@@ -42,7 +42,7 @@ toolbox.count = function(n) {
     return [];
   }
   var arr = [];
-  for (int i = 0; i < n; i++) {
+  for (var i = 0; i < n; i++) {
       arr.push(i);
   }
   return arr;
@@ -56,6 +56,7 @@ toolbox.count = function(n) {
 // ex. first(['a', 'b', 'c']) -> 'a'
 toolbox.first = function(array) {
   // YOUR CODE HERE
+  return array[0];
 };
 
 // 1.3 last(array)
@@ -66,6 +67,7 @@ toolbox.first = function(array) {
 // ex. last(['a', 'b', 'c']) -> 'c'
 toolbox.last = function(array) {
   // YOUR CODE HERE
+  return array[array.length-1];
 };
 
 // 1.4 repeat(n, array)
@@ -77,7 +79,23 @@ toolbox.last = function(array) {
 // ex. repeat(3, [1, 2, 3]) -> [1, 2, 3, 1, 2, 3, 1, 2, 3]
 toolbox.repeat = function(n, array) {
   // YOUR CODE HERE
-};
+  if (n === 1) {
+    return array;
+  }
+
+  if (n === 0) {
+    return [];
+  }
+
+  const len = array.length - 1;
+
+  for (var i = 1; i < n; i++) {
+    for (var j = 0; j <= len; j++) {
+      array.push(array[j]);
+    }
+  }
+  return array;
+};            
 
 // 1.5 reverse(array)
 // Write a function that takes an array and returns that array with it's elements reversed.
@@ -86,6 +104,13 @@ toolbox.repeat = function(n, array) {
 // ex. reverse([1, 2, 3]) -> [3, 2, 1]
 toolbox.reverse = function(array) {
   // YOUR CODE HERE
+  var newArr = new Array(array.length);
+
+  for(var j = array.length - 1, i = 0; j > -1; j--, i++) {
+    newArr[i] = array[j];
+  }
+
+  return newArr;
 };
 
 // Strings represent text. They behave a lot like arrays of letters. You can
@@ -119,6 +144,7 @@ string[0]; // still "h"
 // ex. firstN("hello", 2) -> "he"
 toolbox.firstN = function(string, n) {
   // YOUR CODE HERE
+  return string.substring(0, n);
 };
 
 // 1.7 lastN(string, n)
@@ -128,6 +154,7 @@ toolbox.firstN = function(string, n) {
 // ex. lastN("hello", 2) -> "lo"
 toolbox.lastN = function(string, n) {
   // YOUR CODE HERE
+  return string.substring(string.length - n);
 };
 
 // Built-in function: string.indexOf(substring)
@@ -153,6 +180,7 @@ toolbox.lastN = function(string, n) {
 // ex. startsWith("hello", "x") -> false
 toolbox.startsWith = function(string, substring) {
   // YOUR CODE HERE
+  return string.substring(0, substring.length) === substring;
 };
 
 // Built-in function: string.split(separator)
@@ -173,4 +201,6 @@ toolbox.startsWith = function(string, substring) {
 // ex. replaceAll("hello", "l", "x") -> "hexxo"
 toolbox.replaceAll = function(string, substring, newSubstring) {
   // YOUR CODE HERE
+  let arr = string.split(substring);
+  return arr.join(newSubstring);
 };
