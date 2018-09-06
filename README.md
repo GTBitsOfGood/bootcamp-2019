@@ -2,7 +2,9 @@
 
 ### Week 1
 1. Bootcamp Intro
-2. [JS Crash Course](https://github.com/GTBitsOfGood/bootcamp/tree/master/1_javascript)
+2. JS Crash Course
+   - [Slide Deck](https://docs.google.com/presentation/d/1buIrHO2EcgGLL7WIVXJ4vgJGPsd2rNt0a-DCv-SAId8/edit?usp=sharing)
+   - [Exercises](https://github.com/GTBitsOfGood/bootcamp/tree/master/1_javascript)
 ### Week 2
 1. HTML & CSS
 2. JQuery
