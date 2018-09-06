@@ -38,6 +38,14 @@ array.length; // -> outputs 4
 // ex. count(10) -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 toolbox.count = function(n) {
   // YOUR CODE HERE
+  if(n === 0) {
+    return [];
+  }
+  var arr = [];
+  for (int i = 0; i < n; i++) {
+      arr.push(i);
+  }
+  return arr;
 };
 
 // 1.2 first(array)
