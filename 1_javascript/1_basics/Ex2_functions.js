@@ -43,6 +43,9 @@ window.toolbox = window.toolbox || {};
 //  getMultiplier(3)(4) -> 12
 toolbox.getMultiplier = function(n) {
   // YOUR CODE HERE
+  return function(m) {
+    return n * m;
+  }
 };
 
 // Example once(f)
@@ -85,4 +88,11 @@ toolbox.once = function(f) {
 //  onlyLog(); -> does nothing
 toolbox.only = function(n, f) {
   // YOUR CODE HERE
+  let times = 0;
+  return () => {
+    if (times < n) {
+      f();
+      times++;
+    }
+  }
 };
