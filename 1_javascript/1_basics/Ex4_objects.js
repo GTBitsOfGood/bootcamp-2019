@@ -68,6 +68,16 @@ toolbox.keys = function(object) {
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [1, 1, 2]
 toolbox.values = function(object) {
   // YOUR CODE HERE
+  const newArr = [];
+  for (const lkey in object) {
+    if (object.hasOwnProperty(lkey)) {
+      newArr.push(object[lkey] ) //this works
+      // newArr.push(object.lkey) //this doesn't
+      // const element = object[lkey];
+      
+    }
+  }
+  return newArr;
 };
 
 // Exercise 4.2 pairs(object)
@@ -80,6 +90,17 @@ toolbox.values = function(object) {
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [[a, 1], [b, 1], [c, 2]]
 toolbox.pairs = function(object) {
   // YOUR CODE HERE
+  // let newArr = [];
+  // for (const key in object) {
+  //   if (object.hasOwnProperty(key)) {
+  //     newArr.push([key, object[key]]);
+  //     // const element = object[key];
+      
+  //   }
+  // }
+  // return newArr
+
+  return Object.entries(object);
 };
 
 // Example 4.3 filterKey(object, fun)
@@ -92,7 +113,14 @@ toolbox.pairs = function(object) {
 //  }
 //  filterKey({aa: 1, ab: 2, ba: 3}, startsWithA) -> {aa: 1, ab: 2}
 toolbox.filterKey = function(object, fun) {
+  let newob = {};
   // YOUR CODE HERE
+  for (const key in object) {
+    if (object.hasOwnProperty(key) && fun(key)) {
+      newob[key] = object[key];
+    }
+  }
+  return newob;
 };
 
 // Exercise 4.4 pick(object, keysArray)
@@ -106,6 +134,19 @@ toolbox.filterKey = function(object, fun) {
 // ex. pick({a: 1, b: 2}, ['a', 'b']) -> {a: 1, b: 2}
 toolbox.pick = function(object, keysArray) {
   // YOUR CODE HERE
+  let newob = {};
+  keysArray.forEach(element => {
+    let hell = toolbox.filterKey(object, (param => {
+        return param === element;
+    }));
+    // console.log(hell);
+    for (const key in hell) {
+      if (hell.hasOwnProperty(key)) {
+        newob[key] = hell[key];
+      }
+    }
+  });
+  return newob
 };
 
 // Bonus Exercise 4.5! toolbox.propertyOf(object)
@@ -121,4 +162,10 @@ toolbox.pick = function(object, keysArray) {
 // ex. toolbox.propertyOf({a: 1})('a') -> 1
 toolbox.propertyOf = function(object) {
   // YOUR CODE HERE
+  let returnFunction = (param => {
+    if(object.hasOwnProperty(param)) {
+      return object[param];
+    }
+  });
+  return returnFunction;
 };
