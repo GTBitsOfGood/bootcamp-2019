@@ -67,7 +67,14 @@ toolbox.keys = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [1, 1]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [1, 1, 2]
 toolbox.values = function(object) {
-  // YOUR CODE HERE
+  const temp = []
+  for(let val in object)
+  {
+    if(object.hasOwnProperty(val))
+     temp.push(object[val])
+  }
+  return temp
+
 };
 
 // Exercise 4.2 pairs(object)
