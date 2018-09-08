@@ -130,15 +130,17 @@ toolbox.filter = function(array, fn) {
 //  every(['abcdefghijk'], isLong) -> true
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
-  let state = false
-  for (let i = 0; i<array.length; i++)
+  let state = true
+  /* for (let i = 0; i<array.length; i++)
   {
-    if (fn(array[i]))
+    if (fn(array[i]) && state)
     state = true
     else 
     return false
   }
-  return state
+  return state */
+  array.forEach(element => state=state && fn(element));
+  return state;
 };
 
 // Exercise 3.6 find(array, fn)
@@ -157,14 +159,23 @@ toolbox.every = function(array, fn) {
 //  find([2, 4], isEven) -> 0
 //  find([1, 3, 5], isEven) -> -1
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
-toolbox.find = function(array, fn) {
-  index = 0;
-  array.forEach(element => {
-   if (fn(element) == True)
-   return index
-   else
-   index++
+toolbox.find = function(array, fn){
+ let solutionindex = -1;
+ array.forEach((item,index) => {
+   if (solutionindex === -1 & fn(item))
+   solutionindex = index
+ });
+ return solutionindex 
+  /*
+ array.forEach(element => {
+    if(fn(element))
+    {
+    index++
+    return index
+    }
   });
+  return index;
+  */
 };
 
 // Bonus Exercise! zip(array1, array2)
