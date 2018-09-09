@@ -67,13 +67,7 @@ toolbox.keys = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [1, 1]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [1, 1, 2]
 toolbox.values = function(object) {
-  const returnArray = [];
-  for (let key in object) {
-    if (object.hasOwnProperty(key)) {
-      returnArray.push(object[key]);
-    }
-  }
-  return returnArray;
+  // YOUR CODE HERE
 };
 
 // Exercise 4.2 pairs(object)
@@ -85,13 +79,7 @@ toolbox.values = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [[a, 1], [b, 1]]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [[a, 1], [b, 1], [c, 2]]
 toolbox.pairs = function(object) {
-  const returnArray = [];
-  for (let key in object) {
-    if (object.hasOwnProperty(key)) {
-      returnArray.push([key, object[key]]);
-    }
-  }
-  return returnArray;
+  // YOUR CODE HERE
 };
 
 // Example 4.3 filterKey(object, fun)
@@ -104,20 +92,7 @@ toolbox.pairs = function(object) {
 //  }
 //  filterKey({aa: 1, ab: 2, ba: 3}, startsWithA) -> {aa: 1, ab: 2}
 toolbox.filterKey = function(object, fun) {
-  let returnObject = {}; // create new object to return
-  for (let key in object) {
-    // go through all keys in object
-    if (
-      object.hasOwnProperty(key) && // if key belongs to object // and
-      fun(key)
-    ) {
-      // fun(key) is true
-      returnObject[key] = object[key]; // then save the key and value from object to returnObject
-      // note we use the bracket notation (returnObject[key]) instead of dot notation (returnObject.key)
-      // Why do we do that?
-    }
-  }
-  return returnObject;
+  // YOUR CODE HERE
 };
 
 // Exercise 4.4 pick(object, keysArray)
@@ -130,7 +105,7 @@ toolbox.filterKey = function(object, fun) {
 // ex. pick({a: 1}, ['a', 'b']) -> {a: 1}
 // ex. pick({a: 1, b: 2}, ['a', 'b']) -> {a: 1, b: 2}
 toolbox.pick = function(object, keysArray) {
-  return toolbox.filterKey(object, key => keysArray.indexOf(key) !== -1);
+  // YOUR CODE HERE
 };
 
 // Bonus Exercise 4.5! toolbox.propertyOf(object)
@@ -145,9 +120,5 @@ toolbox.pick = function(object, keysArray) {
 //  propertyGetter('b') -> 2
 // ex. toolbox.propertyOf({a: 1})('a') -> 1
 toolbox.propertyOf = function(object) {
-  return key => object[key];
-  // Also acceptable
-  // return function(key) {
-  //   return object[key];
-  // };
+  // YOUR CODE HERE
 };

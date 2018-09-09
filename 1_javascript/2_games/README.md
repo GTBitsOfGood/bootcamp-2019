@@ -1,4 +1,4 @@
-# JavaScript Basic Exercises 3. JavaScript Games
+# JavaScript Basic Exercises 2.0 JavaScript Games
 
 ## Table of Contents
 

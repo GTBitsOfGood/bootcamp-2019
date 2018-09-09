@@ -1,4 +1,4 @@
-# JavaScript Basics Exercises. Build your own JavaScript toolbox
+# JavaScript Basics Exercises 1.0 Build your own JavaScript toolbox
 
 **Note**: For extra help with JavaScript check out 
 [CodeAcademy's great module on JavaScript][ca].
