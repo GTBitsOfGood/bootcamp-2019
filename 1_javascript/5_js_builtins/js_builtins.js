@@ -21,6 +21,8 @@ window.builtins = {};
 
 builtins.trim = function(str) {
   // YOUR CODE HERE
+  let front;
+  return str = str.replace(/^\s+|\s+$/g,'');
 };
 
 // ----------------------------------------------------------------------------
@@ -40,6 +42,7 @@ builtins.trim = function(str) {
 
 builtins.search = function(sourceString, searchString) {
   // YOUR CODE HERE
+  return sourceString.indexOf(searchString) > -1
 };
 
 // ----------------------------------------------------------------------------
@@ -60,6 +63,8 @@ builtins.search = function(sourceString, searchString) {
 
 builtins.parseQuantity = function(str) {
   // YOUR CODE HERE
+  str = str.replace(/\D/g, '');
+  return parseInt(str);
 };
 
 // ----------------------------------------------------------------------------
@@ -76,6 +81,13 @@ builtins.parseQuantity = function(str) {
 
 builtins.reverse = function(arr) {
   // YOUR CODE HERE
+  var newArr = new Array(arr.length);
+
+  for(var j = arr.length - 1, i = 0; j > -1; j--, i++) {
+    newArr[i] = arr[j];
+  }
+
+  return newArr;
 };
 
 // ----------------------------------------------------------------------------
@@ -94,6 +106,15 @@ builtins.reverse = function(arr) {
 
 builtins.isEqual = function(a, b) {
   // YOUR CODE HERE
+  if (a.length != b.length) {
+    return false;
+  }
+  for (let index = 0; index < a.length; index++) {
+    if (a[index] !== b[index]) {
+      return false;
+    }
+  }
+  return true;
 };
 
 // ----------------------------------------------------------------------------
@@ -111,6 +132,7 @@ builtins.isEqual = function(a, b) {
 
 builtins.isPalindrome = function(arr) {
   // YOUR CODE HERE
+  return (builtins.isEqual(arr, builtins.reverse(arr)));
 };
 
 // ----------------------------------------------------------------------------
@@ -131,6 +153,7 @@ builtins.isPalindrome = function(arr) {
 
 builtins.sortByValue = function(arr) {
   // YOUR CODE HERE
+  return arr.sort((a, b) => a - b);
 };
 
 // ----------------------------------------------------------------------------
@@ -148,6 +171,7 @@ builtins.sortByValue = function(arr) {
 
 builtins.sortByLength = function(arr) {
   // YOUR CODE HERE
+  return arr.sort((a, b) => a.length - b.length);
 };
 
 // ----------------------------------------------------------------------------
@@ -163,4 +187,11 @@ builtins.sortByLength = function(arr) {
 
 builtins.flatten = function(arr) {
   // YOUR CODE HERE
+  let array = [];
+  arr.forEach(element => {
+    element.forEach(elem => {
+      array.push(elem);
+    })
+  });
+  return array;
 };
