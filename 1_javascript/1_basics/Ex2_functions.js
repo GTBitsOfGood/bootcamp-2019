@@ -43,7 +43,9 @@ window.toolbox = window.toolbox || {};
 //  getMultiplier(3)(4) -> 12
 toolbox.getMultiplier = function(n) {
   // YOUR CODE HERE
+  return (m => m * n)
 };
+
 
 // Example once(f)
 // This is a function that takes a function f and returns a function g.
@@ -85,4 +87,11 @@ toolbox.once = function(f) {
 //  onlyLog(); -> does nothing
 toolbox.only = function(n, f) {
   // YOUR CODE HERE
+  //let count = 0;
+  return (_ => {
+    if (n > 0) {
+      f();
+      n--;
+    }
+  })
 };
