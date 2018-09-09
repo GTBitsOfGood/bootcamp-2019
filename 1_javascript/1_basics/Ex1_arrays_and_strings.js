@@ -64,7 +64,7 @@ toolbox.first = function(array) {
 // ex. last(['a', 'b', 'c']) -> 'c'
 toolbox.last = function(array) {
   // YOUR CODE HERE
-  return array.pop()
+  return array[array.length - 1]
 };
 
 // 1.4 repeat(n, array)
@@ -128,6 +128,7 @@ string[0]; // still "h"
 // ex. firstN("hello", 2) -> "he"
 toolbox.firstN = function(string, n) {
   // YOUR CODE HERE
+  
   return string.substring(0, n)
 };
 
@@ -164,6 +165,15 @@ toolbox.lastN = function(string, n) {
 // ex. startsWith("hello", "x") -> false
 toolbox.startsWith = function(string, substring) {
   // YOUR CODE HERE
+  if (substring.length > string.length) { return false; }
+  for (let i = 0; i < substring.length; i++) {
+
+    if (string.charAt(i) !== substring.charAt(i)) {
+
+      return false;
+    }
+  }
+  return true;
 };
 
 // Built-in function: string.split(separator)
@@ -184,4 +194,13 @@ toolbox.startsWith = function(string, substring) {
 // ex. replaceAll("hello", "l", "x") -> "hexxo"
 toolbox.replaceAll = function(string, substring, newSubstring) {
   // YOUR CODE HERE
+  let newStr = ""
+  let arr = string.split(substring);
+
+  for (let a of arr) {
+
+    newStr += a
+    if (a === arr[arr.length - 1]) { return newStr; }
+    newStr += newSubstring
+  }
 };

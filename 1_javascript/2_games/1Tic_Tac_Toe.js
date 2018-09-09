@@ -149,7 +149,15 @@ tictactoe.getResult = function(board) {
     //     _ O _
     //
     // YOUR CODE HERE
-
+    for (var row = 0; row < board.length; row++) {
+      // For each row, if all boxes in the row are taken up by 'side',
+      // 'side' is the winner.
+      if (board[0][row] === side &&
+          board[1][row] === side &&
+          board[2][row] === side) {
+        return side;
+      }
+    }
     // Check for victory first diagonal
     //
     // ex. X O O
@@ -157,7 +165,11 @@ tictactoe.getResult = function(board) {
     //     _ _ X
     // 
     // YOUR CODE HERE
-
+    if (board[0][0] === side &&
+          board[1][1] === side &&
+          board[2][2] === side) {
+        return side;
+      }
     // Check for victory second diagonal
     //
     // ex. _ _ O
@@ -165,12 +177,18 @@ tictactoe.getResult = function(board) {
     //     O X X
     //
     // YOUR CODE HERE
+    if (board[2][0] === side &&
+          board[1][1] === side &&
+          board[0][2] === side) {
+        return side;
+      }
   }
 
   // Check if there are any empty cells (boxes) on the board,
   // if so the game is in progress. Otherwise, the game is
   // over and is a tie.
   // YOUR CODE HERE
+  
 }
 
 // tictactoe.getComputerMove(): Get the move the computer is going to make.
