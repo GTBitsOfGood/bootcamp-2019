@@ -16,7 +16,7 @@ window.builtins = {};
 // Write a function that takes a string and returns the same string without
 // leading and trailing spaces.
 
-// ex. builtins.trim('  Horizons  ') -> 'Horizons'
+// ex. builtins.trim('  Gatech  ') -> 'Gatech'
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
 builtins.trim = function(string) {
@@ -51,8 +51,8 @@ builtins.trim = function(string) {
 // search for, returning true or false as to whether or not the latter
 // was found in the source string.
 
-// ex. builtins.search('Horizons', 'o') -> true
-// ex. builtins.search('Horizons', 'oz') -> false
+// ex. builtins.search('gatech', 'g') -> true
+// ex. builtins.search('gatech', 'ag') -> false
 
 builtins.search = function(sourceString, searchString) {
   return sourceString.indexOf(searchString) > -1;
