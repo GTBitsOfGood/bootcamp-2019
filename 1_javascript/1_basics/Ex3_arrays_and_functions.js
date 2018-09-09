@@ -101,7 +101,7 @@ toolbox.transform = function(array, fn) {
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
   const temp  = [];
- let newArr = array.forEach(element => {
+ array.forEach(element => {
    if (fn(element))
    temp.push(element)
  });
