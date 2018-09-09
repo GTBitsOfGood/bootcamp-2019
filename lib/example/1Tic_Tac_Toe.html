@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Game Room: 1. Tic Tac Toe</title>
+
+  <link rel="shortcut icon" type="image/png" href="../jasmine/jasmine_favicon.png">
+  <link rel="stylesheet" href="../jasmine/jasmine.css">
+
+  <script src="../jasmine/jasmine.js"></script>
+  <script src="../jasmine/jasmine-html.js"></script>
+  <script src="../jasmine/boot.js"></script>
+</head>
+
+<style>
+  body {
+    font-family: Verdana, sans-serif;
+  }
+
+  #board {
+    font-family: monospace;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid gray;
+  }
+
+  #board td {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+  }
+
+  #board td + td, #board th + th {
+    border-left: 2px solid black;
+  }
+  #board tr + tr {
+    border-top: 2px solid black;
+  }
+</style>
+
+<body>
+  <h2>Game 1: Tic Tac Toe</h2>
+  <h2>
+    <a href="1Tic_Tac_Toe.js">Instructions and source code</a>
+    |
+    <a href="1Tic_Tac_Toe_tests.js">Test code</a>
+  </h2>
+  <div>
+    <div>First make sure all the tests pass.<div>
+    <div>When you're ready, hit "Play!" to play Tic Tac Toe.<div>
+      <table id="board" onclick="tictactoe.playerMoveClick(event)" border="1">
+        <tr>
+          <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td>
+        </tr>
+      </table>
+    <div>
+      <span id="result"></span>
+    </div>
+    <div>
+      <strong>Player:</strong>
+      <span id="player">?</span>
+    </div>
+    <div>
+      <strong>Computer:</strong>
+      <span id="computer">?</span>
+    </div>
+    <button onclick="tictactoe.startGame('x')" class="play">Play as x (goes first)</button>
+    <button onclick="tictactoe.startGame('o')" class="play">Play as o (goes second)</button>
+    <p>&nbsp;</p>
+  </div>
+
+  <script src="1Tic_Tac_Toe.js"></script>
+  <script src="1Tic_Tac_Toe_tests.js"></script>
+  <script src="../horizonsJasmineReporter.js"></script>
+  <script>
+    horizons.getTestResult(function(result) {
+      console.log('tests finised running', result);
+    });
+  </script>
+</body>
+</html>
