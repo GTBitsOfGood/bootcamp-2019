@@ -194,4 +194,8 @@ builtins.flatten = function(arr) {
     })
   });
   return array;
+  // arr.forEach(element => {
+  //   array.concat(element);
+  // });
+  // return array;
 };
