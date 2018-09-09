@@ -37,8 +37,20 @@ array.length; // -> outputs 4
 // ex. count(1)  -> [0]
 // ex. count(10) -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 toolbox.count = function(n) {
-  // YOUR CODE HERE
-};
+    if (n === 0) {
+        return [];
+    } else {
+        const arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(i);
+            // arr[i] = i
+        }
+        console.log(arr)
+        return arr;
+    }
+
+
+}
 
 // 1.2 first(array)
 // Write a function that takes an array and returns the first item of the
@@ -47,7 +59,7 @@ toolbox.count = function(n) {
 // ex. first([1, 2, 3]) -> 1
 // ex. first(['a', 'b', 'c']) -> 'a'
 toolbox.first = function(array) {
-  // YOUR CODE HERE
+    return array[0];
 };
 
 // 1.3 last(array)
@@ -57,7 +69,7 @@ toolbox.first = function(array) {
 // ex. last([1, 2, 3]) -> 3
 // ex. last(['a', 'b', 'c']) -> 'c'
 toolbox.last = function(array) {
-  // YOUR CODE HERE
+    return array[array.length - 1];
 };
 
 // 1.4 repeat(n, array)
@@ -68,7 +80,14 @@ toolbox.last = function(array) {
 // ex. repeat(1, [1, 2, 3]) -> [1, 2, 3]
 // ex. repeat(3, [1, 2, 3]) -> [1, 2, 3, 1, 2, 3, 1, 2, 3]
 toolbox.repeat = function(n, array) {
-  // YOUR CODE HERE
+    const arr = [];
+    for (let i = 1; i <= n; i++){
+        for (let item of array) {
+            arr.push(item);
+        }
+    }
+    return arr;
+
 };
 
 // 1.5 reverse(array)
@@ -77,7 +96,11 @@ toolbox.repeat = function(n, array) {
 // ex. reverse([1]) -> [1]
 // ex. reverse([1, 2, 3]) -> [3, 2, 1]
 toolbox.reverse = function(array) {
-  // YOUR CODE HERE
+    const arr = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+        arr.push(array[i]);
+    };
+    return arr;
 };
 
 // Strings represent text. They behave a lot like arrays of letters. You can
@@ -110,7 +133,11 @@ string[0]; // still "h"
 // ex. firstN("hello", 0) -> ""
 // ex. firstN("hello", 2) -> "he"
 toolbox.firstN = function(string, n) {
-  // YOUR CODE HERE
+    let aStr = "";
+    for (let i = 0; i < n; i++) {
+        aStr += string[i];
+    }
+    return aStr;
 };
 
 // 1.7 lastN(string, n)
@@ -119,8 +146,13 @@ toolbox.firstN = function(string, n) {
 // ex. lastN("hello", 0) -> ""
 // ex. lastN("hello", 2) -> "lo"
 toolbox.lastN = function(string, n) {
-  // YOUR CODE HERE
+    let aStr = "";
+    for (let i = string.length - n; i < string.length ; i++) {
+        aStr += string.charAt(i);
+    }
+    return aStr;
 };
+
 
 // Built-in function: string.indexOf(substring)
 // Returns the index of (the position of) the first occurrence of substring in string.
