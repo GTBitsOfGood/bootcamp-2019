@@ -52,15 +52,19 @@
 var Rocketship = {
   coords: {x: 0, y: 0},
   up: function() {
-    // YOUR CODE HERE
+    this.coords.y += 1
+    return this
   },
   down: function() {
-    // YOUR CODE HERE
+    this.coords.y -= 1
+    return this
   },
   left: function() {
-    // YOUR CODE HERE
+    this.coords.x -=1
+    return this
   },
   right: function() {
-    // YOUR CODE HERE
+    this.coords.x += 1
+    return this
   },
 };
