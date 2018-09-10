@@ -20,7 +20,13 @@ window.builtins = {};
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
 builtins.trim = function(str) {
-  // YOUR CODE HERE
+  let newString = ""
+  const temp = str.split(" ")
+  temp.forEach(element => {
+    if (element !== " ")
+    newString+=temp
+  });
+  return newString;
 };
 
 // ----------------------------------------------------------------------------

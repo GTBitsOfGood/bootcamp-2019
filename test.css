@@ -1,0 +1,20 @@
+h1{    
+color:red;
+margin: 10px;
+border: 1px solid black;
+padding: 20px;
+}
+
+.h2class
+{
+    color: pink;
+}
+
+#h3id
+{
+    color:green;
+}
+
+h1:hover{
+    color:blue;
+}
