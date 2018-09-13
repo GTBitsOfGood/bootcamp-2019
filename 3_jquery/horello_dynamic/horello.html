@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Horizons - W2D3 - Making Horello Dynamic</title>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/jquery-ui.js"></script>
+
+    <!-- Bootstrap stuff -->
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <a class="header-logo" href="#">
+        <span class="header-logo-default"></span>
+      </a>
+    </header>
+
+    <div class="modal fade" id="card-edit">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close card-edit-cancel" data-dismiss="modal"
+                                                aria-label="Close"><span
+                                                aria-hidden="true">&times;</span></button>
+            <h3>Edit card</h3>
+          </div>
+          <div class="modal-body">
+            <textarea class="form-control" rows="5" id="card-edit-body" placeholder="Card contents"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default card-edit-cancel" data-dismiss="modal">
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary card-edit-save">
+              Save changes
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="board">
+      <div class="list-container">
+        <div class="list">
+          <div class="list-header">
+            <span class="list-title">Some List</span>
+          </div>
+          <div class="list-cards">
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">First card in first list</div>
+            </div>
+          </div>
+          <div class="list-footer">
+            <button class="list-button add-card">Add a card...</button>
+            <div class="collapse add-card-form-wrapper">
+              <div class="well add-card-form">
+                <input type="text" class="form-control"
+                                   placeholder="Card title">
+                <button type="button" class="btn btn-default add-card-save">
+                  Save
+                </button>
+                <button type="button"
+                        class="btn btn-default add-card-cancel"><span
+                        class="glyphicon glyphicon-remove"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <div class="list">
+          <div class="list-header">
+            <span class="list-title">List 2</span>
+          </div>
+
+          <div class="list-cards">
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card with lots of text that should not fit into a single line</div>
+            </div>
+
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card 3</div>
+            </div>
+
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card 4</div>
+            </div>
+
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card 5</div>
+            </div>
+
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card 6</div>
+            </div>
+
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card 7</div>
+            </div>
+          </div>
+
+          <div class="list-footer">
+            <button class="list-button add-card">Add a card...</button>
+            <div class="collapse add-card-form-wrapper">
+              <div class="well add-card-form">
+                <input type="text" class="form-control"
+                                   placeholder="Card title">
+                <button type="button" class="btn btn-default add-card-save">
+                  Save
+                </button>
+                <button type="button"
+                        class="btn btn-default add-card-cancel"><span
+                        class="glyphicon glyphicon-remove"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <div class="list">
+          <div class="list-header">
+            <span class="list-title">List 3</span>
+          </div>
+          <div class="list-cards">
+            <div class="card">
+              <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+              </span>
+              <div class="card-body">Example card on the last list</div>
+            </div>
+          </div>
+          <div class="list-footer">
+            <button class="add-card">Add a card...</button>
+            <div class="collapse add-card-form-wrapper">
+              <div class="well add-card-form">
+                <input type="text" class="form-control"
+                                   placeholder="Card title">
+                <button type="button"
+                        class="btn btn-default add-card-save">Save
+                </button>
+                <button type="button"
+                        class="btn btn-default add-card-cancel"><span
+                        class="glyphicon glyphicon-remove"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <div class="add-list-container">
+          <button class="add-list">Add a list...</button>
+          <div class="collapse add-list-form-wrapper">
+            <div class="well add-card-form">
+              <input type="text" class="form-control"
+                                 placeholder="List name">
+              <button type="button"
+                      class="btn btn-default add-list-save">Save
+              </button>
+              <button type="button"
+                      class="btn btn-default add-list-cancel"><span
+                      class="glyphicon glyphicon-remove"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
