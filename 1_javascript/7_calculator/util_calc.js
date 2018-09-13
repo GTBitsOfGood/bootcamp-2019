@@ -55,4 +55,22 @@ window.util = {};
 // ex. util.calc('10 * sqrt 81') -> 90
 util.calc = function(expression) {
   // YOUR CODE HERE
+  if (expression.length === 0) { throw "Empty Expression"; }
+  if (expression.search(/^[\+\-\*\/] |[\+\-\*\/]$/g) > -1) { throw "Operator in the wrong spot"; }
+  const numCounter = (str) => {
+    const re = /(\w\.*)+/g
+    return ((str || '').match(re) || []).length;
+  }
+
+  const operatorCounter = (str) => {
+    const re = /( [\+\-\*\/] )/g
+    return ((str || '').match(re) || []).length;
+  }
+  numberCount = numCounter(expression);
+  operatorCount = operatorCounter(expression);
+  if(numberCount < operatorCounter || numberCount > operatorCounter) { throw "Wrong number of operators and numbers" }
+  if(numberCount === 1) {
+    return parseInt(expression);
+  }
+  
 };
