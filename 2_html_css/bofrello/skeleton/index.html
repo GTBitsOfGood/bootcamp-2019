@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Horello</title>
+
+    <!-- Bootstrap stuff -->
+    <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+    <script src="../../../lib/jquery.js"></script>
+    <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<header>
+    <a class="header-logo"
+       href="#"><span class="header-logo-default"></span></a>
+</header>
+
+<div class="modal fade" id="cardEdit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <input type="text" class="form-control"
+                       value="#DominateAllTheHouses">
+            </div>
+            <div class="modal-body">
+                <h5>Description</h5>
+                <textarea class="form-control" rows="5">
+Card body goes here</textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary">Save
+                    changes
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="board">
+    <div class="list-container">
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">Some List</span>
+            </div>
+            <div class="list-cards">
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+<p>Leverage agile frameworks to provide a robust
+synopsis for high level overviews. Iterative
+approaches to corporate strategy foster
+collaborative thinking to further the overall
+value proposition. Organically grow the holistic
+world view of disruptive innovation via
+workplace diversity and empowerment.</p>
+
+<p>Bring to the table win-win survival strategies
+to ensure proactive domination. At the end of
+the day, going forward, a new normal that has
+evolved from generation X is on the runway
+heading towards a streamlined cloud solution.
+User generated content in real-time will have
+multiple touchpoints for offshoring.</p>
+
+<p>Capitalise on low hanging fruit to identify a
+ballpark value added activity to beta test.
+Override the digital divide with additional
+clickthroughs from DevOps. Nanotechnology
+immersion along the information highway will
+close the loop on focusing solely on the bottom
+line.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-footer">
+                <button class="list-button add-card"
+                        data-toggle="collapse"
+                        href="#addCard1">Add a card...
+                </button>
+                <div class="collapse" id="addCard1">
+                    <div class="well add-card-form">
+                        <input type="text" class="form-control"
+                               placeholder="Card title">
+                        <button type="button" class="btn btn-default">
+                            Save
+                        </button>
+                        <button type="button"
+                                class="btn btn-default"><span
+                                class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">Some List</span>
+            </div>
+
+            <div class="list-cards">
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses
+                    </div>
+                </div>
+
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses again
+                    </div>
+                </div>
+
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses again
+                    </div>
+                </div>
+
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses again
+                    </div>
+                </div>
+
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses again
+                    </div>
+                </div>
+
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                        <span class="card-more">
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses again
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-footer">
+                <button class="list-button add-card"
+                        data-toggle="collapse"
+                        href="#addCard2">Add a card...
+                </button>
+                <div class="collapse" id="addCard2">
+                    <div class="well add-card-form">
+                        <input type="text" class="form-control"
+                               placeholder="Card title">
+                        <button type="button" class="btn btn-default">
+                            Save
+                        </button>
+                        <button type="button"
+                                class="btn btn-default"><span
+                                class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">Some List</span>
+            </div>
+            <div class="list-cards">
+                <div class="card" data-toggle="modal"
+                     data-target="#cardEdit">
+                    <span class="card-more">
+                        <span class="glyphicon glyphicon-align-left"></span>
+                    </span>
+                    <div class="card-body">
+                        #DominateAllTheHouses
+                    </div>
+                </div>
+                <div class="list-footer">
+                    <button class="add-card"
+                            data-toggle="collapse"
+                            href="#addCard3">Add a card...
+                    </button>
+                    <div class="collapse" id="addCard3">
+                        <div class="well add-card-form">
+                            <input type="text" class="form-control"
+                                   placeholder="Card title">
+                            <button type="button"
+                                    class="btn btn-default">Save
+                            </button>
+                            <button type="button"
+                                    class="btn btn-default"><span
+                                    class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <div class="add-list-container">
+            <button class="add-list"
+                    data-toggle="collapse"
+                    href="#addList">Add a list...
+            </button>
+            <div class="collapse" id="addList">
+                <div class="well add-card-form">
+                    <input type="text" class="form-control"
+                           placeholder="List name">
+                    <button type="button"
+                            class="btn btn-default">Save
+                    </button>
+                    <button type="button"
+                            class="btn btn-default"><span
+                            class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
