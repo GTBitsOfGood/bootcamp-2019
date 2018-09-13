@@ -7,7 +7,9 @@
    - [Exercises](https://github.com/GTBitsOfGood/bootcamp/tree/master/1_javascript)
 ### Week 2
 1. HTML & CSS
-2. JQuery
+    - [Slide Deck](https://docs.google.com/presentation/d/1POMfrkOvPWVUZCEXwS5x2iylqtFox02bhPeyx4xM3w4/edit?usp=sharing)
+    - [Exercises](https://github.com/GTBitsOfGood/bootcamp/tree/master/2_html_css)
+2. [JQuery](3_jquery/README.md)
 ### Week 3
 1. Node, Command Line, CLIs
 2. Intro to HTTP, Express, and Handlebars
@@ -31,8 +33,3 @@
 
 ### Week 10
 1. Final Project
-
-
-
-
-
