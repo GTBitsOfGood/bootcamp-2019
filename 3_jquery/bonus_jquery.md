@@ -14,4 +14,3 @@
    http://www.nytimes.com/interactive/2015/10/27/world/greenland-is-melting-away.html
 1. Try to recreate the parallax effects here:
    http://www.kennedyandoswald.com/
-
