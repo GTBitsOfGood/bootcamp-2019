@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
+
+body {
+  line-height: 18px;
+  height: 100vh;
+
+  /** PART 1 CSS here */
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+
+  /** PART 1 CSS here */
+}
+
+.header-logo {
+  bottom: 0;
+  display: block;
+  left: 50%;
+  margin-left: -40px;
+  top: 5px;
+  text-align: center;
+  position: absolute;
+  width: 5pc;
+  height: 30px;
+  z-index: 2;
+  opacity: 0.5;
+  transition: opacity ease-in 85ms;
+}
+
+.header-logo-default {
+  background-image: url(../../img/title.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 5pc 30px;
+  right: 0;
+  top: 0;
+  height: 30px;
+  width: 5pc;
+  position: absolute;
+}
+
+a {
+  background-color: transparent;
+}
+
+
+/* BOARD */
+
+.add-list-container {
+  padding: 5px;
+}
+
+.add-list {
+  /** PART 1 CSS here */
+}
+
+.add-list:hover {
+  /** PART 1 CSS here */
+}
+
+.add-list-form {
+  /** PART 4 CSS here */
+}
+
+.board {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: calc(100% - 40px);
+  padding-bottom: 1em;
+
+  /** PART 2 CSS here */
+}
+
+
+/* LISTS */
+
+.list-container {
+  height: 100%;
+}
+
+.list {
+  box-sizing: border-box;
+  max-height: 100%;
+
+  /** PART 2 CSS here */
+}
+
+.list-header {
+  display: block;
+  position: relative;
+
+  /** PART 2 CSS here */
+}
+
+.list-footer {
+  /** PART 2 CSS here */
+}
+
+.list-title {
+  /** PART 2 CSS here */
+}
+
+.add-card {
+  /** PART 2 CSS here */
+}
+
+.add-card:hover {
+  /** PART 2 CSS here */
+}
+
+
+/* CARDS */
+
+.list-cards {
+  min-height: 0;
+
+  /** PART 3 CSS here */
+}
+
+.card {
+  /** PART 3 CSS here */
+}
+
+.card-body {
+  /** PART 3 CSS here */
+}
+
+.card-more {
+  /** PART 3 CSS here */
+}
+
+/** PART 4 CSS here: add card form */

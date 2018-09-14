@@ -9,7 +9,7 @@
 1. HTML & CSS
     - [Slide Deck](https://docs.google.com/presentation/d/1POMfrkOvPWVUZCEXwS5x2iylqtFox02bhPeyx4xM3w4/edit?usp=sharing)
     - [Exercises](https://github.com/GTBitsOfGood/bootcamp/tree/master/2_html_css)
-2. JQuery
+2. [JQuery](3_jquery/README.md)
 ### Week 3
 1. Node, Command Line, CLIs
 2. Intro to HTTP, Express, and Handlebars
