@@ -1,4 +1,4 @@
-# JavaScript Basics Exercises 1.0 Build your own JavaScript toolbox
+# JavaScript Basics Exercises
 
 **Note**: For extra help with JavaScript check out 
 [CodeAcademy's great module on JavaScript][ca].
@@ -6,10 +6,10 @@
 ## Table of Contents
 
 1. <a href="#arrays">Exercise 1: Arrays and Strings</a>
-1. <a href="#functions">Exercise 2: Function Functions</a>
-1. <a href="#arrays_functions">Exercise 3: Arrays and Function Functions</a>
-1. <a href="#objects">Exercise 4: Objects</a>
-1. <a href="#libraries">Exercise 5: Libraries</a>
+2. <a href="#functions">Exercise 2: Function Functions</a>
+3. <a href="#arrays_functions">Exercise 3: Arrays and Function Functions</a>
+4. <a href="#objects">Exercise 4: Objects</a>
+5. <a href="#libraries">Exercise 5: Libraries</a>
 
 
 ## <a id="start">Getting Started</a>
@@ -30,8 +30,8 @@ will combine functions from the first 4 exercises to do do bigger things.
 
 ### Running Exercises
 
-[Download this project][download] and unzip it. Files for module 2 can be found in the folder `2_your_toolbox`.
-To start open `2_your_toolbox/Exercise1_arrays_and_strings.html` in
+[Download this project][download] and unzip it. Files for module 2 can be found in the folder `1_javascript/1_basics`.
+To start open `1_javascript/1_basics/Ex1_arrays_and_strings.html` in
 [Google Chrome][chrome].
 
 This page shows your progress on Exercise 1. Each subexercise is defined as a
