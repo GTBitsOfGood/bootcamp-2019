@@ -1,7 +1,7 @@
 # JavaScript Crash Course
 
-* [JavaScript Basics](1_javascript/1_basics)
-* [JavaScript Games](1_javascript/2_games)
+* [JavaScript Basics](1_basics)
+* [JavaScript Games](2_games)
 * [Debugging in Chrome](3_debugging)
 * [Rocketship](4_rocketship)
 * [JS Built-ins](5_js_builtins)
