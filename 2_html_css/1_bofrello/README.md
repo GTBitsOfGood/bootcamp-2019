@@ -1,4 +1,4 @@
-# HTML and CSS Intro: Building a landing page
+ # HTML and CSS Intro: Building a landing page
 
 Congratulations on being hired and welcome to the Bofrello, Inc. team! As
 our latest web development hire, we're relying on you to build the
@@ -23,18 +23,14 @@ add images and interactive elements to the page.
 
 ## A few important details
 
-- You'll be working in the `skeleton` directory. Each part of the
-project is contained in HTML and CSS files prefixed with the part
-number, e.g., `1_top.html`.
-- Study the mockup screenshots closely. Use an app like Preview in OS X
-so that you can easily pan, zoom, and measure things.
-- Get very comfortable using Chrome's Developer Tools (⌥⌘I, or View >
-Developer > Developer Tools).
-- The best way to do web development is to make small, incremental
-changes to the HTML and CSS and then reload in the browser to see the
-changes. When you get comfortable using the power Developer Tools,
-you'll see how to test individual changes in real time without
-changing your code.
+- You'll be working in the `skeleton` directory. Each part of the project is contained in HTML and CSS files prefixed with the part number, e.g., `1_top.html`.
+
+- Study the mockup screenshots closely. Use an app like Preview in OS X so that you can easily pan, zoom, and measure things.
+
+- Get very comfortable using Chrome's Developer Tools (⌥⌘I, or View > Developer > Developer Tools).
+
+- The best way to do web development is to make small, incremental changes to the HTML and CSS and then reload in the browser to see the changes. When you get comfortable using the power Developer Tools, you'll see how to test individual changes in real time without changing your code.
+
 - Keep the [specs] handy as you'll need them throughout this project.
 
 ## Part 1: Title

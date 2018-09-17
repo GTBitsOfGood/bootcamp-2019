@@ -1,4 +1,4 @@
-# Pair Programming Exercise: Twilio Messenger
+# Twilio Messenger
 
 # Before beginning follow the directions here
 https://codepen.io/moose-horizons/pen/aZdvWa?editors=1010
@@ -11,8 +11,8 @@ Twilio's API. The app will send messages to our Twilio-enabled phone number.
 You've been provided with a static HTML interface. Your task is to write
 JavaScript to turn this into a dynamic application.
 
-To get started open `week02/day4/twilio/twilio.js` in your editor and
-`week02/day4/twilio/twilio.html` in your browser.
+To get started open `b2_twilio/twilio.js` in your editor and
+`b2_twilio/twilio.html` in your browser.
 
 ## Part 0. Get Twilio credentials
 
@@ -29,8 +29,8 @@ The `this.initialize()` method is called when the app is started inside the `Twi
 constructor.
 
 1. In `this.initialize()`, add a click handler to the "Send" button (i.e., the `this.messageSendButton` element) so that it will call `this.handleMessageSend`.
-1. The "Send" button has a default submit behavior when clicked, but we're going to implement our own behavior. In `this.handleMessageSend()`, prevent this default behavior for the click `event`. Don't get rid of the test message yet.
-1. When you click send, you should see the test message.
+2. The "Send" button has a default submit behavior when clicked, but we're going to implement our own behavior. In `this.handleMessageSend()`, prevent this default behavior for the click `event`. Don't get rid of the test message yet.
+3. When you click send, you should see the test message.
 
 <details><summary>
 Hint

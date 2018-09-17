@@ -1,6 +1,6 @@
 # Making Horello dynamic
 
-Today we're going to make the Horello site we built yesterday
+Today we're going to make the Horello site we built
 dynamic using jQuery. This means you will be able to add
 cards, add lists and edit cards just like you can on the
 og Trello. There's a catch though, since our application has
@@ -10,12 +10,12 @@ when we refresh the page. We will fix that tomorrow!
 Here are the parts of this exercise:
 
 1. Add list
-1. Add card
-1. Edit card
-1. Drag and drop cards
-1. **Bonus:** Delete card by hovering and hitting <kbd>c</kbd>
-1. **Double bonus:** Random theme selector
-1. **Triple bonus:** Theme selector with dropdown
+2. Add card
+3. Edit card
+4. Drag and drop cards
+5. **Bonus:** Delete card by hovering and hitting <kbd>c</kbd>
+6. **Double bonus:** Random theme selector
+7. **Triple bonus:** Theme selector with dropdown
 
 ## Part 1: Add list
 

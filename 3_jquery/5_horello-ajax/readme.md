@@ -2,10 +2,10 @@
 
 ## Introduction
 
-During the first half of this week, you have been creating a functioning version
-of Trello in HTML without a connection to any server. You can add cards, but
-they will get deleted if you refresh the page. Today, we are going to use the
-Trello API as a backend for our app so our changes are stored for posterity.
+You should have already created a functioning version of Trello in HTML without
+a connection to any server. You can add cards, but they will get deleted if you
+refresh the page. Today, we are going to use the Trello API as a backend for our
+app so our changes are stored for posterity.
 
 Every action like `adding a card` or `changing a title` needs to be sent to the
 backend now, so it can save our changes. If a user deletes a card, we have to
@@ -77,9 +77,9 @@ create an account, and get a `KEY` and `TOKEN` for our application. This allows
 Trello to identify your app and know what boards it has access to.
 
 1. Head over to http://www.trello.com and sign-up/log-in to your Trello account.
-1. Navigate to the [Trello Developers Page](https://developers.Trello.com/get-started/start-building).
-1. Click the `Get your Application Key` button in the first section of the page. Copy this key and paste it into
-   `week02/day4/horello-ajax/js/config.js`.
+2. Navigate to the [Trello Developers Page](https://developers.Trello.com/get-started/start-building).
+3. Click the `Get your Application Key` button in the first section of the page. Copy this key and paste it into
+   `/3_jquery/5_horello-ajax/src/js/config.js`.
 
 	  ![API KEY](screenshots/capture6.jpeg)
 
@@ -161,7 +161,7 @@ lists and cards and much more.
 
 In this part we will take the response from the AJAX request and use it to render our Horello board.
 
-Head over to the `render()` function in `src/js/script.js`.
+Head over to the `render()` function in `/5_horello-ajax/src/js/script.js`.
 
 Use the AJAX request you constructed in Part 2 and paste it into the `render()` function. Then on success you want to take the response data and pass this object into the `renderBoard` function.
 
@@ -223,7 +223,7 @@ If you load your page and it loads lists and cards, you are good to go! It shoul
 ## Part 5: Updating cards in Trello API
 
 Head over to the `createList`, `createCard`, and `updateCard` functions in
-`src/js/script.js`.
+`5_horello-ajax/src/js/script.js`.
 
 Now, we are going implement the code that sends updates to the server via AJAX
 when a card is updated.

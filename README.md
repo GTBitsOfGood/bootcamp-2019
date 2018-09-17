@@ -7,7 +7,7 @@
 | 9/6/18   | JavaScript Crash Course                    | [Slide Deck][js-intro-slides] | [Exercises][js-exercises]        |
 | 9/9/18   | HTML & CSS Basics                          | [Slide Deck][html-css-slides] | [Exercises][html-css-exercises]  |
 | 9/13/18  | jQuery Crash Course                        | [Slide Deck][jQuery-slides]   | [Exercises][jQuery-exercises]    |
-| 9/18/18  | Ajax to load Data on frontend              | TODO   | TODO    |
+| 9/18/18  | Ajax to load Data on frontend              | TODO   | [Exercises][jQuery-exercises]    |
 | 9/20/18  | Node, Command Line, CLIs                   | TODO   | TODO    |
 | 9/27/18  | Into to HTTP, Express, and Handlebars      | TODO   | TODO    |
 | 10/2/18  | Mongo/Mongoose & Handlebars pt2            | TODO   | TODO    |
@@ -27,8 +27,8 @@
 
 
 [js-intro-slides]: https://docs.google.com/presentation/d/1buIrHO2EcgGLL7WIVXJ4vgJGPsd2rNt0a-DCv-SAId8/edit?usp=sharing
-[js-exercises]: 1_javascript/README.md
+[js-exercises]: 1_javascript/
 [html-css-slides]: https://docs.google.com/presentation/d/1POMfrkOvPWVUZCEXwS5x2iylqtFox02bhPeyx4xM3w4/edit?usp=sharing
-[html-css-exercises]: 2_html_css/README.md
+[html-css-exercises]: 2_html_css/
 [jQuery-slides]: https://docs.google.com/presentation/d/1aQaK7HcrJRifq5v11Bw80sGZ1e90Of1oQZwkMu0Hl7Q/edit?usp=sharing
-[jQuery-exercises]: 3_jquery/README.md
+[jQuery-exercises]: 3_jquery/

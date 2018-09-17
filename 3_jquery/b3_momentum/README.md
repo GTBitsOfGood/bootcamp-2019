@@ -151,7 +151,7 @@ In this part, you will:
 	+ (1) performs AJAX calls for weather data from the API
 	+ (2) updates the DOM with the current temperature data.
 
-Do your work in `js/momentum-weather.js`, and remember to put the object in the `momentum` namespace.
+Do your work in `b3_momentum/js/momentum-weather.js`, and remember to put the object in the `momentum` namespace.
 
 First things first, you're going to need to sign up for the OpenWeatherMap API. As you can probably tell, this is something you're usually going to have to do for APIs you want to use in the future - companies will make their data and services available, so long as your sign up, authenticate, and join their community.
 
@@ -184,7 +184,7 @@ In this exercise, you'll need to write a `QuoteController` object that:
 + Fetches a daily quote from the API and
 + renders it onto the screen.
 
-You should do your work in `js/momentum-quote.js` and remember to keep your `QuoteController` in the `momentum` namespace.
+You should do your work in `b3_momentum/js/momentum-quote.js` and remember to keep your `QuoteController` in the `momentum` namespace.
 
 **TheySaidSo** does not require you to make an account or sign up for API credentials - they have *public* APIs that you can use, much like *Unpslash*. We're going to be using their **Quote of the Day** service, located at:
 
