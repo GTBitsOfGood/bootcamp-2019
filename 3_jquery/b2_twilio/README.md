@@ -1,7 +1,7 @@
 # Twilio Messenger
 
 # Before beginning follow the directions here
-https://codepen.io/moose-horizons/pen/aZdvWa?editors=1010
+https://codepen.io/BitsofGood/pen/PdybGQ
 
 ## Introduction
 
@@ -90,7 +90,7 @@ Follow these steps to send an SMS via the Twilio API:
 1. Validate the message using `this.validateMessageField()` and the phone number using `this.validatePhoneField()`.
 1. If both fields are valid, make an AJAX request to Twilio to send the message.
 
-    Use the AJAX request from [the previous exercise](https://codepen.io/moose-horizons/pen/aZdvWa?editors=1010). Update the from/to phone numbers, the account id, the token, and the message body.
+    Use the AJAX request from [the previous exercise](https://codepen.io/BitsofGood/pen/PdybGQ). Update the from/to phone numbers, the account id, the token, and the message body.
 
     1. If the AJAX request succeeds, use `this.displayMessage()` to display the sent message to the user. Make sure to also clear the contents of `messageInputField`.
     1. If the AJAX request fails, notify the user using the browser built-in [`alert()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) function.
