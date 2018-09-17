@@ -12,7 +12,7 @@ window.util = {};
 // Part 1. If an invalid expression is given, throw an exception.
 //
 // ex. util.calc('') -> Error, empty expression
-// ex. util.calc('1 2') -> Error, mission operator
+// ex. util.calc('1 2') -> Error, missing operator
 // ex. util.calc('-') -> Error, no numbers
 // ex. util.calc('1 2 +') -> Error, operator at the wrong spot
 // ex. util.calc('+ 1 -18') -> Error, operator at the wrong spot
@@ -55,57 +55,4 @@ window.util = {};
 // ex. util.calc('10 * sqrt 81') -> 90
 util.calc = function(expression) {
   // YOUR CODE HERE
-  if (!expression) {
-    throw new Error("Empty expression");
-  }
-  var tokens = expression.split(" ");
-
-  var i = 0;
-  var product = num();
-  var tot = 0;
-
-  function next() {
-    return tokens[i++];
-  }
-
-  function num() {
-    var cur = next();
-    if (cur === "sqrt") {
-      return Math.sqrt(num());
-    }
-
-    if (!isNumber(cur)) {
-      throw new Error("Expected number, got " + cur);
-    }
-    return +cur;
-  }
-
-  function op() {
-    var cur = next();
-    if (["-", "+", "/", "*", "sqrt"].indexOf(cur) < 0) {
-      throw new Error("Expected operator, got " + cur);
-    }
-    return cur;
-  }
-
-  while (i < tokens.length) {
-    var oper = op();
-    if (oper === "+") {
-      tot += product;
-      product = num();
-    } else if (oper === "-") {
-      tot += product;
-      product = -num();
-    } else if (oper === "*") {
-      product *= num();
-    } else if (oper === "/") {
-      product /= num();
-    }
-  }
-
-  return tot + product;
 };
-
-function isNumber(n) {
-  return !isNaN(n);
-}

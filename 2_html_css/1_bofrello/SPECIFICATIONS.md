@@ -1,50 +1,54 @@
-# Borello Landing Page Specifications
+# Horello Web App Specifications
 
-## Colors
+## Defaults (Body)
+- background color: rgb(0,121,191)
+- font: Bootstrap default sans-serif
 
-- Default background: #fff
-- Default font: #4d4d4d
-- Dark blue: #0079bf
-- Font on dark blue: #fff
-- Light blue: #e4f0f6
-- Link: #5e98ba
-- Link (hover): #265773
-- Button (normal): linear gradient start #61bd4f end #5aac44
-- Button (hover): linear gradient start #5aac44 end #519839
-- Button (box shadow): #3f6f21
-- Button (font color): #fff
-- Footer (font color): #999
+## Header
+- padding: 5px
+- height: 40px
+- background color: rgba(0, 0, 0, 0.15)
 
-## Default Fonts
+## Board
+- set board display: flex
+- Add list button
+  - background color: rgba(0, 0, 0, 0.15)
+  - font color: #fff
+  - min height: 30px
+  - border radius: 3px
+  - margin: 5px vertical, 5px horizontal
+  - width: 280px
+  - padding: 7px
+  - border: 0px
 
-- Font family: Helvetica Neue, Arial, sans-serif
-- Font weight: 400
-- Font size:
-    - small: 16px
-    - medium: 20px
-    - large: 36px
-- Button font weight: bold
+## List
+- padding: 0.5em
+- margin: 5px vertical, 5px horizontal
+- border radius: 3px
+- width: 270px;
+- background color: #e2e4e6
+- Add Card button
+  - height: 40px
+  - border radius: 4px
+  - text align: left
+  - background: rgb(16, 16, 16), alpha 0.15
+  - font color: #333
+  - margin: 3px vertical, 0 horizontal
+  - Hover:
+    - background: rgb(96, 96, 96), alpha 0.15
+ - Header
+    - margin: .5em bottom, 0 others
+    - font color: black
+    - font weight: 700
+ - Footer
+    - font weight: 500
 
-## Layout
-
-- Section padding: vertical 80px, horizontal 20px
-- Footer padding: same
-- Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
-    - **TIP**: 1/6 margin on each side refers to 16% of the entire webpage as margin on each side.
-- Content full-width image padding: vertical 40px, horizontal 60px
-- Image margin: bottom 2em
-- Button
-    - Padding vertical: 0.6em
-    - Padding horizontal: 1.3em
-    - Border radius: 0.3em
-    - Margin bottom: 0.8em
-    - Border: 0
-- Footer link spacing: 7px
-- Margin between left image and text: 40px
-- Max width: 890px
-- Left text max width: 585px
-- Right image
-    - Shift top: 60px up
-    - From left: 640px
-- App store badge height: 54px
-- App store button margin: top 0.4em, right 1em
+## Card
+- margin: 0 top, left, right; .5em bottom
+- background: white
+- border radius: 3px
+- body:
+  - padding: .5em top, left, right; 2em bottom
+  - font (preference order): Cabin, Arial, default sans-serif
+  - font size: 16px
+  - line height: 1.5em

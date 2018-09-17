@@ -3,7 +3,7 @@
 window.builtins = {};
 
 // In this exercise, we'll be recreating some common JavaScript built-in
-// functions such as contains() and trim() using the skills we already know.
+// functions such as search() and trim() using the skills we already know.
 
 // For a reference to all JavaScript built-in objects and functions,
 // check out this MDN reference:
@@ -16,46 +16,30 @@ window.builtins = {};
 // Write a function that takes a string and returns the same string without
 // leading and trailing spaces.
 
-// ex. builtins.trim('  Gatech  ') -> 'Gatech'
+// ex. builtins.trim('  Horizons  ') -> 'Horizons'
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
-builtins.trim = function(string) {
-  // Notice how this for loop is constructed without an iterating
-  // statement like an incrementing operator (i++) - this is because
-  // each time we are taking the substring, the indices are shifting
-  // to the left - if we incremented i after this, we would miss
-  // some spaces!
-  for (var i = 0; i < string.length; ) {
-    if (string[i] === " ") {
-      string = string.substring(i + 1);
-    } else {
-      break;
-    }
-  }
-
-  for (var j = string.length - 1; j >= 0; j--) {
-    if (string[j] === " ") {
-      string = string.substring(0, j);
-    } else {
-      break;
-    }
-  }
-  return string;
+builtins.trim = function(str) {
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
 
-// Exercise 2. contains() using indexOf()
+// Exercise 2. search() using indexOf()
 
 // Write a function that takes a string to be searched and a string to
 // search for, returning true or false as to whether or not the latter
 // was found in the source string.
 
-// ex. builtins.search('gatech', 'g') -> true
-// ex. builtins.search('gatech', 'ag') -> false
+// ex. builtins.search('Horizons', 'o') -> true
+// ex. builtins.search('Horizons', 'oz') -> false
+// ex. builtins.search('rizo', 'Horizons') -> false
+// ex. builtins.search('', 'Horizons') -> false
+// ex. builtins.search('Horizons', '') -> true
+// ex. builtins.search('Horizons', 'h') -> false
 
 builtins.search = function(sourceString, searchString) {
-  return sourceString.indexOf(searchString) > -1;
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -68,9 +52,14 @@ builtins.search = function(sourceString, searchString) {
 
 // ex. builtins.parseQuantity('1 tool') -> 1
 // ex. builtins.parseQuantity('8 buckets') -> 8
+// ex. builtins.parseQuantity('0 computers') -> 0
 
-builtins.parseQuantity = function(string) {
-  return parseInt(string.split("")[0]);
+// Hint: Use split() to separate each part of the input string by spaces
+// (or any other separator). See:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+builtins.parseQuantity = function(str) {
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -82,13 +71,11 @@ builtins.parseQuantity = function(string) {
 
 // ex. builtins.reverse([1, 2, 3]) -> [3, 2, 1]
 // ex. builtins.reverse(['dogs', 'cats', 'moose']) -> ['moose', 'cats', 'dogs']
+// ex. builtins.reverse([]) -> []
+// ex. builtins.reverse([123]) -> [123]
 
-builtins.reverse = function(array) {
-  var reversedArr = [];
-  for (var i = 0; i < array.length; i++) {
-    reversedArr.push(array[array.length - i - 1]);
-  }
-  return reversedArr;
+builtins.reverse = function(arr) {
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -101,17 +88,12 @@ builtins.reverse = function(array) {
 // ex. builtins.isEqual([1, 2, 3], [1, 2, 3]) -> true
 // ex. builtins.isEqual(['1', '2', '3'], [1, 2, 3]) -> false
 // ex. builtins.isEqual([3, 2, 1], [1, 2, 3]) -> false
+// ex. builtins.isEqual([], [1, 2, 3]) -> false
+// ex. builtins.isEqual([1, 2, 3], []) -> false
+// ex. builtins.isEqual([], []) -> true
 
 builtins.isEqual = function(a, b) {
-  if (a.length !== b.length) {
-    return false;
-  }
-  for (var i = 0; i < a.length; i++) {
-    if (a[i] !== b[i]) {
-      return false;
-    }
-  }
-  return true;
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -119,16 +101,16 @@ builtins.isEqual = function(a, b) {
 // Exercise 6. Checking if an array is a palindrome (forward order is the same
 // as reversed order).
 
-// Write a function that takes an array a and checks if the original order of
-// its contents as it is reversed.
+// Write a function that takes an array a and checks if the order of its contents
+// in reverse is identical to the original order of the contents.
 
 // ex. builtins.isPalindrome([1, 2, 3, 2, 1]) -> true
 // ex. builtins.isPalindrome([1, 2, 3, 4, 5]) -> false
 // ex. builtins.isPalindrome(['1', '2', '3', 2, 1]) -> false
 // ex. builtins.isPalindrome('racecar'.split('')) -> true
 
-builtins.isPalindrome = function(a) {
-  return builtins.isEqual(a, builtins.reverse(a));
+builtins.isPalindrome = function(arr) {
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -147,10 +129,8 @@ builtins.isPalindrome = function(a) {
 // behavior). See:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
-builtins.sortByValue = function(array) {
-  return array.sort(function(a, b) {
-    return a - b;
-  });
+builtins.sortByValue = function(arr) {
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -166,10 +146,8 @@ builtins.sortByValue = function(array) {
 // Hint: Use the same Array sort() function - but think about what you're
 // comparing this time!
 
-builtins.sortByLength = function(array) {
-  return array.sort(function(a, b) {
-    return a.length - b.length;
-  });
+builtins.sortByLength = function(arr) {
+  // YOUR CODE HERE
 };
 
 // ----------------------------------------------------------------------------
@@ -181,13 +159,8 @@ builtins.sortByLength = function(array) {
 
 // ex. builtins.flatten([[1, 2, 3], [4, 5], [6]]) -> [1, 2, 3, 4, 5, 6]
 // ex. builtins.flatten([[], [''], []]) -> ['']
+// ex. builtins.flatten([]) -> []
 
-builtins.flatten = function(array) {
-  var newArr = [];
-  for (var i = 0; i < array.length; i++) {
-    for (var j = 0; j < array[i].length; j++) {
-      newArr.push(array[i][j]);
-    }
-  }
-  return newArr;
+builtins.flatten = function(arr) {
+  // YOUR CODE HERE
 };
