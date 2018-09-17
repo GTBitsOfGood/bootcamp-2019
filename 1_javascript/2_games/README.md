@@ -1,10 +1,10 @@
-# JavaScript Basic Exercises 2.0 JavaScript Games
+# JavaScript Games Exercises
 
 ## Table of Contents
 
 1. [Tic Tac Toe](#tictactoe)
-1. [Hangman](#hangman)
-1. [Towers of Hanoi](#towers)
+2. [Hangman](#hangman)
+3. [Towers of Hanoi](#towers)
 
 ## <a id="tictactoe">Tic Tac Toe</a>
 
