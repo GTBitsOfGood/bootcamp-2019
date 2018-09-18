@@ -50,7 +50,7 @@
  */
 
 var Rocketship = {
-  coords: {x: 0, y: 0},
+  coords: { x: 0, y: 0 },
   up: function() {
     // YOUR CODE HERE
     this.coords.x = this.coords.x;
