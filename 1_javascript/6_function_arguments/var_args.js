@@ -38,7 +38,7 @@ varArgs.makeUser = function(name, age) {
     name = "John Doe";
     age = 24;
   }
-  return { 'name': name, 'age': age };
+  return { name: name, age: age };
 };
 
 // Exercise 1. varArgs.sum(args...)
