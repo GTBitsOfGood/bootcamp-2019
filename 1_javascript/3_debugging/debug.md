@@ -6,12 +6,12 @@ The goal of this exercise is to learn how to do advanced debugging with Chrome D
 
 ## Part 1: Jumping to Source
 
-1. Open `week01/day1/debug.html`
+1. Open `1_javascript/3_debug/debug.html`
 1. Open DevTools Console with <kbd>Command</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> on Windows
 1. Click on the file name `debug.js` next to the error
   ![](img/debug%20console.png)
 1. This opens the **Source Tab**, inspect your code and find the error.
-1. Open `week01/day1/debug.js` in your favorite editor and fix the syntax error.
+1. Open `1_javascript/3_debug/debug.js` in your favorite editor and fix the syntax error.
 
 Tip: You can jump to Source for `console.log()` lines too!
 
@@ -25,7 +25,7 @@ points is a great way of investigating why.
 There's a logical error in function `firstWord()` lets investigate with
 break points.
 
-1. Open `week01/day1/debug.js`
+1. Open `1_javascript/3_debug/debug.js`
 1. Add a `debugger;` statement to the first line after the for loop in `firstWord()`. It should look like this.
   ```javascript
   function firstWord(string) {
@@ -39,7 +39,7 @@ break points.
     return string;
   }
   ```
-1. Open `week01/day1/debug.html` and click on the first failing test.
+1. Open `1_javascript/3_debug/debug.html` and click on the first failing test.
   ![](img/debug%20click%20failing.png)
 1. Open DevTools console and refresh the page.
 1. Breakpoint is triggered :boom: Code stops executing at the `debugger` statement! Note the line where code stopped next to the red arrow.
