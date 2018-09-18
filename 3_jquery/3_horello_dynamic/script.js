@@ -1,7 +1,7 @@
 "use strict";
 
 // YOUR JAVASCRIPT CODE GOES HERE
-<<<<<<< HEAD:3_jquery/horello_dynamic/script.js
+
 $(window).on('load', function(){
 
     //ADD LIST
@@ -87,6 +87,3 @@ $(window).on('load', function(){
 
 
 });
-=======
-
->>>>>>> 2aa527233bf92ad25bbe3de7f8af3f6211463d78:3_jquery/3_horello_dynamic/script.js
