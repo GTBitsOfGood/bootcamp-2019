@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Momentum</title>
+
+	<!-- Bootstrap stuff -->
+	<link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+	<script src="../../../lib/jquery.js"></script>
+	<script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- our files -->
+	<link rel="stylesheet" href="css/momentum.css" type="text/css">
+	<script src="js/momentum-weather.js"></script>
+	<script src="js/momentum-quote.js"></script>
+	<script src="js/momentum.js"></script>
+	<script>
+	$(function() {
+		// create a new momentum core
+		var core = new momentum.Core();
+
+		core.start();
+		// I want to run the time update and rendering every second
+		setInterval(function() {
+		  core.updateTime();
+		  core.render();
+		},1000);
+		
+		// I only want to fetch and update the weather once every ten minutes
+		setInterval(function() {
+		  core.updateWeather();
+		}, 1000*60*10);
+	});
+	</script>
+</head>
+<body><div class="momentum">
+	  <div class="bg-wrapper">
+	      <img src="https://source.unsplash.com/daily"/>
+	    <div class="main-text">
+	      <h1 class="time">12:01</h1>
+	      <span class="quote">To be or not to be</span>
+	    </div>
+	    <div class="weather-text">
+	      <span class="weather">64</span>
+	    </div>
+	  </div>
+	</div>
+</body>
+</html>
