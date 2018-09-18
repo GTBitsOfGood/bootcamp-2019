@@ -3,7 +3,6 @@
 // This file contains JavaScript that will run on your page.
 // YOUR CODE HERE
 
-<<<<<<< HEAD:3_jquery/comment_threads/comment_threads.js
 $(".post").on('click',function() {
     let name = prompt("Enter you name")
     let comment = prompt("What is your comment")
@@ -49,5 +48,3 @@ $(".post").on('click',function() {
         repliesDiv.show("slow")
     })
 
-=======
->>>>>>> 2aa527233bf92ad25bbe3de7f8af3f6211463d78:3_jquery/2_comment_threads/comment_threads.js
