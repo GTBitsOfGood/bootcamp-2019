@@ -54,5 +54,45 @@ window.util = {};
 // ex. util.calc('sqrt 9 - 3 * 10') -> -27
 // ex. util.calc('10 * sqrt 81') -> 90
 util.calc = function(expression) {
-  // YOUR CODE HERE
+  if(!expression)
+  throw new Error("Empty expression")
+  
+  let tokens = expression.split(" ")
+  let total = 0;
+  let product = num();
+
+  function next()
+  {
+    return tokens[i++]
+  }
+  function num()
+  {
+    let cur = next();
+    if (cur === "sqrt")
+    return Math.sqrt(num())
+
+    if(!isNumber(cur))
+    throw new Error("Expected number, got "+cur)
+    return +cur;
+  }
+  
+  function op()
+  {
+    if(["+","-","/","*","sqrt"].indexOf(expression)===-1)
+    throw new Error("Missing operator")
+    return cur
+  }
+  function isNumber(n)
+  {
+    return !isNaN(n)
+  }
+
+  for (let i = 0; i < tokens.length;i++)
+  {
+    let oper = op();
+    if (oper === "+"){
+    total += product
+    product = num();
+    }
+  }
 };

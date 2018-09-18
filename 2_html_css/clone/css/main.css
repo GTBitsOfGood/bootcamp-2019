@@ -1,8 +1,11 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+        text-align: center;
 }
 
 .title {
     color: purple;
+}
+#nav
+{
+color: #d6dee6de;
 }
