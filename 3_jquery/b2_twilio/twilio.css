@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+.tw-app {
+  background: #8f1716;
+  font-family: "Open Sans", Helvetica;
+}
+
+.app-wrapper {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  top: 50vh;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #eee;
+  border-radius: 4px;
+}
+
+.outlined {
+/*   outline: 1px solid black; */
+}
+
+.message-list {
+  margin: 1em 0;
+  padding: 0;
+  background: #fff;
+  height: 300px;
+  list-style: none;
+  overflow-y: auto;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.message {
+  padding: 0.5em;
+}
+
+.message:nth-child(even) {
+  background: #ccc;
+}
+
+.sender {
+  color: #07D;
+  font-weight: 700;
+}
+
+.sender::before {
+  content: "@+";
+}
+
+.sender::after {
+  content: ":";
+}
+
+.message-input {
+  width: 100%;
+}
+
+.message-input-field {
+  box-sizing: border-box;
+  outline: 0;
+  width: 75%;
+}
+
+.message-input-button {
+  box-sizing: border-box;
+/*   background: #07D; */
+  width: 20%;
+}
