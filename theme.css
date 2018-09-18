@@ -1,0 +1,9 @@
+h1:hover {
+	color: red !important;
+}
+body:hover {
+	text-align: center;
+}
+* {
+	color:pink;
+}

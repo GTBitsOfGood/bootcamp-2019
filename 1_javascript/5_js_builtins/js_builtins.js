@@ -21,6 +21,15 @@ window.builtins = {};
 
 builtins.trim = function(str) {
   // YOUR CODE HERE
+  let first = 0;
+  let last = str.length - 1;
+  while (str.charAt(first) === " ") {
+  	first++;
+  }
+  while (str.charAt(last) === " ") {
+  	last--;
+  }
+  return str.slice(first, last + 1)
 };
 
 // ----------------------------------------------------------------------------
@@ -40,6 +49,7 @@ builtins.trim = function(str) {
 
 builtins.search = function(sourceString, searchString) {
   // YOUR CODE HERE
+  return sourceString.includes(searchString)
 };
 
 // ----------------------------------------------------------------------------
@@ -60,6 +70,7 @@ builtins.search = function(sourceString, searchString) {
 
 builtins.parseQuantity = function(str) {
   // YOUR CODE HERE
+  
 };
 
 // ----------------------------------------------------------------------------
