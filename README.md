@@ -8,17 +8,17 @@
 | 9/9/18   | HTML & CSS Basics                          | [Slide Deck][html-css-slides] | [Exercises][html-css-exercises]  |
 | 9/13/18  | jQuery Crash Course                        | [Slide Deck][jQuery-slides]   | [Exercises][jQuery-exercises]    |
 | 9/18/18  | Ajax to load Data on frontend              | [Slide Deck][ajax-slides]     | [Exercises][jQuery-exercises]    |
-| 9/20/18  | Node, Command Line, CLIs                   | TODO   | TODO    |
-| 9/27/18  | Into to HTTP, Express, and Handlebars      | TODO   | TODO    |
-| 10/2/18  | Mongo/Mongoose & Handlebars pt2            | TODO   | TODO    |
-| 10/4/18  | Validation & Ajax w/ Express               | TODO   | TODO    |
-| 10/9/18  | Middleware, Passport, and oAuth            | TODO   | TODO    |
-| 10/11/18 | Advanced Mongoose, Heroku, and Webhooks    | TODO   | TODO    |
-| 10/16/18 | Web Security, SSL, Encrpytion, and Hashing | TODO   | TODO    |
-| 10/18/18 | React Crash Course                         | TODO   | TODO    |
-| 10/23/18 | React w/ APIs                              | TODO   | TODO    |
-| 10/25/18 | React Router                               | TODO   | TODO    |
-| 10/30/18 | Redux Crash Course                         | TODO   | TODO    |
+| 9/20/18  | Node, Command Line, CLIs                   | [WIP][node-slides]            | TODO    |
+| 9/27/18  | Express, and Handlebars                    | [WIP][express-slides]         | TODO    |
+| 10/2/18  | Mongo/Mongoose & Handlebars pt2            | [WIP][mongo-slides]           | TODO    |
+| 10/4/18  | Validation & Ajax w/ Express               | [WIP][validation-slides]      | TODO    |
+| 10/9/18  | Middleware, Passport, and oAuth            | [WIP][passport-slides]        | TODO    |
+| 10/11/18 | Heroku, and Webhooks                       | [WIP][heroku-slides]          | TODO    |
+| 10/16/18 | Web Security, SSL, Encrpytion, and Hashing | [WIP][security-slides]        | TODO    |
+| 10/18/18 | React Crash Course                         | [WIP][react-slides]           | TODO    |
+| 10/23/18 | React w/ APIs                              | [WIP][react-api-slides]       | TODO    |
+| 10/25/18 | React Router                               | [WIP][react-router-slides]    | TODO    |
+| 10/30/18 | Redux Crash Course                         | [WIP][redux-slides]           | TODO    |
 | 11/1/18  | Topic       | TODO   | TODO    |
 | 11/6/18  | Topic       | TODO   | TODO    |
 | 11/8/18  | Topic       | TODO   | TODO    |
@@ -33,3 +33,14 @@
 [jQuery-slides]: https://docs.google.com/presentation/d/1aQaK7HcrJRifq5v11Bw80sGZ1e90Of1oQZwkMu0Hl7Q/edit?usp=sharing
 [jQuery-exercises]: 3_jquery/
 [ajax-slides]: https://docs.google.com/presentation/d/1fBdQsX0XFbNH61LodRJkLqRNXZTupQwPp6ccj4-6XJs/edit?usp=sharing
+[node-slides]: https://docs.google.com/presentation/d/1bmWGuiGA0zW9lfz3MLfvTMuQVlIC-_y5AKaKleI6sUI/edit?usp=sharing
+[express-slides]: https://docs.google.com/presentation/d/1WBwDXRFZoMvg4-Jp-qbuAlp2SBJv68-N8K5-z49Ddrs/edit?usp=sharing
+[mongo-slides]: https://docs.google.com/presentation/d/1A2EwFbc-0ulofNWfNDlifEXukHfl6IyMa61or-2WUC0/edit?usp=sharing
+[validation-slides]: https://docs.google.com/presentation/d/1GWI_RN_BeSli8iTOapMSxszU8sfdmGMA1UjgYio25mE/edit?usp=sharing
+[passport-slides]: https://docs.google.com/presentation/d/1heaKYIk0mAir9rVUZdxo2wvVi-ceIa82mArhuXndfqc/edit?usp=sharing
+[heroku-slides]: https://docs.google.com/presentation/d/1ReQjdkdU5zi_wxuia8zFpNn7p24pSMfoUOJz_RZyrKw/edit?usp=sharing
+[security-slides]: https://docs.google.com/presentation/d/12_z17MJC1CxPdaTqxadhqZYMJUbKLbpYG3lWqxJ6ZjI/edit?usp=sharing
+[react-slides]: https://docs.google.com/presentation/d/1rXNLIfJ8ITURx3YMzIGAPrEenZ-bL0ee_9-sflWIgF0/edit?usp=sharing
+[react-api-slides]: https://docs.google.com/presentation/d/1YLdtNChps73CfUlKwxbUR4fra1dZMRcS5jfpGquQVmk/edit?usp=sharing
+[react-router-slides]: https://docs.google.com/presentation/d/1W52M5aw2tBah7JReojyE534CY-d7YhH6OsMgSi2uhyY/edit?usp=sharing
+[redux-slides]: https://docs.google.com/presentation/d/1bE-1UrDDahsAP6VYMkgs1WZQQ6dTTCertNF7C-7nADA/edit?usp=sharing
