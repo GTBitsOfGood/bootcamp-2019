@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Horizons - W2D4 - Making Horello Dynamic w/AJAX</title>
+  <script src="../../../lib/underscore.js"></script>
+  <script src="../../../lib/jquery.js"></script>
+  <script src="../../../lib/jquery-ui.js"></script>
+
+  <!-- Bootstrap stuff -->
+  <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+  <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Our Styles -->
+  <link rel="stylesheet" href="css/style.css" type="text/css"></link>
+</head>
+<header>
+  <a class="header-logo"
+  href="#"><span class="header-logo-default"></span></a>
+</header>
+
+<div class="modal fade" id="cardEdit">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <input type="text" class="form-control" id="modalText">
+      </div>
+      <div class="modal-body">
+        <h5>Description</h5>
+        <textarea class="form-control" rows="5" id="modalBody"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+        data-dismiss="modal">Close
+      </button>
+      <button type="button" class="btn btn-primary" id="modalSave">
+        Save changes
+      </button>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="board">
+
+  <!-- The board renders here -->
+  <div id="boardAnchor"></div>
+
+  <div class="list-container">
+    <div class="add-list-container">
+      <button class="add-list">Add a list...</button>
+      <div class="collapse" id="addList">
+        <div class="well add-card-form">
+          <input type="text" class="form-control" placeholder="List name" id="addListText">
+          <button type="button" class="btn btn-default" id="addListSave">
+            Save
+          </button>
+          <button type="button" class="btn btn-default" id="addListCancel">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Load JS Assets -->
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
