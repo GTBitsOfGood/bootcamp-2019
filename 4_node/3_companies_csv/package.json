@@ -1,0 +1,14 @@
+{
+  "name": "investments",
+  "version": "1.0.0",
+  "description": "Investment exercise w3d1",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^1.1.3"
+  }
+}
