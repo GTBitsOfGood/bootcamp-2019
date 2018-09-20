@@ -8,7 +8,7 @@
 | 9/9/18   | HTML & CSS Basics                          | [Slide Deck][html-css-slides] | [Exercises][html-css-exercises]  |
 | 9/13/18  | jQuery Crash Course                        | [Slide Deck][jQuery-slides]   | [Exercises][jQuery-exercises]    |
 | 9/18/18  | Ajax to load Data on frontend              | [Slide Deck][ajax-slides]     | [Exercises][jQuery-exercises]    |
-| 9/20/18  | Node, Command Line, CLIs                   | [WIP][node-slides]            | [Exercises][node-exercises]      |
+| 9/20/18  | Node, Command Line, CLIs                   | [Slide Deck][node-slides]     | [Exercises][node-exercises]      |
 | 9/27/18  | Express, and Handlebars                    | [WIP][express-slides]         | TODO    |
 | 10/2/18  | Mongo/Mongoose & Handlebars pt2            | [WIP][mongo-slides]           | TODO    |
 | 10/4/18  | Validation & Ajax w/ Express               | [WIP][validation-slides]      | TODO    |
