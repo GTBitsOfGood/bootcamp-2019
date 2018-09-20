@@ -19,7 +19,15 @@ function updateCard(title, desc, cardId) {
 }
 
 function render() {
-  // YOUR CODE HERE
+	$.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {
+  data: {
+    key: "b353a7f928ccd7a2e9ed46939afd2982",
+    token: "ad825767cff449acd88f94696914798bccf5dc8f407adf8eaaa45ad76ec54f09",
+    cards: 'all',
+    lists: 'all'
+  },
+  success: function(data) { renderBoard(data) }
+});
 }
 
 function renderBoard(board) {
