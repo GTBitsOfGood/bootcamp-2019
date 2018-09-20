@@ -23,10 +23,19 @@
 
     <script>
       // YOUR CODE HERE
+      let arr = []
+      $.get("https://gtbitsofgood.github.io/bootcamp-static/data.json", function(hello){
 
-      $.ajax({
-        url: 'https://gtbitsofgood.github.io/bootcamp-static/data.json'
-      });
+        const test = [...hello]
+        console.log(test)
+        // console.log(hello);
+        // $("#out").html(hello);
+        arr = hello;
+        arr = arr.sort((a, b) => b.Population - a.Population);
+        console.log(arr);
+        $("#out").html(arr[0]["City / Urban area"])
+      })
+
     </script>
   </body>
 </html>

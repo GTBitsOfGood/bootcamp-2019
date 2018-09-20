@@ -26,6 +26,11 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      let alldata;
+      $.ajax({url: "https://gtbitsofgood.github.io/bootcamp-static/products.json", success: function(hello) {
+        console.log(hello)
+        $("#products").html(hello);
+      }})
     </script>
   </body>
 </html>
