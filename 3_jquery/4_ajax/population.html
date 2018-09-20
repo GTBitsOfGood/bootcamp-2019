@@ -23,10 +23,18 @@
 
     <script>
       // YOUR CODE HERE
-
-      $.ajax({
-        url: 'https://gtbitsofgood.github.io/bootcamp-static/data.json'
-      });
+      $.get('https://gtbitsofgood.github.io/bootcamp-static/data.json', json => {
+        let maxPop = 0
+        let name = ""
+        $.each(json, pop => {
+          if (json[pop].Population > maxPop) {
+            maxPop = json[pop].Population
+            name = json[pop]["City / Urban area"]
+          }
+        })
+        $("#out").html(name + " " + maxPop)
+      })
+      
     </script>
   </body>
 </html>
