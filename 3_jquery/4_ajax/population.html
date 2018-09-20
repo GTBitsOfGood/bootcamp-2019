@@ -22,10 +22,14 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
-
       $.ajax({
         url: 'https://gtbitsofgood.github.io/bootcamp-static/data.json'
+      }).done(function(response) {
+        console.log(response)
+        let sorted = response.sort(function(a, b){
+          return b["Population"] - a["Population"];
+        });
+        $('h1').text(sorted[0]["City / Urban area"]);
       });
     </script>
   </body>
