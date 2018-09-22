@@ -3,7 +3,7 @@
 var fs = require('fs');
 var validator = require('validator')
 //require columnify here
-
+var columnify = require('columnify')
 
 var JSON_FILE = 'data.json'
 // If data.json file doesn't exist, create an empty one
@@ -34,7 +34,11 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
-
+  let x = [...argv];
+  if (x.length  === 0) {
+    return "";
+  }
+  return x[0];
 }
 
 //store the command and execute its corresponding function
@@ -89,7 +93,30 @@ function displayContacts(){
 */
 function addContact() {
 // YOUR CODE HERE
-
+  let name = argv[1];
+  let number = argv[2];
+  if (name.search(/\d/g) > -1) {
+    return;
+  }
+  let numchanged = false;
+  if (number.search(/[a-zA-Z]/g) > -1 || number.length === 0) {
+    number = -1
+  } else {
+    number = +number
+  }
+  
+  const contact = {name,number}
+  let iscontained = -1;
+  data.forEach((element, index) => {
+    if (element.name === contact.name) {
+      iscontained = index;
+    }
+  });
+  if (iscontained === -1) {
+    data.push(contact)
+  } else {
+    data[iscontained] = contact;
+  }
 }
 
 
@@ -105,12 +132,67 @@ function addContact() {
 */
 function updateContact(){
 // YOUR CODE HERE
+  let temp = -1;
+  let contactName = argv[1]
+  let newContactNumber = argv[2]
+  let newContactName = "";
+  if (contactName.search(/\d/g) > -1) {
+    return;
+  }
+  if (newContactNumber.search(/[a-zA-Z]/g) === -1) { // if there are no letters, its a number
+    newContactNumber = +newContactNumber
+    console.log(newContactNumber)
+    const newContact = {
+      name: contactName,
+      number: newContactNumber
+    }
+    console.log("Changing the number")
+    data.forEach((element, index) => {
+      if(element.name === contactName) {
+        temp = index;
+      }
+    });
+    if (temp > -1) {
+      data[temp] = newContact; 
+    }
+  } else {
+    if(newContactNumber.search(/\d/g) === -1) {
+      // if there are no numbers in the name
+      data.forEach((element, index) => {
+        if(element.name === contactName) {
+          temp = index;
+        }
+      });
+      if (temp > -1) {
+        const newContact = {
+          name: newContactNumber,
+          number: data[temp].number
+        }
+        data[temp] = newContact; 
+      }
+    }
+  }
+
 }
 
 
 //BONUS Implement deleteContact
 function deleteContact(){
     //YOUR CODE HERE
+    const nameToDelete = argv[1];
+    console.log("Before: \n",data)
+    let temp = -1;
+    data.forEach((element, index) => {
+      if(element.name === nameToDelete) {
+        temp = index;
+      }
+    });
+    if (temp > -1) {
+      let pt1 = data.slice(0, temp);
+      let pt2 = data.slice(temp+1);
+      data = pt1.concat(pt2);
+    }
+
 }
 
 
