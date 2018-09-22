@@ -33,7 +33,7 @@ handlers.attachClick = function(e, fn) {
 // to select it.
 
 handlers.attachHover = function(e, fn) {
-  // YOUR CODE HERE
+  $(e).hover(fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -42,7 +42,7 @@ handlers.attachHover = function(e, fn) {
 // handler 'fn' to the "mouseleave" event instead.
 
 handlers.attachUnhover = function(e, fn) {
-  // YOUR CODE HERE
+  
 };
 
 // ----------------------------------------------------------------------------
