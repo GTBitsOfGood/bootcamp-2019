@@ -16,7 +16,8 @@
 //  *
 let five = require('./five.js')
 let fs = require('fs')
-let fileContent = fs.readFileSync('./main.js', 'utf8')
-console.log(fileContent)
-fs.writeFileSync('./main.js', 'console.log("AHHH")')
+fileContent = fs.writeFileSync('./countio/log.txt')
+fs.appendFile('./countio/log.txt', new Date(), (err)=> {
+    if (err) throw err;
+})
 five.logger(five.value)
