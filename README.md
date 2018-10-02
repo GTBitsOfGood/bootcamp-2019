@@ -9,7 +9,7 @@
 | 9/13/18  | jQuery Crash Course                        | [Slide Deck][jQuery-slides]   | [Exercises][jQuery-exercises]    |
 | 9/18/18  | Ajax to load Data on frontend              | [Slide Deck][ajax-slides]     | [Exercises][jQuery-exercises]    |
 | 9/20/18  | Node, Command Line, CLIs                   | [Slide Deck][node-slides]     | [Exercises][node-exercises]      |
-| 10/2/18  | Express, and Handlebars                    | [WIP][express-slides]         | [Exercises][express-exercises]   |
+| 10/2/18  | Express, and Handlebars                    | [Videos][express-videos]      | [Exercises][express-exercises]   |
 | 10/4/18  | Mongo/Mongoose & Handlebars pt2            | [WIP][mongo-slides]           | TODO    |
 | 10/9/18  | Validation & Ajax w/ Express               | [WIP][validation-slides]      | TODO    |
 | 10/11/18  | Middleware, Passport, and oAuth            | [WIP][passport-slides]        | TODO    |
@@ -34,7 +34,7 @@
 [ajax-slides]: https://docs.google.com/presentation/d/1fBdQsX0XFbNH61LodRJkLqRNXZTupQwPp6ccj4-6XJs/edit?usp=sharing
 [node-slides]: https://docs.google.com/presentation/d/1bmWGuiGA0zW9lfz3MLfvTMuQVlIC-_y5AKaKleI6sUI/edit?usp=sharing
 [node-exercises]: 4_node/
-[express-slides]: https://docs.google.com/presentation/d/1WBwDXRFZoMvg4-Jp-qbuAlp2SBJv68-N8K5-z49Ddrs/edit?usp=sharing
+[express-videos]: https://github.com/GTBitsOfGood/bootcamp/tree/master/5_express/1_express_intro
 [express-exercises]: 5_express/
 [mongo-slides]: https://docs.google.com/presentation/d/1A2EwFbc-0ulofNWfNDlifEXukHfl6IyMa61or-2WUC0/edit?usp=sharing
 [validation-slides]: https://docs.google.com/presentation/d/1GWI_RN_BeSli8iTOapMSxszU8sfdmGMA1UjgYio25mE/edit?usp=sharing
