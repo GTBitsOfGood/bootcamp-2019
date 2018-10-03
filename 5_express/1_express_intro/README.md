@@ -9,7 +9,6 @@ Today we will learn how to build web applications with Express.
 1. Section 3. Templating and Handlebars
 1. Section 4. HTML Forms
 
-**All videos have the password `horizonites`**
 
 ---
 
@@ -273,8 +272,6 @@ In this example you are to make a register form. Make sure that when you press s
 [form_2_1]: img/form_2_1.png
 
 ### Section 4c. Form Method Attribute
-
-### [Watch Me: Chrome DevTools Network Tab](https://vimeo.com/213266902)
 
 ### [Watch Me: Form Method Attribute](https://youtu.be/MCFkzx3Irmw)
 
