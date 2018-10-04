@@ -4,8 +4,9 @@
 // five.js sits in the same directory so './five.js' is 
 // my relative path from main.js (current file)
 
-// var five = require('./five.js')
-// five.logger(five.value);
+var five = require('./five.js')
+five.logger(five.value);
+five.answer()
 
 // YOUR CODE HERE
 

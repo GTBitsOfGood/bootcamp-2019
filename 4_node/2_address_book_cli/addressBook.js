@@ -34,7 +34,8 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
-
+  
+  return process.argv[0]
 }
 
 //store the command and execute its corresponding function

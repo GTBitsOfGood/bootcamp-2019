@@ -1,3 +1,18 @@
 <div>
-  <span>YOUR CODE HERE</span>
+<ul>
+  {{#each students}}
+  	{{#if male}}
+  		{{#if this.gender.match "Male"}}
+  			<li>{{this.first_name}}, {{this.last_name}}: {{this.email}}</li>
+  		{{/if}}
+  
+  	{{else if female}}
+  		{{#if this.gender.match "Female"}}
+  			<li>{{this.first_name}}, {{this.last_name}}: {{this.email}}</li>
+  		{{/if}}
+  	{{else}}
+  		<li>{{this.first_name}}, {{this.last_name}}: {{this.email}}</li>
+  	{{/if}}
+  {{/each}}
+ </ul>
 </div>
