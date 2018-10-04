@@ -1,6 +1,7 @@
 "use strict";
 
 var fs = require('fs');
+let csv = require('csvtojson')
 var path = require('path');
 var csvjson = require('csvjson');
 
@@ -31,7 +32,14 @@ var csvjson = require('csvjson');
 //      ...
 //    ]
 function fileReader(csvFilePath){
-  // YOUR CODE HERE
+
+  let options = {
+    delimiter: ',',
+    quote: '"'
+  }
+  let fileContent = fs.readFileSync(path.join(__dirname,csvFilePath),{encoding: 'utf8'})
+  //console.log(fileContent)
+  return csvjson.toObject(fileContent,options)
 }
 
 // Write a function that takes an array of investment objects and replaces
@@ -46,7 +54,11 @@ function fileReader(csvFilePath){
 //     originalInvestment: 1100000, // Note conversion from string to number
 //     valueToday: 1000000}] // Note conversion from string to number
 function parser(arr){
-  // YOUR CODE HERE
+  return arr.map(event => {
+    event.orignalInvestment = parseInt(event.orignalInvestment)
+    event.valueToday = parseInt(event.valueToday)
+    return event
+  })
 }
 
 module.exports = {

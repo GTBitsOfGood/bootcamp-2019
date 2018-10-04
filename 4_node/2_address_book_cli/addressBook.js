@@ -31,6 +31,7 @@ var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:
 function parseCommand() {
   // YOUR CODE HERE
   var args = process.argv;
+  console.log(args)
   args.splice(0,2);
   console.log(args[0])
   if(args.length == 0){
