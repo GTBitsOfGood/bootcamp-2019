@@ -11,7 +11,7 @@
 | 9/20/18  | Node, Command Line, CLIs                   | [Slide Deck][node-slides]     | [Exercises][node-exercises]      |
 | 10/2/18  | Express, and Handlebars                    | [Videos][express-videos]      | [Exercises][express-exercises]   |
 | 10/4/18  | Mongo/Mongoose & Handlebars pt2 | [Slides][mongo-slides], [Videos][mongo-videos] | [Exercises][mongo-exercises]|
-| 10/7/18  | Mini Project 1                             | n/a                           | [Project Files][mini-project-1]  |
+| 10/9/18  | Mini Project 1                             | n/a                           | [Project Files][mini-project-1]  |
 | 10/11/18 | Validation & Ajax w/ Express               | [WIP][validation-slides]      | TODO    |
 | 10/16/18 | Middleware, Passport, and oAuth            | [WIP][passport-slides]        | TODO    |
 | 10/18/18 | Heroku, and Webhooks                       | [WIP][heroku-slides]          | TODO    |
