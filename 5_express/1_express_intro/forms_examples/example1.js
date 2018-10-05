@@ -12,7 +12,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Part 1
 // YOUR CODE HERE
-
+app.get('/',(req,res)=>
+{
+    res.render('example1',{query_users_name:req.query.users_name})
+})
+app.get('/destination', (req,res)=>
+{
+    res.send(`Got ${req.query.users_name}`)
+})
 // start the express app
 var port = process.env.PORT || 3000;
 app.listen(port);

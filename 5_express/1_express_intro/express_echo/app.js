@@ -1,13 +1,22 @@
 // Let's bring express into this file!
 var express = require('express');
-
+const handlebars = require('express-handlebars');
 // Let's create a new express app
 var app = express();
 
+
+app.engine("hbs",
+handlebars({
+  extname: ".hbs"
+}
+)
+)
+
+app.set("view engine","hbs")
 // Example route:
 // This creates an Express route at http://localhost:3000
 app.get('/', function(request, response) {
-  response.status(404).send("Welcome to Express");
+  response.render('template')
 });
 
 app.get('/status/:code',(req,res)=>{
@@ -18,7 +27,9 @@ app.get('/status/:code',(req,res)=>{
 // })
 
 app.get('/hello',(req,res)=>{
-  res.send(`Hello there ${req.query.name}!`)
+  const name = req.query.name
+  res.render('greet_me',
+  {users_name: name})
 })
 
 // Create a route that listens to /hello and takes one query parameter

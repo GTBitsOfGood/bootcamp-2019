@@ -1,3 +1,11 @@
-<form>
-  <!-- YOUR CODE HERE -->
+<h1>
+  {{#if query_users_name}}
+      {{query_users_name}}
+      {{else}}
+      Default Header
+      {{/if}}  
+      </h1>
+<form action ="/destination">
+  <input type="text" name="users_name" value ="{{query_users_name}}">
+  <input type="submit" value="Submit Form">
 </form>

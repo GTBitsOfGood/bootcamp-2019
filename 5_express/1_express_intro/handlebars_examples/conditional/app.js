@@ -4,6 +4,7 @@ var path = require('path');
 
 var app = express();
 
+
 app.engine('hbs', exphbs({extname:'hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -19,3 +20,4 @@ app.get('/:word', function(req, res) {
 
 app.listen(3000);
 
+console.log("Server is running")

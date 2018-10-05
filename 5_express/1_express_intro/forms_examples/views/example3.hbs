@@ -1,5 +1,19 @@
-<form>
-  <span>YOUR CODE HERE</span>
+<form action="/login" method="POST">
+  <span>
+        <input type="text" name="Email" value={{query_email}}><br>
+        <input type="password" name="Password" value={{query_password}}><br>
+        <input type="submit" value="Submit">
+  </span>
 </form>
+<!--This as far as I'm getting today-->
+<h1>Hi 
+  {{#if query_name.length}}
+  {{#each query_name}}
+  {{this.first_name}}!
+  {{/each}}
+  {{else}}
+  Stranger!
+  {{/if}}</h1>
+
 
 

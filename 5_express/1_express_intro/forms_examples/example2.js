@@ -13,6 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res) {
   res.render('example2', {text: req.query.text});
 });
+app.use('/destination', (req,res)=>
+{
+    res.send(`Got ${req.query.gender}`)
+})
 
 // start the express app
 var port = process.env.PORT || 3000;
