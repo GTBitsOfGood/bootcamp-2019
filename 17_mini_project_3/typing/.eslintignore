@@ -1,0 +1,6 @@
+dist
+node_modules
+coverage
+webpack.*.js
+*server.js
+dictionary.js

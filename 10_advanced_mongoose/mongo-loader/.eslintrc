@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "linebreak-style": [2, "unix"],
+    "default-case": 2,
+    "indent": [1, 2],
+    "no-unexpected-multiline": 2,
+    "semi": ["error", "always"],
+    "consistent-return": 2,
+    "no-fallthrough": 2,
+    "no-console": 0,
+    "quotes": 0,
+    "guard-for-in": 2,
+    "eqeqeq": 2,
+    "no-native-reassign": 2
+  }
+}
