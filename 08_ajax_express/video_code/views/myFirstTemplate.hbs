@@ -6,6 +6,11 @@
   </head>
   <body>
     <h1><a href="/">Form Methods</a></h1>
+    <ul>
+      {{#each errors}}
+        <li>{{msg}}</li>
+      {{/each}}
+    </ul>
     <form method="post">
       User: <input type="text" name="user">
       Password: <input type="password" name="secret" value="">
