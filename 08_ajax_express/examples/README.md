@@ -8,7 +8,7 @@ Today we will learn how to use AJAX in applications built with Express.
 
 ## Section 1: Validation
 
-### [Watch Me: Form validation](https://vimeo.com/221131674)
+### [Watch Me: Form validation](https://www.youtube.com/watch?v=sLxK7WsqOfE&t=40s)
 
 ### Complete the [forms exercise](forms/) in `week03/day4/examples/forms`.
 
@@ -16,7 +16,7 @@ Today we will learn how to use AJAX in applications built with Express.
 
 ## Section 2: Redirection
 
-### [Watch Me: Redirection](https://vimeo.com/221382208)
+### [Watch Me: Redirection](https://www.youtube.com/watch?v=e96X1pOlzL0&t=3s)
 
 1. Edit `week03/day4/examples/counter/app.js`
 1. Create a `POST /up` route. When this route is called, increase the global
@@ -38,7 +38,7 @@ that the up and down buttons work.
 
 ## Section 3: Server JavaScript vs Browser JavaScript
 
-### [Watch Me: Server JavaScript vs Browser JavaScript](https://vimeo.com/221696598)
+### [Watch Me: Server JavaScript vs Browser JavaScript](https://youtu.be/A5iTJZ-V_Vk)
 
 ---
 
