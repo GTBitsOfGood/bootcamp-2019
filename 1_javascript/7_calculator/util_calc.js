@@ -68,9 +68,13 @@ util.calc = function(expression) {
   }
   numberCount = numCounter(expression);
   operatorCount = operatorCounter(expression);
-  if(numberCount < operatorCounter || numberCount > operatorCounter) { throw "Wrong number of operators and numbers" }
+  console.log(numberCount);
+  console.log(operatorCount);
+  if (operatorCount === 0) { throw "No operators."}
+  if (operatorCounter > numberCount) {throw "Too many operators."}
   if(numberCount === 1) {
     return parseInt(expression);
   }
+  
   
 };

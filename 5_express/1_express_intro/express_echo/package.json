@@ -1,8 +1,15 @@
 {
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
   },
   "scripts": {
     "start": "node app.js"
-  }
+  },
+  "name": "express_echo",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
