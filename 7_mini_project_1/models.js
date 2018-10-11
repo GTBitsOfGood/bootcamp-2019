@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 var Project = mongoose.model('Project', {
   title: {
-    type: String,
+    type: String
   },
   goal: {
     type: Number

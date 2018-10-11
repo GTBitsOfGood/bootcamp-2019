@@ -24,10 +24,9 @@ router.get('/create-test-project', function(req, res) {
 // Implement the GET / endpoint.
 router.get('/', function(req, res) {
   // YOUR CODE HERE
-  var project = new Project();
-  project.find(function(err, array) {
+  Project.find(function(err, array) {
     if (!err) {
-      res.render('temp', {items: array});
+      res.render('index', {items: array});
     }
   })
 });
@@ -36,18 +35,36 @@ router.get('/', function(req, res) {
 // Implement the GET /new endpoint
 router.get('/new', function(req, res) {
   // YOUR CODE HERE
+  console.log('hello');
+  res.render('new')
 });
 
 // Part 2: Create project
 // Implement the POST /new endpoint
 router.post('/new', function(req, res) {
   // YOUR CODE HERE
+  let arr = req.body
+  console.log(arr);
+  let toAdd = new Project(arr)
+  toAdd.save()
+  .then(res=> {
+    console.log(res)
+    res.render('/')
+  })
+  .catch(err => {
+    res.render('new', {project: req.body})
+  })
+  console.log(toAdd)
+  // res.render('new', arr)
 });
 
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get('/project/:projectid', function(req, res) {
   // YOUR CODE HERE
+  proj = req.params.name;
+  toFind = Project.findById(proj);
+  res.render('project', {single: toFind});
 });
 
 // Part 4: Contribute to a project
