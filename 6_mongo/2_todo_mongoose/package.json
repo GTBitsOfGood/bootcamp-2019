@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "jasmine-node": "^1.14.5",
+    "jsonfile": "^2.3.1",
+    "mongoose": "^5.0.3"
+  },
+  "scripts": {
+    "test": "jasmine-node .",
+    "start": "node toDo.js"
+  }
+}

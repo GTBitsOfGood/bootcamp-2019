@@ -10,19 +10,20 @@
 | 9/18/18  | Ajax to load Data on frontend              | [Slide Deck][ajax-slides]     | [Exercises][jQuery-exercises]    |
 | 9/20/18  | Node, Command Line, CLIs                   | [Slide Deck][node-slides]     | [Exercises][node-exercises]      |
 | 10/2/18  | Express, and Handlebars                    | [Videos][express-videos]      | [Exercises][express-exercises]   |
-| 10/4/18  | Mongo/Mongoose & Handlebars pt2            | [WIP][mongo-slides]           | TODO    |
-| 10/9/18  | Validation & Ajax w/ Express               | [WIP][validation-slides]      | TODO    |
-| 10/11/18  | Middleware, Passport, and oAuth            | [WIP][passport-slides]        | TODO    |
-| 10/16/18 | Heroku, and Webhooks                       | [WIP][heroku-slides]          | TODO    |
-| 10/18/18 | Web Security, SSL, Encrpytion, and Hashing | [WIP][security-slides]        | TODO    |
-| 10/23/18 | React Crash Course                         | [WIP][react-slides]           | TODO    |
-| 10/25/18 | React w/ APIs                              | [WIP][react-api-slides]       | TODO    |
-| 10/30/18 | React Router                               | [WIP][react-router-slides]    | TODO    |
-| 11/1/18 | Redux Crash Course                         | [WIP][redux-slides]           | TODO    |
-| 11/6/18  | Topic       | TODO   | TODO    |
+| 10/4/18  | Mongo/Mongoose & Handlebars pt2 | [Slides][mongo-slides], [Videos][mongo-videos] | [Exercises][mongo-exercises]|
+| 10/9/18  | Mini Project 1                             | n/a                           | [Project Files][mini-project-1]  |
+| 10/11/18 | Validation & Ajax w/ Express               | [WIP][validation-slides]      | TODO    |
+| 10/16/18 | Middleware, Passport, and oAuth            | [WIP][passport-slides]        | TODO    |
+| 10/18/18 | Heroku, and Webhooks                       | [WIP][heroku-slides]          | TODO    |
+| 10/23/18 | Web Security, SSL, Encrpytion, and Hashing | [WIP][security-slides]        | TODO    |
+| 10/25/18 | React Crash Course                         | [WIP][react-slides]           | TODO    |
+| 10/30/18 | React w/ APIs                              | [WIP][react-api-slides]       | TODO    |
+| 11/1/18  | React Router                               | [WIP][react-router-slides]    | TODO    |
+| 11/6/18  | Redux Crash Course                         | [WIP][redux-slides]           | TODO    |
 | 11/8/18  | Topic       | TODO   | TODO    |
 | 11/13/18 | Topic       | TODO   | TODO    |
 | 11/15/18 | Topic       | TODO   | TODO    |
+| 11/20/18 | Topic       | TODO   | TODO    |
 
 
 [js-intro-slides]: https://docs.google.com/presentation/d/1buIrHO2EcgGLL7WIVXJ4vgJGPsd2rNt0a-DCv-SAId8/edit?usp=sharing
@@ -37,6 +38,9 @@
 [express-videos]: https://github.com/GTBitsOfGood/bootcamp/tree/master/5_express/1_express_intro
 [express-exercises]: 5_express/
 [mongo-slides]: https://docs.google.com/presentation/d/1A2EwFbc-0ulofNWfNDlifEXukHfl6IyMa61or-2WUC0/edit?usp=sharing
+[mongo-videos]: https://www.youtube.com/playlist?list=PLG3Osgh6aITX5HMqWJ1f0J30e_zl-Lhxl
+[mongo-exercises]: 6_mongo/
+[mini-project-1]: 7_mini_project_1
 [validation-slides]: https://docs.google.com/presentation/d/1GWI_RN_BeSli8iTOapMSxszU8sfdmGMA1UjgYio25mE/edit?usp=sharing
 [passport-slides]: https://docs.google.com/presentation/d/1heaKYIk0mAir9rVUZdxo2wvVi-ceIa82mArhuXndfqc/edit?usp=sharing
 [heroku-slides]: https://docs.google.com/presentation/d/1ReQjdkdU5zi_wxuia8zFpNn7p24pSMfoUOJz_RZyrKw/edit?usp=sharing
