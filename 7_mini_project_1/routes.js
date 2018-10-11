@@ -24,6 +24,12 @@ router.get('/create-test-project', function(req, res) {
 // Implement the GET / endpoint.
 router.get('/', function(req, res) {
   // YOUR CODE HERE
+  var project = new Project();
+  project.find(function(err, array) {
+    if (!err) {
+      res.render('temp', {items: array});
+    }
+  })
 });
 
 // Part 2: Create project

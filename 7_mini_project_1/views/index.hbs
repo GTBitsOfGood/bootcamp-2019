@@ -2,6 +2,11 @@
 
 <!-- Part 1: View all projects -->
 <!-- YOUR CODE HERE -->
-
+<ul class="project_list">
+    {{#each project}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
 <!-- Part 2: Create new project -->
 <!-- YOUR CODE HERE -->
+<a href="https:localhost:3000/new"> Create new project</a>
