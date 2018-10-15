@@ -1,4 +1,5 @@
-# Inline exercise: Cookies
+# Cookies
+
 ## Time limit: 10 minutes
 
 ## Goal

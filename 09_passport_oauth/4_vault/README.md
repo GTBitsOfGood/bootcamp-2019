@@ -1,4 +1,4 @@
-# The Vault (pair exercise)
+# The Vault
 
 ## Goal
 
@@ -28,10 +28,10 @@ Here are the steps to follow:
 
 1. Install required dependencies for the project - we've listed those in the `package.json` file. (In general, you'll want to do this for all npm-based exercises)
     - Use `npm install`
-1. Install `passport` and the `passport-local` modules.
+2. Install `passport` and the `passport-local` modules.
     - Use `npm install --save`
     - `require()` `passport` and `passport-local` in `app.js` (refer to Passport docs on properly doing this)
-1. Write a `LocalStrategy` similar to the one in [Passport docs](http://passportjs.org/docs#strategies)
+3. Write a `LocalStrategy` similar to the one in [Passport docs](http://passportjs.org/docs#strategies)
 
     - Authenticate users using `passwords.plain.json`.
       Your strategy will read this file into a variable, and check to see the the user who
@@ -48,13 +48,13 @@ Here are the steps to follow:
 
       ![](img/local.png)
 
-1. Add passport into your application with [`passport.initialize()` and `passport.session()`](http://passportjs.org/docs#middleware):
+4. Add passport into your application with [`passport.initialize()` and `passport.session()`](http://passportjs.org/docs#middleware):
 
     ![](img/passportInit.png)
 
-1. Create the route `GET /` and render `index.hbs` (`index.hbs` is already provided)
-1. Create the route `GET /login` and render `login.hbs` (`login.hbs` is already provided)
-1. Create the route `POST /login` and call `passport.authenticate('local')`.
+5. Create the route `GET /` and render `index.hbs` (`index.hbs` is already provided)
+6. Create the route `GET /login` and render `login.hbs` (`login.hbs` is already provided)
+7. Create the route `POST /login` and call `passport.authenticate('local')`.
 
    When a user successfully logs in they should be sent to '/' so set
    `successRedirect` to `'/'`.
@@ -64,7 +64,7 @@ Here are the steps to follow:
 
    ![](img/login.png)
 
-1. Tell `passport` how to store users in the session with `passport.serializeUser()`.
+8. Tell `passport` how to store users in the session with `passport.serializeUser()`.
 
     `serializeUser` takes a `function(user, done){}`. We use `done()` to send
     back to passport what part of our user we want to store in the session. In our case,
@@ -73,7 +73,7 @@ Here are the steps to follow:
 
     ![](img/serialize.png)
 
-5. You can verify that your code is working correctly by:
+9. You can verify that your code is working correctly by:
     - Go to http://localhost:3000/login and try to log in using
       usernames and passwords from `passwords.plain.json`
     - Successful login should take you to http://localhost:3000/

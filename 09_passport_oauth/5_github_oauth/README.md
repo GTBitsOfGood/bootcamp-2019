@@ -1,4 +1,4 @@
-# Inline Exercise: GitHub OAuth
+# GitHub OAuth
 
 ## Goal
 
@@ -8,9 +8,9 @@ In this exercise we're going to implement logins using GitHub OAuth.
 
 1. [Register a new OAuth application with GitHub](https://github.com/settings/developers)
     1. Pick a fun application name
-    1. Set "Homepage URL" to `http://localhost:3000`
-    1. Set "Authorization callback URL" to `http://localhost:3000/auth/github/callback`
-1. Create a new file `env.sh` in `week04/day4/examples/oauth` put the Client ID and Client
+    2. Set "Homepage URL" to `http://localhost:3000`
+    3. Set "Authorization callback URL" to `http://localhost:3000/auth/github/callback`
+2. Create a new file `env.sh` in `09_passport_oauth/5_github_oauth/` put the Client ID and Client
   Secret for your new app there:
 
     ```bash
