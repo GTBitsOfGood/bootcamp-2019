@@ -6,6 +6,7 @@ var router = express.Router();
 var Project = require('./models').Project;
 var strftime = require('strftime');
 
+
 // Example endpoint
 router.get('/create-test-project', function(req, res) {
   var project = new Project({
@@ -22,26 +23,40 @@ router.get('/create-test-project', function(req, res) {
 
 // Part 1: View all projects
 // Implement the GET / endpoint.
-router.get('/', function(req, res) {
-  // YOUR CODE HERE
-});
+router.get('/', (req,res) =>{
+  Project.find((err,projects)=>{
+    res.render('index',{projects})
+  })
+  });
 
 // Part 2: Create project
 // Implement the GET /new endpoint
 router.get('/new', function(req, res) {
-  // YOUR CODE HERE
+  res.render('new')
 });
 
 // Part 2: Create project
 // Implement the POST /new endpoint
 router.post('/new', function(req, res) {
-  // YOUR CODE HERE
-});
+  let project = new Project({
+    title:req.body.title,
+    goal:req.body.goal,
+    start:req.body.start,
+    description:req.body.description,
+    end:req.body.end
+  })
+  return project.save()
+  .then(() =>{
+    res.redirect('/')
+  })});
 
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get('/project/:projectid', function(req, res) {
-  // YOUR CODE HERE
+  Project.findById(req.params.projectid,(err,project)=>
+  {
+     res.render('project',{project})
+  })
 });
 
 // Part 4: Contribute to a project

@@ -1,5 +1,5 @@
 "use strict";
-
+require('dotenv').config
 //configuration options. These make up the exercicse.
 var fs = require('fs');
 // This is the NPM module commander, we use it to interpret
@@ -9,10 +9,9 @@ var program = require('commander');
 // require the mongoose package
 var mongoose = require('mongoose');
 
-// PART 0: Create an env.sh file that should export the MONGODB_URI
 
 // connect to your Mongo Database
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true});
 mongoose.Promise = global.Promise;
 
 // check if the connection was successful
@@ -42,7 +41,13 @@ db.once('open', function() {
 //    is a String, a "priority" property that is a String, and a
 //    "completed" property that is a Boolean.
 
-// YOUR CODE HERE
+const itemSchema = new mongoose.Schema(
+{
+name: String,
+priority: String,
+completed: Boolean})
+
+let ToDoItem = mongoose.model('ToDoItems',itemSchema)
 
 // Time to start defining our Commands. What are we going to do with our program?
 // We want to be able to add, show and delete tasks.
@@ -93,6 +98,7 @@ program
 // These lines are part of the 'Commander' module. They tell it to process all the
 // other arguments that are sent to our program with no specific name.
 program.parse(process.argv);
+console.log(process.argv)
 if (process.argv.length === 2) {
   program.help();
 }
@@ -125,15 +131,17 @@ function addTask(){
 
   // TODO: create new instance of your toDo model (call it task) and
   //    set name, priority, and completed.
-
-  // YOUR CODE HERE
+  //Well we had to do something vro
+  let temp = new ToDoItem({name,priority,completed:false})
 
   // TODO: Use mongoose's save function to save task (the new instance of
   //    your model that you created above). In the callback function
   //    you should close the mongoose connection to the database at the end
   //    using "mongoose.connection.close();"
+//Fix this
+  temp.save().then((results)=>{
 
-  // YOUR CODE HERE
+  })
 }
 
 // PART 3: Show tasks
@@ -169,3 +177,4 @@ function deleteTask(){
 
   // YOUR CODE HERE
 }
+

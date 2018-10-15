@@ -1,6 +1,7 @@
 "use strict";
 
 // Express setup
+require('dotenv').config()
 var fs = require('fs');
 var express = require('express');
 var exphbs  = require('express-handlebars');
@@ -14,7 +15,7 @@ var app = express();
 // mongoose configuration
 var mongoose = require('mongoose');
 
-if (! fs.existsSync('./env.sh')) {
+if (! fs.existsSync('.env')) {
   throw new Error('env.sh file is missing');
 }
 if (! process.env.MONGODB_URI) {
