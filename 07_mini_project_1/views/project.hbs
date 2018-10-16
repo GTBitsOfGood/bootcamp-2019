@@ -1,0 +1,23 @@
+<h1>View Project</h1>
+
+<!-- Part 3: View a single project -->
+<pre>
+    project: {{project._id}}
+    Title: {{project.title}}
+    Goal: {{project.goal}}
+    Description: {{project.description}}
+    Start Date: {{project.start}}
+    End Date: {{project.end}} 
+</pre>
+<!-- Part 4: Contribute to a project -->
+<h2>
+    Contribute to this project
+    </h2>
+    <!--Fix this -->
+<form action="/project/{{project._id}}" method="POST">
+<h3>Name</h3>
+<input type="text" name="name" value={{_name}}>
+<h3>Amount</h3>
+<input type="text" name="amount" value={{_amount}}>
+<input type="submit">
+</form>

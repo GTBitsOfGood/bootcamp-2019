@@ -24,8 +24,7 @@ var Project = mongoose.model('Project', {
     type:Date,
     required:true
   },
-  contributions_amount:[Number],
-  contributions_name:[String]
+  contributions:[object]
 
 });
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Latest compiled and minified jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <title>Advanced Mongoose</title>
+</head>
+<body>
+  <center>
+    <h1>Advanced Mongoose</h1>
+    <div class="container">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="?limit={{limit}}&page={{prev}}">&lt;</a></li>
+        <li class="page-item"><a class="page-link" href="?limit={{limit}}&page={{next}}">&gt;</a></li>
+        <li class="page-item"><p>Current Page: {{current}}</p></li>
+      </ul>
+      <form id="changePage" method="GET" action="/">
+        <input type="hidden" name="page" value="{{current}}">
+        <select name="limit" onchange="document.getElementById('changePage').submit()">
+          <option value="">Items Per Page</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
+      </form>
+      <p>Items per page: {{limit}}</p>
+    </div>
+
+    <div class="row">
+      <div class="container">
+        <table class="table">
+          <thead class="thead-inverse">
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>Birthday</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#listItems}}
+            <tr>
+              <th scope="row">{{baseOne @index}}</th>
+              <td>{{name.first}}</td>
+              <td>{{name.last}}</td>
+              <td>{{gender}}</td>
+              <td>{{formatDate birthday}}</td>
+            </tr>
+          {{/listItems}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </center>
+</body>
+</html>
+
+
+
+
