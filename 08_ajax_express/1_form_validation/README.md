@@ -2,7 +2,7 @@
 
 ## Goal
 
-### [Watch Me: Form Validation](https://vimeo.com/221131674)
+### [Watch Me: Form Validation](https://youtu.be/sLxK7WsqOfE)
 
 The goal of this exercise if to familiarize yourself with a few key concepts: **server-side rendering w/ templating** and **form validation**.
 
