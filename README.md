@@ -11,7 +11,7 @@
 | 10/2/18  | Express, and Handlebars         | [Videos][express-videos]      | [Exercises][express-code]     |
 | 10/4/18  | Mongo/Mongoose       |[Slides][mongo-slides], [Videos][mongo-videos] | [Exercises][mongo-code]  |
 | 10/9/18  | Mini Project 1                  | n/a                           |[Project Files][mini-project-1]|
-| 10/16/18 | Validation & Ajax w/ Express    | n/a                           |[Exercises][ajax-express-code] |
+| 10/16/18 | Validation & Ajax w/ Express    | [Videos][val-ajax-videos]                          |[Exercises][ajax-express-code] |
 | 10/18/18 | Middleware, Passport, and oAuth | [WIP][passport-slides]        | WIP [Exercises][passport-code]    |
 | 10/23/18 | Advanced Mongoose               | WIP                           | WIP [Exercises][mongoose-code]    |
 | 10/25/18 | Heroku, and Webhooks            | [WIP][heroku-slides]          | WIP [Exercises][heroku-code]      |
@@ -51,6 +51,7 @@
 [mongo-slides]: https://docs.google.com/presentation/d/1A2EwFbc-0ulofNWfNDlifEXukHfl6IyMa61or-2WUC0/edit?usp=sharing
 [mongo-videos]: https://www.youtube.com/playlist?list=PLG3Osgh6aITX5HMqWJ1f0J30e_zl-Lhxl
 [validation-slides]: https://docs.google.com/presentation/d/1GWI_RN_BeSli8iTOapMSxszU8sfdmGMA1UjgYio25mE/edit?usp=sharing
+[val-ajax-videos]: https://www.youtube.com/watch?v=sLxK7WsqOfE&list=PLG3Osgh6aITVaAEjqpaEencWdnqqm47OW
 [passport-slides]: https://docs.google.com/presentation/d/1heaKYIk0mAir9rVUZdxo2wvVi-ceIa82mArhuXndfqc/edit?usp=sharing
 [heroku-slides]: https://docs.google.com/presentation/d/1ReQjdkdU5zi_wxuia8zFpNn7p24pSMfoUOJz_RZyrKw/edit?usp=sharing
 [security-slides]: https://docs.google.com/presentation/d/12_z17MJC1CxPdaTqxadhqZYMJUbKLbpYG3lWqxJ6ZjI/edit?usp=sharing
