@@ -44,7 +44,7 @@ that the up and down buttons work.
 
 ## Section 4: AJAX in Express
 
-### [Watch Me: AJAX in Express](https://vimeo.com/221702422)
+### [Watch Me: AJAX in Express](https://youtu.be/81lPRvyBITM)
 
 1. Edit `week03/day4/examples/ajax-counter/app.js`
     1. Create a `POST /up` route. When this route is called, increase the global
