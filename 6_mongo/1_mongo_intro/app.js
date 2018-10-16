@@ -13,27 +13,27 @@ const dogSchema = new mongoose.Schema( {
 
 const Dog = mongoose.model("Dog", dogSchema);
 
-// const freddy = new Dog({name: "Freddy", favorite_toy: "bone", age: 2});
-// freddy.save();
+const freddy = new Dog({name: "Freddy", favorite_toy: "bone", age: 2});
+freddy.save();
 
-// const spots = new Dog({name: "Spots", favorite_toy: "bone", age: 1});
-// spots.save();
+const spots = new Dog({name: "Spots", favorite_toy: "bone", age: 1});
+spots.save();
 
-// const ralph = new Dog({name: "Ralph", favorite_toy: "ball", age: 1});
-// ralph.save();
+const ralph = new Dog({name: "Ralph", favorite_toy: "ball", age: 1});
+ralph.save();
 
-// Dog.findOne({name: "Freddy"})
-// .then(results => {
-// 	results.age = 3;
-// 	return results.save();
-// }).then(updated_dog => {
-// 	console.log(updated_dog);
-// })
-// .catch(err => console.log("This is an error"));
+Dog.findOne({name: "Freddy"})
+.then(results => {
+	results.age = 3;
+	return results.save();
+}).then(updated_dog => {
+	console.log(updated_dog);
+})
+.catch(err => console.log("This is an error"));
 
-// Dog.findOneAndDelete({name: "Freddy"})
-// .then(_ => {
-// 	console.log("Freddy is gone from the database");
-// 	Dog.find({name: "Freddy"}).then(result => console.log("Freddy should be gone", result))
-// });
+Dog.findOneAndDelete({name: "Freddy"})
+.then(_ => {
+	console.log("Freddy is gone from the database");
+	Dog.find({name: "Freddy"}).then(result => console.log("Freddy should be gone", result))
+});
 

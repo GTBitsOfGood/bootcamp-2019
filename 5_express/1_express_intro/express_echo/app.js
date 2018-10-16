@@ -56,9 +56,9 @@ app.listen(3000);
 // app.get('/second', (req, res) => {
 // 	res.send("Bits of Good Rocks!");
 // })
-// app.post('/second', (req, res) => {
-// 	res.send("post request babeh!");
-// })
+app.post('/second', (req, res) => {
+	res.send("post request babeh!");
+})
 // app.use('/any', (req, res) => {
 // 	res.send("Got a request, dunno what type");
 // })
