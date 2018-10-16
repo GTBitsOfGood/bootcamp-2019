@@ -44,7 +44,7 @@ Yesterday's project horizon starter was a server-side rendered app. Today, we ar
 
 ## Part 1: Ajax contributions
 
-1.    Create a new endpoint route in your routes file: `/horizonstarter/routes.js`. The new route should be: `POST /api/project/:projectId/contribution`
+1.    Create a new endpoint route in your routes file: `/07_mini_project_1/routes.js`. The new route should be: `POST /api/project/:projectId/contribution`
 
     1. When posting to our new route, search the database for the project with the correct `projectId`. Return an error if no such project is found.
 
@@ -77,7 +77,7 @@ Yesterday's project horizon starter was a server-side rendered app. Today, we ar
 
     Now, we want to send the contribution data to the `localhost:3000/api/project/YOUR_PROJECT_ID_HERE/contribution` endpoint via ajax. You have to setup a couple of things before being able to perform an AJAX request.
 
-    1. Create a file on your `public/js` folder called `contributions.js`
+    1. Create a file on your `07_mini_project_1/public/js` folder called `contributions.js`
 
     1. Add a script tag to your `project.hbs` that looks like this `<script src="/js/contributions.js"></script>` which loads the new file you created at `public/js/contibutions.js`.
 
@@ -127,7 +127,7 @@ In this exercise, we are going to implement project filtering in `index.hbs` via
 
 **1. Defining the route**
 
-1. Create a new endpoint route in `horizonstarter/routes.js` to `GET /api/projects`
+1. Create a new endpoint route in `07_mini_project_1/routes.js` to `GET /api/projects`
 
 2. This route is similar to the `GET /` you created yesterday. The only difference is that instead of rendering, it returns all the posts as JSON with `res.json(posts)`. You should:
     Just like yesterdays `GET /` route:
@@ -155,13 +155,13 @@ In this exercise, we are going to implement project filtering in `index.hbs` via
 
 This is similar to filtering projects by funded or not funded. The difference is that, instead of adding links to pages by linking to `localhost:3000/api/projects?funded=false`, we are making buttons with event listeners. You can reuse the buttons you made yesterday or make new buttons for our events that will filter the projects, without refreshing the page. If you want to make it look better, make it a dropdown, with an event listener for when someone selects an option.
 
-1. Add 3 buttons/dropdown to your `index.hbs` template. They should be: "Funded", "Not completely funded" and "show all".
+1. Add 3 buttons/dropdown to your `07_mini_project_1/views/index.hbs` template. They should be: "Funded", "Not completely funded" and "show all".
 
-1. Create a file on your `public/js` folder called `projects.js`
+1. Create a file on your `07_mini_project_1/public/js` folder called `projects.js`
 
-1. Add a script tag to your `index.hbs` to import the file you created `public/js/index.js`.
+1. Add a script tag to your `index.hbs` to import the file you created `07_mini_project_1/public/js/index.js`.
 
-1. Open  `public/js/index.js` file and add `click` event listeners for the 3 buttons/dropdown we just created. When each button is clicked:
+1. Open  `07_mini_project_1/public/js/index.js` file and add `click` event listeners for the 3 buttons/dropdown we just created. When each button is clicked:
 
     1. Make an AJAX request to `GET /api/projects`. Remember to send the correct params. For example: If the "funded" button was clicked, perform the following request `GET localhost:3000/api/projects?funded=true` . `console.log` your posts on the success callback of the AJAX request to make sure you are getting the correct posts.
 
@@ -219,7 +219,7 @@ The `GET localhost:3000/api/projects` route is already defined on the last step.
 
 Now, we have to connect our new route to the page.
 
-1. Edit `views/index.hbs`  and add two dropdown's (or modify the ones from yesterday.):
+1. Edit `07_mini_project_1/views/index.hbs`  and add two dropdown's (or modify the ones from yesterday.):
 
     1. Sort By, that should contain two options:  "Percentage Funded", "Amount Funded"
     1. Order, that should contain two options: "Ascending", "Descending"

@@ -1,22 +1,42 @@
-# Day 1 Exercises
+# Passport & oAuth
 
-## Pair programming exercises
+Today we will learn how to use Passport and oAuth to provide authentication to
+Express applications.
 
-1. **Set up your `week04` repository**
+---
 
-    Make sure you are in your `horizons` folder:
+## Section 1: Cookies
 
-    ```
-    pwd
-    ```
+### TODO: [Watch Me: Cookies]()
 
-    Clone this repository and create your own branch:
+### Complete the cookie exercise in `09_passport_oauth/1_cookies/`
 
-    ```
-    git clone git@github.com:horizons-school-of-technology/week04.git
-    cd week04
-    git checkout -b YOUR GIT USERNAME
-    ```
+---
 
-1. [The Vault](vault/)
-1. [(Bonus) Blackjack!](blackjack/)
+## Section 2: Middleware
+
+### TODO: [Watch Me: Redirection]()
+
+### Complete the middleware exercise in `09_passport_oauth/2_middleware/`
+
+---
+
+## Section 3: Passport Intro
+
+### TODO: [Watch Me: Passport Intro]()
+
+### Complete the passport exercise in `09_passport_oauth/3_passport_intro/`
+
+---
+
+## Section 4: Passport Full Example
+
+### Complete the exercise in `09_passport_oauth/4_vault/`
+
+---
+
+## Section 5: Passport w/ Github Strategy
+
+### TODO: [Watch Me: Passport with Github Strategy]()
+
+### Complete the cookie exercise in `09_passport_oauth/5_github_oauth/`

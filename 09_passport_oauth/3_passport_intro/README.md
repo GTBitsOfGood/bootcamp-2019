@@ -1,4 +1,4 @@
-# W4D1 | Individual | Passport-Form
+# Passport-Form
 
 Up until now, you've been creating applications that stores users and does very
 simple authentication. Now you're going to learn how to use
