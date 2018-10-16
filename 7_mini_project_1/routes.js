@@ -24,30 +24,72 @@ router.get('/create-test-project', function(req, res) {
 // Implement the GET / endpoint.
 router.get('/', function(req, res) {
   // YOUR CODE HERE
+  Project.find().then(results => {
+    res.render('index', {results});
+  })
 });
 
 // Part 2: Create project
 // Implement the GET /new endpoint
 router.get('/new', function(req, res) {
   // YOUR CODE HERE
+  res.render('new');
 });
 
 // Part 2: Create project
 // Implement the POST /new endpoint
 router.post('/new', function(req, res) {
   // YOUR CODE HERE
+  let newObj = {
+    title: req.body.title,
+    goal: req.body.goal,
+    description: req.body.description,
+    start: req.body.start,
+    end: req.body.end
+  }
+  console.log(newObj);
+  let project = new Project(newObj)
+  project.save()
+    .then(_ => {
+      res.redirect("http://localhost:3000/");
+    })
+    .catch(err => {
+      console.log(err);
+      res.render('new', {project : newObj})
+    })
 });
 
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get('/project/:projectid', function(req, res) {
   // YOUR CODE HERE
+  let project = Project.findById({_id : req.params.projectid})
+    .then(project => {
+      let count = 0;
+      for (let i = 0; i < project.contributions.length; i++) {
+        count += project.contributions[i].amount;
+      }
+      res.render('project', {project : project, total : count})
+    });
+  
 });
 
 // Part 4: Contribute to a project
 // Implement the GET /project/:projectid endpoint
 router.post('/project/:projectid', function(req, res) {
-  // YOUR CODE HERE
+  // YOUR CODE HERE 
+  let project = Project.findById({_id : req.params.projectid})
+    .then(project => {
+      project.contributions = project.contributions.concat([ {name : req.body.name, amount : req.body.amount} ]);
+      return project.save()
+    })
+    .then(project => {
+      let count = 0;
+      for (let i = 0; i < project.contributions.length; i++) {
+        count += project.contributions[i].amount;
+      }
+      res.render('project', {project : project, total : count});
+    });
 });
 
 // Part 6: Edit project

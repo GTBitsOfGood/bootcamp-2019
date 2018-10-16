@@ -3,3 +3,22 @@
 <!-- Part 2: Create project -->
 <!-- Part 5: Project categories -->
 <!-- YOUR CODE HERE -->
+<form action = '/new' method="post">
+	Title<br>
+	<input type="text" name="title" value="{{project.title}}"><br>
+	Goal<br>
+	<input type="text" name="goal" value="{{project.goal}}"><br>
+	Description<br>
+	<textarea rows="4" cols="50" name="description">{{project.description}}
+	</textarea><br>
+	Start<br>
+	<input type="date" name="start" value="{{project.start}}"><br>
+	End<br>
+	<input type="date" name="end" value="{{project.end}}"><br>
+	<br>
+	{{#if project}}
+		<div style="color:red"> One or more fields has been input incorrectly</div>
+		<br>
+	{{/if}}
+	<input type="submit" value="Submit">
+</form>

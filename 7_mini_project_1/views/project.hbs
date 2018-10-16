@@ -4,6 +4,41 @@
 
 <!-- YOUR CODE HERE -->
 
+<h1>{{project.title}}</h1>
+<ul>
+	<li>Goal: {{project.goal}}</li>
+	<li>Description: {{project.description}}</li>
+	<li>Start Date: {{project.start}}</li>
+	<li>End Date: {{project.end}}</li>
+</ul>
+<br>
+	Total amount of contributions made: 
+	{{total}}
+
+	<div class="progress">
+	  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+	  aria-valuemin="0" aria-valuemax="100" style="width:">
+	    
+	  </div>
+	</div>
+
 <!-- Part 4: Contribute to a project -->
 
 <!-- YOUR CODE HERE -->
+<form method="post">
+	Name<br>
+	<input type="text" name="name"><br>
+	Amount<br>
+	$<input type="Number" name="amount"><br>
+	<br>
+	<input type="submit" value="Submit">
+</form>
+
+<!-- <script>
+	Handlebars.registerHelper('count', function(n, block) {
+		var accum = 0;
+		for(var i = 0; i < n.length; ++i)
+		    accum += n[i].amount;
+		return accum;
+	});
+</script> -->
