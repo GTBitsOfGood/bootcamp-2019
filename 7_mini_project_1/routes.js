@@ -62,7 +62,14 @@ router.get('/project/:projectid', function(req, res) {
 // Part 4: Contribute to a project
 // Implement the GET /project/:projectid endpoint
 router.post('/project/:projectid', function(req, res) {
-  // YOUR CODE HERE
+  Project.findById(req.params.projectid,(err,project)=>{
+    console.log("Amount",typeof(req.body.amount))
+    project.contributions_amount.push(req.body.amount)
+    project.contributions_name.push(req.body.name)
+    return project.save().then(()=>{
+      res.redirect('/project/:projectid')
+    })
+  })
 });
 
 // Part 6: Edit project

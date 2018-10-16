@@ -10,5 +10,14 @@
     End Date: {{project.end}} 
 </pre>
 <!-- Part 4: Contribute to a project -->
-
-<!-- YOUR CODE HERE -->
+<h2>
+    Contribute to this project
+    </h2>
+    <!--Fix this -->
+<form method="POST" action="/project/{{project._id}}">
+<h3>Name</h3>
+<input type="text" name={{name}}>
+<h3>Amount</h3>
+<input type ="text" name={{amount}}>
+<input type="submit">
+</form>
