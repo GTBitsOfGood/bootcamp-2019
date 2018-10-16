@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <h1>Movies</h1>
+
+    <form action="/load" method="post">
+      <button type="submit" class="btn btn-danger">Load movies into MongoDB</button>
+    </form>
+
+    <table>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Year</th>
+      </tr>
+      {{#each movies}}
+      <tr>
+        <td>
+          <img height="64" src="{{photo}}" alt="{{title}}">
+        </td>
+        <td>{{title}}</td>
+        <td>{{year}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
