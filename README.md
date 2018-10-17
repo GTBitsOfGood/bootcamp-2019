@@ -11,8 +11,8 @@
 | 10/2/18  | Express, and Handlebars         | [Videos][express-videos]      | [Exercises][express-code]     |
 | 10/4/18  | Mongo/Mongoose       |[Slides][mongo-slides], [Videos][mongo-videos] | [Exercises][mongo-code]  |
 | 10/9/18  | Mini Project 1                  | n/a                           |[Project Files][mini-project-1]|
-| 10/16/18 | Validation & Ajax w/ Express    | n/a                           |[Exercises][ajax-express-code] |
-| 10/18/18 | Middleware, Passport, and oAuth | [WIP][passport-slides]        | WIP [Exercises][passport-code]    |
+| 10/16/18 | Validation & Ajax w/ Express    | n/a                           | [Exercises][ajax-express-code]|
+| 10/18/18 | Middleware, Passport, and oAuth | [passport-slides]             | [Exercises][passport-code]    |
 | 10/23/18 | Advanced Mongoose               | WIP                           | WIP [Exercises][mongoose-code]    |
 | 10/25/18 | Heroku, and Webhooks            | [WIP][heroku-slides]          | WIP [Exercises][heroku-code]      |
 | 10/30/18 | React Crash Course              | [WIP][react-slides]           | WIP [Exercises][react-code]       |
