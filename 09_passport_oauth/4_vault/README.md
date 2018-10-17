@@ -9,7 +9,7 @@ in progressively more secure ways.
 
 ## Instructions
 
-Work in `week04/day1/vault` directory. You'll need to add code to `app.js`.
+Work in `09_passport_oauth/4_vault` directory. You'll need to add code to `app.js`.
 
 :warning:The order of middleware functions in `app.js` matters.  We've given you
 place markers for setup steps in `app.js`. Make sure to use these markers when

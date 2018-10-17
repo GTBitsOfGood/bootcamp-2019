@@ -3,40 +3,48 @@
 Today we will learn how to use Passport and oAuth to provide authentication to
 Express applications.
 
+For more resources about using Passport check out this [Youtube Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jdm7QX143aMLAqyM-jTZ2x)
+
 ---
 
-## Section 1: Cookies
+## Section 1: What is Middleware
 
-### TODO: [Watch Me: Cookies]()
+### [Watch Me: Middleware](https://youtu.be/z-s_6gCjeug)
+
+
+---
+
+## Section 2: Cookies
+
+### [Watch Me: What are cookies?](https://www.youtube.com/watch?v=I01XMRo2ESg)
+
+### [Watch Me: Cookies in Express](https://youtu.be/qPSq6s1hrds)
+
 
 ### Complete the cookie exercise in `09_passport_oauth/1_cookies/`
 
 ---
 
-## Section 2: Middleware
-
-### TODO: [Watch Me: Redirection]()
+## Section 3: Middleware
 
 ### Complete the middleware exercise in `09_passport_oauth/2_middleware/`
 
 ---
 
-## Section 3: Passport Intro
+## Section 4: Passport Intro
 
-### TODO: [Watch Me: Passport Intro]()
+### [Watch Me: Passport Intro](https://youtu.be/oHi45nQN4eA)
 
 ### Complete the passport exercise in `09_passport_oauth/3_passport_intro/`
 
 ---
 
-## Section 4: Passport Full Example
+## Section 5: Passport Full Example
 
 ### Complete the exercise in `09_passport_oauth/4_vault/`
 
 ---
 
-## Section 5: Passport w/ Github Strategy
+## Bonus: Passport w/ Github Strategy
 
-### TODO: [Watch Me: Passport with Github Strategy]()
-
-### Complete the cookie exercise in `09_passport_oauth/5_github_oauth/`
+### Use the [Github Strategy](https://github.com/cfsghost/passport-github#readme) with Passport in `09_passport_oauth/b1_github_oauth/`
