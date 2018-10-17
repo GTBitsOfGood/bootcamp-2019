@@ -33,7 +33,7 @@ For more resources about using Passport check out this [Youtube Playlist](https:
 
 ## Section 4: Passport Intro
 
-### TODO: [Watch Me: Passport Intro](https://youtu.be/oHi45nQN4eA)
+### [Watch Me: Passport Intro](https://youtu.be/oHi45nQN4eA)
 
 ### Complete the passport exercise in `09_passport_oauth/3_passport_intro/`
 
