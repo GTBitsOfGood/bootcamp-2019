@@ -42,7 +42,7 @@ Today we will learn how to use AJAX in applications built with Express.
 
 ## Section 4: AJAX in Express
 
-### [Watch Me: AJAX in Express](https://vimeo.com/221702422)
+### [Watch Me: AJAX in Express](https://youtu.be/81lPRvyBITM)
 
 1. Edit `08_ajax_express/3_ajax_counter/app.js`
     1. Create a `POST /up` route. When this route is called, increase the global
