@@ -1,10 +1,29 @@
-# Day 2 Exercises
+# Advanced Mongoose
 
-## Morning Videos & Individual Exercises
+Today we will learn about some advanced mongoose features
 
-1. [Advanced Mongoose Videos and Exercises Part 1](examples/part1/)
-1. [Advanced Mongoose Videos and Exercises Part 2](examples/part2/)
+## Table of Contents
 
-## Pair programming exercise
 
-1. [Twitter](twitter/)
+- exec() (p1)
+- skip() (p1)
+- limit() (p1)
+- sort() (p1)
+- paginate (p1) (books)
+- Aside: Schema (p2)
+- populate() (p2) (comments)
+- Aside: Ref (p2)
+- Virtuals (p2)
+- Methods (p2)
+- Statics (p2)
+- Promise.all (mongo-loader)
+- Twitter exercises
+
+---
+
+## Section 1: From Validation
+
+### [Watch Me: Form validation](https://youtu.be/sLxK7WsqOfE)
+
+### Complete the forms exercise in `08_ajax_express/1_form_validation/`
+
