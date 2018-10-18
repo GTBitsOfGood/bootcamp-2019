@@ -1,0 +1,24 @@
+<h1>Books</h1>
+
+{{#if page}}
+  {{{ prev page }}}
+{{/if}}
+| Current page: {{page}} |
+{{#if hasNext }}
+  {{{ next page }}}
+{{/if}}
+
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>
+      Title
+    </th>
+  </tr>
+{{#each books}}
+  <tr>
+    <td>
+      {{title}}
+    </td>
+  </td>
+{{/each}}
+</table>

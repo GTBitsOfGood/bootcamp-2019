@@ -1,0 +1,34 @@
+<h2>Bet:</h2>
+<form id="betForm" action="" method="POST">
+  <input type="number" name="bet" placeholder="bet amount" />
+  <input type="submit" value="Submit" />
+</form>
+
+
+<h2 id="game-status"></h2>
+<div class="user-area">
+  <div id="user-buttons" class="controls">
+    <input type="button" id="hit" value="Hit">
+    <input type="button" id="stand" value="Stand">
+  </div>
+  <div id="user-hand" class="hand">
+    <h2>User Hand</h2>
+  </div>
+  <div class="score-parent">
+    <p>Score</p>
+    <div id="user-score" class="score">
+    </div>
+  </div>
+</div>
+<div class="dealer-area">
+  <div id="dealer-hand" class="hand">
+    <h2>Dealer Hand</h2>
+  </div>
+  <div class="score-parent">
+    <p>Score</p>
+    <div id="dealer-score"class="score">
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src='/javascripts/game.js'></script>

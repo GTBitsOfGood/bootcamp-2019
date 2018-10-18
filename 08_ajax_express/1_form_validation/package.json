@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-validator": "^2.20.5"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
