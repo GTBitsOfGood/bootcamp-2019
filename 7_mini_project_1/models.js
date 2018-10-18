@@ -19,8 +19,20 @@ var Project = mongoose.model('Project', {
   },
   end: {
     type: Date
-  }
+  },
   // YOUR CODE HERE
+  contributions: {
+    type: [
+      {
+        name : {
+          type : String
+        },
+        amount : {
+          type : Number
+        }
+      }
+    ]
+  }
 });
 
 module.exports = {

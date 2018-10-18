@@ -4,10 +4,21 @@
 
 <!-- YOUR CODE HERE -->
 <ul class="param_list">
-    {{#each single}}
+    {{!-- {{#each single}}
         <li>{{this}}</li>
-    {{/each}}
+    {{/each}} --}}
+    <li>Title: {{single.title}}</li>
+    <li>Goal: {{single.goal}}</li>
+    <li>Description: {{single.description}}</li>
+    <li>Start: {{single.start}}</li>
+    <li>End: {{single.end}}</li>
+    <li>Contributions: {{single.contributions.length}}</li>
+    <li>Contributed Amount: {{count}}</li>
 </ul>
 <!-- Part 4: Contribute to a project -->
-
+<form method="POST">
+    Name: <input type="text" name="name" value="" required><br>
+    Amount: <input type="text" name="amount" value="" required><br>
+    Submit <input type="submit" name = "submit"><br>
+</form>
 <!-- YOUR CODE HERE -->

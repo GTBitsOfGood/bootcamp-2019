@@ -62,15 +62,41 @@ router.post('/new', function(req, res) {
 // Implement the GET /project/:projectid endpoint
 router.get('/project/:projectid', function(req, res) {
   // YOUR CODE HERE
-  proj = req.params.name;
-  toFind = Project.findById(proj);
-  res.render('project', {single: toFind});
+  let proj = req.params.projectid;
+  console.log("INSIDE GET", proj);
+  Project.findById(proj, (err, projected) => {
+    if (!err) {
+      // console.log(projected);
+      let sum = projected.contributions.reduce((acc, curr) => acc + curr.amount, 0);
+      console.log("sum", sum);
+      
+      res.render('project', {single: projected, count: sum});
+    }
+  });
 });
 
 // Part 4: Contribute to a project
-// Implement the GET /project/:projectid endpoint
-router.post('/project/:projectid', function(req, res) {
+// Implement the POST /project/:projectid endpoint
+router.post('/project/:andre', function(req, res) {
   // YOUR CODE HERE
+  let arr = req.body;
+  let proj = req.params.andre;
+  // console.log(proj);
+  console.log("please", proj);
+  Project.findById(proj, (err, projected) => {
+    console.log(err);
+    console.log(projected);
+    
+    if (!err) {
+      // console.log(projected);
+      let conts = projected.contributions
+      let newconts = [...conts,arr] 
+      projected.contributions = newconts;
+      projected.save();
+      console.log("hello");
+      res.render('project', {single: projected});
+    }
+  });
 });
 
 // Part 6: Edit project
