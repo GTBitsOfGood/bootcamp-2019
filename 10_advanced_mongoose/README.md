@@ -49,7 +49,7 @@ looks like
 ---
 
 ## Section 2: `skip`
-### [Watch me](https://www.youtube.com/watch?v=lnNbVmZOpdQ)
+### [Watch me](https://www.youtube.com/watch?v=ZROrzBVTtSM)
 
 The Skip function helps us skip over a specified number of documents in mongoose queries.
 
