@@ -12,10 +12,12 @@
 <body>
   <div class="container">
     <h1>Put your registration form here</h1>
-    <div><strong>Errors:</strong>{{errors}}</div>
+    <div><strong>Errors:</strong>{{#each errors}}
+    {{msg}}
+    {{/each}}</div>
     <div class="row">
       <form action="/register" method="post">
-        <input type="text" placeholder="First Name" name="firstName" required>
+        <input type="text" placeholder="First Name" name="firstName" >
         <input type="submit">
       </form>
     </div>

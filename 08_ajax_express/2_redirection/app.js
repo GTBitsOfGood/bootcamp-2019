@@ -27,10 +27,18 @@ app.get('/', function(req, res){
 });
 
 // Implement POST /up route
-// YOUR CODE HERE
+app.post('/up', (req,res)=>
+{
+  count++
+  res.redirect('/')
+})
 
 // Implement POST /down route
-// YOUR CODE HERE
+app.post('/down', (req,res)=>
+{
+  count--
+  res.redirect('/')
+})
 
 app.listen(3000, function() {
   console.log("Example app listening on port 3000!");

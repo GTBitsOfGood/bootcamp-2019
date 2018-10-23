@@ -5,17 +5,51 @@
     <title>AJAX Counter</title>
   </head>
   <body>
-    <h1>Count: <span id="count">{{count}}</span></h1>
     <form action="/up" method="post">
-      <input id="up" type="submit" value="Up">
+    <h1>Count: <span id="count">{{count}}</span></h1>
     </form>
+
     <form action="/down" method="post">
       <input id="down" type="submit" value="Down">
     </form>
 
     <script src="/jquery.js"></script>
     <script>
-      // YOUR CODE HERE
-    </script>
+      let count1 = $('#count').text()
+
+      $('#up').on('click',event=>
+      {
+        event.preventDefault();
+                $.ajax({
+          type:'POST',
+          url:'/up',
+          data:{
+            count:count1
+          },
+          success:(res)=>
+          {
+            $('#count').text(res.count)
+           console.log("Successfully increased to",res.count)
+          },
+          dataType:'json'
+        }
+        )
+      })
+      $('#down').on('click', event=>
+      {
+        event.preventDefault();
+        let count1 = $('#down').text()
+        $.ajax({
+          type:'POST',
+          url:'/down',
+          data:{
+            count:count1
+          },
+          success:(res)=>{
+            $('#count').text(res.count)
+          }
+        })
+      })
+    </script> 
   </body>
 </html>

@@ -5,9 +5,8 @@ var express = require('express');
 var router = express.Router();
 var Project = require('./models').Project;
 var strftime = require('strftime');
-
-
 // Example endpoint
+
 router.get('/create-test-project', function(req, res) {
   var project = new Project({
     title: 'I am a test project'
@@ -67,7 +66,7 @@ router.post('/project/:projectid', function(req, res) {
     project.contributions.push(
       {
       name:req.body.name,
-      amount:req.body.amount}
+      amount:parseInt(req.body.amount)}
       )
     return project.save().then(()=>{
       res.redirect(`/project/${req.params.projectid}`)

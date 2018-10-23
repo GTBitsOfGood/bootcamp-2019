@@ -12,12 +12,13 @@ app.set('view engine', '.hbs');
 
 // Enable form validation with express validator.
 var expressValidator = require('express-validator');
-app.use(expressValidator());
 
 // Enable POST request body parsing
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(expressValidator());
+
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,14 +45,15 @@ app.get('/register', function(req, res){
 // 3. Update profile.hbs to display all the submitted user profile fields. This
 //    profile should not be editable.
 app.post('/register', function(req, res){
-  // YOUR CODE HERE - Add express-validator validation rules here
-  var errors; // YOUR CODE HERE - Get errors from express-validator here
+  req.checkBody('firstName','First name is empty').notEmpty();
+  var errors = req.validationErrors();
+  console.log(errors)
   if (errors) {
-    res.render('register', {errors: errors});
+    res.render('register', {errors});
   } else {
     // Include the data of the profile to be rendered with this template
     // YOUR CODE HERE
-    res.render('profile');
+    res.render('profile',{firstName:req.body.firstName});
   }
 });
 

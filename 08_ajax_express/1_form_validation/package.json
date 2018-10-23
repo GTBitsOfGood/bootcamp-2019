@@ -3,12 +3,13 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
-    "express-validator": "^2.20.5"
+    "express-validator": "^2.21.0",
+    "node-validator": "^0.1.27"
   },
   "scripts": {
     "start": "nodemon app.js"
   },
   "devDependencies": {
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.18.4"
   }
 }

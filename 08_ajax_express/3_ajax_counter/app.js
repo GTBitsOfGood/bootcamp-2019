@@ -25,19 +25,29 @@ app.get('/', function(req, res) {
   res.render('index.hbs', {
     count: count
   });
+
+  
 });
 
 // ---Task 1---
 // POST /up: Create JSON endpoint that increases `count` by 1
 // and returns a JSON response indicating the new value of `count`.
 
-// YOUR CODE HERE
+app.post('/up',(req,res)=>
+  {
+    count+=1
+  return res.json({count:count})
+  })
 
 // ---Task 2---
 // POST /down: Create another JSON endpoint that decreases `count` by 1
 // and returns a JSON response indicating the new value of `count`.
 
-// YOUR CODE HERE
+app.post('/down',(req,res)=>
+{
+  count-=1
+  return res.json({count:count})
+})
 
 app.listen(3000, function() {
   console.log("Example app listening on port 3000!");
