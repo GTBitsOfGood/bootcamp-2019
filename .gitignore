@@ -1,2 +1,6 @@
 .DS_Store
+<<<<<<< HEAD
 node_modules/
+=======
+08_ajax_express/video_code/node_modules/*
+>>>>>>> 6c084796e2596fc1414553e58163bb0c6e5443c8

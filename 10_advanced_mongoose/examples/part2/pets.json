@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "5928a4dab5649b6cd0177fe0",
+    "__v": 0,
+    "owner": "59273a8090347f4a60740fee",
+    "gender": "male",
+    "name": "Rover"
+  },
+  {
+    "_id": "5928a4dab5649b6cd0177fe1",
+    "__v": 0,
+    "owner": "59273a8090347f4a60740fee",
+    "gender": "female",
+    "name": "Stacy"
+  },
+  {
+    "_id": "5928a4dbb5649b6cd0177fe2",
+    "__v": 0,
+    "owner": "59273a8490347f4a60740ff8",
+    "gender": "male",
+    "name": "Fido"
+  },
+  {
+    "_id": "5928a4dbb5649b6cd0177fe3",
+    "__v": 0,
+    "owner": "59273a8490347f4a60740ff8",
+    "gender": "female",
+    "name": "Goldie"
+  }
+]

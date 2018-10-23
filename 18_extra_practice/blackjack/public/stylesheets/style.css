@@ -1,0 +1,83 @@
+div.card
+{
+	display: inline-block;
+	width: 100px;
+	height: 150px;
+	border: solid 1px #333;
+	border-radius: 5px 5px 5px 5px;
+	float: left;
+	margin-right: 10px;
+	position: relative;
+}
+
+div.card.hearts, div.card.diamonds
+{
+	color: red;
+}
+
+div.card div.main-number
+{
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+
+div.card-value, div.suit
+{
+	position: absolute;
+	left: 5px;
+}
+
+div.card-value{top: 5px;}
+div.card-value{top: 20px;}
+
+div.card-value.invert, div.suit.invert
+{
+	transform: rotate(180deg);
+	right: 5px;
+	text-align: right;
+	top: auto;
+	left: auto;
+}
+
+div.card-value.invert{bottom: 5px;}
+div.suit.invert{bottom: 20px;}
+
+div.dealer-area{}
+
+div.user-area{float: left;}
+
+div#user-score, div#dealer-score
+{
+	display: inline-block;
+}
+
+div.score-parent
+{
+	width: 100%;
+	display: inline-block;
+}
+
+div.score-parent p
+{
+	display: inline-block;
+}
+
+
+div.card#hidden-card
+{
+	background-color: #CBE0FD;
+}
+
+div.card#hidden-card div
+{
+	visibility: hidden;
+}
+
+div.controls input
+{
+	margin-left: 20px;
+	width: 200px;
+}

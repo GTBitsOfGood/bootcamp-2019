@@ -1,0 +1,13 @@
+{
+  "restaurant": "RESTAURANT HERE",
+  "menu": [
+    {
+      "name": "MENU ITEM NAME HERE",
+      "price": 12,
+      "ingredients": [
+        "INGREDIENT 1 HERE",
+        "INGREDIENT 1 HERE"
+      ]
+    }
+  ]
+}
