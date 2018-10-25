@@ -4,7 +4,7 @@ var express = require('express');
 
 // Express setup
 var app = express();
-
+require('dotenv').config()
 var exphbs = require('express-handlebars');
 var hbs = require('./helpers');
 
@@ -18,15 +18,19 @@ var Pet = require('./pet');
 
 //-------------------EDIT ONLY BELOW THIS LINE!----------------------//
 app.get('/pets', function(req,res,next) {
-  Pet.find(function(err, pets){
+  Pet.find().populate('owner')
+  .exec((err,pets)=>
+  {
+    if(err)
+    console.log("There's a user error")
     res.render('pets', {
       pets: pets
     });
-  });
+  })
 });
 
 app.get('/', function(req, res, next) {
-  User.find().sort({"name.first":"asc"}).exec(function(err,users){
+  User.find().sort({"name.first":"asc"}).exec(function(err,users){    console.log(users)
     res.render('index', {
       users: users
     });
@@ -61,6 +65,7 @@ app.get('/users/:name', function(req, res, next) {
     });
   }
 });
+
 
 //-------------------EDIT ONLY ABOVE THIS LINE!----------------------//
 

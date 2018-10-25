@@ -1,13 +1,12 @@
 "use strict";
 
 var express = require('express');
-
 // Express setup
 var app = express();
 var server = require('http').createServer(app);
 var exphbs = require('express-handlebars');
 var hbs = require('./helpers');
-
+require('dotenv').config()
 app.engine('.hbs', exphbs(hbs));
 app.set('view engine', '.hbs');
 
@@ -21,9 +20,16 @@ app.get('/', function(req, res) {
   var next = pageNumber + 1;
   var limit = Number(req.query.limit) || 10;
 
+
   //-------------------EDIT ONLY BELOW THIS LINE!----------------------//
 
-  User.find(function(err,users){
+  User.find().skip(limit-next).limit(next-limit).sort({'name.first':'asc'}).exec((err,users)=>
+  {
+    if(err)
+    {
+      console.log("Error has occured")
+      res.render('./views/error')
+    }
     res.render('index', {
       listItems: users,
       prev: prev,
