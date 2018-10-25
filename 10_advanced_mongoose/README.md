@@ -222,7 +222,7 @@ name and birthday are properly displayed
 ### [Watch me](https://youtu.be/YWX5bgLIvKE)
 
 ## Section 7: Virtuals
-### [Watch me](https://vimeo.com/album/4604349/video/218990923)
+### [Watch me](https://youtu.be/LFvpyNqmkf4)
 
 1. Edit `week04/day2/examples/part2/user.js` and add an `age` virtual property the `User` schema
 
@@ -266,7 +266,7 @@ name and birthday are properly displayed
     </p></details>
 
 ## Section 8: Methods
-### [Watch me](https://vimeo.com/221365169)
+### [Watch me](https://youtu.be/dDEIx9Q0zsc)
 
 1. Edit `week04/day2/examples/part2/user.js` and add a method called `toggleGender` to the
 `User` schema
@@ -291,7 +291,7 @@ the page you should see the gender alternate between `male` and `female`
 
 
 ## Section 9 : Statics
-### [Watch me](https://vimeo.com/album/4604349/video/219184740)
+### [Watch me](https://youtu.be/DqmermPF5_M)
 
 1. Edit `week04/day2/examples/part2/user.js` and add a static called `findByName` to the
 `User` schema
