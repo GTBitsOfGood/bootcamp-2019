@@ -5,10 +5,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
-var LocalStrategy = require('passport-local');
+var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 var User = require('./models/models').User;
-
+var MONGDB_URI = require('./models/connect').MongoDB;
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
 
@@ -18,6 +18,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+mongoose.connect(MONGDB_URI,err=>{
+  if(err){
+    console.log(err)
+  }
+  else
+  console.log("Connected to MongoDB Server")
+});
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -36,8 +43,24 @@ passport.deserializeUser(function(id, done) {
 });
 
 // passport strategy
-// YOUR CODE HERE
+passport.use(
+  new LocalStrategy((username,password,done)=>{
+    User.findOne({username:username},(err,user)=>{
+      if (err)
+      {
+        return done(err)
+      }
+      if (!user)
+      {
+        return done(null,false,{message:'Incorrect username.'})
+      }
+      if (user.password !== password)
+      return done(null,false,{message:'Incorrect password.'})
 
+      return done(null,user)
+    })
+  })
+)
 app.use(passport.initialize());
 app.use(passport.session());
 
