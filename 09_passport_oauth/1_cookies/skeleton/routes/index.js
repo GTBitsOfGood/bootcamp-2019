@@ -16,7 +16,9 @@ var generateId = function() {
 router.use(function(req, res, next) {
   // Your middleware goes here: check for a cookie, and create one if there
   // isn't one. Use generateId() to generate a unique cookie value.
+  next();
 });
+
 
 router.get('/', function(req, res, next) {
   res.setHeader('Content-Type', 'text/html');
@@ -26,6 +28,7 @@ router.get('/', function(req, res, next) {
   else {
     res.write("<h1>I don't know who you are!</h1><p><a href='/login'>Click here</a> to login.</p>");
   }
+  console.log("About to end")
   res.end();
 });
 
@@ -35,7 +38,7 @@ router.get('/login', function(req, res, next) {
 
 router.post('/login', function(req, res, next) {
   // Your code here. Set the user inside the session!
-  
+  res.cookie("username", req.body.username);
   res.redirect('/');
 });
 
