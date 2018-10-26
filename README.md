@@ -14,7 +14,7 @@
 | 10/16/18 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
 | 10/18/18 | Middleware & Passport         |[Slides][passport], [Videos][passport-vids]|[Exercises][passport-code]     |
 | 10/23/18 | Advanced Mongoose             | [Videos][mongoose-advanced-videos]        |[Exercises][mongoose-code]     |
-| 10/25/18 | Heroku                        | n/a                                       | [Exercises][heroku-code]      |
+| 10/25/18 | Heroku                        | [Videos][[heroku-videos]]                 | [Exercises][heroku-code]      |
 | 10/30/18 | React Crash Course            | [WIP][react-slides]                       | WIP [Exercises][react-code]   |
 | 11/1/18  | React w/ APIs                 | [WIP][react-api-slides]                   | WIP [Exercises][react-api-code]|
 | 11/6/18  | Mini Project 2                | n/a                                       | WIP [Project][mini-project-2] |
@@ -56,6 +56,7 @@
 [passport]: https://docs.google.com/presentation/d/1heaKYIk0mAir9rVUZdxo2wvVi-ceIa82mArhuXndfqc/edit?usp=sharing
 [passport-vids]: https://www.youtube.com/playlist?list=PLG3Osgh6aITWFCqypvdY_cuIrmsd8iL9j
 [heroku-slides]: https://docs.google.com/presentation/d/1ReQjdkdU5zi_wxuia8zFpNn7p24pSMfoUOJz_RZyrKw/edit?usp=sharing
+[heroku-videos]: https://www.youtube.com/playlist?list=PLG3Osgh6aITWlIl2wVkoLbgHMhtiDLhdk
 [security-slides]: https://docs.google.com/presentation/d/12_z17MJC1CxPdaTqxadhqZYMJUbKLbpYG3lWqxJ6ZjI/edit?usp=sharing
 [react-slides]: https://docs.google.com/presentation/d/1rXNLIfJ8ITURx3YMzIGAPrEenZ-bL0ee_9-sflWIgF0/edit?usp=sharing
 [react-api-slides]: https://docs.google.com/presentation/d/1YLdtNChps73CfUlKwxbUR4fra1dZMRcS5jfpGquQVmk/edit?usp=sharing
