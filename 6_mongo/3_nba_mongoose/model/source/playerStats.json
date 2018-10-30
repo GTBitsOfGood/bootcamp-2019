@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Russell Westbrook",
+    "Points": 31.6,
+    "Rebounds": 10.7,
+    "Assists": 10.4
+  },
+  {
+    "Name": "James Harden",
+    "Points": 29.1,
+    "Rebounds": 8.1,
+    "Assists": 11.2
+  },
+  {
+    "Name": "Stephen Curry",
+    "Points": 25.3,
+    "Rebounds": 4.5,
+    "Assists": 6.6
+  },
+  {
+    "Name": "Lebron James",
+    "Points": 26.4,
+    "Rebounds": 8.6,
+    "Assists": 8.7
+  },
+  {
+    "Name": "Kevin Durant",
+    "Points": 25.1,
+    "Rebounds": 8.3,
+    "Assists": 4.8
+  }
+]

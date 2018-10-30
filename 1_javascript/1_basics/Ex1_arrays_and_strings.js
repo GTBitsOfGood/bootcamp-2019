@@ -38,6 +38,15 @@ array.length; // -> outputs 4
 // ex. count(10) -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 toolbox.count = function(n) {
   // YOUR CODE HERE
+  let countArr = []
+  if (n === 0) {
+    return countArr;
+  } else {
+    for (let i = 0; i < n; i++) {
+        countArr.push(i);
+    }
+    return countArr;
+  }
 };
 
 // 1.2 first(array)
@@ -48,6 +57,7 @@ toolbox.count = function(n) {
 // ex. first(['a', 'b', 'c']) -> 'a'
 toolbox.first = function(array) {
   // YOUR CODE HERE
+  return array[0];
 };
 
 // 1.3 last(array)
@@ -58,6 +68,8 @@ toolbox.first = function(array) {
 // ex. last(['a', 'b', 'c']) -> 'c'
 toolbox.last = function(array) {
   // YOUR CODE HERE
+  return array.pop();
+  // return array[array.length - 1];
 };
 
 // 1.4 repeat(n, array)
@@ -69,6 +81,15 @@ toolbox.last = function(array) {
 // ex. repeat(3, [1, 2, 3]) -> [1, 2, 3, 1, 2, 3, 1, 2, 3]
 toolbox.repeat = function(n, array) {
   // YOUR CODE HERE
+  let newArray = [];
+  if ((array.length === 0) || (n === 0)) {
+      return newArray;
+  } else {
+      for (let i = 0; i < n; i++) {
+          array.forEach(e => newArray.push(e));
+      }
+      return newArray;
+  }
 };
 
 // 1.5 reverse(array)
@@ -78,6 +99,11 @@ toolbox.repeat = function(n, array) {
 // ex. reverse([1, 2, 3]) -> [3, 2, 1]
 toolbox.reverse = function(array) {
   // YOUR CODE HERE
+  let reversedArray = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+      reversedArray.push(array[i]);
+  }
+  return reversedArray;
 };
 
 // Strings represent text. They behave a lot like arrays of letters. You can
@@ -109,8 +135,9 @@ string[0]; // still "h"
 // returns the first n letters in the string.
 // ex. firstN("hello", 0) -> ""
 // ex. firstN("hello", 2) -> "he"
-toolbox.firstN = function(string, n) {
+firstN = function(string, n) {
   // YOUR CODE HERE
+  return string.substring(0, n);
 };
 
 // 1.7 lastN(string, n)
@@ -120,6 +147,7 @@ toolbox.firstN = function(string, n) {
 // ex. lastN("hello", 2) -> "lo"
 toolbox.lastN = function(string, n) {
   // YOUR CODE HERE
+  return string.substring(string.length - n, string.length);
 };
 
 // Built-in function: string.indexOf(substring)
