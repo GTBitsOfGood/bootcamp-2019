@@ -34,7 +34,10 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+<<<<<<< HEAD
   $(e).on("mouseenter", fn);
+=======
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 };
 
 // ----------------------------------------------------------------------------
@@ -44,7 +47,10 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+<<<<<<< HEAD
   $(e).on("mouseleave", fn);
+=======
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 };
 
 // ----------------------------------------------------------------------------
@@ -73,7 +79,10 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+<<<<<<< HEAD
   $(key).on("keypress", fn);
+=======
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 };
 
 // ----------------------------------------------------------------------------
@@ -87,9 +96,12 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = { red: 0, blue: 0, nope: 0 };
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+<<<<<<< HEAD
   $(id).on("click", function(event) {
       
   })
+=======
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button

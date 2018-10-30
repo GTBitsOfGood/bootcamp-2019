@@ -48,6 +48,7 @@ app.post('/register', function(req, res){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var errors; // YOUR CODE HERE - Get errors from express-validator here
 =======
   var errors; // YOUR CODE HERE - Get errors from express-validator here
@@ -58,6 +59,9 @@ app.post('/register', function(req, res){
 =======
   var errors; // YOUR CODE HERE - Get errors from express-validator here
 >>>>>>> 87d6fbe551b4067e247d77c8c2db43d5585da7a2
+=======
+  var errors; // YOUR CODE HERE - Get errors from express-validator here
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
   if (errors) {
     res.render('register', {errors: errors});
   } else {

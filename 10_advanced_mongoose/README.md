@@ -24,6 +24,7 @@ Today we will learn about some advanced mongoose features
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Section 1: From Validation
 
 ### [Watch Me: Form validation](https://youtu.be/sLxK7WsqOfE)
@@ -35,6 +36,8 @@ Today we will learn about some advanced mongoose features
 >>>>>>> 87d6fbe551b4067e247d77c8c2db43d5585da7a2
 =======
 >>>>>>> 87d6fbe551b4067e247d77c8c2db43d5585da7a2
+=======
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 ## Section 1: `exec()`
 
 ### [Watch me](https://www.youtube.com/watch?v=QZWuyz3cipw)
@@ -236,7 +239,11 @@ name and birthday are properly displayed
 ### [Watch me](https://youtu.be/YWX5bgLIvKE)
 
 ## Section 7: Virtuals
+<<<<<<< HEAD
 ### [Watch me](https://vimeo.com/album/4604349/video/218990923)
+=======
+### [Watch me](https://youtu.be/LFvpyNqmkf4)
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 
 1. Edit `week04/day2/examples/part2/user.js` and add an `age` virtual property the `User` schema
 
@@ -280,7 +287,11 @@ name and birthday are properly displayed
     </p></details>
 
 ## Section 8: Methods
+<<<<<<< HEAD
 ### [Watch me](https://vimeo.com/221365169)
+=======
+### [Watch me](https://youtu.be/dDEIx9Q0zsc)
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 
 1. Edit `week04/day2/examples/part2/user.js` and add a method called `toggleGender` to the
 `User` schema
@@ -305,7 +316,11 @@ the page you should see the gender alternate between `male` and `female`
 
 
 ## Section 9 : Statics
+<<<<<<< HEAD
 ### [Watch me](https://vimeo.com/album/4604349/video/219184740)
+=======
+### [Watch me](https://youtu.be/DqmermPF5_M)
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 
 1. Edit `week04/day2/examples/part2/user.js` and add a static called `findByName` to the
 `User` schema
@@ -337,8 +352,11 @@ the page you should see the gender alternate between `male` and `female`
     </p></details>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 87d6fbe551b4067e247d77c8c2db43d5585da7a2
 =======
 >>>>>>> 87d6fbe551b4067e247d77c8c2db43d5585da7a2
 =======
 >>>>>>> 87d6fbe551b4067e247d77c8c2db43d5585da7a2
+=======
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b

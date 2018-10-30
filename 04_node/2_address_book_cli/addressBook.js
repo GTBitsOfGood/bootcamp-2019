@@ -1,8 +1,12 @@
 "use strict";
 // The node builtin filesystem library.
 var fs = require('fs');
+<<<<<<< HEAD
 var validator = require('validator');
 var columnify = require('columnify');
+=======
+var validator = require('validator')
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 //require columnify here
 
 
@@ -35,11 +39,15 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
+<<<<<<< HEAD
   if (process.argv.length > 2) {
       return process.argv[2];
   } else {
       return "";
   }
+=======
+
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 }
 
 //store the command and execute its corresponding function
@@ -75,7 +83,11 @@ switch(input){
 function displayContacts(){
     //YOUR CODE HERE
 
+<<<<<<< HEAD
     console.log(columnify(data)); //UNCOMMENT
+=======
+    // console.log(columnify(data)); //UNCOMMENT
+>>>>>>> 0df9e90476c9ed674ec7ee48a0786d6f97b0749b
 
 }
 
