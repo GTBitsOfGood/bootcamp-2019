@@ -8,11 +8,14 @@ var userSchema = new Schema({
     first: String,
     last: String
   },
-  age:Number,
   gender: String,
   birthday: Date
 },{
   toJSON:{
+    virtuals:true
+  },
+  toObject:
+  {
     virtuals:true
   }
 });
@@ -22,15 +25,16 @@ var userSchema = new Schema({
 
 
 var User = mongoose.model('User', userSchema);
-let schemaVirtual = userSchema.virtual('age')
-schemaVirtual.get((age)=>{
-  return this.age
-})
-schemaVirtual.set((age)=>{
-  var ageDifMs = Date.now() - this.birthday.getTime();
+function getAge(birthday) {
+  var ageDifMs = Date.now() - birthday.getTime();
   var ageDate = new Date(ageDifMs); // miliseconds from epoch
-  this.age = Math.abs(ageDate.getUTCFullYear() - 1970);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+userSchema.virtual('age').get(function(){
+  let age = getAge(this.birthday);
+  return age;
 })
+
 
 
 

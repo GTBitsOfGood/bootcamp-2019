@@ -30,9 +30,10 @@ app.get('/pets', function(req,res,next) {
 });
 
 app.get('/', function(req, res, next) {
-  User.find().sort({"name.first":"asc"}).exec(function(err,users){    console.log(users)
+  User.find({}).sort({"name.first":"asc"}).exec(function(err,users){  
+  
     res.render('index', {
-      users: users
+      users
     });
   });
 });
