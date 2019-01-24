@@ -12,4 +12,13 @@ In this section you will learn about JavaScript. Although seemingly simple, lear
 8. Complete the [Calculator](7_calculator)
 9. Complete the [BONUS: Poker](B1_poker)
 
+## Helpful Docs
+
+* [MDN JavaScript Docs](mdn-js)
+* [MDN JavaScript Array Docs](mdn-js-array)
+* [9 Promising Promise Tips](promises)
+
 [js-playlist]: https://www.youtube.com/watch?v=vGZ0iil2fas&list=PLG3Osgh6aITWh_5AdG00k1tJZ-kte4Fp8
+[mdn-js]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[mdn-js-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[promises]: https://dev.to/kepta/promising-promise-tips--c8f
