@@ -1,6 +1,6 @@
 "use strict";
 window.toolbox = window.toolbox || {};
-
+// Made a change
 // Exercise 1. Arrays
 
 // Open this file (Exercise1 arrays.js) in your favorite text editor.  Your solution
