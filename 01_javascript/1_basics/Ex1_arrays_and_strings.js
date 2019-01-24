@@ -159,6 +159,8 @@ toolbox.startsWith = function(string, substring) {
 [1].join(" "); // -> "1"
 [1, 2].join(" "); // -> "1 2"
 
+//Hi
+
 // 1.9 replaceAll(string, substring, newSubstring)
 // Write a function that replaces all instances of substring with newSubstring.
 // ex. replaceAll("hello world", "hello", "goodbye") -> "goodbye world"
