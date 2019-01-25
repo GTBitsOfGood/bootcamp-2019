@@ -2,7 +2,6 @@
 window.toolbox = window.toolbox || {};
 
 // Exercise 1. Arrays
-//i was here
 
 // Open this file (Exercise1 arrays.js) in your favorite text editor.  Your solution
 // code should go where it says YOUR CODE HERE.
