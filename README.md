@@ -1,26 +1,25 @@
 # Bits of Good Bootcamp
 
-hi 
-| Date     | Topic                         | Slides                                    | Exercises                     |
-|--------- |-------------------------------|-------------------------------------------|-------------------------------|
-| 9/4/18   | Intro to Bootcamp             |  n/a                                      |  n/a                          |
-| 9/6/18   | JavaScript Crash Course       | [Slide Deck][js-intro-slides]             | [Exercises][js-code]          |
-| 9/9/18   | HTML & CSS Basics             | [Slide Deck][html-css-slides]             | [Exercises][html-css-code]    |
+| Sprint | Topic                         | Slides                                    | Exercises                     |
+|------- |-------------------------------|-------------------------------------------|-------------------------------|
+| 1      | Intro to Bootcamp             |  n/a                                      |  n/a                          |
+| 1      | JavaScript Crash Course       | [Slide Deck][js-intro-slides]             | [Exercises][js-code]          |
+| 1      | HTML & CSS Basics             | [Slide Deck][html-css-slides]             | [Exercises][html-css-code]    |
 | 9/13/18  | jQuery Crash Course           | [Slide Deck][jQuery-slides]               | [Exercises][jQuery-code]      |
 | 9/18/18  | Ajax to load Data on frontend | [Slide Deck][ajax-slides]                 | [Exercises][jQuery-code]      |
-| 9/20/18  | Node, Command Line, CLIs      | [Slide Deck][node-slides]                 | [Exercises][node-code]        |
-| 10/2/18  | Express, and Handlebars       | [Videos][express-videos]                  | [Exercises][express-code]     |
-| 10/4/18  | Mongo/Mongoose                | [Slides][mongo], [Videos][mongo-vids]     | [Exercises][mongo-code]       |
+| 2      | Node, Command Line, CLIs      | [Slide Deck][node-slides]                 | [Exercises][node-code]        |
+| 2      | Express, and Handlebars       | [Videos][express-videos]                  | [Exercises][express-code]     |
+| 2      | Mongo/Mongoose                | [Slides][mongo], [Videos][mongo-vids]     | [Exercises][mongo-code]       |
 | 10/9/18  | Mini Project 1                | n/a                                       | [Project][mini-project-1]     |
-| 10/16/18 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
-| 10/18/18 | Middleware & Passport         |[Slides][passport], [Videos][passport-vids]|[Exercises][passport-code]     |
-| 10/23/18 | Advanced Mongoose             | [Videos][mongoose-advanced-videos]        |[Exercises][mongoose-code]     |
-| 10/25/18 | Heroku                        | [Videos][heroku-videos]                   | [Exercises][heroku-code]      |
-| 10/30/18 | React Crash Course            | [Slides][react], [Videos][react-vids]     | [Exercises][react-code]       |
-| 11/1/18  | React w/ APIs                 | [WIP][react-api-slides]                   | WIP [Exercises][react-api-code]|
+| 3 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
+| 3 | Middleware & Passport         |[Slides][passport], [Videos][passport-vids]|[Exercises][passport-code]     |
+| 3 | Advanced Mongoose             | [Videos][mongoose-advanced-videos]        |[Exercises][mongoose-code]     |
+| 3 | Heroku                        | [Videos][[heroku-videos]                  | [Exercises][heroku-code]      |
+| 4 | React Crash Course            | [Slides][react], [Videos][react-vids]     | [Exercises][react-code]       |
+| 4  | React w/ APIs                 | [WIP][react-api-slides]                   | WIP [Exercises][react-api-code]|
 | 11/6/18  | Mini Project 2                | n/a                                       | WIP [Project][mini-project-2] |
-| 11/8/18  | React Router                  | [WIP][react-router-slides]                | WIP [Exercises][react-router-code]|
-| 11/13/18 | Redux Crash Course            | [WIP][redux-slides]                       | WIP [Exercises][redux-code]   |
+| 4  | React Router                  | [WIP][react-router-slides]                | WIP [Exercises][react-router-code]|
+| 4 | Redux Crash Course            | [WIP][redux-slides]                       | WIP [Exercises][redux-code]   |
 | 11/15/18 | Mini Project 3                | n/a                                       | WIP [Project][mini-project-3] |
 | 11/27/18 | Personal Project              | n/a   | n/a    |
 | 11/29/18 | Personal Project              | n/a   | n/a    |
