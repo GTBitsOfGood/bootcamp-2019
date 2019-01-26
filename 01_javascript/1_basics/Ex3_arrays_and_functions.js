@@ -45,6 +45,9 @@ window.toolbox = window.toolbox || {};
 // ex.
 //  sum([1, 2, -3]) -> 0
 toolbox.sum = function(array) {
+    let temp = 0;
+    array.forEach(num => temp +=num);
+    return temp;
   // YOUR CODE HERE
 };
 
@@ -63,6 +66,9 @@ toolbox.sum = function(array) {
 // ex.
 //  product([2, -3]) -> -6
 toolbox.product = function(array) {
+    let temp = 1;
+    array.forEach(num => temp *= num);
+    return temp;
   // YOUR CODE HERE
 };
 
@@ -78,6 +84,9 @@ toolbox.product = function(array) {
 //  transform([1, 2], function(n) { return n * 2; }) -> [2, 4]
 toolbox.transform = function(array, fn) {
   // YOUR CODE HERE
+  const temp = [];
+  array.forEach(value => temp.push(fn(value)));
+  return temp;
 };
 
 // Exercise 3.4 filter(array, fn)
@@ -96,6 +105,7 @@ toolbox.transform = function(array, fn) {
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
   // YOUR CODE HERE
+  return array.filter(fn);
 };
 
 // Exercise 3.5 every(array, fn)
@@ -121,6 +131,7 @@ toolbox.filter = function(array, fn) {
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
   // YOUR CODE HERE
+  return array.filter(fn).length == array.length;
 };
 
 // Exercise 3.6 find(array, fn)
@@ -141,6 +152,12 @@ toolbox.every = function(array, fn) {
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
 toolbox.find = function(array, fn) {
   // YOUR CODE HERE
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) == true) {
+        return i;
+    }
+  }
+  return -1;
 };
 
 // Bonus Exercise! zip(array1, array2)
@@ -152,5 +169,11 @@ toolbox.find = function(array, fn) {
 //  zip(['moe', 'larry', 'curly'], [30, 40, 50]) ->
 //    [["moe", 30], ["larry", 40], ["curly", 50]]
 toolbox.zip = function(array1, array2) {
+    const ret =[];
+    for (let i = 0; i < array1.length && i < array2.length; i++) {
+        const temp = [array1[i], array2[i]];
+        ret.push(temp);
+    }
+    return ret;
   // YOUR CODE HERE
 };
