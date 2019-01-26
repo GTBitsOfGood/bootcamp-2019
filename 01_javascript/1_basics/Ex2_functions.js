@@ -43,6 +43,9 @@ window.toolbox = window.toolbox || {};
 //  getMultiplier(3)(4) -> 12
 toolbox.getMultiplier = function(n) {
   // YOUR CODE HERE
+  return function(m) {
+    return m * n;
+  }
 };
 
 // Example once(f)
@@ -85,4 +88,12 @@ toolbox.once = function(f) {
 //  onlyLog(); -> does nothing
 toolbox.only = function(n, f) {
   // YOUR CODE HERE
+  let called = 0; // Let's create a local variable to track if f has been called
+  return function() {
+    if (called < n) {
+      // if f hasn't been called yet
+      f(); // call f
+      called++; // mark f as called
+    }
+  };
 };
