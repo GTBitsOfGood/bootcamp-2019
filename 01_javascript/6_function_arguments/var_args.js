@@ -11,7 +11,7 @@ window.varArgs = {};
 // ex. varArgs.numArgs() -> 0
 //
 // Try to insert, pop or push another 'argument' inside the function into the
-// list of arguements. What happens?
+// list of arguments. What happens?
 // Hint: see <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments>
 // for details about the `arguments` data structure.
 varArgs.numArgs = function() {
@@ -49,7 +49,11 @@ varArgs.makeUser = function(name, age) {
 // ex. varArgs.sum(1, 2, 4) -> 7
 // ex. varArgs.sum(1, -2, 4) -> 3
 varArgs.sum = function() {
-  // TODO: YOUR CODE HERE
+  let sum = 0;
+  for (let i of arguments) {
+    sum += i;
+  }
+  return sum;
 };
 
 // Exercise 2. varArgs.product(args...)
@@ -60,7 +64,11 @@ varArgs.sum = function() {
 // ex. varArgs.product(1, -2, 4) -> -8
 // ex. varArgs.product() -> 1
 varArgs.product = function() {
-  // TODO: YOUR CODE HERE
+  let product = 1;
+  for (let i of arguments) {
+    product *= i;
+  }
+  return product;
 };
 
 // Exercise 3. varArgs.joinWith(args...)
@@ -72,5 +80,15 @@ varArgs.product = function() {
 // ex. varArgs.joinWith(',', 'a', 'b') -> 'a,b'
 // ex. varArgs.joinWith('.', '192', '168', '1', '1') -> '192.168.1.1'
 varArgs.joinWith = function() {
-  // TODO: YOUR CODE HERE
+  let joined = '';
+  if (arguments.length > 1) {
+    const delimiter = arguments[0];
+    for (let i = 1; i < arguments.length - 3; i++) {
+      joined += arguments[i];
+      joined += delimiter;
+    }
+    if (arguments.length > 1)
+      joined += arguments[arguments.length - 1];
+  }
+  return joined;
 };
