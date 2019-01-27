@@ -37,6 +37,11 @@ array.length; // -> outputs 4
 // ex. count(1)  -> [0]
 // ex. count(10) -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 toolbox.count = function(n) {
+    const l = new Array();
+    for (let i = 0; i < n; i++) {
+        l.push(i);
+    }
+    return l;
   // YOUR CODE HERE
 };
 
@@ -47,6 +52,7 @@ toolbox.count = function(n) {
 // ex. first([1, 2, 3]) -> 1
 // ex. first(['a', 'b', 'c']) -> 'a'
 toolbox.first = function(array) {
+    return array[0];
   // YOUR CODE HERE
 };
 
@@ -57,6 +63,7 @@ toolbox.first = function(array) {
 // ex. last([1, 2, 3]) -> 3
 // ex. last(['a', 'b', 'c']) -> 'c'
 toolbox.last = function(array) {
+    return array[array.length - 1];
   // YOUR CODE HERE
 };
 
@@ -68,6 +75,13 @@ toolbox.last = function(array) {
 // ex. repeat(1, [1, 2, 3]) -> [1, 2, 3]
 // ex. repeat(3, [1, 2, 3]) -> [1, 2, 3, 1, 2, 3, 1, 2, 3]
 toolbox.repeat = function(n, array) {
+    const newArray = new Array();
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < array.length; j++) {
+            newArray.push(array[j]);
+        }
+    }
+    return newArray;
   // YOUR CODE HERE
 };
 
@@ -77,6 +91,11 @@ toolbox.repeat = function(n, array) {
 // ex. reverse([1]) -> [1]
 // ex. reverse([1, 2, 3]) -> [3, 2, 1]
 toolbox.reverse = function(array) {
+    const newArray = new Array();
+    for (let i = array.length - 1; i >= 0; i--) {
+        newArray.push(array[i]);
+    }
+    return newArray;
   // YOUR CODE HERE
 };
 
@@ -110,6 +129,7 @@ string[0]; // still "h"
 // ex. firstN("hello", 0) -> ""
 // ex. firstN("hello", 2) -> "he"
 toolbox.firstN = function(string, n) {
+    return string.slice(0,n);
   // YOUR CODE HERE
 };
 
@@ -119,6 +139,7 @@ toolbox.firstN = function(string, n) {
 // ex. lastN("hello", 0) -> ""
 // ex. lastN("hello", 2) -> "lo"
 toolbox.lastN = function(string, n) {
+    return string.slice(string.length - n,string.length);
   // YOUR CODE HERE
 };
 
@@ -144,6 +165,7 @@ toolbox.lastN = function(string, n) {
 // ex. startsWith("hello", "e") -> false
 // ex. startsWith("hello", "x") -> false
 toolbox.startsWith = function(string, substring) {
+    return string.indexOf(substring) === 0 ? true : false;
   // YOUR CODE HERE
 };
 
@@ -164,5 +186,6 @@ toolbox.startsWith = function(string, substring) {
 // ex. replaceAll("hello world", "hello", "goodbye") -> "goodbye world"
 // ex. replaceAll("hello", "l", "x") -> "hexxo"
 toolbox.replaceAll = function(string, substring, newSubstring) {
+    return string.split(substring).join(newSubstring);
   // YOUR CODE HERE
 };

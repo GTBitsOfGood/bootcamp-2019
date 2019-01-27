@@ -91,6 +91,30 @@ towers.isNumber = function(something) {
 // ex. towers.isValidBoard([[2], [], [2, 0]]) -> false: duplicate disk 2
 // ex. towers.isValidBoard([[2], [3], [1, 0]]) -> false: invalid disk 3
 towers.isValidBoard = function(board) {
+    if (!towers.isArray(board) || !towers.isArray(board[0]) || !towers.isArray(board[1]) || !towers.isArray(board[2])) return false;
+    console.log('f");');
+    let found = [];
+    for (let small = 0; small < board.length; small++) {
+        let foundinthis = [];
+        for (let each = 0; each < board[small].length; each++) {
+            if (found.indexOf(board[small][each]) === -1) {
+                found.push(board[small][each]);
+                
+            } else return false;
+            foundinthis.push(board[small][each]);
+            console.log(foundinthis, board, board[small][each]);
+            for (let i = 0; i < foundinthis.length; i++) {
+                console.log('sasdf');
+                console.log(foundinthis[i], board[small][each]);
+                if (foundinthis[i] < board[small][each]) {
+                    return false;
+                }
+                
+            } 
+        }
+    }
+    if (found.length !== 3) return false;
+    return true;
   // YOUR CODE HERE
   // Delete the next line:
   throw "towers.isValidBoard() not implemented, you should implement it.";

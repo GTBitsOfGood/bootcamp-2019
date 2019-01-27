@@ -45,6 +45,11 @@ window.toolbox = window.toolbox || {};
 // ex.
 //  sum([1, 2, -3]) -> 0
 toolbox.sum = function(array) {
+    let s = 0;
+    array.forEach(function(item) {
+        s += item;
+    });
+    return s;
   // YOUR CODE HERE
 };
 
@@ -63,6 +68,11 @@ toolbox.sum = function(array) {
 // ex.
 //  product([2, -3]) -> -6
 toolbox.product = function(array) {
+    let prod = 1;
+    array.forEach(function(item) {
+        prod *= item;
+    });
+    return prod;
   // YOUR CODE HERE
 };
 
@@ -77,6 +87,7 @@ toolbox.product = function(array) {
 // ex. same as above, but more concise
 //  transform([1, 2], function(n) { return n * 2; }) -> [2, 4]
 toolbox.transform = function(array, fn) {
+    return array.map(fn);
   // YOUR CODE HERE
 };
 
@@ -95,6 +106,7 @@ toolbox.transform = function(array, fn) {
 //  }
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
+    return array.filter(fn);
   // YOUR CODE HERE
 };
 
@@ -120,6 +132,7 @@ toolbox.filter = function(array, fn) {
 //  every(['abcdefghijk'], isLong) -> true
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
+    return (array.length === array.filter(fn).length) ? true : false;
   // YOUR CODE HERE
 };
 
@@ -140,6 +153,15 @@ toolbox.every = function(array, fn) {
 //  find([1, 3, 5], isEven) -> -1
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
 toolbox.find = function(array, fn) {
+    let hasSet = false;
+    let i = -1;
+    array.forEach(function(item, index){
+        if (!hasSet && fn(item)) {
+            i = index;
+            hasSet = true;
+        }
+    });
+    return i;
   // YOUR CODE HERE
 };
 
@@ -152,5 +174,10 @@ toolbox.find = function(array, fn) {
 //  zip(['moe', 'larry', 'curly'], [30, 40, 50]) ->
 //    [["moe", 30], ["larry", 40], ["curly", 50]]
 toolbox.zip = function(array1, array2) {
+    let bigArr = [];
+    array1.forEach(function(item, index) {
+        bigArr.push([item, array2[index]]);
+    });
+    return bigArr;
   // YOUR CODE HERE
 };

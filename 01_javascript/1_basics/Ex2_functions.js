@@ -42,6 +42,9 @@ window.toolbox = window.toolbox || {};
 // ex.
 //  getMultiplier(3)(4) -> 12
 toolbox.getMultiplier = function(n) {
+    return function(m) {
+        return m * n;
+    }
   // YOUR CODE HERE
 };
 
@@ -84,5 +87,12 @@ toolbox.once = function(f) {
 //  onlyLog(); -> does nothing
 //  onlyLog(); -> does nothing
 toolbox.only = function(n, f) {
+    let called = n;
+    return function() {
+        if (called !== 0) {
+            f();
+            called--;
+        }
+    }
   // YOUR CODE HERE
 };

@@ -40,6 +40,9 @@ console.log("let's see what's in our toolbox:", toolbox);
 // ex. toolbox.countEven(1)  -> [0]
 // ex. toolbox.countEven(10) -> [0, 2, 4, 6, 8]
 toolbox.countEven = function(n) {
+    return toolbox.count(n).filter(function(item) {
+        return item % 2 == 0;
+    });
   // YOUR CODE HERE
 };
 
@@ -54,6 +57,12 @@ toolbox.countEven = function(n) {
 // See indexOf() from the underscore.js library:
 // http://underscorejs.org/#indexOf
 toolbox.indexOf = function(array, item) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            return i;
+        }
+    }
+    return -1;
   // YOUR CODE HERE
 };
 
@@ -81,7 +90,10 @@ toolbox.indexOf = function(array, item) {
 // See lastIndexOf() from the underscore.js library:
 // http://underscorejs.org/#lastIndexOf
 toolbox.lastIndexOf = function(array, item) {
-  // YOUR CODE HERE
+    let result = toolbox.find(array.reverse(), function(ind) {
+        return item === array[ind];
+    });
+    return (result !== -1) ? array.length - 1 - result : result;
 };
 
 // Exercise 5.4 negate(fun)
@@ -103,6 +115,9 @@ toolbox.lastIndexOf = function(array, item) {
 // See negate() from the underscore.js library:
 // http://underscorejs.org/#negate
 toolbox.negate = function(fun) {
+    return function(arg) {
+        return !fun(arg);
+    }
   // YOUR CODE HERE
 };
 
@@ -127,6 +142,13 @@ toolbox.negate = function(fun) {
 // See reject() from the underscore.js library:
 // http://underscorejs.org/#reject
 toolbox.reject = function(array, fun) {
+    let arr = [];
+    array.forEach(function(item) {
+        if (!fun(item)){
+            arr.push(item);
+        }
+    });
+    return arr;
   // YOUR CODE HERE
 };
 
@@ -143,5 +165,12 @@ toolbox.reject = function(array, fun) {
 // See difference() from the underscore.js library:
 // http://underscorejs.org/#difference
 toolbox.difference = function(array1, array2) {
+    let arr = []
+    array1.forEach(function(item) {
+        if (array2.indexOf(item) === -1) {
+            arr.push(item);
+        }
+    });
+    return arr;
   // YOUR CODE HERE
 };

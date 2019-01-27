@@ -42,8 +42,9 @@ tictactoe.errorIfNotXOrO = function(xOrO) {
 // ex. tictactoe.getOtherSide('a') -> Error
 tictactoe.getOtherSide = function(xOrO) {
   // YOUR CODE HERE
-  // Remove the next line!
-  throw "tictactoe.getOtherSide() not implemented, you should implement it.";
+    // Remove the next line!
+    tictactoe.errorIfNotXOrO(xOrO);
+    return (xOrO === 'o') ? 'x' : 'o';
 }
 
 // tictactoe.newBoard(): Create a new game board with no moves made.
@@ -79,7 +80,10 @@ tictactoe.newBoard = function() {
 tictactoe.makeMove = function(board, row, column, xOrO) {
   // YOUR CODE HERE
   // Remove the next line!
-  throw "tictactoe.makeMove() not implemented, you should implement it.";
+    if (board[row][column] !== ' ') throw "there's a thing there.";
+    tictactoe.errorIfNotXOrO(xOrO);
+    board[row][column] = xOrO;
+    return board;
 }
 
 
@@ -148,7 +152,16 @@ tictactoe.getResult = function(board) {
     //     X O _
     //     _ O _
     //
-    // YOUR CODE HERE
+      // YOUR CODE HERE
+      for (var col = 0; col < board[0].length; col++) {
+          // For each row, if all boxes in the row are taken up by 'side',
+          // 'side' is the winner.
+          if (board[0][col] === side &&
+              board[1][col] === side &&
+              board[2][col] === side) {
+              return side;
+          }
+      }
 
     // Check for victory first diagonal
     //
@@ -157,6 +170,11 @@ tictactoe.getResult = function(board) {
     //     _ _ X
     // 
     // YOUR CODE HERE
+      if (board[0][0] === side &&
+          board[1][1] === side &&
+          board[2][2] === side) {
+          return side;
+      }
 
     // Check for victory second diagonal
     //
@@ -164,13 +182,24 @@ tictactoe.getResult = function(board) {
     //     _ O X
     //     O X X
     //
-    // YOUR CODE HERE
+      // YOUR CODE HERE
+      if (board[0][2] === side &&
+          board[1][1] === side &&
+          board[2][0] === side) {
+          return side;
+      }
   }
 
   // Check if there are any empty cells (boxes) on the board,
   // if so the game is in progress. Otherwise, the game is
   // over and is a tie.
   // YOUR CODE HERE
+    for (let r  = 0; r < board.length; r++) {
+        for (let c = 0; c < board[0].length; c++) {
+            if (board[r][c] == ' ') return '?';
+        }
+    }
+    return '-';
 }
 
 // tictactoe.getComputerMove(): Get the move the computer is going to make.
@@ -187,7 +216,14 @@ tictactoe.getResult = function(board) {
 tictactoe.getComputerMove = function(board, computerSide) {
   // YOUR CODE HERE
   // Remove the next line!
-  throw "tictactoe.getComputerMove() not implemented, you should implement it.";
+    for (let r  = 0; r < board.length; r++) {
+        for (let c = 0; c < board[0].length; c++) {
+            if (board[r][c] === ' ') {
+                return [r,c];
+            }
+        }
+    }
+    throw "board is full";
 }
 
 // ----Game State Functions----
