@@ -1,4 +1,4 @@
-# Pair Programming Exercise: Debugging
+# Debugging
 
 ## Goal
 
@@ -6,12 +6,12 @@ The goal of this exercise is to learn how to do advanced debugging with Chrome D
 
 ## Part 1: Jumping to Source
 
-1. Open `1_javascript/2_debugging/debug.html`
+1. Open `01_javascript/2_debugging/debug.html`
 2. Open DevTools Console with <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> on Windows
 3. Click on the file name `debug.js` next to the error
   ![debug console](img/debug%20console.png)
 4. This opens the **Source Tab**, inspect your code and find the error.
-5. Open `1_javascript/2_debugging/debug.js` in your favorite editor and fix the syntax error.
+5. Open `01_javascript/2_debugging/debug.js` in your favorite editor and fix the syntax error.
 
 Tip: You can jump to Source for `console.log()` lines too!
 
@@ -25,7 +25,7 @@ points is a great way of investigating why.
 There's a logical error in function `firstWord()` lets investigate with
 break points.
 
-1. Open `1_javascript/2_debugging/debug.js`
+1. Open `01_javascript/2_debugging/debug.js`
 2. Add a `debugger;` statement to the first line after the for loop in `firstWord()`. It should look like this.
 
     ```javascript
@@ -40,7 +40,7 @@ break points.
     }
     ```
 
-3. Open `1_javascript/2_debugging/debug.html` and click on the first failing test.
+3. Open `01_javascript/2_debugging/debug.html` and click on the first failing test.
   ![debug click failingf](img/debug%20click%20failing.png)
 4. Open DevTools console and refresh the page.
 5. Breakpoint is triggered :boom: Code stops executing at the `debugger` statement! Note the line where code stopped next to the red arrow.
