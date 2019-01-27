@@ -28,8 +28,8 @@ will combine functions from the first 4 exercises to do do bigger things.
 
 ### Running Exercises
 
-Files for this section can be found in the folder `01_javascript/1_basics`.
-To start open `01_javascript/1_basics/Ex1_arrays_and_strings.html` in
+Files for this section can be found in the folder `02_javascript/1_basics`.
+To start open `02_javascript/1_basics/Ex1_arrays_and_strings.html` in
 [Google Chrome][chrome].
 
 This page shows your progress on Exercise 1. Each subexercise is defined as a
