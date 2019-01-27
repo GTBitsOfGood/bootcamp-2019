@@ -5,6 +5,9 @@ describe("builtins.trim(str)", function() {
   it("builtins.trim('Hello World!    ') -> 'Hello World!'", function() {
     expect(builtins.trim("Hello World!    ")).toEqual("Hello World!");
   });
+  it("builtins.trim('     ') -> ''", function() {
+    expect(builtins.trim("     ")).toEqual("");
+  });
 });
 
 describe("builtins.search(sourceString, searchString)", function() {

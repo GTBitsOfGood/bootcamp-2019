@@ -13,7 +13,7 @@ window.toolbox = window.toolbox || {};
 
 // Here's a more explicit way of saying the same thing:
 if (!window.toolbox) {
-  // things that are not defined are false-y
+  // If window.toolbox is not false, 0, "", null, undefined, or NaN
   window.toolbox = {}; // {} is short-hand for create new empty object
 }
 
@@ -40,7 +40,7 @@ console.log("let's see what's in our toolbox:", toolbox);
 // ex. toolbox.countEven(1)  -> [0]
 // ex. toolbox.countEven(10) -> [0, 2, 4, 6, 8]
 toolbox.countEven = function(n) {
-  // YOUR CODE HERE
+  return toolbox.filter(toolbox.count(n), (i) => i % 2 == 0);
 };
 
 // Exercise 5.2 indexOf(array, item)
@@ -54,7 +54,7 @@ toolbox.countEven = function(n) {
 // See indexOf() from the underscore.js library:
 // http://underscorejs.org/#indexOf
 toolbox.indexOf = function(array, item) {
-  // YOUR CODE HERE
+  return toolbox.find(array, (element) => element === item);
 };
 
 // Exercise 5.3 lastIndexOf(array, fun)
@@ -81,7 +81,8 @@ toolbox.indexOf = function(array, item) {
 // See lastIndexOf() from the underscore.js library:
 // http://underscorejs.org/#lastIndexOf
 toolbox.lastIndexOf = function(array, item) {
-  // YOUR CODE HERE
+  const indexOfRev = toolbox.find(array.reverse(), (element) => element === item)
+  return (indexOfRev != -1) ? array.length - indexOfRev - 1 : -1;
 };
 
 // Exercise 5.4 negate(fun)
@@ -103,7 +104,7 @@ toolbox.lastIndexOf = function(array, item) {
 // See negate() from the underscore.js library:
 // http://underscorejs.org/#negate
 toolbox.negate = function(fun) {
-  // YOUR CODE HERE
+  return (x) => !fun(x);
 };
 
 // Exercise 5.5 reject(array, fun)
@@ -127,7 +128,8 @@ toolbox.negate = function(fun) {
 // See reject() from the underscore.js library:
 // http://underscorejs.org/#reject
 toolbox.reject = function(array, fun) {
-  // YOUR CODE HERE
+  // wrong: return toolbox.negate(toolbox.filter)(array, fun);
+  return toolbox.filter(array, (item) => toolbox.negate(fun)(item));
 };
 
 // Bonus Exercise! difference(array1, array2)
@@ -143,5 +145,5 @@ toolbox.reject = function(array, fun) {
 // See difference() from the underscore.js library:
 // http://underscorejs.org/#difference
 toolbox.difference = function(array1, array2) {
-  // YOUR CODE HERE
+  return toolbox.filter(array1, (item) => array2.indexOf(item) == -1);
 };
