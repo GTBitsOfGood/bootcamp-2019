@@ -2,7 +2,7 @@
 
 | Sprint | Topic                         | Slides                                    | Exercises                     |
 |------- |-------------------------------|-------------------------------------------|-------------------------------|
-| 1      | Intro to Bootcamp             |  n/a                                      |  n/a                          |
+| 1      | Git                |  n/a           |  n/a                          |
 | 1      | JavaScript Crash Course       | [Slide Deck][js-intro-slides]             | [Exercises][js-code]          |
 | 1      | HTML & CSS Basics             | [Slide Deck][html-css-slides]             | [Exercises][html-css-code]    |
 | 2      | Node, Command Line, CLIs      | [Slide Deck][node-slides]                 | [Exercises][node-code]        |
