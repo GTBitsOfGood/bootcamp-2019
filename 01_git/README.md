@@ -6,6 +6,8 @@ In this section you will learn about `git`. Git is a version control tool experi
 
 For this section, you will watch this [video playlist about Git Basics][git-course].
 
+If you'd like to learn about git merge conflicts, [check out this article.][git-conflict]
+
 ---
 
 ## What you'll use mostly in bootcamp
@@ -88,3 +90,4 @@ git merge master
 - Reset your HEAD pointer to a previous commit and discard all changes since then: `git reset -hard <commit>`
   
 [git-course]: https://www.youtube.com/watch?v=8oRjP8yj2Wo&list=PLG3Osgh6aITWY4QCO2BHvxRc03sY65ZzQ
+[git-conflict]: https://githowto.com/resolving_conflicts
