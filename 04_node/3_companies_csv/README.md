@@ -33,7 +33,7 @@ Your app will perform calculations on these JSON objects to find out the best in
 2. Install the [`jasmine-node`](https://www.npmjs.com/package/jasmine-node) NPM
    package for all Node projects on your computer.
 
-   ```
+   ```sh
    npm install -g jasmine-node
    ```
 
@@ -42,7 +42,7 @@ Your app will perform calculations on these JSON objects to find out the best in
 3. Add the [`csvjson`](https://github.com/pradeep-mishra/csvjson) NPM package to
    your current project.
 
-   ```
+   ```sh
    npm install --save csvjson
    ```
 

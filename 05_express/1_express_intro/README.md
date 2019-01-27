@@ -82,8 +82,8 @@ Today we will learn how to build web applications with Express.
 1. Open your terminal and navigate to the `/5_express/1_express_intro/` folder
 2. Run `npm install`
 3. Open `/5_express/1_express_intro/server.js` in your favourite text editor.
-4. Require the `express` library (`var express = require('expres')`)
-5. Initialize your express app instance (`var app = express()`)
+4. Require the `express` library (`const express = require('expres')`)
+5. Initialize your express app instance (`const app = express()`)
 6. Create the following routes:
     - __`GET /`__: Send the string `"The Horizons Poet API v1.0"`.
     - __`GET /api/*`__: Send the string `"We couldn’t find any routes matching this endpoint"`.
@@ -91,9 +91,9 @@ Today we will learn how to build web applications with Express.
         - you will need to use `app.use()` for this
     - __`GET /api/poem`__: Send the text from the file `/5_express/1_express_intro/poem.txt`
         - use the following code to read `poem.txt`
-            ```js
-            var fs = require('fs');
-            var poem = fs.readFileSync('./poem.txt', 'utf8');
+            ```javascript
+            const fs = require('fs');
+            const poem = fs.readFileSync('./poem.txt', 'utf8');
             ```
     - __`POST /api/success`__: Send the json `{success: true}` using [`res.json()`](http://expressjs.com/en/api.html#res.json)
 7. Listen on port __3000__

@@ -16,10 +16,10 @@ This day focusses on NodeJS a popular web technology that lets you run javascrip
 
 ## Section 1: Introduction to NodeJS
 
-1. [Install NodeJS](https://nodejs.org/en/) 
+1. [Install NodeJS](https://nodejs.org/en/)
 2. Run the following code snippet using node.
 
-    When you are successful you will see the text "Hello NodeJS" in your terminal window. Note that you will need to create a script file with the code and then run it using "node myfilename.js".
+    When you are successful you will see the text "Hello NodeJS" in your terminal window.
 
     ```bash
         $ node
@@ -62,7 +62,7 @@ Bonus:
 
 [Reading input from terminal](https://nodejs.org/api/readline.html#readline_readline)
 
-```
+```javascript
     // Example code for getting input from the user
     var readline = require('readline');
 
@@ -76,7 +76,6 @@ Bonus:
         rl.close();
     });
 ```
-
 
 ---
 
