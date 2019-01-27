@@ -83,7 +83,7 @@ varArgs.joinWith = function() {
   let joined = '';
   if (arguments.length > 1) {
     const delimiter = arguments[0];
-    for (let i = 1; i < arguments.length - 3; i++) {
+    for (let i = 1; i < arguments.length - 1; i++) {
       joined += arguments[i];
       joined += delimiter;
     }
