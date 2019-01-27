@@ -7,7 +7,7 @@ The goal of this exercise is to learn how to do advanced debugging with Chrome D
 ## Part 1: Jumping to Source
 
 1. Open `1_javascript/3_debug/debug.html`
-1. Open DevTools Console with <kbd>Command</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> on Windows
+1. Open DevTools Console with <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> on Windows
 1. Click on the file name `debug.js` next to the error
   ![](img/debug%20console.png)
 1. This opens the **Source Tab**, inspect your code and find the error.

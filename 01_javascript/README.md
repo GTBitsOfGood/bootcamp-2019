@@ -4,13 +4,9 @@ In this section you will learn about JavaScript. Although seemingly simple, lear
 
 1. Watch the videos in this [YouTube JavaScript playlist](js-playlist).
 2. Complete the [JavaScript Basics Exercises](1_basics)
-3. Complete the [JavaScript Games Exercises](2_games)
-4. Complete the [Debugging in Chrome](3_debugging)
-5. Complete the [Rocketship](4_rocketship)
-6. Complete the[JS Built-ins](5_js_builtins)
-7. Complete the [Function Arguments](6_var_args)
-8. Complete the [Calculator](7_calculator)
-9. Complete the [BONUS: Poker](B1_poker)
+3. Complete the [Debugging in Chrome](3_debugging)
+4. Complete the[JS Built-ins](5_js_builtins)
+5. Complete the [Function Arguments](6_var_args)
 
 ## Helpful Docs
 
