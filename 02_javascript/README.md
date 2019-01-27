@@ -13,8 +13,12 @@ In this section you will learn about JavaScript. Although seemingly simple, lear
 * [MDN JavaScript Docs][mdn-js]
 * [MDN JavaScript Array Docs][mdn-js-array]
 * [9 Promising Promise Tips][promises]
+* [JS Crash Course Slides][js-slides]
+* [JS Arrays Slides][js-arrays]
 
 [js-playlist]: https://www.youtube.com/watch?v=vGZ0iil2fas&list=PLG3Osgh6aITWh_5AdG00k1tJZ-kte4Fp8
 [mdn-js]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [mdn-js-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [promises]: https://dev.to/kepta/promising-promise-tips--c8f
+[js-slides]: https://docs.google.com/presentation/d/1buIrHO2EcgGLL7WIVXJ4vgJGPsd2rNt0a-DCv-SAId8/edit?usp=sharing
+[js-arrays]: https://docs.google.com/presentation/d/1ss123gJrcodGMZO25u9RQll0570vH-3GNvPEhWnaIVI/edit?usp=sharing
