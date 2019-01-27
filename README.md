@@ -1,14 +1,16 @@
 # Bits of Good Bootcamp
 
-| Sprint | Topic                         | Slides                                    | Exercises                     |
-|------- |-------------------------------|-------------------------------------------|-------------------------------|
-| 1      | Git                |  n/a           |  n/a                          |
-| 1      | JavaScript Crash Course       | [Slide Deck][js-intro-slides]             | [Exercises][js-code]          |
-| 1      | HTML & CSS Basics             | [Slide Deck][html-css-slides]             | [Exercises][html-css-code]    |
-| 2      | Node, Command Line, CLIs      | [Slide Deck][node-slides]                 | [Exercises][node-code]        |
-| 2      | Express, and Handlebars       | [Videos][express-videos]                  | [Exercises][express-code]     |
-| 2      | Mongo/Mongoose                | [Slides][mongo], [Videos][mongo-vids]     | [Exercises][mongo-code]       |
-| 3 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
+| Sprint | Topic                         | Videos                  | Length       |
+|------- |-------------------------------|-------------------------|--------------|
+| 1      | [Git][git]                    | [Videos][git-vids]      | ~ 30 mins    |
+| 1      | [JavaScript][js]              | [Videos][js-vids]       | ~ 3 hours    |
+| 1      | [HTML & CSS][html]            | [Videos][html-vids]     | ~ 5 hours    |
+| 2      | [Node & CLIs][node]           | TODO                    | TBD          |
+| 2      | [Express][express]            | [Videos][express-vids]  | ~ 4 hours    |
+| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | ~ 5 hours    |
+
+
+<!---| 3 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
 | 3 | Middleware & Passport         |[Slides][passport], [Videos][passport-vids]|[Exercises][passport-code]     |
 | 3 | Advanced Mongoose             | [Videos][mongoose-advanced-videos]        |[Exercises][mongoose-code]     |
 | 3 | Heroku                        | [Videos][[heroku-videos]                  | [Exercises][heroku-code]      |
@@ -25,11 +27,23 @@
 | 9/18/18  | Ajax to load Data on frontend | [Slide Deck][ajax-slides]                 | [Exercises][jQuery-code]      |
 | 10/9/18  | Mini Project 1                | n/a                                       | [Project][mini-project-1]     |
 
-[js-code]: 01_javascript/
-[html-css-code]: 02_html_css/
-[jQuery-code]: 03_jquery/
-[node-code]: 04_node/
-[express-code]: 05_express/
+--->
+
+[git]: 01_git/
+[git-vids]: https://www.youtube.com/watch?v=8oRjP8yj2Wo&list=PLG3Osgh6aITWY4QCO2BHvxRc03sY65ZzQ
+[js]: 02_javascript/
+[js-vids]: https://www.youtube.com/watch?v=vGZ0iil2fas&list=PLG3Osgh6aITWh_5AdG00k1tJZ-kte4Fp8
+[html]: 03_html_css/
+[html-vids]: https://www.udacity.com/course/intro-to-html-and-css--ud001
+[node]: 04_node/
+[node-vids]: TODO
+[express]: 05_express/
+[express-vids]: https://www.youtube.com/watch?v=eSYhlrcjjk8&list=PLG3Osgh6aITUj-1SpoZxipsqdyiPY0LLN
+[mongo]: 06_mongo/
+[mongo-vids]: https://www.youtube.com/playlist?list=PLG3Osgh6aITX5HMqWJ1f0J30e_zl-Lhxl
+
+
+
 [mongo-code]: 06_mongo/
 [mini-project-1]: 07_mini_project_1/
 [ajax-express-code]: 08_ajax_express/
@@ -49,8 +63,7 @@
 [ajax-slides]: https://docs.google.com/presentation/d/1fBdQsX0XFbNH61LodRJkLqRNXZTupQwPp6ccj4-6XJs/edit?usp=sharing
 [node-slides]: https://docs.google.com/presentation/d/1bmWGuiGA0zW9lfz3MLfvTMuQVlIC-_y5AKaKleI6sUI/edit?usp=sharing
 [express-videos]: https://github.com/GTBitsOfGood/bootcamp/tree/master/5_express/1_express_intro
-[mongo]: https://docs.google.com/presentation/d/1A2EwFbc-0ulofNWfNDlifEXukHfl6IyMa61or-2WUC0/edit?usp=sharing
-[mongo-vids]: https://www.youtube.com/playlist?list=PLG3Osgh6aITX5HMqWJ1f0J30e_zl-Lhxl
+
 [mongoose-advanced-videos]: https://www.youtube.com/watch?v=QZWuyz3cipw&list=PLG3Osgh6aITWo1sx9lxrBJ33zbNPTTxKA
 [validation-slides]: https://docs.google.com/presentation/d/1GWI_RN_BeSli8iTOapMSxszU8sfdmGMA1UjgYio25mE/edit?usp=sharing
 [val-ajax-videos]: https://www.youtube.com/watch?v=sLxK7WsqOfE&list=PLG3Osgh6aITVaAEjqpaEencWdnqqm47OW
