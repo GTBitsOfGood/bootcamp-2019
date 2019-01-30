@@ -1,13 +1,13 @@
 # Bits of Good Bootcamp
 
-| Sprint | Topic                         | Videos                  | Length       |
-|------- |-------------------------------|-------------------------|--------------|
-| 1      | [Git][git]                    | [Videos][git-vids]      | ~ 30 mins    |
-| 1      | [JavaScript][js]              | [Videos][js-vids]       | ~ 3 hours    |
-| 1      | [HTML & CSS][html]            | [Videos][html-vids]     | ~ 5 hours    |
-| 2      | [Node & CLIs][node]           | TODO                    | TBD          |
-| 2      | [Express][express]            | [Videos][express-vids]  | ~ 4 hours    |
-| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | ~ 5 hours    |
+| Sprint | Topic                         | Videos                  | Length  |
+|--------|-------------------------------|-------------------------|---------|
+| 1      | [Git][git]                    | [Videos][git-vids]      | 30 mins |
+| 1      | [JavaScript][js]              | [Videos][js-vids]       | 3 hours |
+| 1      | [HTML & CSS][html]            | [Videos][html-vids]     | 5 hours |
+| 2      | [Node & CLIs][node]           | [Videos][node-vids]     | 4 hours |
+| 2      | [Express][express]            | [Videos][express-vids]  | 4 hours |
+| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | 5 hours |
 
 
 <!---| 3 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
@@ -36,7 +36,7 @@
 [html]: 03_html_css/
 [html-vids]: https://www.udacity.com/course/intro-to-html-and-css--ud001
 [node]: 04_node/
-[node-vids]: TODO
+[node-vids]: https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PLG3Osgh6aITXxo8zA_c2qw0X2y7eNfh_r
 [express]: 05_express/
 [express-vids]: https://www.youtube.com/watch?v=eSYhlrcjjk8&list=PLG3Osgh6aITUj-1SpoZxipsqdyiPY0LLN
 [mongo]: 06_mongo/
