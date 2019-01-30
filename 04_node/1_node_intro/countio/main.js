@@ -14,5 +14,7 @@ if(process.argv[2] === '-s' || process.argv[2] === '--stats' ) {
     fs.writeFile('./log.txt', new Date(), (err) => {
         if(err) return console.log(err);
     });
+
+    
 }
     
