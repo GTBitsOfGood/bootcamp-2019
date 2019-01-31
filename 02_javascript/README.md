@@ -2,6 +2,8 @@
 
 In this section you will learn about JavaScript. Although seemingly simple, learning JavaScript well is vital to becoming a strong web developer. JavaScript is the language you'll use later when we learn about Node, Express, and React. A solid background knowledge of JavaScript is one of the diferentiating factors between amature and advanced web developers.
 
+## Tasks
+
 1. Watch the videos in this [YouTube JavaScript playlist][js-playlist].
 2. Complete the [JavaScript Basics Exercises](./1_basics)
 3. Complete the [Debugging in Chrome](2_debugging)

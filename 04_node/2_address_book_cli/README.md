@@ -24,11 +24,10 @@ We can pass strings into our program to be used as arguments or parameters.
 **Commands** are arguments that specify specific actions. You can run:
 `node myProgram.js doSomething`. `doSomething` is an argument or command for the `node myProgram.js` command line tool. Consider if `myProgram.js` was a calculator application; then `node myProgram.js add` contains the command `add` and `node myProgram.js subtract` contains the command `subtract`. Commands given to a program are just special arguments that modify the behavior of the app/tool we are running.  
 
-
-
 - - - -
 
 ## Introduction - The Address Book
+
 Our Address Book data is stored in the file called data.json. The address book is an array objects. Each object represents a Contact and has two properties:
 
  1. **name**: a string (letters only!), first name of the contact
@@ -91,7 +90,6 @@ The command will be the first argument:
 - `$ node addressBook.js display`         parseCommand() returns 'display'
 - `$ node addressBook.js`                 parseCommand() returns ""
 
-
 > **Note:** If you need a refresher on what `process.argv` is, see [here](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
 
 - - - -  
@@ -106,7 +104,7 @@ Write the function displayContacts(). It will be called in the following way:
 This function should output the appropriate contacts using console.log() and [columnify npm package](https://www.npmjs.com/package/columnify).  
 Contacts that do not have a phone number (for which we put -1 as the placeholder), should be displayed with `'-None-'` in place of their number, as follows:  
 
-![](./img/displaycontactsresult.png)
+![display contacts result](./img/displaycontactsresult.png)
 
 ### Using columnify
 
