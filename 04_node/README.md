@@ -1,6 +1,6 @@
 # NodeJS
 
-In this section you will learn about NodeJs. NodeJS is a powerful tool we use that allows us to run JavaScript on the server. This allows us to learn one language and use it for both backend and frontend development -- no trivial convinence.
+In this section you will learn about NodeJS. NodeJS is a powerful tool we use that allows us to run JavaScript on the server. This allows us to learn one language and use it for both backend and frontend development -- no trivial convinence.
 
 ## Tasks
 
