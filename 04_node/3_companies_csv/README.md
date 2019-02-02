@@ -13,11 +13,11 @@ spreadsheets) by separating each column with a comma.
 
 The first line on a CSV file is usually the header, which specifies the names of the columns for the table. Our columns are `id`, `investorId`, `company`, `originalInvestment`, and `valueToday`. Each line after that corresponds to an investment. These values correspond to the following:
 
-  + **id**: Each investment has a unique number associated with it.
-  + **investorId**: Each investor has a number associated with them. An investor can be associated with multiple investments.
-  + **company**: The number associated with each company. A company can also be associated with multiple investments.
-  + **originalInvestment**: The original value of the stock bought by the investor.
-  + **valueToday**: The current value of that same stock.
++ **id**: Each investment has a unique number associated with it.
++ **investorId**: Each investor has a number associated with them. An investor can be associated with multiple investments.
++ **company**: The number associated with each company. A company can also be associated with multiple investments.
++ **originalInvestment**: The original value of the stock bought by the investor.
++ **valueToday**: The current value of that same stock.
 
 In order to be able to use this data, we will convert it to JSON objects that look like this:
 
