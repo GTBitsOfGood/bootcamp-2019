@@ -10,6 +10,7 @@ var JSON_FILE = 'data.json'
 ensureFileExists();
 // This is where our Address Book is stored.
 var data = JSON.parse(fs.readFileSync(JSON_FILE));
+// console.log(data);
 
 
 
@@ -19,9 +20,8 @@ var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:
 
 
 var argv = process.argv
-//console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
+// console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
-
 
 //------------PART1: PARSING COMMAND LINE ARGUMENTS------------------------
 
@@ -34,6 +34,14 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
+  //   console.log(argv.length);
+    if (argv.length === 1) {
+      // console.log('a');
+      return '';
+    }
+    else {
+      return argv[0];
+    }
 
 }
 
@@ -69,9 +77,27 @@ switch(input){
 */
 function displayContacts(){
     //YOUR CODE HERE
-
-    // console.log(columnify(data)); //UNCOMMENT
-
+    let columnify = require('columnify');
+    let output = columnify(data, {
+        dataTransform: function (contactData) {
+            if (contactData === -1) {
+                contactData = '-None-';
+            }
+        },
+        config: {
+            name: {
+                headingTransform: function(heading) {
+                    heading = 'CONTACT_NAME';
+                }
+            },
+            description: {
+                headingTransform: function (heading) {
+                    heading = 'PHONE_NUMBER';
+                }
+            }
+        }
+    });
+    console.log(output); //UNCOMMENT
 }
 
 
