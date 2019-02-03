@@ -49,7 +49,11 @@ varArgs.makeUser = function(name, age) {
 // ex. varArgs.sum(1, 2, 4) -> 7
 // ex. varArgs.sum(1, -2, 4) -> 3
 varArgs.sum = function() {
-  // TODO: YOUR CODE HERE
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum = sum + arguments[i];
+  }
+  return sum;
 };
 
 // Exercise 2. varArgs.product(args...)
@@ -60,7 +64,11 @@ varArgs.sum = function() {
 // ex. varArgs.product(1, -2, 4) -> -8
 // ex. varArgs.product() -> 1
 varArgs.product = function() {
-  // TODO: YOUR CODE HERE
+  let prod = 1;
+  for (let i = 0; i < arguments.length; i++) {
+    prod = prod * arguments[i];
+  }
+  return prod;
 };
 
 // Exercise 3. varArgs.joinWith(args...)
