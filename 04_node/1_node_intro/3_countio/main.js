@@ -3,15 +3,12 @@
 let fs = require('fs');
 if(process.argv[2] === '-s' || process.argv[2] === '--stats' ) {
     // console.log("stats requested");
-    global.sum = 0;
-    sum++;
-    fs.writeFile('./log.txt', sum, (err) => {
+    fs.writeFile('../countio/log.txt', , (err) => {
         if(err) return console.log(err);
     });
 } else {
     // console.log("ran at:" + new Date());
-    sum++;
-    fs.writeFile('./log.txt', new Date(), (err) => {
+    fs.writeFile('../countio/log.txt', new Date(), (err) => {
         if(err) return console.log(err);
     });
 
