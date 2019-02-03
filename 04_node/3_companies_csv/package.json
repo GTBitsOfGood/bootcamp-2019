@@ -1,10 +1,14 @@
 {
-  "name": "investments",
-  "version": "1.0.0",
-  "description": "Investment exercise",
-  "main": "app.js",
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+    "name": "investments",
+    "version": "1.0.0",
+    "description": "Investment exercise",
+    "main": "app.js",
+    "author": "",
+    "scripts": {
+        "test": "jasmine-node spec"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "csvjson": "^5.1.0"
   }
 }

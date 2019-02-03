@@ -1,11 +1,13 @@
 "use strict";
+console.log("This seems to work fine but I can't get it quite right for the tester...");
 // The node builtin filesystem library.
 var fs = require('fs');
-var validator = require('validator')
+var validator = require('validator');
+let columnify = require('columnify');
 //require columnify here
 
 
-var JSON_FILE = 'data.json'
+var JSON_FILE = 'data.json';
 // If data.json file doesn't exist, create an empty one
 ensureFileExists();
 // This is where our Address Book is stored.
@@ -13,12 +15,11 @@ var data = JSON.parse(fs.readFileSync(JSON_FILE));
 
 
 
-
 //the message that will be displayed  If no arguments are specified or if user types help
-var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
+var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n";
 
 
-var argv = process.argv
+var argv = process.argv;
 //console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
 
@@ -33,12 +34,14 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
+    if (argv.length == 0) return '';
+    else return argv[0];
   // YOUR CODE HERE
 
 }
 
 //store the command and execute its corresponding function
-var input = parseCommand()
+var input = parseCommand();
 switch(input){
   case "add":
     addContact();
@@ -47,7 +50,7 @@ switch(input){
     updateContact();
     break;
   case "delete":
-    deleteContact()
+    deleteContact();
     break;
   case "display":
     displayContacts();
@@ -68,9 +71,21 @@ switch(input){
 *
 */
 function displayContacts(){
-    //YOUR CODE HERE
 
-    // console.log(columnify(data)); //UNCOMMENT
+//    console.log(columnify(data)); //UNCOMMENT
+    console.log(columnify(data, {
+        dataTransform: function(data) {
+            if (data === "-1") {
+                return data = '-None-';
+            }
+            return data;
+        },
+        headingTransform: function(heading) {
+
+            if (heading == 'key') return 'CONTACT_NAME';
+            return 'PHONE_NUMBER';
+        }
+    }));
 
 }
 
@@ -88,6 +103,13 @@ function displayContacts(){
 * if no number is provided, store -1 as their number
 */
 function addContact() {
+    if (data[process.argv[1]] === undefined) {
+        if (process.argv[2] === undefined) {
+            data[process.argv[1]] = -1;
+        } else data[process.argv[1]] = parseInt(process.argv[2]);
+    } else {
+        console.log(process.argv[1] + ' already in Address Book');
+    }
 // YOUR CODE HERE
 
 }
@@ -104,6 +126,17 @@ function addContact() {
 *
 */
 function updateContact(){
+    if (data[process.argv[1]] !== undefined & process.argv[2] !== undefined) {
+        console.log('fff');
+        if (isNaN(process.argv[2])) {
+            data[process.argv[2]] = data[process.argv[1]];
+            delete data[process.argv[1]];
+        } else data[process.argv[1]] = parseInt(process.argv[2]);
+    }
+    else if (data[process.argv[1]] === undefined) {
+        console.log('No contact found');
+    } else console.log('Invalid contact format');
+    
 // YOUR CODE HERE
 }
 
@@ -124,7 +157,7 @@ function writeFile(data) {
 
 function ensureFileExists() {
   if (! fs.existsSync(JSON_FILE)) {
-    writeFile([]);
+      writeFile([]);
   }
 }
 
