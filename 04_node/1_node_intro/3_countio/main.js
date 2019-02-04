@@ -3,7 +3,7 @@
 let fs = require('fs');
 if(process.argv[2] === '-s' || process.argv[2] === '--stats' ) {
     // console.log("stats requested");
-    fs.writeFile('../countio/log.txt', , (err) => {
+    fs.writeFile('../countio/log.txt', "a", (err) => {
         if(err) return console.log(err);
     });
 } else {

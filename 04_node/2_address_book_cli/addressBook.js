@@ -3,13 +3,26 @@
 var fs = require('fs');
 var validator = require('validator')
 //require columnify here
-
+var jsonfile = require('jsonfile');
+// var file = 'data.json';
 
 var JSON_FILE = 'data.json'
+// jsonfile.writeFileSync(JSON_FILE, [
+//     {
+//         "name": "Moose",
+//         "number": 123
+//     },
+//     {
+//         "name": "Ricky",
+//         "number": -1
+//     }
+// ]);
 // If data.json file doesn't exist, create an empty one
 ensureFileExists();
 // This is where our Address Book is stored.
 var data = JSON.parse(fs.readFileSync(JSON_FILE));
+// var data = JSON.parse(fs.readFileSync(file));
+
 // console.log(data);
 
 
@@ -35,7 +48,7 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 function parseCommand() {
   // YOUR CODE HERE
   //   console.log(argv.length);
-    if (argv.length === 1) {
+    if (argv.length === 0) {
       // console.log('a');
       return '';
     }
@@ -63,9 +76,7 @@ switch(input){
   default:
     console.log(helpString); //if command = 'help' or invalid command, print help
 }
-
 //----------------- PART 2 'display' command---------------------//
-
 /**
 *
 * Implement displayContacts()
@@ -76,30 +87,29 @@ switch(input){
 *
 */
 function displayContacts(){
-    //YOUR CODE HERE
     let columnify = require('columnify');
     let output = columnify(data, {
-        dataTransform: function (contactData) {
-            if (contactData === -1) {
-                contactData = '-None-';
+        dataTransform: function (data) {
+            if (data === '-1') {
+                data = '-None-';
             }
+            return data;
         },
         config: {
             name: {
-                headingTransform: function(heading) {
-                    heading = 'CONTACT_NAME';
+                headingTransform: function (heading) {
+                    return "CONTACT_NAME"
                 }
             },
-            description: {
+            number: {
                 headingTransform: function (heading) {
-                    heading = 'PHONE_NUMBER';
+                    return "PHONE_NUMBER"
                 }
             }
         }
     });
     console.log(output); //UNCOMMENT
 }
-
 
 
 //----------------- PART 3 'add' command---------------------//
@@ -115,7 +125,45 @@ function displayContacts(){
 */
 function addContact() {
 // YOUR CODE HERE
-
+//     console.log(argv[1]);
+    if (argv.length === 1 || !argv[1].match(/[a-z][A-Z]/i)) {
+        // console.log('a');
+        console.log('Invalid contact format');
+    } else if (argv.length > 2 && isNaN(argv[2])) {
+        // console.log('b');
+        console.log('Invalid contact format');
+    }else if (argv.length > 1) {
+        var hasMatch =false;
+        for (var index = 0; index < data.length; ++index) {
+            var name = data[index];
+            if(name.Name === argv[1]){
+                hasMatch = true;
+                break;
+            }
+        }
+        if (hasMatch) {
+            // console.log('c');
+            console.log("${argv[1]} already in the Address Book");
+            return undefined;
+        } else if (argv.length > 2) {
+            // console.log('d');
+            let l = data.length;
+            data[l] = {};
+            data[l]['name'] = argv[1];
+            data[l]['number'] = Number(argv[2]);
+            // console.log('a');
+            // console.log(data);
+            jsonfile.writeFileSync(JSON_FILE, data);
+            // console.log(data);
+            console.log('"Added contact Buzz"');
+        } else {
+            data[argv[1]] = -1;
+            jsonfile.writeFileSync(JSON_FILE, data);
+            console.log("Added contact Buzz");
+            return undefined;
+        }
+    }
+    return data;
 }
 
 
@@ -131,12 +179,55 @@ function addContact() {
 */
 function updateContact(){
 // YOUR CODE HERE
+    if (argv.length < 3 || !argv[1].match(/[a-z][A-Z]/i)) {
+        return undefined;
+    }
+    var hasMatch =false;
+    for (var index = 0; index < data.length; ++index) {
+        var name = data[index];
+        if(name.name === argv[1]){
+            // console.log('as');
+            hasMatch = true;
+            if (isNaN(argv[2]) && argv[1].match(/[a-z][A-Z]/i)) {
+                name.name = argv[2];
+            } else {
+                name.number = Number(argv[2]);
+            }
+            break;
+        }
+    }
+    if (hasMatch) {
+        jsonfile.writeFileSync(JSON_FILE, data);
+        console.log("update value for ${args[1]}");
+    }
+    // console.log(data);
 }
 
 
 //BONUS Implement deleteContact
 function deleteContact(){
     //YOUR CODE HERE
+    var hasMatch =false;
+    for (var index = 0; index < data.length; ++index) {
+        var name = data[index];
+        if(name.name === argv[1]){
+            // console.log('as');
+            hasMatch = true;
+            // console.log(data[name.name]);
+            // delete name.name;
+            // delete name.number;
+            delete data[index];
+            data = data.filter((obj) => {
+                if (obj != null) {
+                    return obj
+                }
+            });
+            console.log(data);
+            jsonfile.writeFileSync(JSON_FILE, data);
+            break;
+        }
+    }
+
 }
 
 
