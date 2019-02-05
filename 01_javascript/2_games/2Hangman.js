@@ -39,9 +39,11 @@ window.hangman = window.hangman || {};
 // ex. hangman.isGuessWrong('carrot', 'r') -> false
 // ex. hangman.isGuessWrong('carrot', 't') -> false
 // ex. hangman.isGuessWrong('dog', 'do') -> Error!
-hangman.isGuessWrong = function(word, guess) {
-  // YOUR CODE HERE
-  throw "hangman.isGuessWrong() is not implemented, you should implement it.";
+hangman.isGuessWrong = function (word, guess) {
+    if (guess.length > 1) {
+        throw 'the guess is long than one letter, invalid!';
+    }
+    return word.indexOf(guess) === -1;
 };
 
 // hangman.words: a word is randomly chosen from this array when a new game starts.
@@ -49,17 +51,16 @@ hangman.words = ["cat", "doctor", "dog", "bits", "of", "good"];
 
 // hangman.getRandomInteger(min, max): returns a random integer between min (included) and max (excluded).
 // Taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-hangman.getRandomInteger = function(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+hangman.getRandomInteger = function (min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 };
 
 // hangman.getRandomWord(): returns a random word from hangman.words.
 // Use: hangman.getRandomInteger() and hangman.words
 //
 // ex. getRandomWord() -> 'cat'
-hangman.getRandomWord = function() {
-  // YOUR CODE HERE
-  throw "hangman.getRandomWord() is not implemented, you should implement it.";
+hangman.getRandomWord = function () {
+    return hangman.words[hangman.getRandomInteger(0, hangman.words.length)];
 };
 
 // hangman.maxWrongGuesses: Maximum wrong guesses allowed during a hangman game.
@@ -81,9 +82,26 @@ hangman.maxWrongGuesses = 6;
 // ex. hangman.getGameStatus('cat', ['c', 'a']) -> 'in_progress'
 // ex. hangman.getGameStatus('cat', ['x', 'y', 'z', 'b', 'd', 'e']) -> 'lose'
 // ex. hangman.getGameStatus('carrot', ['c', 'a', 'r', 'o', 't']) -> 'win'
-hangman.getGameStatus = function(word, guesses) {
-  // YOUR CODE HERE
-  throw "hangman.getGameStatus() is not implemented, you should implement it.";
+hangman.getGameStatus = function (word, guesses) {
+    let correct = 0;
+    if(guesses !== undefined) {
+        for (let x = 0; x < guesses.length; x++) {
+            if (guesses[x] !== undefined) {
+                if (!(guesses[x].length > 1)) {
+                    if (!hangman.isGuessWrong(word, guesses[x])) {
+                        correct++;
+                    }
+                }
+            }
+        }
+        if (!((guesses.length - correct) < hangman.maxWrongGuesses)) {
+            return 'lose';
+        }
+        if (correct === String.prototype.concat(...new Set(word)).length) {
+            return 'win';
+        }
+    }
+    return 'in_progress';
 };
 
 // ----Game State Functions----
@@ -91,9 +109,9 @@ hangman.getGameStatus = function(word, guesses) {
 // us read and update game state as the game progresses.
 // Values are initially empty (null). When the game starts, they will be set to new values.
 hangman.game = {
-  word: null, // The word player is trying to guess
-  guesses: null // An array of letters containing guesses player has made so far
-  // ex. ['a', 'b', 'c']
+    word: null, // The word player is trying to guess
+    guesses: null // An array of letters containing guesses player has made so far
+    // ex. ['a', 'b', 'c']
 };
 
 // hangman.startGame(): Start a new game of hangman.
@@ -104,9 +122,10 @@ hangman.game = {
 //  * set hangman.game.word to a new word chosen with hangman.getRandomWord()
 //  * set hangman.game.guesses to be an empty array []
 //  * draw the game in the browser with hangman.drawGame() after state has been updated
-hangman.startGame = function() {
-  // YOUR CODE HERE
-  throw "hangman.startGame() is not implemented, you should implement it.";
+hangman.startGame = function () {
+   hangman.game.word = hangman.getRandomWord();
+   hangman.game.guesses = [];
+   hangman.drawGame();
 };
 
 // hangman.makeGuess(letter): This function is called when the player makes a guess.
@@ -116,9 +135,12 @@ hangman.startGame = function() {
 //  * throw an exception (generate an error) if game is over (using hangman.getGameStatus())
 //  * add letter to the array of guesses (hangman.game.guesses)
 //  * draw the game in the browser with hangman.drawGame() after state has been updated
-hangman.makeGuess = function(letter) {
-  // YOUR CODE HERE
-  throw "hangman.makeGuess() is not implemented, you should implement it.";
+hangman.makeGuess = function (letter) {
+    if(hangman.getGameStatus(hangman.game.word, hangman.game.guess) !== 'in_progress') {
+        throw 'The game is over! No more guesses!';
+    }
+    hangman.game.guesses.push(letter);
+    hangman.drawGame();
 };
 
 // ----Browser Functions----
@@ -134,84 +156,84 @@ hangman.makeGuess = function(letter) {
 //  * hangman.isGuessWrong() to count wrong guesses
 //  * hangman.maxWrongGuesses to figure out how many guesses are left
 //  * hangman.getGameStatus() to get game status
-hangman.drawGame = function() {
-  // Count wrong guesses
-  var wrongGuesses = [];
-  hangman.game.guesses.forEach(function(guess) {
-    if (hangman.isGuessWrong(hangman.game.word, guess)) {
-      wrongGuesses.push(guess);
+hangman.drawGame = function () {
+    // Count wrong guesses
+    var wrongGuesses = [];
+    hangman.game.guesses.forEach(function (guess) {
+        if (hangman.isGuessWrong(hangman.game.word, guess)) {
+            wrongGuesses.push(guess);
+        }
+    });
+    var guessesLeft = hangman.maxWrongGuesses - wrongGuesses.length;
+    document.getElementById("guessesLeft").innerHTML = guessesLeft + "";
+
+    var imgSrc = ["img/hangman", wrongGuesses.length, ".png"].join("");
+    document.getElementById("man").src = imgSrc;
+
+    // Hide letters from word and display it
+    var letters = hangman.game.word.split("");
+    for (var i = 0; i < letters.length; i++) {
+        var letter = letters[i];
+        if (letter === " ") {
+            // Make spaces explicit
+            letters[i] = "&nbsp;";
+        } else if (!guessesLeft || hangman.game.guesses.indexOf(letter) > -1) {
+            // Game is over or letter has been guessed, capitalize it then reveal it
+            letters[i] = letter.toUpperCase();
+        } else {
+            // Letter has not been guessed, hide it
+            letters[i] = "_";
+        }
     }
-  });
-  var guessesLeft = hangman.maxWrongGuesses - wrongGuesses.length;
-  document.getElementById("guessesLeft").innerHTML = guessesLeft + "";
+    document.getElementById("word").innerHTML = letters.join(" ");
 
-  var imgSrc = ["img/hangman", wrongGuesses.length, ".png"].join("");
-  document.getElementById("man").src = imgSrc;
-
-  // Hide letters from word and display it
-  var letters = hangman.game.word.split("");
-  for (var i = 0; i < letters.length; i++) {
-    var letter = letters[i];
-    if (letter === " ") {
-      // Make spaces explicit
-      letters[i] = "&nbsp;";
-    } else if (!guessesLeft || hangman.game.guesses.indexOf(letter) > -1) {
-      // Game is over or letter has been guessed, capitalize it then reveal it
-      letters[i] = letter.toUpperCase();
-    } else {
-      // Letter has not been guessed, hide it
-      letters[i] = "_";
-    }
-  }
-  document.getElementById("word").innerHTML = letters.join(" ");
-
-  // Update game status
-  var status = hangman.getGameStatus(hangman.game.word, hangman.game.guesses);
-  var statuses = {
-    win: "You win!",
-    lose: "You lose.",
-    in_progress: ""
-  };
-  document.getElementById("status").innerHTML = statuses[status];
+    // Update game status
+    var status = hangman.getGameStatus(hangman.game.word, hangman.game.guesses);
+    var statuses = {
+        win: "You win!",
+        lose: "You lose.",
+        in_progress: ""
+    };
+    document.getElementById("status").innerHTML = statuses[status];
 };
 
 // hangman.playerLetterClick(event): This function is called when the player clicks on
 // a letter to make a guess. This function in turn calls hangman.makeGuess() with the
 // button that the user clicked on.
 // It also handles disabling buttons once they are clicked.
-hangman.playerLetterClick = function(event) {
-  if (!hangman.game.word || !hangman.game.guesses) {
-    console.log(
-      "Ignoring user click. Game not initialized. Game: %O",
-      hangman.game
-    );
-    return;
-  }
+hangman.playerLetterClick = function (event) {
+    if (!hangman.game.word || !hangman.game.guesses) {
+        console.log(
+            "Ignoring user click. Game not initialized. Game: %O",
+            hangman.game
+        );
+        return;
+    }
 
-  if (!event.target || event.target.tagName !== "BUTTON") {
-    console.log("Ignore user click outside button. Event: %O", event);
-    return;
-  }
+    if (!event.target || event.target.tagName !== "BUTTON") {
+        console.log("Ignore user click outside button. Event: %O", event);
+        return;
+    }
 
-  if (event.target.disabled) {
-    console.log("Ignore user click to disabled button. Event: %O", event);
-    return;
-  }
+    if (event.target.disabled) {
+        console.log("Ignore user click to disabled button. Event: %O", event);
+        return;
+    }
 
-  var letter = event.target.innerHTML.trim().toLowerCase();
-  console.log("Player makes guesses '%s'", letter);
-  hangman.makeGuess(letter);
-  event.target.disabled = true;
+    var letter = event.target.innerHTML.trim().toLowerCase();
+    console.log("Player makes guesses '%s'", letter);
+    hangman.makeGuess(letter);
+    event.target.disabled = true;
 };
 
 // hangman.resetButtons(): letters become disabled when the player clicks on them, when a new game
 // starts, this function re-enables them.
-hangman.resetButtons = function() {
-  // Get all buttons
-  var buttons = document.querySelectorAll(".letters button");
-  if (buttons) {
-    [].forEach.call(buttons, function(button) {
-      button.disabled = false;
-    });
-  }
+hangman.resetButtons = function () {
+    // Get all buttons
+    var buttons = document.querySelectorAll(".letters button");
+    if (buttons) {
+        [].forEach.call(buttons, function (button) {
+            button.disabled = false;
+        });
+    }
 };

@@ -4,12 +4,12 @@
 // In this exercise we're building the game of Towers of Hanoi in the browser.
 // Very few functions are have been implemented for you this time.
 //
-// Rules: 
+// Rules:
 //  * You may only move one disk at a time.
 //  * You must never allow a bigger disk to go on top of a smaller disk.
 //  * All three disks start on the leftmost tower.
 //  * Game is won when all three disks are on the rightmost tower.
-// 
+//
 // Functions in this file are split into three groups
 //  * Game Functions
 //  * Browser Functions You Will Call
@@ -25,8 +25,8 @@ window.towers = {};
 
 // towers.newBoard(): create new Towers of Hanoi board in the starting state.
 // This is format towers.drawGame() expects your board to be in.
-towers.newBoard = function() { 
-  return [[2, 1, 0], [], []];
+towers.newBoard = function () {
+    return [[2, 1, 0], [], []];
 };
 
 // towers.isArray(something): return true if 'something' is an array, otherwise
@@ -35,10 +35,10 @@ towers.newBoard = function() {
 // ex. towers.isArray('a') -> false
 // ex. towers.isArray(0) -> false
 // ex. towers.isArray([]) -> true
-towers.isArray = function(something) {
-  // Array.isArray() is a built-in function check if something is an array.
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
-  return Array.isArray(something);
+towers.isArray = function (something) {
+    // Array.isArray() is a built-in function check if something is an array.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+    return Array.isArray(something);
 }
 
 // towers.isNumber(something): return true if 'something' is a number, otherwise
@@ -47,11 +47,11 @@ towers.isArray = function(something) {
 // ex. towers.isNumber('a') -> false
 // ex. towers.isNumber([]) -> false
 // ex. towers.isNumber(0) -> true
-towers.isNumber = function(something) {
-  // typeof is a built-in operator for getting the 'type' of a given value.
-  // We'll learn more about it soon, for now we only use it to tell if
-  // something is a number.
-  return typeof something === 'number';
+towers.isNumber = function (something) {
+    // typeof is a built-in operator for getting the 'type' of a given value.
+    // We'll learn more about it soon, for now we only use it to tell if
+    // something is a number.
+    return typeof something === 'number';
 }
 
 // towers.isValidBoard(board): return true if the given board is valid, false otherwise.
@@ -90,15 +90,59 @@ towers.isNumber = function(something) {
 // ex. towers.isValidBoard([[], [], [2, 1, 0]]) -> true: valid board
 // ex. towers.isValidBoard([[2], [], [2, 0]]) -> false: duplicate disk 2
 // ex. towers.isValidBoard([[2], [3], [1, 0]]) -> false: invalid disk 3
-towers.isValidBoard = function(board) {
-  // YOUR CODE HERE
-  // Delete the next line:
-  throw "towers.isValidBoard() not implemented, you should implement it.";
+towers.isValidBoard = function (board) {
+    if (!towers.isArray(board)) {
+        return false;
+    }
+    if (board.length !== 3) {
+        return false;
+    }
+    let hasOne = false;
+    let hasTwo = false;
+    let hasZero = false;
+    for (let x = 0; x < 3; x++) {
+        if (!towers.isArray(board[x])) {
+            return false;
+        }
+        for (let y = 0; y < board[x].length; y++) {
+            if (board[x][y] !== 1 && board[x][y] !== 2 && board[x][y] !== 0) {
+                return false;
+            }
+            if (board[x][y] === 1) {
+                if (hasOne === true) {
+                    return false;
+                }
+                hasOne = true;
+            }
+            if (board[x][y] === 2) {
+                if (hasTwo === true) {
+                    return false;
+                }
+                hasTwo = true;
+            }
+            if (board[x][y] === 0) {
+                if (hasZero === true) {
+                    return false;
+                }
+                hasZero = true;
+            }
+        }
+        for (let y = 0; y < board[x].length - 1; y++) {
+            if (board[x][y] < board[x][y + 1]) {
+                return false;
+            }
+        }
+    }
+    if (hasOne && hasTwo && hasZero) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // Store your game state here. You should set values to be null initially.
 towers.game = {
-  // YOUR CODE HERE
+    board : null
 };
 
 // towers.newGame(): Start a new game of Towers of Hanoi.
@@ -108,26 +152,26 @@ towers.game = {
 //  * Save the new board somewhere (maybe towers.game.board?)
 //  * Call towers.drawGame() with updated board
 //  * Call towers.clearWin() to clear the win message
-towers.newGame = function() {
-  // YOUR CODE HERE
-  // Delete the next line:
-  throw "towers.newGame() not implemented, you should implement it.";
+towers.newGame = function () {
+    towers.game.board = towers.newBoard();
+    towers.drawGame(towers.game.board);
+    towers.clearWin();
 }
 
 // towers.copyBoard(board): Make a copy of the given board and return it.
 // This is useful for creating copies of the game board that you can
 // modify to test hypothetical moves.
-towers.copyBoard = function(board) {
-  var newBoard = [];
-  // Array.forEach() is just another way of iterating over Arrays.
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-  board.forEach(function(tower) {
-    // Array.slice(0) makes a copy of a given array.  However, it does not make
-    // copies of arrays within the array. This is known as a shallow copy.
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-    newBoard.push(tower.slice(0));
-  });
-  return newBoard;
+towers.copyBoard = function (board) {
+    var newBoard = [];
+    // Array.forEach() is just another way of iterating over Arrays.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+    board.forEach(function (tower) {
+        // Array.slice(0) makes a copy of a given array.  However, it does not make
+        // copies of arrays within the array. This is known as a shallow copy.
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+        newBoard.push(tower.slice(0));
+    });
+    return newBoard;
 }
 
 // towers.makeMove(fromTower, toTower): move the disk at the top of fromTower
@@ -139,19 +183,31 @@ towers.copyBoard = function(board) {
 //  * The FROM tower is empty
 //  * The disk at the top of FROM tower is larger than the disk at the top of
 //    TO tower (you can rely on isValidBoard for this one)
-// 
+//
 // This function should:
 //  * Use towers.copyBoard() to copy the board to make test moves.
 //  * Use towers.isValidBoard() to verify if the board is valid after test moves move.
 //  * If move is valid, update the saved board (maybe in towers.game.board?)
 //  * Call towers.drawGame() with updated board
 //  * If the player has completed the game successfully call towers.win()
-// 
+//
 // ex. towers.makeMove(0, 1) -> move disk from tower 0 to tower 1
-towers.makeMove = function(fromTower, toTower) {
-  // YOUR CODE HERE
-  // Delete the next line:
-  throw "towers.makeMove() not implemented, you should implement it.";
+towers.makeMove = function (fromTower, toTower) {
+    if(fromTower.length === 0) {
+        throw "Move invalid: the tower you are trying to move from is empty";
+    }
+    let testBoard = towers.copyBoard(towers.game.board);
+    testBoard[toTower].push(testBoard[fromTower][testBoard[fromTower].length - 1]);
+    testBoard[fromTower].pop();
+    if(!towers.isValidBoard(testBoard)) {
+        throw "Move invalid: you are trying to place a larger disk on a smaller disk";
+    }
+    towers.game.board = testBoard;
+    towers.drawGame(towers.game.board);
+    if(towers.game.board[2][0] === 2 && towers.game.board[2][1] === 1 && towers.game.board[2][2] === 0) {
+        towers.win();
+    }
+
 }
 
 // ----Browser Functions You Will Call----
@@ -161,44 +217,44 @@ towers.makeMove = function(fromTower, toTower) {
 // Uses towers.isValidBoard() to verify the board is valid before drawing it
 // Make sure you call this function whenever the game board is updated when a
 // new game starts or when a new move is made.
-towers.drawGame = function(board) {
-  if (! towers.isValidBoard(board)) {
-    console.log('Board is not valid, not drawing.', board);
-    return;
-  }
+towers.drawGame = function (board) {
+    if (!towers.isValidBoard(board)) {
+        console.log('Board is not valid, not drawing.', board);
+        return;
+    }
 
-  console.log('Drawing new board:', board);
-  // Erase old board completely
-  var boardElem = document.getElementById('board');
-  boardElem.innerHTML = '';
-  // Draw new board
-  board.forEach(function(tower, i) {
-    var towerElem = document.createElement('div');
-    towerElem.classList.add('tower');
-    towerElem.classList.add('tower' + i);
-    towerElem.innerHTML = '<button onclick="towers.select(' + i + ')" class="select-btn">Select</button>\n' +
-                          '<button onclick="towers.drop(' + i + ')" class="drop-btn">Drop</button>';
-    tower.forEach(function(disk) {
-      var diskElem = document.createElement('div');
-      diskElem.classList.add('disk');
-      diskElem.classList.add('disk' + disk);
-      towerElem.appendChild(diskElem);
+    console.log('Drawing new board:', board);
+    // Erase old board completely
+    var boardElem = document.getElementById('board');
+    boardElem.innerHTML = '';
+    // Draw new board
+    board.forEach(function (tower, i) {
+        var towerElem = document.createElement('div');
+        towerElem.classList.add('tower');
+        towerElem.classList.add('tower' + i);
+        towerElem.innerHTML = '<button onclick="towers.select(' + i + ')" class="select-btn">Select</button>\n' +
+            '<button onclick="towers.drop(' + i + ')" class="drop-btn">Drop</button>';
+        tower.forEach(function (disk) {
+            var diskElem = document.createElement('div');
+            diskElem.classList.add('disk');
+            diskElem.classList.add('disk' + disk);
+            towerElem.appendChild(diskElem);
+        });
+        boardElem.appendChild(towerElem);
     });
-    boardElem.appendChild(towerElem);
-  });
 }
 
 // towers.win(): Update the browser to indicate that the player has successfully
 // completed the game. Should be called after player makes final successful
 // move.
-towers.win = function() {
-  document.getElementById('win').innerHTML = 'You win!';
+towers.win = function () {
+    document.getElementById('win').innerHTML = 'You win!';
 }
 
 // towers.clearWin(): Update the browser to remove the win message. Should be
 // called when new game starts.
-towers.clearWin = function() {
-  document.getElementById('win').innerHTML = '';
+towers.clearWin = function () {
+    document.getElementById('win').innerHTML = '';
 }
 
 // ----Browser Functions You Won't Call----
@@ -206,12 +262,12 @@ towers.clearWin = function() {
 // You can still read them if you're curious.
 
 // towers.select(): Select tower to move a disk FROM.
-// Highlights selected tower and saved tower number. 
-towers.select = function(i) {
-  console.log('Player selected tower %s', i);
-  document.getElementsByClassName('tower' + i)[0].classList.toggle('selected')
-  document.getElementById('board').classList.add('selecting');
-  towers.selectedTower = i;
+// Highlights selected tower and saved tower number.
+towers.select = function (i) {
+    console.log('Player selected tower %s', i);
+    document.getElementsByClassName('tower' + i)[0].classList.toggle('selected')
+    document.getElementById('board').classList.add('selecting');
+    towers.selectedTower = i;
 };
 
 // Since the move action is two step process, we have to remember the FROM
@@ -221,24 +277,24 @@ towers.selectedTower = -1;
 // towers.drop(): Select tower to move the disk TO. Clears highlighted tower.
 // Calls towers.makeMove() with from and to towers and displays message to
 // player if an error is received from towers.makeMove().
-towers.drop = function(i) {
-  var from = towers.selectedTower;
-  [].forEach.call(document.getElementsByClassName('tower'), function(node) {
-    node.classList.remove('selected');
-  });
-  document.getElementById('board').classList.remove('selecting');
-  console.log('Player makes move from %s to tower %s', towers.selectedTower, i);
-  towers.selectedTower = -1;
+towers.drop = function (i) {
+    var from = towers.selectedTower;
+    [].forEach.call(document.getElementsByClassName('tower'), function (node) {
+        node.classList.remove('selected');
+    });
+    document.getElementById('board').classList.remove('selecting');
+    console.log('Player makes move from %s to tower %s', towers.selectedTower, i);
+    towers.selectedTower = -1;
 
-  try {
-    towers.makeMove(from, i);
-  } catch (e) {
-    alert('Error making move: ' + e);
-  }
+    try {
+        towers.makeMove(from, i);
+    } catch (e) {
+        alert('Error making move: ' + e);
+    }
 };
 
 // towers.newGameClick(): Called when player clicks new game button,
 // calls towers.newGame().
-towers.newGameClick = function() {
-  towers.newGame();
+towers.newGameClick = function () {
+    towers.newGame();
 };

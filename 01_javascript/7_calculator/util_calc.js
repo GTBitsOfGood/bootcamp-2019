@@ -53,6 +53,77 @@ window.util = {};
 // ex. util.calc('-1 * sqrt 4 - 3') -> -5
 // ex. util.calc('sqrt 9 - 3 * 10') -> -27
 // ex. util.calc('10 * sqrt 81') -> 90
-util.calc = function(expression) {
-  // YOUR CODE HERE
+util.calc = function (expression) {
+    //partI
+    let hasOperator = 0;
+    let hasNumber = 0;
+    if (expression.length === 0) {
+        throw 'Error, empty expression';
+    }
+    let testArray = Object.values(expression).join('').split(' ');
+    for (let x = 0; x < testArray.length; x++) {
+        if (testArray[x] === ('+' || '*' || '/')) {
+            hasOperator++;
+            if (x === testArray.length - 1 || x === 0) {
+                throw 'Error, operator at wrong spot';
+            }
+        }
+        if (testArray[x] === '-' && (isNaN(testArray[(x + 1) % testArray.length]) || x === testArray.length - 1)) {
+            hasOperator++;
+            if (x === testArray.length - 1 || x === 0) {
+                throw 'Error, operator at wrong spot';
+            }
+        }
+        if (!isNaN(testArray[x])) {
+            hasNumber++;
+        }
+    }
+    if (hasNumber === 0) {
+        throw 'Error, no numbers';
+    }
+    if (hasNumber > hasOperator + 1) {
+        throw 'Error, too many numbers';
+    }
+    if (!(hasNumber > hasOperator)) {
+        throw 'Error, too many operators';
+    }
+    if (hasOperator === 0 && hasNumber !== 1) {
+        throw 'Error, missing operator';
+    }
+    // Part 2. Implement support for addition and subtraction.
+//
+// ex. util.calc('1') -> 1
+// ex. util.calc('-12') -> -12
+// ex. util.calc('3 + 2') -> 5
+// ex. util.calc('3 + 8 + 2 + 1    ') -> 14
+// ex. util.calc('2 - 1 + 5 + 6') -> 12
+// ex. util.calc('-1 + 3 - 2 + 5') -> 5
+    let add = 0;
+    let subtract = 0;
+    if (hasNumber === 1) {
+        return parseInt(expression);
+    }
+    let plusArray = testArray.join('').split('+');
+    console.log('plus' + plusArray);
+    let minusArray = [];
+
+    plusArray.forEach(function(item) {
+        minusArray.push(item.split(' - '));
+    })
+
+    console.log('minus' + minusArray);
+    minusArray.forEach(function(item) {
+        for (let x = 0; x < item.length; x++) {
+            if(x === 0) {
+                subtract = parseInt(item[x]);
+            } else {
+                subtract -= parseInt(item[x]);
+            }
+        }
+        console.log(subtract);
+        add += subtract;
+    })
+    console.log(add);
+    return add;
+
 };

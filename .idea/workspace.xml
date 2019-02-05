@@ -1,16 +1,369 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ChangeListManager">
+    <list default="true" id="41f44636-62b2-4024-9177-90051f43a8e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/2Hangman.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/2_games/2Hangman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="bootcamp" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>td</find>
+      <find>draw</find>
+      <find>board</find>
+      <find>newBoard</find>
+      <find>getComp</find>
+      <find>spy</find>
+      <find>isGuess</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" />
+        <option value="$USER_HOME$/Downloads/Prison.java" />
+        <option value="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" />
+        <option value="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" />
+        <option value="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" />
+        <option value="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" />
+        <option value="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js" />
+        <option value="E:/VGdev/ThePriceOfWealth/The-Price-of-Wealth-dev/README.md" />
+        <option value="$PROJECT_DIR$/01_javascript/2_games/2Hangman.js" />
+        <option value="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js" />
+        <option value="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" />
+        <option value="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js" />
+        <option value="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" />
+        <option value="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" />
+        <option value="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549333903529" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41f44636-62b2-4024-9177-90051f43a8e8" name="Default Changelist" comment="" />
+      <created>1548373700764</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548373700764</updated>
+      <workItem from="1548373713335" duration="1355000" />
+      <workItem from="1548818979824" duration="3333000" />
+      <workItem from="1548858929436" duration="17806000" />
+      <workItem from="1548975077015" duration="1911000" />
+      <workItem from="1549033717039" duration="5128000" />
+      <workItem from="1549133995772" duration="584000" />
+      <workItem from="1549134901744" duration="8710000" />
+      <workItem from="1549249293553" duration="4480000" />
+      <workItem from="1549293005634" duration="14302000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="55945000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <layout>
+      <window_info id="Structure" order="0" side_tool="true" weight="0.24966443" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.5295302" />
+      <window_info id="Learn" order="6" weight="0.3295302" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info anchor="bottom" id="CheckStyle" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="186" column="7" lean-forward="true" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Prison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="70" column="2" lean-forward="true" selection-start-line="70" selection-start-column="2" selection-end-line="70" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="195" column="2" lean-forward="true" selection-start-line="195" selection-start-column="2" selection-end-line="195" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="170" column="43" lean-forward="true" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="493">
+            <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="149" column="2" lean-forward="true" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="215" column="60" lean-forward="true" selection-start-line="215" selection-start-column="60" selection-end-line="215" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/VGdev/ThePriceOfWealth/The-Price-of-Wealth-dev/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/2_games/2Hangman_tests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/2_games/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/2_games/2Hangman.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="140" column="5" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/3_debugging/debug.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-364" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/3_debugging/debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="183" selection-start-line="183" selection-end-line="184" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/7_calculator/util_calc.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="201" column="41" lean-forward="true" selection-start-line="201" selection-start-column="41" selection-end-line="201" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
