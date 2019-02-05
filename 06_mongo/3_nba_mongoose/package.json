@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "mongoose": "^5.0.3"
+    "mongoose": "^5.4.7"
   },
   "scripts": {
     "start": "nodemon index.js"
@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.18.9"
   }
 }
