@@ -126,7 +126,7 @@ function displayContacts(){
 function addContact() {
 // YOUR CODE HERE
 //     console.log(argv[1]);
-    if (argv.length === 1 || !argv[1].match(/[a-z][A-Z]/i)) {
+    if (argv.length === 1 || !/^[a-zA-Z]+$/.test(argv[1])) {
         // console.log('a');
         console.log('Invalid contact format');
     } else if (argv.length > 2 && isNaN(argv[2])) {
@@ -144,7 +144,6 @@ function addContact() {
         if (hasMatch) {
             // console.log('c');
             console.log("${argv[1]} already in the Address Book");
-            return undefined;
         } else if (argv.length > 2) {
             // console.log('d');
             let l = data.length;
@@ -155,15 +154,16 @@ function addContact() {
             // console.log(data);
             jsonfile.writeFileSync(JSON_FILE, data);
             // console.log(data);
-            console.log('"Added contact Buzz"');
-        } else {
-            data[argv[1]] = -1;
+            console.log("Added contact ${argv[1]} , and number: ${argv[2]}");
+        } else if (argv.length === 2) {
+            let l = data.length;
+            data[l] = {};
+            data[l]['name'] = argv[1];
+            data[l]['number'] = -1;
             jsonfile.writeFileSync(JSON_FILE, data);
             console.log("Added contact Buzz");
-            return undefined;
         }
     }
-    return data;
 }
 
 
@@ -179,8 +179,8 @@ function addContact() {
 */
 function updateContact(){
 // YOUR CODE HERE
-    if (argv.length < 3 || !argv[1].match(/[a-z][A-Z]/i)) {
-        return undefined;
+    if (argv.length === 1 || !/^[a-zA-Z]+$/.test(argv[1])) {
+        console.log("Invalid");
     }
     var hasMatch =false;
     for (var index = 0; index < data.length; ++index) {
@@ -199,6 +199,8 @@ function updateContact(){
     if (hasMatch) {
         jsonfile.writeFileSync(JSON_FILE, data);
         console.log("update value for ${args[1]}");
+    } else {
+        console.log("No contact found");
     }
     // console.log(data);
 }
@@ -222,10 +224,13 @@ function deleteContact(){
                     return obj
                 }
             });
-            console.log(data);
+            // console.log(data);
             jsonfile.writeFileSync(JSON_FILE, data);
             break;
         }
+    }
+    if (!hasMatch) {
+        console.log("No contact found");
     }
 
 }

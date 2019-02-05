@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Investment exercise",
   "main": "app.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csvjson": "^5.1.0"
   }
 }
