@@ -14,3 +14,15 @@
 //    *
 //   *
 //  *
+
+var path = require('path');
+
+var one = require('./../../b/one.js');
+var two = require('./../two.js');
+var three = require('./../../b/three.js');
+var four = require('./four.js');
+
+one.first();
+one.second()
+two.twoFunc();
+three.logger(four.horizons);
