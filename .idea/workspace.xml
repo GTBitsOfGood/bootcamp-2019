@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41f44636-62b2-4024-9177-90051f43a8e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/2Hangman.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/2_games/2Hangman.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js" afterDir="false" />
-    </list>
+    <list default="true" id="41f44636-62b2-4024-9177-90051f43a8e8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +13,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/legacy/javascript/2_games/1Tic_Tac_Toe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-            </state>
+            <state relative-caret-position="-4335" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/legacy/javascript/7_calculator/util_calc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1734" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/02_javascript/1_basics/Ex1_arrays_and_strings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1683" />
           </provider>
         </entry>
       </file>
@@ -74,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -84,14 +81,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
               <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
+              <item name="02_javascript" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
+              <item name="02_javascript" type="462c0819:PsiDirectoryNode" />
+              <item name="1_basics" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -102,7 +110,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549333903529" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549337590711" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -143,7 +151,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55945000" />
+    <option name="totallyTimeSpent" value="56017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -155,14 +163,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.24966443" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.5295302" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.5375839" />
       <window_info id="Learn" order="6" weight="0.3295302" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -363,6 +371,21 @@
         <state relative-caret-position="34">
           <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/legacy/javascript/2_games/1Tic_Tac_Toe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4335" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/legacy/javascript/7_calculator/util_calc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_javascript/1_basics/Ex1_arrays_and_strings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683" />
       </provider>
     </entry>
   </component>
