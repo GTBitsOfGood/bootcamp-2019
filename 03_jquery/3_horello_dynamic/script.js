@@ -1,4 +1,0 @@
-"use strict";
-
-// YOUR JAVASCRIPT CODE GOES HERE
-
