@@ -26,7 +26,7 @@ to unzip them.
 
 Each line in each file contains 4 fields separated by a single space character:
 
-```
+```text
 [language] [page name] [number of visits] [bandwidth usage in bytes]
 ```
 
@@ -34,7 +34,7 @@ For example the following line means the page (i.e. article) on Annie Villeneuve
 in the French language Wikipedia received 4 visits, which resulted in 40,831
 bytes (~40 Kb)being downloaded.
 
-```
+```text
 fr Annie_Villeneuve 4 40831
 ```
 
@@ -45,7 +45,7 @@ As with most real world data, there is some data format issues we need to accoun
 1. Ignore lines where the language contains the string `.mw`. These are
   mobile subtotals that we don't care about. Example:
 
-    ```
+    ```text
     en.mw en 5178493 118985328227
     ady.mw ady 1 12033
     ```
@@ -53,7 +53,7 @@ As with most real world data, there is some data format issues we need to accoun
 1. Ignore lines where the page name contains a `:`. These pages
   don't contain articles so we don't care about them. Example:
 
-    ```
+    ```text
     en Special:Search 25189 190452063
     aa Talks:Contributions/Sirmylesnagopaleentheda 1 5812
     ```
@@ -80,20 +80,20 @@ The function `countLines` counts the lines in a given file one line at a time
 [`readline` library](https://nodejs.org/api/readline.html):
 
 ```javascript
-var fs = require('fs');
-var readline = require('readline');
+const fs = require('fs');
+const readline = require('readline');
 
 function countLines(fileName) {
-  var input = fs.createReadStream(fileName);
-  var rl = readline.createInterface({
+  const input = fs.createReadStream(fileName);
+  const rl = readline.createInterface({
     input: input
   });
-  var count = 0;
-  rl.on('line', function(line) {
+  let count = 0;
+  rl.on('line', line => {
     // This is called for each line in file
     count++;
   });
-  rl.on('close', function() {
+  rl.on('close', () => {
     // This is called when the file is done being read finished
     console.log('There are %s lines in file %s', count, fileName);
   });
@@ -120,6 +120,5 @@ written in that language received the most visits during one hour starting June
 
 For some use cases it may be useful to know which topics are trending. In this part we will be calculating changes in traffic for the top 10 pages you found in Part 1. Calculate the total gain or loss in traffic compared to the same hour the next day, June 7th 2016 1700
 GMT.
-
 
 [File Information](https://wikitech.wikimedia.org/wiki/Analytics/Data/Pagecounts-raw)
