@@ -46,7 +46,7 @@ Today we will learn how to use MongoDB, mLab, and Mongoose to persist data.
 ### [Watch me: Environment Variables part 1](https://youtu.be/Xw5OXKBv1sQ)
 
 
-### **[TODO: exercises in `/6_mongo/1_mongo_intro`](./1_mongo_intro)**
+### **[TODO: exercises in `/06_mongo/1_mongo_intro`](./1_mongo_intro)**
 
 ## Section 3: Mongoose Updates & Deletes
 
@@ -56,7 +56,7 @@ Today we will learn how to use MongoDB, mLab, and Mongoose to persist data.
 
 ### [Watch me: Mongoose Validation](https://youtu.be/RoMheTLXjwo)
 
-### **[TODO: exercises in `/6_mongo/2_todo_mongoose`](./2_todo_mongoose)**
+### **[TODO: exercises in `/06_mongo/2_todo_mongoose`](./2_todo_mongoose)**
 
 ## Section 4: Mongoose w/ Express
 
@@ -66,4 +66,4 @@ Now that we've covered the basics of Mongoose, it's time to start using it with 
 
 In this exercise you will use Express to build some API endpoints and Mongoose to persist data.
 
-### **[TODO: exercises in `/6_mongo/3_nba_mongoose`](./3_nba_mongoose)**
+### **[TODO: exercises in `/06_mongo/3_nba_mongoose`](./3_nba_mongoose)**

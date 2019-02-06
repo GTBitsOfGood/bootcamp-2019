@@ -7,7 +7,7 @@
 | 1      | [HTML & CSS][html]            | [Videos][html-vids]     | 5 hours |
 | 2      | [Node & CLIs][node]           | [Videos][node-vids]     | 4 hours |
 | 2      | [Express][express]            | [Videos][express-vids]  | 4 hours |
-| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | 5 hours |
+| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | 3 hours |
 
 
 <!---| 3 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
