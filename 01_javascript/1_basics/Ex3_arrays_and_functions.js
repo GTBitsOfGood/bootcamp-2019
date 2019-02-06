@@ -46,6 +46,9 @@ window.toolbox = window.toolbox || {};
 //  sum([1, 2, -3]) -> 0
 toolbox.sum = function(array) {
   // YOUR CODE HERE
+  let count = 0;
+  array.forEach(function(item) {count+= item});
+  return count;
 };
 
 // Exercise 3.2 product(array)
@@ -64,6 +67,9 @@ toolbox.sum = function(array) {
 //  product([2, -3]) -> -6
 toolbox.product = function(array) {
   // YOUR CODE HERE
+  let count = 1;
+  array.forEach(function(item) {count*= item});
+  return count;
 };
 
 // Example 3.3 transform(array, fn)
@@ -78,6 +84,12 @@ toolbox.product = function(array) {
 //  transform([1, 2], function(n) { return n * 2; }) -> [2, 4]
 toolbox.transform = function(array, fn) {
   // YOUR CODE HERE
+  let arr = [];
+  array.forEach(function(item) {
+  	arr.push(fn(item));
+  })
+  return arr;
+  
 };
 
 // Exercise 3.4 filter(array, fn)
@@ -96,6 +108,14 @@ toolbox.transform = function(array, fn) {
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
   // YOUR CODE HERE
+  let arr = [];
+  array.forEach(function(item) {
+  	if(fn(item)) {
+  		arr.push(item);
+  	}
+  })
+  return arr;
+
 };
 
 // Exercise 3.5 every(array, fn)
@@ -120,7 +140,11 @@ toolbox.filter = function(array, fn) {
 //  every(['abcdefghijk'], isLong) -> true
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
-  // YOUR CODE HERE
+	let allTrue = true;
+	array.forEach(function(item) {
+		if(!fn(item)) allTrue = false;
+	})
+	return allTrue;
 };
 
 // Exercise 3.6 find(array, fn)
@@ -140,7 +164,11 @@ toolbox.every = function(array, fn) {
 //  find([1, 3, 5], isEven) -> -1
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
 toolbox.find = function(array, fn) {
-  // YOUR CODE HERE
+	let loc = -1;
+  array.forEach(function(item, index) {
+  	if(loc === -1 && fn(item)) loc = index;
+  })
+  return loc;
 };
 
 // Bonus Exercise! zip(array1, array2)
@@ -152,5 +180,9 @@ toolbox.find = function(array, fn) {
 //  zip(['moe', 'larry', 'curly'], [30, 40, 50]) ->
 //    [["moe", 30], ["larry", 40], ["curly", 50]]
 toolbox.zip = function(array1, array2) {
-  // YOUR CODE HERE
+  let arr = [];
+  array1.forEach(function(item, index) {
+  	arr.push([item, array2[index]]);
+  })
+  return arr;
 };
