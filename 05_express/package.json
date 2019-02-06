@@ -1,0 +1,14 @@
+{
+  "name": "05_express",
+  "version": "1.0.0",
+  "description": "1. [Express Exercises](1_express_intro/README.md)\r 2. [Web 1.0 Guestbook](2_guestbook/README.md)\r 3. [Bonus: Trello CSV Import Export](b1_trello-csv/README.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

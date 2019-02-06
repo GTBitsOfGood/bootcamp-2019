@@ -45,6 +45,11 @@ window.toolbox = window.toolbox || {};
 // ex.
 //  sum([1, 2, -3]) -> 0
 toolbox.sum = function(array) {
+	let sum = 0;
+	array.forEach((item) => {
+		sum += item;
+	});
+	return sum;
   // YOUR CODE HERE
 };
 
@@ -64,6 +69,11 @@ toolbox.sum = function(array) {
 //  product([2, -3]) -> -6
 toolbox.product = function(array) {
   // YOUR CODE HERE
+	let sum = 1;
+	array.forEach((item) => {
+		sum *= item;
+	});
+	return sum;
 };
 
 // Example 3.3 transform(array, fn)
@@ -78,6 +88,11 @@ toolbox.product = function(array) {
 //  transform([1, 2], function(n) { return n * 2; }) -> [2, 4]
 toolbox.transform = function(array, fn) {
   // YOUR CODE HERE
+  let arr = [];
+  array.forEach((item) => {
+ 		arr.push(fn(item));
+  });
+  return arr;
 };
 
 // Exercise 3.4 filter(array, fn)
@@ -96,6 +111,13 @@ toolbox.transform = function(array, fn) {
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
   // YOUR CODE HERE
+  let arr = [];
+  array.forEach((item) => {
+  	if (fn(item)) {
+  		arr.push(item);
+  	}
+  });
+  return arr;
 };
 
 // Exercise 3.5 every(array, fn)
@@ -121,6 +143,13 @@ toolbox.filter = function(array, fn) {
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
   // YOUR CODE HERE
+  let bool = true;
+  array.forEach((item) => {
+  	if (!fn(item)) {
+  		bool = false;
+  	}
+  });
+  return bool;
 };
 
 // Exercise 3.6 find(array, fn)
@@ -141,6 +170,17 @@ toolbox.every = function(array, fn) {
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
 toolbox.find = function(array, fn) {
   // YOUR CODE HERE
+  let ind = [-1];
+  array.forEach((item, index) => {
+  	if (fn(item)) {
+  		ind.push(index);
+  	}
+  });
+  console.log(ind);
+  if (ind.length > 1){
+  	return ind[1];
+  }
+  	return ind[0];
 };
 
 // Bonus Exercise! zip(array1, array2)
@@ -153,4 +193,9 @@ toolbox.find = function(array, fn) {
 //    [["moe", 30], ["larry", 40], ["curly", 50]]
 toolbox.zip = function(array1, array2) {
   // YOUR CODE HERE
+  let arr = [];
+  array1.forEach((item, index) => {
+  	arr.push([item, array2[index]]);
+  });
+  return arr;
 };

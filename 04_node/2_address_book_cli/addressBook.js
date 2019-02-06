@@ -3,7 +3,7 @@
 var fs = require('fs');
 var validator = require('validator')
 //require columnify here
-
+var columnify = require('columnify')
 
 var JSON_FILE = 'data.json'
 // If data.json file doesn't exist, create an empty one
@@ -34,7 +34,8 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
-
+  let commands = process.argv[0];
+  return commands;
 }
 
 //store the command and execute its corresponding function
@@ -69,9 +70,21 @@ switch(input){
 */
 function displayContacts(){
     //YOUR CODE HERE
-
-    // console.log(columnify(data)); //UNCOMMENT
-
+    let tester = columnify(data, {config: {
+        name: {
+            headingTransform:
+            function(heading) {
+              return "CONTACT_NAME";
+            }
+        },
+        number: {
+          headingTransform:
+          function(heading) {
+            return "PHONE_NUMBER";
+          }
+        }
+    }}); //UNCOMMENT
+    console.log(tester);
 }
 
 
@@ -89,6 +102,26 @@ function displayContacts(){
 */
 function addContact() {
 // YOUR CODE HERE
+let name = process.argv[1];
+let number = -1;
+if (process.argv[2] !== undefined) {
+  number = parseInt(process.argv[2]);
+}
+let repeat = false;
+data.forEach((item) => {
+  if (item.name === name) {
+    console.log('already in contact book');
+    repeat = true;
+  }
+});
+let newcontact = {
+  name: name,
+  number: number
+}
+if (!repeat) {
+  data.push(newcontact);
+  console.log('successfully added contact');
+}
 
 }
 
@@ -105,12 +138,45 @@ function addContact() {
 */
 function updateContact(){
 // YOUR CODE HERE
+let oldname = process.argv[1];
+let occured = false;
+let occind = -1;
+data.forEach((item, index) => {
+  if (item.name === oldname) {
+    occured = true;
+    occind = index;
+  }
+});
+if (!occured) {
+  console.log('no instance found');
+} else {
+  let second = process.argv[2];
+  if (isNaN(second)) {
+    data[occind].name = second;
+  } else {
+    data[occind].number = second;
+  }
+}
 }
 
 
 //BONUS Implement deleteContact
 function deleteContact(){
     //YOUR CODE HERE
+    let oldname = process.argv[1];
+    let occured = false;
+    let occind = -1;
+    data.forEach((item, index) => {
+      if (item.name === oldname) {
+        occured = true;
+        occind = index;
+      }
+    });
+    if (!occured) {
+      console.log('no instance found');
+    } else {
+      data.splice(occind, 1);
+    }
 }
 
 
