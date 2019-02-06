@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "dependencies": {
     "columnify": "^1.5.4",
-    "jasmine-node": "^1.14.5",
+    "jasmine-node": "^1.16.2",
     "jsonfile": "^2.3.1",
     "validator": "^8.2.0"
   },

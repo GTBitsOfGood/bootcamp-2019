@@ -1,24 +1,20 @@
 "use strict";
 // The node builtin filesystem library.
-var fs = require('fs');
-var validator = require('validator')
-//require columnify here
+const fs = require('fs');
+const validator = require('validator')
+const columnify = require('columnify')
 
-
-var JSON_FILE = 'data.json'
+const JSON_FILE = 'data.json'
 // If data.json file doesn't exist, create an empty one
 ensureFileExists();
 // This is where our Address Book is stored.
 var data = JSON.parse(fs.readFileSync(JSON_FILE));
 
-
-
-
 //the message that will be displayed  If no arguments are specified or if user types help
-var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
+const helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
 
 
-var argv = process.argv
+const argv = process.argv
 //console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
 
@@ -33,8 +29,7 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
-  // YOUR CODE HERE
-
+  return argv[0] || '';
 }
 
 //store the command and execute its corresponding function
@@ -67,14 +62,19 @@ switch(input){
 * Do not return anything, console.log() the contacts
 *
 */
-function displayContacts(){
-    //YOUR CODE HERE
-
-    // console.log(columnify(data)); //UNCOMMENT
-
+function displayContacts() {
+  console.log(data)
+  console.log(columnify(data, {
+    headingTransform: (heading) => {
+      if (heading === 'key') return 'CONTACT_NAME'
+      else if (heading === 'value') return 'PHONE_NUMBER'
+    },
+    dataTransform: (data) => {
+      if (data === '-1') return '-None-'
+      else return data
+    }
+  }))
 }
-
-
 
 //----------------- PART 3 'add' command---------------------//
 /**
@@ -88,10 +88,23 @@ function displayContacts(){
 * if no number is provided, store -1 as their number
 */
 function addContact() {
-// YOUR CODE HERE
-
+  const name = argv[1];
+  const number = argv[2];
+  if (name === undefined) {
+    console.log('First argument (name) was not given')
+  } else if (!/^[a-z]+$/i.test(name)) {
+    console.log('Name (first argument) must contain only alphabetic characters')
+  } else if (!/^\d+$/.test(number)) {
+      console.log('Number (second argument) must consist of only digits')
+  } else if (data.indexOf(name) !== -1) {
+    console.log(`${name} already in Address Book`)
+  } else {
+    if (number === undefined) number = -1
+    data[name] = number;
+    writeFile(data);
+    console.log(`Added ${name} with phone number ${number}`)
+  }
 }
-
 
 //----------------- PART 4 'update' command---------------------//
 /**
