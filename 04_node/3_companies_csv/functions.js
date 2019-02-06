@@ -8,6 +8,13 @@ module.exports = {
   // Return the amount of the largest investment.
   singleLargestInvestment: function(arr){
     // Fields to be parsed: "originalInvestment", "valueToday"
+    let max = 0;
+    for (let i=0; i<arr.length-1; i++){
+      if (arr[i]>arr[i+1]){
+        max = arr[i];
+      }
+    }
+    return max;
   },
 
   // Find the average of all the original investments for all companies.
@@ -16,6 +23,11 @@ module.exports = {
   // Return a Number.
   averageOfOriginalInvestments: function(arr){
     // Fields to be parsed: "originalInvestment", "valueToday"
+    let sum = 0;
+    for (let i=0; i<arr.length; i++) {
+      sum += arr[i];
+    }
+    return sum/arr.length;
   },
 
   // Find out how much a company got as the original investments. In this case, You
@@ -30,6 +42,14 @@ module.exports = {
   // }
   totalOriginalInvestmentForCompanies: function(arr){
     // Fields to be parsed: "originalInvestment", "valueToday"
+    let sum = 0;
+    for (let i = 0; i<arr.length; i++){
+      sum += arr[i].originalInvestment;
+    }
+    let object1 = {
+      1:
+      2: sum
+    }
   },
 
   // Find out how much money an investor spent as  original investments. You will

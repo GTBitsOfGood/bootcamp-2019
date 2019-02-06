@@ -41,6 +41,12 @@ console.log("let's see what's in our toolbox:", toolbox);
 // ex. toolbox.countEven(10) -> [0, 2, 4, 6, 8]
 toolbox.countEven = function(n) {
   // YOUR CODE HERE
+  let array = toolbox.count(n)
+ return toolbox.filter(array, function (item){
+    if (item %2 == 0){
+        return true;
+    }
+ });
 };
 
 // Exercise 5.2 indexOf(array, item)
@@ -55,6 +61,11 @@ toolbox.countEven = function(n) {
 // http://underscorejs.org/#indexOf
 toolbox.indexOf = function(array, item) {
   // YOUR CODE HERE
+
+  return toolbox.find(array, function first(x){
+    return x==item;
+    });
+
 };
 
 // Exercise 5.3 lastIndexOf(array, fun)
@@ -82,6 +93,14 @@ toolbox.indexOf = function(array, item) {
 // http://underscorejs.org/#lastIndexOf
 toolbox.lastIndexOf = function(array, item) {
   // YOUR CODE HERE
+  let index = toolbox.find(array.reverse(), function (x){
+    return item==x;
+  });
+  if (index == -1){
+    return index;
+  } else{
+    return array.length-index-1;
+  }
 };
 
 // Exercise 5.4 negate(fun)
@@ -104,6 +123,9 @@ toolbox.lastIndexOf = function(array, item) {
 // http://underscorejs.org/#negate
 toolbox.negate = function(fun) {
   // YOUR CODE HERE
+   return function retFun(x){
+    return !fun(x);
+}
 };
 
 // Exercise 5.5 reject(array, fun)
@@ -128,6 +150,7 @@ toolbox.negate = function(fun) {
 // http://underscorejs.org/#reject
 toolbox.reject = function(array, fun) {
   // YOUR CODE HERE
+  return toolbox.filter(array, toolbox.negate(fun))
 };
 
 // Bonus Exercise! difference(array1, array2)
@@ -144,4 +167,7 @@ toolbox.reject = function(array, fun) {
 // http://underscorejs.org/#difference
 toolbox.difference = function(array1, array2) {
   // YOUR CODE HERE
+  return toolbox.filter(array1, function (item){
+    return array2.indexOf(item) == -1;
+  });
 };

@@ -10,6 +10,7 @@ var JSON_FILE = 'data.json'
 ensureFileExists();
 // This is where our Address Book is stored.
 var data = JSON.parse(fs.readFileSync(JSON_FILE));
+const columnify = require('columnify');
 
 
 
@@ -18,9 +19,9 @@ var data = JSON.parse(fs.readFileSync(JSON_FILE));
 var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
 
 
-var argv = process.argv
+var argv = process.argv.slice(2);
 //console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
-argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
+ //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
 
 
 //------------PART1: PARSING COMMAND LINE ARGUMENTS------------------------
@@ -34,6 +35,12 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
+
+  if (argv.length > 0){
+    return argv[0];
+  } else {
+    return '';
+  }
 
 }
 
@@ -70,7 +77,7 @@ switch(input){
 function displayContacts(){
     //YOUR CODE HERE
 
-    // console.log(columnify(data)); //UNCOMMENT
+    console.log(columnify(data)); //UNCOMMENT
 
 }
 
@@ -89,6 +96,8 @@ function displayContacts(){
 */
 function addContact() {
 // YOUR CODE HERE
+
+
 
 }
 

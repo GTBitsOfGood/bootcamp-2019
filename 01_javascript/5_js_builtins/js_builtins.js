@@ -20,7 +20,19 @@ window.builtins = {};
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
 builtins.trim = function(str) {
+    let firstIndex = str.indexOf(" ");
+    let lastIndex =  str.lastIndexOf(" ");
+    let secondInd = str.indexOf(" ", str.indexOf(" "));
+    let thirdInd = str.indexOf(" ",secondInd);
+    let newStr = "";
+    if (secondInd > 0){
+        newStr += str.substring(secondInd,thirdInd);
+    } else {
+        newStr+= str.substring(firstIndex,lastIndex);
+    }
+
   // YOUR CODE HERE
+  return newStr;
 };
 
 // ----------------------------------------------------------------------------
@@ -40,6 +52,17 @@ builtins.trim = function(str) {
 
 builtins.search = function(sourceString, searchString) {
   // YOUR CODE HERE
+  let truthy = false;
+  for (let i = 0; i < sourceString.length(); i++) {
+    if (searchString.length() < sourceString.length()) {
+        if (sourceString.substring (i, searchString.length() + i) == searchString) {
+            truthy = true;
+        } else {
+            truthy = false;
+    }
+}
+  }
+  return truthy;
 };
 
 // ----------------------------------------------------------------------------
@@ -60,6 +83,8 @@ builtins.search = function(sourceString, searchString) {
 
 builtins.parseQuantity = function(str) {
   // YOUR CODE HERE
+  let num = parseInt(str.substring(0,1));
+  return num;
 };
 
 // ----------------------------------------------------------------------------
@@ -76,6 +101,11 @@ builtins.parseQuantity = function(str) {
 
 builtins.reverse = function(arr) {
   // YOUR CODE HERE
+  let newArr = [];
+  for (let i =0; i < arr.length; i++) {
+    newArr.push(arr[arr.length-1-i]);
+  }
+  return newArr;
 };
 
 // ----------------------------------------------------------------------------
@@ -94,6 +124,20 @@ builtins.reverse = function(arr) {
 
 builtins.isEqual = function(a, b) {
   // YOUR CODE HERE
+  let truthy = false;
+  for (let i =0; i<a.length; i++){
+    if (a[i] !== b[i]){
+        truthy = false;
+        break;
+    }
+    else {
+        truthy = true;
+    }
+  }
+  if (a.length == 0 && b.length == 0){
+    truthy = true;
+  }
+  return truthy;
 };
 
 // ----------------------------------------------------------------------------
@@ -111,6 +155,8 @@ builtins.isEqual = function(a, b) {
 
 builtins.isPalindrome = function(arr) {
   // YOUR CODE HERE
+  let newArr = builtins.reverse(arr);
+  return builtins.isEqual(arr, newArr);
 };
 
 // ----------------------------------------------------------------------------
@@ -131,6 +177,11 @@ builtins.isPalindrome = function(arr) {
 
 builtins.sortByValue = function(arr) {
   // YOUR CODE HERE
+let newArr = arr.sort(function(a,b){
+    return a - b;
+});
+
+return arr;
 };
 
 // ----------------------------------------------------------------------------
@@ -148,6 +199,10 @@ builtins.sortByValue = function(arr) {
 
 builtins.sortByLength = function(arr) {
   // YOUR CODE HERE
+  let newArr = arr.sort(function(a,b){
+    return a.length - b.length;
+  })
+  return newArr;
 };
 
 // ----------------------------------------------------------------------------
@@ -163,4 +218,11 @@ builtins.sortByLength = function(arr) {
 
 builtins.flatten = function(arr) {
   // YOUR CODE HERE
+  let newArr = [];
+  for (let i =0; i<arr.length; i ++){
+    for (let j = 0; j < arr[i].length; j++){
+        newArr.push(arr[i][j]);
+    }
+  }
+  return newArr;
 };
