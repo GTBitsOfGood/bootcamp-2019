@@ -63,11 +63,10 @@ switch(input){
 *
 */
 function displayContacts() {
-  console.log(data)
   console.log(columnify(data, {
     headingTransform: (heading) => {
-      if (heading === 'key') return 'CONTACT_NAME'
-      else if (heading === 'value') return 'PHONE_NUMBER'
+      if (heading === 'name') return 'CONTACT_NAME'
+      else if (heading === 'number') return 'PHONE_NUMBER'
     },
     dataTransform: (data) => {
       if (data === '-1') return '-None-'
@@ -100,8 +99,7 @@ function addContact() {
     console.log(`${name} already in Address Book`)
   } else {
     if (number === undefined) number = -1
-    data[name] = number;
-    writeFile(data);
+    data.push({ 'name': name, 'number': number });
     console.log(`Added ${name} with phone number ${number}`)
   }
 }
