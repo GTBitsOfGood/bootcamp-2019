@@ -23,13 +23,26 @@
 // > 5
 //
 
+var array = process.argv.splice(2);
+
+
+let returnValue = 0;
+for(var i = 0; i < array.length; i++) {
+  nums = parseInt(i);
+  returnValue += i;
+}
+console.log(returnValue);
+
+
+
+
 // Example code for reading command line arguments:
-console.log('Command line arguments', process.argv.slice(2));
+//console.log('Command line arguments', process.argv.splice(2));
 
 // Example code for getting input from the user
-var readline = require('readline');
+//var readline = require('readline');
 
-var rl = readline.createInterface({
+/*var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -37,4 +50,4 @@ var rl = readline.createInterface({
 rl.question("Hi! What's your name? ", function(name) {
   console.log('Nice to meet you', name);
   rl.close();
-});
+});*/

@@ -2,6 +2,7 @@
 // The node builtin filesystem library.
 var fs = require('fs');
 var validator = require('validator')
+const columnify = require('columnify');
 //require columnify here
 
 
@@ -33,7 +34,8 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
-  // YOUR CODE HERE
+  var command = process.argv[2];
+  return command;
 
 }
 
@@ -70,7 +72,7 @@ switch(input){
 function displayContacts(){
     //YOUR CODE HERE
 
-    // console.log(columnify(data)); //UNCOMMENT
+    console.log(columnify(data)); //UNCOMMENT
 
 }
 
