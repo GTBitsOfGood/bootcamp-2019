@@ -6,15 +6,25 @@ app.engine("hbs", handlebars({
     extname: ".hbs"
 }));
 app.set("view engine", "hbs");
-app.get('/', (req, res) => {
-    res.render("first_template");
-});
+
+// app.get('/', (req, res) => {
+//     res.render("first_template");
+// });
 
 app.get('/greet', (req, res) => {
-    const name = req.query.name || "stranger";
+    //const name = req.query.name || "stranger";
     res.render("greet_me", {
-        users_name: name
+        users_name: req.query.name
     });
+});
+
+app.get('/', (req, res) => {
+    const skills = [
+        {language: "JavaScript", level: "Expert"},
+        {language: "HTML", level: "Rookie"},
+        {language: "CSS", level: "Sucks"},
+    ];
+    res.render("first_template", {skills});
 });
 
 app.get('/', (req, res) => {

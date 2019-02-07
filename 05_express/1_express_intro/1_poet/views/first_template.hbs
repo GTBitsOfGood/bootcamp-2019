@@ -6,5 +6,12 @@
     </head>
     <body>
         <h1>This is our first handlebars template</h1>
+        <ul>
+            {{#each skills}}
+            <li>Language: {{language}}
+                Skills Level: {{level}}
+            </li>
+            {{/each}}
+        </ul>
     </body>
 </html>

@@ -8,7 +8,12 @@ app.engine('hbs', exphbs({extname:'hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// YOUR CODE HERE
+app.get('/', (req, res) => {
+    const students = [
+        {first_name, last_name, email, gender}
+    ];
+    res.render("first_template", {students});
+});
 
 app.listen(3000);
 
