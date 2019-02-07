@@ -75,6 +75,14 @@ function displayContacts() {
   }))
 }
 
+function isAlphabetic(str) {
+  return /^[a-z]+$/i.test(str)
+}
+
+function isNumeric(str) {
+  return /^\d+$/.test(str)
+}
+
 //----------------- PART 3 'add' command---------------------//
 /**
 * Implement addContacts()
@@ -91,9 +99,9 @@ function addContact() {
   const number = argv[2];
   if (name === undefined) {
     console.log('First argument (name) was not given')
-  } else if (!/^[a-z]+$/i.test(name)) {
+  } else if (!isAlphabetic(name)) {
     console.log('Name (first argument) must contain only alphabetic characters')
-  } else if (!/^\d+$/.test(number)) {
+  } else if (!isNumeric(number)) {
       console.log('Number (second argument) must consist of only digits')
   } else if (data.indexOf(name) !== -1) {
     console.log(`${name} already in Address Book`)
@@ -115,7 +123,23 @@ function addContact() {
 *
 */
 function updateContact(){
-// YOUR CODE HERE
+  const contactName = argv[1]
+  const newInfo = argv[2]
+  let newInfoIsName // boolean
+  if (isAlphabetic(newInfo)) newInfoIsName = true
+  else if (isNumeric(newInfo)) newInfoIsName = false
+  else {
+    console.log('New info (second argument) must be either all letters or all numbers')
+    return
+  }
+  const index = data.indexOf(contact)
+  if (index === -1) {
+    console.log('Contact to update was not found')
+    return
+  }
+  const oldContactObj = data[index]
+  if (newInfoIsName) oldContactObj['name'] = newInfo
+  else objContactObj['number'] = newInfo
 }
 
 
