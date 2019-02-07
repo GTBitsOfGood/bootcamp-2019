@@ -1,0 +1,23 @@
+{
+  "name": "bootcamp",
+  "version": "1.0.0",
+  "description": "| Sprint | Topic                         | Videos                  | Length  | |--------|-------------------------------|-------------------------|---------| | 1      | [Git][git]                    | [Videos][git-vids]      | 30 mins | | 1      | [JavaScript][js]              | [Videos][js-vids]       | 3 hours | | 1      | [HTML & CSS][html]            | [Videos][html-vids]     | 5 hours | | 2      | [Node & CLIs][node]           | [Videos][node-vids]     | 4 hours | | 2      | [Express][express]            | [Videos][express-vids]  | 4 hours | | 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | 5 hours |",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GTBitsOfGood/bootcamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GTBitsOfGood/bootcamp/issues"
+  },
+  "homepage": "https://github.com/GTBitsOfGood/bootcamp#readme",
+  "dependencies": {}
+}
