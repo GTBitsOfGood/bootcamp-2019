@@ -30,8 +30,30 @@ var csvjson = require('csvjson');
 //      valueToday: '300000' },
 //      ...
 //    ]
-function fileReader(csvFilePath){
-  // YOUR CODE HERE
+
+function fileReader(csvFilePath) {
+    let fileArray = fs.readFileSync("investments1.csv", 'utf8').split('\r\n');
+    for (let x = 0; x < fileArray.length; x++) {
+        if (fileArray[x].length == 0) {
+            fileArray.splice(x, 1);
+        } else {
+            let testA = fileArray[x].split(',');
+            let company = {};
+            if (x == 0) {
+                var heading = [];
+                heading = testA;
+            }
+            if (x > 0) {
+                for (let y = 0; y < 5; y++) {
+                    let tag = heading[y];
+                    company[tag] = testA[y];
+                    fileArray[x] = company;
+                }
+            }
+        }
+    }
+    fileArray.splice(0, 1);
+    return fileArray;
 }
 
 // Write a function that takes an array of investment objects and replaces
@@ -45,11 +67,16 @@ function fileReader(csvFilePath){
 //   [{id: '1', investorId: '1', company: '9',
 //     originalInvestment: 1100000, // Note conversion from string to number
 //     valueToday: 1000000}] // Note conversion from string to number
-function parser(arr){
-  // YOUR CODE HERE
+function parser(arr) {
+    let newArr = arr;
+    newArr.forEach(function(item, index){
+        newArr[index].originalInvestment = parseInt(newArr[index].originalInvestment);
+        newArr[index].valueToday = parseInt(newArr[index].valueToday);
+    });
+    return newArr;
 }
 
 module.exports = {
-  fileReader: fileReader,
-  parser: parser
+    fileReader: fileReader,
+    parser: parser
 }

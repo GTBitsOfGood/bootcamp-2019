@@ -30,11 +30,26 @@ console.log('Command line arguments', process.argv.slice(2));
 var readline = require('readline');
 
 var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+    input: process.stdin,
+    output: process.stdout
 });
-
-rl.question("Hi! What's your name? ", function(name) {
-  console.log('Nice to meet you', name);
-  rl.close();
-});
+let num1 = 0;
+let num2 = 0;
+if (process.argv.slice(2).length === 0) {
+    rl.question("Enter first number? ", function (num) {
+        num1 = parseInt(num);
+        rl.question("Enter second number? ", function (num) {
+            num2 = parseInt(num);
+            console.log(num1 + num2);
+            rl.close();
+        });
+    });
+} else {
+    let args = process.argv.slice(2);
+    let sum = 0;
+    args.forEach(function(item){
+        sum += parseInt(item);
+    })
+    console.log(sum);
+    rl.close();
+}
