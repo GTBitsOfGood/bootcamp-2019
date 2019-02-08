@@ -1,5 +1,5 @@
 Hello!
 
-This line DEFINITELY HAS a merge conflict.......
+I fixed the merge conflict!!!
 
 All the other lines should be fine.
