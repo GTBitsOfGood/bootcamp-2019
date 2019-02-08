@@ -1,9 +1,8 @@
 "use strict";
 // The node builtin filesystem library.
 var fs = require('fs');
-var validator = require('validator')
-//require columnify here
-
+var validator = require('validator');
+var columnify = require('columnify');
 
 var JSON_FILE = 'data.json'
 // If data.json file doesn't exist, create an empty one
@@ -22,7 +21,6 @@ var argv = process.argv
 //console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
 
-
 //------------PART1: PARSING COMMAND LINE ARGUMENTS------------------------
 
 /**
@@ -33,7 +31,13 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
-  // YOUR CODE HERE
+  let commands = ['add', 'update', 'display', 'delete', 'help'];
+  for (let i = 0; i < commands.length; i++) {
+    if (argv[0] === commands[i]) {
+      return commands[i];
+    }
+  }
+  return "";
 
 }
 
@@ -68,9 +72,29 @@ switch(input){
 *
 */
 function displayContacts(){
-    //YOUR CODE HERE
+  let output = columnify(data, {
+    dataTransform: function(word) {
+      if(parseInt(word)===-1) {
+        return '-None-';
+      } else {
+        return word;
+      }
+    },
+    config: {
+      name: {
+        headingTransform: function(heading) {
+          return "CONTACT_NAME"
+        }
+      },
+      number: {
+        headingTransform: function(heading) {
+          return "PHONE_NUMBER"
+      }
+    }
+  }
+})
 
-    // console.log(columnify(data)); //UNCOMMENT
+console.log(output);
 
 }
 
@@ -88,8 +112,41 @@ function displayContacts(){
 * if no number is provided, store -1 as their number
 */
 function addContact() {
-// YOUR CODE HERE
+  process.argv.splice(0,1);
+  if (process.argv.length == 0) {
+    console.log("Invalid contact format");
+    return;
+  }
+  let name = process.argv[0];
+  let number = process.argv[1] || -1;
+  let exists = data.find(function(contact){
+    return contact.name === name
+  });
+  if (!checkForLetters(name)) {
+    console.log("Name must only contain letters.")
+    return;
+  } else if (exists) {
+    console.log("Name already exists.");
+    return;
+  } else if (argv.length > 1 && !checkForNumbers(number)) {
+    console.log("Number must only contain numbers");
+    return;
+  }
+  data.push({
+    name: name,
+    number: parseInt(number)
+  });
+  console.log("Added new contact " + name + ", " + number + ".");
+}
 
+//returns if text contains only letters
+function checkForLetters(text) {
+  return !/[^a-z]/i.test(text);//some alien magic right here
+}
+
+//returns if text contains only numbers
+function checkForNumbers(text) {
+  return !/[^0-9]/i.test(text);
 }
 
 
@@ -104,13 +161,43 @@ function addContact() {
 *
 */
 function updateContact(){
-// YOUR CODE HERE
+  process.argv.splice(0,1);
+  let name = argv[0];
+  let change = argv[1];
+  let foundName = data.find(function(contact){
+    return contact.name === name
+  });
+  if (argv.length < 2) {
+    console.log("Incorrect Format");
+  } else if (!foundName) {
+    console.log("No contact found");
+  } else if (checkForLetters(change)) {
+    console.log("Updated name to " + change);
+    foundName.name = change;
+  } else if (checkForNumbers(change)) {
+    console.log("Updated number to " + change);
+    foundName.number = parseInt(change);
+  } else {
+    console.log("Incorrect Format");
+  }
 }
 
 
 //BONUS Implement deleteContact
 function deleteContact(){
-    //YOUR CODE HERE
+  process.argv.splice(0,1);
+  let name = argv[0];
+  let foundName = data.find(function(contact){
+    return contact.name === name;
+  });
+  if (!foundName) {
+    console.log('No contact found');
+  } else {
+    console.log('Removed ' + foundName);
+    data = data.filter(function(word) {
+      return word.name !== name;
+    });
+  }
 }
 
 

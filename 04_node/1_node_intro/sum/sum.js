@@ -23,7 +23,31 @@
 // > 5
 //
 
+let numbers = process.argv.slice(2);
+if (numbers.length == 0) {
+  const readline = require('readline');
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  rl.question("Please enter the first number :", (answer1) => {
+    rl.question("Please enter the second number :", (answer2) => {
+        let sum = (+answer1) + (+answer2);
+        console.log("Sum = " + sum);
+        rl.close();
+    });
+  });
+} else {
+  let sum = 0;
+  numbers.forEach(function(element) {
+    sum+=parseFloat(element);
+  });
+  console.log("Sum = " + sum);
+}
+
+
 // Example code for reading command line arguments:
+/*
 console.log('Command line arguments', process.argv.slice(2));
 
 // Example code for getting input from the user
@@ -38,3 +62,4 @@ rl.question("Hi! What's your name? ", function(name) {
   console.log('Nice to meet you', name);
   rl.close();
 });
+*/
