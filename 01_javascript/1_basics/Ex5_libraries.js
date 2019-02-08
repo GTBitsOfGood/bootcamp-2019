@@ -40,8 +40,10 @@ console.log("let's see what's in our toolbox:", toolbox);
 // ex. toolbox.countEven(1)  -> [0]
 // ex. toolbox.countEven(10) -> [0, 2, 4, 6, 8]
 toolbox.countEven = function(n) {
-  // YOUR CODE HERE
-};
+  return toolbox.count(n).filter(function(item) {
+    return item % 2 == 0;
+  });
+}
 
 // Exercise 5.2 indexOf(array, item)
 // Build using: toolbox.find()
@@ -54,8 +56,11 @@ toolbox.countEven = function(n) {
 // See indexOf() from the underscore.js library:
 // http://underscorejs.org/#indexOf
 toolbox.indexOf = function(array, item) {
-  // YOUR CODE HERE
-};
+  let func = function(i) {
+    return i === item;
+  };
+  return toolbox.find(array, func);
+}
 
 // Exercise 5.3 lastIndexOf(array, fun)
 // Build using: toolbox.find() array.reverse()
@@ -81,7 +86,9 @@ toolbox.indexOf = function(array, item) {
 // See lastIndexOf() from the underscore.js library:
 // http://underscorejs.org/#lastIndexOf
 toolbox.lastIndexOf = function(array, item) {
-  // YOUR CODE HERE
+  array.reverse();
+  const indexResult = toolbox.find(array, itemFromArray => itemFromArray === item);
+  return indexResult !== -1 ? array.length - 1 - indexResult : -1;
 };
 
 // Exercise 5.4 negate(fun)
@@ -103,7 +110,19 @@ toolbox.lastIndexOf = function(array, item) {
 // See negate() from the underscore.js library:
 // http://underscorejs.org/#negate
 toolbox.negate = function(fun) {
-  // YOUR CODE HERE
+  debugger;
+  return function () {
+    return !fun.apply(this, arguments);
+};
+  /* debugger;
+  let retFun = function(n) {
+    return false;
+  }
+  if (retFun === fun) {
+    return retFun = !fun;
+  } else {
+    return retFun;
+  } */
 };
 
 // Exercise 5.5 reject(array, fun)
@@ -127,8 +146,11 @@ toolbox.negate = function(fun) {
 // See reject() from the underscore.js library:
 // http://underscorejs.org/#reject
 toolbox.reject = function(array, fun) {
-  // YOUR CODE HERE
-};
+  let neg = toolbox.negate(fun);
+  return toolbox.filter(array, function(item) {
+    return neg(item);
+  });
+}
 
 // Bonus Exercise! difference(array1, array2)
 // Build using: toolbox.filter() (or toolbox.reject()) and toolbox.indexOf()

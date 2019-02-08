@@ -20,7 +20,7 @@ window.builtins = {};
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
 builtins.trim = function(str) {
-  // YOUR CODE HERE
+  
 };
 
 // ----------------------------------------------------------------------------

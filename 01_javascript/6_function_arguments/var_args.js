@@ -49,7 +49,7 @@ varArgs.makeUser = function(name, age) {
 // ex. varArgs.sum(1, 2, 4) -> 7
 // ex. varArgs.sum(1, -2, 4) -> 3
 varArgs.sum = function() {
-  // TODO: YOUR CODE HERE
+  return arguments += arguments;
 };
 
 // Exercise 2. varArgs.product(args...)
@@ -60,7 +60,7 @@ varArgs.sum = function() {
 // ex. varArgs.product(1, -2, 4) -> -8
 // ex. varArgs.product() -> 1
 varArgs.product = function() {
-  // TODO: YOUR CODE HERE
+  return arguments *= arguments;
 };
 
 // Exercise 3. varArgs.joinWith(args...)
@@ -72,5 +72,5 @@ varArgs.product = function() {
 // ex. varArgs.joinWith(',', 'a', 'b') -> 'a,b'
 // ex. varArgs.joinWith('.', '192', '168', '1', '1') -> '192.168.1.1'
 varArgs.joinWith = function() {
-  // TODO: YOUR CODE HERE
+  return arguments(',', arguments);
 };

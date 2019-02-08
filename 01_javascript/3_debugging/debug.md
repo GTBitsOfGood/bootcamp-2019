@@ -31,7 +31,7 @@ break points.
   function firstWord(string) {
     for (var i = 0; i < string.length; i++) {
       debugger; // NEW DEBUGGER STATEMENT
-      if (string[0] === ' ') {
+      if (string[i] === ' ') {
         return string.substring(0, i);
       }
     }

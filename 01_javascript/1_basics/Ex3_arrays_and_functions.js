@@ -45,7 +45,11 @@ window.toolbox = window.toolbox || {};
 // ex.
 //  sum([1, 2, -3]) -> 0
 toolbox.sum = function(array) {
-  // YOUR CODE HERE
+  let sum = 0;
+  array.forEach(function(item) {
+    sum += item;
+  });
+  return sum;
 };
 
 // Exercise 3.2 product(array)
@@ -63,7 +67,11 @@ toolbox.sum = function(array) {
 // ex.
 //  product([2, -3]) -> -6
 toolbox.product = function(array) {
-  // YOUR CODE HERE
+  let product = 1;
+  array.forEach(function(item) {
+    product *= item;
+  });
+  return product;
 };
 
 // Example 3.3 transform(array, fn)
@@ -77,7 +85,10 @@ toolbox.product = function(array) {
 // ex. same as above, but more concise
 //  transform([1, 2], function(n) { return n * 2; }) -> [2, 4]
 toolbox.transform = function(array, fn) {
-  // YOUR CODE HERE
+  array.forEach(function(item, index) {
+    array[index] = fn(item);
+  });
+  return array;
 };
 
 // Exercise 3.4 filter(array, fn)
@@ -95,7 +106,13 @@ toolbox.transform = function(array, fn) {
 //  }
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
-  // YOUR CODE HERE
+  let arr = [];
+  array.forEach(function(item, index) {
+    if (fn(item) === true) {
+      arr.push(array[index]);
+    }
+  });
+  return arr;
 };
 
 // Exercise 3.5 every(array, fn)
@@ -120,7 +137,22 @@ toolbox.filter = function(array, fn) {
 //  every(['abcdefghijk'], isLong) -> true
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
-  // YOUR CODE HERE
+  /* let count = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) === true) {
+      count++;
+    }
+  }
+  if (count === array.length) {
+    return true;
+  }
+  return false; */
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) === false) {
+      return false;
+    }
+  }
+  return true;
 };
 
 // Exercise 3.6 find(array, fn)
@@ -140,7 +172,12 @@ toolbox.every = function(array, fn) {
 //  find([1, 3, 5], isEven) -> -1
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
 toolbox.find = function(array, fn) {
-  // YOUR CODE HERE
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) === true) {
+      return i;
+    }
+  }
+  return -1;
 };
 
 // Bonus Exercise! zip(array1, array2)
