@@ -1,24 +1,24 @@
 "use strict";
 // The node builtin filesystem library.
-var fs = require('fs');
-var validator = require('validator')
+let fs = require('fs');
+let validator = require('validator')
 //require columnify here
 
 
-var JSON_FILE = 'data.json'
+let JSON_FILE = 'data.json'
 // If data.json file doesn't exist, create an empty one
 ensureFileExists();
 // This is where our Address Book is stored.
-var data = JSON.parse(fs.readFileSync(JSON_FILE));
+let data = JSON.parse(fs.readFileSync(JSON_FILE));
 
 
 
 
 //the message that will be displayed  If no arguments are specified or if user types help
-var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
+let helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
 
 
-var argv = process.argv
+let argv = process.argv
 //console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
 
@@ -38,7 +38,7 @@ function parseCommand() {
 }
 
 //store the command and execute its corresponding function
-var input = parseCommand()
+let input = parseCommand()
 switch(input){
   case "add":
     addContact();
