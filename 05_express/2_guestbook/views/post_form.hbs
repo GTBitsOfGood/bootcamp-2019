@@ -22,6 +22,15 @@
     This login form should have input elements for title, body and date and a submit button.
   -->
   <!-- YOUR CODE HERE -->
+  {{#if isLoggedin}}
+  <form method="POST" action="/posts">
+          <h1>Login Page</h1>
+          <input type="text" name="title"><br>
+          <input type="text" name="body"><br>
+          <input type="text" name="date"><br>
+          <input type="submit" name="submit" value="login">
+  </form>
+  {{/if}}
 
 </body>
 </html>

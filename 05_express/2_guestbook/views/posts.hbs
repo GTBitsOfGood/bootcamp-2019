@@ -24,5 +24,23 @@
 
 <!-- YOUR CODE HERE -->
 
+<div>
+{{#if Order}}
+    {{#each posts}}
+            <div>
+                {{author}} {{title}} {{body}} {{date}}
+                <a href="/posts?author={{res.query.author}}">{{author}}</a> <br>
+            </div>
+        {{/each}}
+{{else}}
+        {{#each posts}}
+            <div>
+                 {{author}} {{title}} {{body}} {{date}}
+                 <a href="/posts?author={{res.query.author}}">{{author}}</a><br>
+            </div>
+        {{/each}}
+{{/if}}
+</div>
+
 </body>
 </html>

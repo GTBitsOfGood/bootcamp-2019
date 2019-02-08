@@ -41,6 +41,7 @@ app.get('/', function(req, res) {
 // For example if you wanted to render 'views/index.hbs' you'd do res.render('index')
 app.get('/login', function(req, res) {
   // YOUR CODE HERE
+    res.render('login');
 });
 
 // POST /login: Receives the form info from /login, sets a cookie on the client
@@ -64,6 +65,7 @@ app.get('/posts', function (req, res) {
     // Pass `username` to the template from req.cookies.username
     // Pass `posts` to the template from data.read()
     // YOUR CODE HERE
+      username: req.cookies.username, posts: data.read()
   });
 });
 
@@ -78,6 +80,8 @@ app.get('/posts', function (req, res) {
 // Hint: check req.cookies.username to see if user is logged in
 app.get('/posts/new', function(req, res) {
   // YOUR CODE HERE
+    let isLoggedin = Boolean(req.cookies.username);
+    res.render('post_form', { isLoggedin })
 });
 
 // POST /posts:
@@ -97,8 +101,60 @@ app.get('/posts/new', function(req, res) {
 // write it back wih data.save(array).
 app.post('/posts', function(req, res) {
   // YOUR CODE HERE
+    let isLoggedin = Boolean(req.cookies.username);
+    if (!isLoggedin) {
+        res.status(401).send("Error! Not Logged In");
+    } else if (req.cookies.body === null || req.cookies.title === null || req.cookies.date === null) {
+        res.status(400).send("Error! Incomplete!");
+    } else {
+        obj={};
+        obj.author = req.cookies.username;
+        obj.date = req.body.date;
+        obj.title = req.body.title;
+        obj.body = req.body.body;
+        let arr = data.read();
+        arr.push(obj);
+        data.save(arr);
+        // res.send(arr);
+    }
+    // res.render('posts', req.param("order"));
+    if (req.query.order === 'ascending') {
+        let Order = true;
+        let arr = data.read();
+        arr.sort((a,b) => {
+            let ina = a.date.lastIndexOf("/");
+            let inb = b.date.lastIndexOf("/");
+            let numa = Number(a.date.slice(ina+1, a.date.length - 1));
+            let numb = Number(b.date.slice(ina+1, b.date.length - 1));
+            return numa > numb;
+        });
+        data.save(arr);
+        res.render('posts', { Order });
+    } else {
+        res.send("I got here");
+        let Order = false;
+        let arr = data.read();
+        arr.sort((a,b) => {
+            let ina = a.date.lastIndexOf("/");
+            let inb = b.date.lastIndexOf("/");
+            let numa = Number(a.date.slice(ina+1, a.date.length - 1));
+            let numb = Number(b.date.slice(ina+1, b.date.length - 1));
+            return numa < numb;
+        });
+        data.save(arr);
+        res.render('posts', { Order })
+    }
+    let author = req.query.author;
+    let arr = data.read().slice();
+    arr.forEach((e) => {
+        if (e.author === author) {
+            return e;
+        }
+    });
+    res.send(arr);
+
 });
 
 // Start the express server
-var port = '3000'
+var port = '3000';
 app.listen(port);
