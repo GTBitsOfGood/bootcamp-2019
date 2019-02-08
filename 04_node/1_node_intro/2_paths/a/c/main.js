@@ -7,13 +7,14 @@
 // let five = require('./five.js')
 // five.logger(five.value);
 
-let one = require('./one.js');
-one.logger(one.value);
-let two = require('../a/two.js');
-two.logger(two.value);
-let three = require('../b/three.js');
+let one = require('../../b/one.js');
+one.first(one.value);
+one.second(one.value);
+let two = require('../two');
+two.twoFunc(two.value);
+let three = require('../../b/three.js');
 let four = require('./four.js');
-three.logger(four.value);
+three.logger(four.horizons);
 
 // Output should look like
 //     *
