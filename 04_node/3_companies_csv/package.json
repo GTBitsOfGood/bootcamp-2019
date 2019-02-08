@@ -1,7 +1,7 @@
 {
   "name": "investments",
   "version": "1.0.0",
-  "description": "Investment exercise w3d1",
+  "description": "Investment exercise",
   "main": "app.js",
   "scripts": {
     "test": "jasmine-node spec"
