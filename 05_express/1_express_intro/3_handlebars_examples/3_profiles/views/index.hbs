@@ -1,3 +1,20 @@
 <div>
-  <span>YOUR CODE HERE</span>
+    <h1>Directory</h1>
+    <h3>Filtered using keyword "{{filter}}"</h3>
+    <br><br>
+
+    <ol>
+    {{#each filtered}}
+        <li>
+    <ul>
+        <li>First name: {{this.first_name}}</li>
+        <li>Last name: {{this.last_name}}</li>
+        <li>Email: {{this.email}}</li>
+        <li>Gender: {{this.gender}}</li>
+    </ul>
+        </li>
+
+    <!--<body>{{this.id}}{{isMale}}</body>-->
+    {{/each}}
+    </ol>
 </div>
