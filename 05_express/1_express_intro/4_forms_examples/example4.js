@@ -10,11 +10,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/login', function(req, res) {
+app.get('/login', (req, res) => {
   res.render('login');
 });
 
-app.get('/register', function(req, res) {
+app.get('/register', (req, res) => {
   res.render('register');
 });
 

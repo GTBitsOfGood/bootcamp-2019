@@ -1,5 +1,29 @@
-<form>
-  <span>YOUR CODE HERE</span>
+<form action="/login" method="post">
+    <label>Username:
+        <input type="input" name="username" value="{{out_username}}">
+    </label><br>
+    <label>Password:
+        <input type="password" name="password" value="{{out_password}}">
+    </label><br>
+    <label>Name:
+        <input type="input" name="name" value="{{out_name}}">
+    </label><br>
+    <div>
+        <label>Gender:</label><br>
+        <label>
+            {{#if out_checked.isMaleChecked}}
+                <input type="radio" name="gender" value="male" checked="checked">
+            {{else}}
+                <input type="radio" name="gender" value="male" >
+            {{/if}}
+        </label>Male<br>
+        <label>
+            {{#if out_checked.isFemaleChecked}}
+                <input type="radio" name="gender" value="Female" checked="checked">
+            {{else}}
+                <input type="radio" name="gender" value="female" >
+            {{/if}}
+        </label>Female<br>
+    </div>
+    <input type="submit" value="Register">
 </form>
-
-

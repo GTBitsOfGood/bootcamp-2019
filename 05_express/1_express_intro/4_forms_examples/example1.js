@@ -12,9 +12,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Part 1
 // YOUR CODE HERE
-
+app.get('/', (req, res) => {
+    res.render('example1', {users_name: req.query.user_name});
+});
 // start the express app
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Express started. Listening on port %s', port);
 
