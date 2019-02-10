@@ -100,14 +100,14 @@ app.get('/posts/new', function(req, res) {
 // Read all posts with data.read(), .push() the new post to the array and
 // write it back wih data.save(array).
 app.post('/posts', function(req, res) {
-  // YOUR CODE HERE
+    // YOUR CODE HERE
     let isLoggedin = Boolean(req.cookies.username);
     if (!isLoggedin) {
         res.status(401).send("Error! Not Logged In");
     } else if (req.cookies.body === null || req.cookies.title === null || req.cookies.date === null) {
         res.status(400).send("Error! Incomplete!");
     } else {
-        obj={};
+        obj = {};
         obj.author = req.cookies.username;
         obj.date = req.body.date;
         obj.title = req.body.title;
@@ -115,10 +115,12 @@ app.post('/posts', function(req, res) {
         let arr = data.read();
         arr.push(obj);
         data.save(arr);
-        // res.send(arr);
+        res.send("Complete!");
     }
-    // res.render('posts', req.param("order"));
-    if (req.query.order === 'ascending') {
+});
+
+app.get('/posts/:order', (req, res) => {
+    if (req.param.order === 'ascending') {
         let Order = true;
         let arr = data.read();
         arr.sort((a,b) => {
@@ -144,15 +146,12 @@ app.post('/posts', function(req, res) {
         data.save(arr);
         res.render('posts', { Order })
     }
-    let author = req.query.author;
-    let arr = data.read().slice();
-    arr.forEach((e) => {
-        if (e.author === author) {
-            return e;
-        }
-    });
-    res.send(arr);
+});
 
+app.get('/posts/:author(req.cookies.author)', (req, res) => {
+    // let aut = req.cookies.author;
+    // data.filter((e) => e.author === aut);
+    res.render('posts');
 });
 
 // Start the express server
