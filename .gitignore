@@ -1,2 +1,3 @@
 .DS_Store
-08_ajax_express/video_code/node_modules/*
+node_modules/
+.idea/
