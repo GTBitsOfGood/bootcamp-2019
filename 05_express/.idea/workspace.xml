@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bfcb314-3cfb-4359-9bdb-ef9d4b34f4d8" name="Default Changelist" comment="finish handlebars example 4">
+    <list default="true" id="0bfcb314-3cfb-4359-9bdb-ef9d4b34f4d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example1.js" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example2.js" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example3.js" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example4.js" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/example4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example1.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example1.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example2.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example2.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example3.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example3.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2_guestbook/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/2_guestbook/views/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2_guestbook/views/posts.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/2_guestbook/views/posts.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,76 +15,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/package.json">
+        <entry file="file://$PROJECT_DIR$/2_guestbook/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="437">
+              <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/accounts.json">
+        <entry file="file://$PROJECT_DIR$/2_guestbook/data.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2_guestbook/views/login.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="63" selection-start-column="51" selection-end-column="63" />
+            <state relative-caret-position="405">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/example3.js">
+        <entry file="file://$PROJECT_DIR$/2_guestbook/views/post_form.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/login.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#h1#1;n#form#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="390">
+              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+        <entry file="file://$PROJECT_DIR$/2_guestbook/views/posts.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/example2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="33" selection-start-column="33" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example3.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example2.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" selection-end-line="29" selection-end-column="7" />
+            <state relative-caret-position="255">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -124,6 +83,11 @@
         <option value="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example3.hbs" />
         <option value="$PROJECT_DIR$/1_express_intro/4_forms_examples/example3.js" />
         <option value="$PROJECT_DIR$/1_express_intro/4_forms_examples/views/login.hbs" />
+        <option value="$PROJECT_DIR$/2_guestbook/views/post_form.hbs" />
+        <option value="$PROJECT_DIR$/2_guestbook/data.json" />
+        <option value="$PROJECT_DIR$/2_guestbook/app.js" />
+        <option value="$PROJECT_DIR$/2_guestbook/views/login.hbs" />
+        <option value="$PROJECT_DIR$/2_guestbook/views/posts.hbs" />
       </list>
     </option>
   </component>
@@ -156,34 +120,30 @@
               <item name="05_express" type="b2602c69:ProjectViewProjectNode" />
               <item name="05_express" type="462c0819:PsiDirectoryNode" />
               <item name="1_express_intro" type="462c0819:PsiDirectoryNode" />
-              <item name="3_handlebars_examples" type="462c0819:PsiDirectoryNode" />
+              <item name="2_express_echo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="05_express" type="b2602c69:ProjectViewProjectNode" />
               <item name="05_express" type="462c0819:PsiDirectoryNode" />
               <item name="1_express_intro" type="462c0819:PsiDirectoryNode" />
-              <item name="3_handlebars_examples" type="462c0819:PsiDirectoryNode" />
-              <item name="3_profiles" type="462c0819:PsiDirectoryNode" />
+              <item name="4_forms_examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="05_express" type="b2602c69:ProjectViewProjectNode" />
               <item name="05_express" type="462c0819:PsiDirectoryNode" />
               <item name="1_express_intro" type="462c0819:PsiDirectoryNode" />
-              <item name="3_handlebars_examples" type="462c0819:PsiDirectoryNode" />
-              <item name="3_profiles" type="462c0819:PsiDirectoryNode" />
+              <item name="4_forms_examples" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="05_express" type="b2602c69:ProjectViewProjectNode" />
               <item name="05_express" type="462c0819:PsiDirectoryNode" />
-              <item name="1_express_intro" type="462c0819:PsiDirectoryNode" />
-              <item name="4_forms_examples" type="462c0819:PsiDirectoryNode" />
+              <item name="2_guestbook" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="05_express" type="b2602c69:ProjectViewProjectNode" />
               <item name="05_express" type="462c0819:PsiDirectoryNode" />
-              <item name="1_express_intro" type="462c0819:PsiDirectoryNode" />
-              <item name="4_forms_examples" type="462c0819:PsiDirectoryNode" />
+              <item name="2_guestbook" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -199,7 +159,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -226,20 +186,37 @@
       <workItem from="1549583725644" duration="224000" />
       <workItem from="1549584006673" duration="2507000" />
       <workItem from="1549689727838" duration="3925000" />
+      <workItem from="1549821081765" duration="5316000" />
     </task>
+    <task id="LOCAL-00001" summary="finish handlebars example 4">
+      <created>1549754568714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549754568714</updated>
+    </task>
+    <task id="LOCAL-00002" summary="finish handlebars guestbook without bonus">
+      <created>1549827082095</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549827082095</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13593000" />
+    <option name="totallyTimeSpent" value="21195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -250,6 +227,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -261,7 +239,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish handlebars example 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish handlebars example 4" />
+    <MESSAGE value="finish handlebars guestbook without bonus" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish handlebars guestbook without bonus" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1_express_intro/3_handlebars_examples/1_hello_world/views/error.hbs">
@@ -319,9 +298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_express_intro/2_express_echo/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/1_express_intro/3_handlebars_examples/3_profiles/data.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -368,6 +344,13 @@
     <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/register.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example2.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/example2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -375,10 +358,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/package.json">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="177">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -389,41 +372,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example2.hbs">
+    <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="16" selection-end-line="29" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example3.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/example3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="371">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_guestbook/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/login.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#h1#1;n#form#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/1_express_intro/2_express_echo/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_express_intro/4_forms_examples/views/example3.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_guestbook/views/post_form.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_guestbook/data.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_guestbook/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_guestbook/views/login.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2_guestbook/views/posts.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
         </state>
       </provider>
     </entry>
