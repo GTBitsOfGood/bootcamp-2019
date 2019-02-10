@@ -13,7 +13,7 @@
 <body>
 <h1>View all posts</h1>
 
-<h2>Your username: {{username}}</h2>
+<h2>Your username: {{username}}</h2><br><br>
 
 <!-- Part 2: Display posts -->
 
@@ -21,8 +21,20 @@
   display them on the page.
   Put each post inside a div. Be sure to display the author, title, body and date of each post.
 -->
-
-<!-- YOUR CODE HERE -->
+<a href="/posts?order={{query.order}}">View all authors: </a>
+<p>Sort by Date:</p>
+<a href="/posts?author={{query.author}}&order=ascending">Ascending</a>
+<a href="/posts?author={{query.author}}&order=descending">Descending</a>
+<br>
+{{#each posts}}
+    <div>
+        <h2>{{title}}</h2>
+        <h3>By: {{author}} on {{date}}</h3>
+        <p>{{body}}</p>
+        <a href="/posts?order={{@root.query.order}}&author={{author}}">View posts only by this author</a>
+    </div>
+    <br>
+{{/each}}
 
 </body>
 </html>

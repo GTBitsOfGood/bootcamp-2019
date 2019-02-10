@@ -39,7 +39,8 @@ app.get('/', function(req, res) {
 // of the template without .hbs
 //
 // For example if you wanted to render 'views/index.hbs' you'd do res.render('index')
-app.get('/login', function(req, res) {
+app.get('/login', (req, res) => {
+  res.render('login');
   // YOUR CODE HERE
 });
 
@@ -60,7 +61,24 @@ app.post('/login', function(req, res) {
 // Hint: to get the username, use req.cookies.username
 // Hint: use data.read() to read the post data from data.json
 app.get('/posts', function (req, res) {
+  const multiplier = req.query.order==='ascending' ? 1 : -1;
+  let array = data.read();
+  array.sort((x,y) =>
+      ((x.date === y.date) ? 0 : ((x.date > y.date) ? multiplier  : -1  * multiplier))
+  );
+  let isFiltered = false;
+  const author = req.query.author;
+  if (author) {
+    isFiltered = true;
+    array = array.filter((item) => {
+      return item.author === author;
+    });
+  }
   res.render('posts', {
+    username: req.cookies.username,
+    posts: array,
+    isFiltered,
+    query: req.query
     // Pass `username` to the template from req.cookies.username
     // Pass `posts` to the template from data.read()
     // YOUR CODE HERE
@@ -77,6 +95,8 @@ app.get('/posts', function (req, res) {
 //
 // Hint: check req.cookies.username to see if user is logged in
 app.get('/posts/new', function(req, res) {
+  res.render('post_form');
+
   // YOUR CODE HERE
 });
 
@@ -96,6 +116,23 @@ app.get('/posts/new', function(req, res) {
 // Read all posts with data.read(), .push() the new post to the array and
 // write it back wih data.save(array).
 app.post('/posts', function(req, res) {
+  if (req.cookies.username) {
+    if (req.body.title && req.body.body && req.body.date) {
+      const array = data.read();
+      array.push({
+        author: req.cookies.username,
+        title: req.body.title,
+        body: req.body.body,
+        date: req.body.date
+      });
+      data.save(array);
+      res.redirect('/posts');
+    } else {
+      res.sendStatus(400);
+    }
+  } else {
+    res.sendStatus(401);
+  }
   // YOUR CODE HERE
 });
 
