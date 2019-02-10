@@ -1,8 +1,8 @@
 // Let's bring express into this file!
-var express = require("express");
+const express = require("express");
 
 // Let's create a new express app
-var app = express();
+const app = express();
 
 // Example route:
 // This creates an Express route at http://localhost:3000

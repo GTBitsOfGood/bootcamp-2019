@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+<<<<<<< HEAD
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
@@ -11,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json());
+=======
+
+const app = express();
+>>>>>>> master
 
 // view engine setup
 app.engine('hbs', exphbs({extname:'hbs'}));

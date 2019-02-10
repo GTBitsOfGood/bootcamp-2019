@@ -1,8 +1,8 @@
-var express = require('express');
-var path = require('path');
-var exphbs = require('express-handlebars');
+const express = require('express');
+const path = require('path');
+const exphbs = require('express-handlebars');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.engine('hbs', exphbs({extname:'hbs'}));
