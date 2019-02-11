@@ -49,6 +49,8 @@ if (args.length > 2) {
   });
 }
 
+// Example code for getting input from the user
+var readline = require("readline");
 
 // Example code for getting input from the user
 // let readline = require('readline');
@@ -62,3 +64,7 @@ if (args.length > 2) {
 //   console.log('Nice to meet you', name);
 //   rl.close();
 // });
+rl.question("Hi! What's your name? ", function(name) {
+  console.log("Nice to meet you", name);
+  rl.question("qu2", resp => console.log("ty", resp));
+});

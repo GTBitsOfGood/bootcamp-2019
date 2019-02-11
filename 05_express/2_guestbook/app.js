@@ -1,20 +1,20 @@
 // This is the top level Express server application file.
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 
-var app = express();
+const app = express();
 
 // Enable cookie parsing
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 // Set up handlebar templates
-var exphbs = require('express-handlebars');
+const exphbs = require('express-handlebars');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // We use this module to store and retrieve data.
 // data.read(): Read the latest data stored on disk.
 // data.save(data): Save the given data to disk.
-var data = require('./data');
+const data = require('./data');
 
 app.get('/', function(req, res) {
   res.send('Your server is working!');
@@ -155,5 +155,6 @@ app.get('/posts/:author(req.cookies.author)', (req, res) => {
 });
 
 // Start the express server
-var port = '3000';
+
+const port = '3000'
 app.listen(port);

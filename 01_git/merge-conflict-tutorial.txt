@@ -1,0 +1,5 @@
+Hello!
+
+This line MIGHT have a merge conflict.
+
+All the other lines should be fine.

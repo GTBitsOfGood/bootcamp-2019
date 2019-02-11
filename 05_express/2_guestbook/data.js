@@ -1,9 +1,9 @@
 "use strict";
 
 // This module allows you to save data using JSON files.
-var fs = require('fs');
-var jsonfile = require('jsonfile');
-var file = 'data.json';
+const fs = require('fs');
+const jsonfile = require('jsonfile');
+const file = 'data.json';
 
 module.exports = {
   read: function() {

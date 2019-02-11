@@ -1,16 +1,16 @@
 "use strict";
 
-var fs = require('fs');
-var path = require('path');
-var express = require('express');
-var exphbs  = require('express-handlebars');
-var parse = require('csv-parse');
-var _ = require('underscore');
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
+const exphbs  = require('express-handlebars');
+const parse = require('csv-parse');
+const _ = require('underscore');
 
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var app = express();
-var mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const app = express();
+const mongoose = require('mongoose');
 mongoose.connect(require('./connect'));
 
 app.engine('hbs', exphbs({

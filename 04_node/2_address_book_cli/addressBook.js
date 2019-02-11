@@ -1,12 +1,12 @@
 "use strict";
 // The node builtin filesystem library.
-var fs = require('fs');
-var validator = require('validator')
+const fs = require('fs');
+const validator = require('validator')
 //require columnify here
-var jsonfile = require('jsonfile');
+const jsonfile = require('jsonfile');
 // var file = 'data.json';
 
-var JSON_FILE = 'data.json'
+
 // jsonfile.writeFileSync(JSON_FILE, [
 //     {
 //         "name": "Moose",
@@ -20,20 +20,25 @@ var JSON_FILE = 'data.json'
 // If data.json file doesn't exist, create an empty one
 ensureFileExists();
 // This is where our Address Book is stored.
-var data = JSON.parse(fs.readFileSync(JSON_FILE));
 // var data = JSON.parse(fs.readFileSync(file));
 
 // console.log(data);
+const JSON_FILE = 'data.json'
+// If data.json file doesn't exist, create an empty one
+ensureFileExists();
+// This is where our Address Book is stored.
+const data = JSON.parse(fs.readFileSync(JSON_FILE));
 
 
 
 
 //the message that will be displayed  If no arguments are specified or if user types help
-var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
+const helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:\n" + "\t\thelp   Show this help message and quit"+"\n\n\n\tCommands:\n" + "\t\tadd       Create Contact\n" + "\t\tdisplay   Display all contacts in directory\n" + "\t\tupdate    Update existing contact\n"
 
 
-var argv = process.argv
-// console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
+
+const argv = process.argv
+//console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
 
 //------------PART1: PARSING COMMAND LINE ARGUMENTS------------------------
@@ -59,7 +64,7 @@ function parseCommand() {
 }
 
 //store the command and execute its corresponding function
-var input = parseCommand()
+const input = parseCommand()
 switch(input){
   case "add":
     addContact();
