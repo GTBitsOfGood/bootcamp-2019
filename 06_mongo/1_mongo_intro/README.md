@@ -1,4 +1,4 @@
-# Inline exercise: Mongoose
+# Mongoose
 
 ## Goal
 
@@ -7,15 +7,15 @@ Write to and read from MongoDb using a Mongoose model.
 ## Instructions
 
 1. Login to [mLab](https://mlab.com/home)
-1. Click on your database
+2. Click on your database
 
     ![](img/mlab1.png)
 
-1. Copy the MongoDb URI
+3. Copy the MongoDb URI
 
     ![](img/mlab2.png)
 
-1. Open `6_mongo/1_mongo_intro` and create a file name `env.sh` and put
+4. Open `/06_mongo/1_mongo_intro` and create a file name `env.sh` and put
 the following code in it
 
     ```bash

@@ -1,9 +1,11 @@
 # Mongoose Exercise: Todo List
+
 Mongoose is a `Node.js` library that translates data in the Mongo database to JavaScript objects for use in your application. Let's take a look at creating and storing documents in a collection using MongoDB and Mongoose.
 
 **Note:** For this exercise you will modify your code from the `toDo.js` exercise on Day 1. *Remember* that you stored all of your tasks in a `data.json` file. Now you will have to create an mlab database and re-write the `toDo.js` file to store tasks on your database.
 
 ## Set up mLab
+
 1. Navigate to [https://mlab.com/login/](https://mlab.com/login/) and login to your mlab account (create an account if you do not have one).
 
 1. Beside the **MongoDB Deployments** tab press the **Create New** button. Select **Amazon Web Services** as the Cloud Provider, and then **Single-node > *FREE* Sandbox Plan** under Plan. Don't forget to name the database. When you're all done, press `Create new MongoDB deployment`.
@@ -32,7 +34,8 @@ commit changes `env.sh`. We've excluded `env.sh` from Git because you shouldn't 
 username and password on GitHub, where other people can see it!
 
 ## Exercises
-Open `/6_mongo/2_todo_mongoose/toDo.js` and look for all of the `TODO` tags and implement missing functionality where it says `// YOUR CODE HERE`. **NOTE:** be sure to do `npm install` before you begin.
+
+Open `/06_mongo/2_todo_mongoose/toDo.js` and look for all of the `TODO` tags and implement missing functionality where it says `// YOUR CODE HERE`. **NOTE:** be sure to do `npm install` before you begin.
 
   **REMEMBER** in order to pass a string (task name) into commander in your command line you should use double quotes.
 
@@ -42,4 +45,5 @@ Open `/6_mongo/2_todo_mongoose/toDo.js` and look for all of the `TODO` tags and 
 
 
 ### Test
+
 Use the `npm test` command to test your functions. The tests could take a long time to run, so please be aware that this is normal.
