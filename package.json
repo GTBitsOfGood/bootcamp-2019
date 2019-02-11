@@ -19,5 +19,7 @@
     "url": "https://github.com/GTBitsOfGood/bootcamp/issues"
   },
   "homepage": "https://github.com/GTBitsOfGood/bootcamp#readme",
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.3"
+  }
 }

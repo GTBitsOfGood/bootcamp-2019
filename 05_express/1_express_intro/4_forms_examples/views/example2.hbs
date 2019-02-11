@@ -1,3 +1,11 @@
 <form>
-  <span>YOUR CODE HERE</span>
+  <span>
+    <form id="form" onsubmit="return false;">
+      <input type="text" name="username" values={{query_username}} >Username<br>
+      <input type="text" name="password" values={{query_password}}>Password<br>
+      <input type="radio" name="gender" values="male"> Male<br>
+      <input type="radio" name="gender" values="female">Female<br>
+      <input type="submit" value="Submit form">
+    </form>
+  </span>
 </form>

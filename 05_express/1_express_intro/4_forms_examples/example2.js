@@ -20,3 +20,11 @@ app.listen(port);
 console.log('Express started. Listening on port %s', port);
 
 module.exports = app;
+
+app.get('/form', (req, res) => {
+  res.render("example2", {query_username: req.query.username});
+})
+
+app.get('/form', (req,res) => {
+  res.render("example2", {query_password: req.query.password});
+})

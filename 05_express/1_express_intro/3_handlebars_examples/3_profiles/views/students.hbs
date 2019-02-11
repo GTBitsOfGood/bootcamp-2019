@@ -5,11 +5,15 @@
         <title>Hello World</title>
     </head>
     <body>
-        <h1>This is our first handlebars template</h1>
+        <h1>This is our list of students</h1>
         <ul>
             {{#each students}}
-            <li>First Name: {{first_name}}
+            <li>
+                ID: {{id}}
+                First Name: {{first_name}}
                 Last Name: {{last_name}}
+                Email: {{email}}
+                Gender: {{gender}}
             </li>
             {{/each}}
         </ul>
