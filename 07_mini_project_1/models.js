@@ -1,15 +1,16 @@
 "use strict";
 
-// Project model
-var mongoose = require('mongoose');
+// Import Mongoose
+const mongoose = require("mongoose");
 
-var Project = mongoose.model('Project', {
+// Project model
+const Project = mongoose.model("Project", {
   title: {
-    type: String,
+    type: String
   }
   // YOUR CODE HERE
 });
 
 module.exports = {
-  Project: Project
-}
+  Project
+};

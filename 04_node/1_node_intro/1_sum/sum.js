@@ -24,7 +24,7 @@
 //
 
 // Example code for reading command line arguments:
-console.log('Command line arguments', process.argv.slice(2));
+// console.log('Command line arguments', process.argv.slice(2));
 
 function sumList(list) {
     function sumListRec(l, tot) {
@@ -36,27 +36,17 @@ function sumList(list) {
 
 
 // Example code for getting input from the user
-var readline = require('readline');
+var readline = require("readline");
 
 var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-let getNumber = function(curr) {
-    return new Promise(function(resolve, reject) {
-        rl.question("Enter a number: ", function(num) {
-            resolve(curr + parseInt(num));
-        });
 
-    });
-};
-
-getNumber(0).then(function(result) {
-    return getNumber(result);
-}).then(function(result) {
-    console.log("The sum is " + result);
-    rl.close();
+rl.question("Hi! What's your name? ", function(name) {
+  console.log("Nice to meet you", name);
+  rl.question("qu2", resp => console.log("ty", resp));
 });
 
 
