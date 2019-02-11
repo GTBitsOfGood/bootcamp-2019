@@ -7,8 +7,8 @@
 | 1      | [HTML & CSS][html]            | [Videos][html-vids]     | 5 hours |
 | 2      | [Node & CLIs][node]           | [Videos][node-vids]     | 4 hours |
 | 2      | [Express][express]            | [Videos][express-vids]  | 4 hours |
-| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | 5 hours |
-
+| 2      | [Mongo & Mongoose][mongo]     | [Videos][mongo-vids]    | 3 hours |
+| 2      | [Mini Project 1][mp1]         | N/A                     | 5 hours |
 
 <!---| 3 | Validation & Ajax w/ Express  | [Videos][val-ajax-videos]                 | [Exercises][ajax-express-code]|
 | 3 | Middleware & Passport         |[Slides][passport], [Videos][passport-vids]|[Exercises][passport-code]     |
@@ -41,11 +41,10 @@
 [express-vids]: https://www.youtube.com/watch?v=eSYhlrcjjk8&list=PLG3Osgh6aITUj-1SpoZxipsqdyiPY0LLN
 [mongo]: 06_mongo/
 [mongo-vids]: https://www.youtube.com/playlist?list=PLG3Osgh6aITX5HMqWJ1f0J30e_zl-Lhxl
+[mp1]: 07_mini_project_1/
 
 
 
-[mongo-code]: 06_mongo/
-[mini-project-1]: 07_mini_project_1/
 [ajax-express-code]: 08_ajax_express/
 [passport-code]: 09_passport_oauth/
 [mongoose-code]: 10_advanced_mongoose/
