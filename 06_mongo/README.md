@@ -1,6 +1,6 @@
 # MongoDB & Mongoose
 
-Today we will learn how to use MongoDB, mLab, and Mongoose to persist data.
+In this section you will learn about an important part of the tech stack -- database persistance. At Bits of Good we tend to favor using MongoDB with Mongoose to persist our data.
 
 ## Outline
 
