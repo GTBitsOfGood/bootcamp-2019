@@ -1,3 +1,33 @@
-<div>
-  <span>YOUR CODE HERE</span>
-</div>
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" concert="width=device-width,
+        <meta http-equiv=X-UA-Compatible" contents="ie=edge">
+    </head>
+
+    <body>
+        <h1>
+        <ul>
+            <li>
+            {{#if isMale}}
+                {{#each}}
+                    First Name: {{this.first_name}} <br/> Last Name: {{this.last_name}} <br/> Email: {{this.email}} <br/>
+                    Gender: {{this.gender}}
+
+            {{else if isFemale}}
+                {{#each}}
+                    First Name: {{this.first_name}} <br/> Last Name: {{this.last_name}} <br/> Email: {{this.email}} <br/>
+                    Gender: {{this.gender}}
+            {{else}}
+                {{#each}}
+                    First Name: {{this.first_name}} <br/> Last Name: {{this.last_name}} <br/> Email: {{this.email}} <br/>
+                    Gender: {{this.gender}}
+
+            {{/if}}
+         </li>
+         </ul
+        </h1>
+    </body>
+</html>

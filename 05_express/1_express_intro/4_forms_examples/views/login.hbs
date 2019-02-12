@@ -1,5 +1,11 @@
 <form>
-  <span>YOUR CODE HERE</span>
+  <span>
+    {{#if userName}}
+        <h1> Hi {{name}}! </h1>
+    {{else}}
+        <h1> ERROR </h1>
+    {{/if}}
+  </span>
 </form>
 
 
