@@ -45,7 +45,11 @@ window.toolbox = window.toolbox || {};
 // ex.
 //  sum([1, 2, -3]) -> 0
 toolbox.sum = function(array) {
-  // YOUR CODE HERE
+    let sumValue = 0;
+    array.forEach(item => {
+    sumValue = sumValue + item;
+   });
+  return sumValue;
 };
 
 // Exercise 3.2 product(array)
@@ -63,7 +67,11 @@ toolbox.sum = function(array) {
 // ex.
 //  product([2, -3]) -> -6
 toolbox.product = function(array) {
-  // YOUR CODE HERE
+  let product = 1;
+  array.forEach(item => {
+    product = product * item;
+  })
+  return product;
 };
 
 // Example 3.3 transform(array, fn)
@@ -77,7 +85,11 @@ toolbox.product = function(array) {
 // ex. same as above, but more concise
 //  transform([1, 2], function(n) { return n * 2; }) -> [2, 4]
 toolbox.transform = function(array, fn) {
-  // YOUR CODE HERE
+  let answer = [];
+  array.forEach(item => {
+    answer.push(fn(item));
+  });
+  return answer;
 };
 
 // Exercise 3.4 filter(array, fn)
@@ -95,7 +107,13 @@ toolbox.transform = function(array, fn) {
 //  }
 //  filter(['a', 'abc', 'abcdefghijk'], isLong) -> ['abcdefghijk']
 toolbox.filter = function(array, fn) {
-  // YOUR CODE HERE
+  let answer = [];
+  array.forEach(item => {
+    if (fn(item)) {
+    answer.push(item);
+   }
+  });
+  return answer;
 };
 
 // Exercise 3.5 every(array, fn)
@@ -120,7 +138,11 @@ toolbox.filter = function(array, fn) {
 //  every(['abcdefghijk'], isLong) -> true
 //  every(['a', 'abc', 'abcdefghijk'], isLong) -> false
 toolbox.every = function(array, fn) {
-  // YOUR CODE HERE
+  let temp = true;
+  array.forEach(item => {
+  temp = temp && fn(item);
+  });
+  return temp;
 };
 
 // Exercise 3.6 find(array, fn)
@@ -140,7 +162,13 @@ toolbox.every = function(array, fn) {
 //  find([1, 3, 5], isEven) -> -1
 //  find([1, 2, 3, 4, 5, 6], isEven) -> 1
 toolbox.find = function(array, fn) {
-  // YOUR CODE HERE
+  let indexItem = -1;
+  array.forEach(item => {
+  if (indexItem === -1 && fn(item)) {
+    indexItem = array.indexOf(item);
+    }
+  });
+  return indexItem;
 };
 
 // Bonus Exercise! zip(array1, array2)
