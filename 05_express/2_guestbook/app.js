@@ -63,9 +63,6 @@ app.get('/posts', function (req, res) {
   res.render('posts', {
     username: req.cookies.username,
     posts: data.read()
-    // Pass `username` to the template from req.cookies.username
-    // Pass `posts` to the template from data.read()
-    // YOUR CODE HERE
   });
 });
 
@@ -79,7 +76,7 @@ app.get('/posts', function (req, res) {
 //
 // Hint: check req.cookies.username to see if user is logged in
 app.get('/posts/new', function(req, res) {
-  // YOUR CODE HERE
+  res.render('post_form', { username: req.cookies.username })
 });
 
 // POST /posts:
@@ -98,7 +95,13 @@ app.get('/posts/new', function(req, res) {
 // Read all posts with data.read(), .push() the new post to the array and
 // write it back wih data.save(array).
 app.post('/posts', function(req, res) {
-  // YOUR CODE HERE
+  if (!req.cookies.username) {
+    res.status(401)
+    res.send('Please log in to see posts')
+  }
+  else if (!title || !body || !date) {
+    
+  }
 });
 
 // Start the express server
