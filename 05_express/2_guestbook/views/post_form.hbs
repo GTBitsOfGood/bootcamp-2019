@@ -21,7 +21,16 @@
     Add an HTML form here with `method="POST"` and `action="/posts"`.
     This login form should have input elements for title, body and date and a submit button.
   -->
-  <!-- YOUR CODE HERE -->
+  <form action="/posts" method="post">
+  <span><input type="text" name="title" value={{title}}>
+    <br/>
+    <input type="text" name="body" value={{body}}>
+    <br/>
+      <input type="text" name="date" value={{date}}>
+    <br/>
+    <input type="submit" value="Submit New Post">
+  </span>
+  </form>
 
 </body>
 </html>

@@ -11,7 +11,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Part 1
-// YOUR CODE HERE
+app.get('/*', function(req, res) {
+    res.render('example1', {header: req.query.header});
+});
 
 // start the express app
 var port = process.env.PORT || 3000;

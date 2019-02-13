@@ -1,3 +1,9 @@
 <div>
-  <span>YOUR CODE HERE</span>
+  <span>{
+      <ul>
+          {{#each arr}}
+              <li>First Name: {{first_name}}  Last Name: {{last_name}}  Email: {{email}}</li>
+          {{/each}}
+      </ul>
+  </span>
 </div>

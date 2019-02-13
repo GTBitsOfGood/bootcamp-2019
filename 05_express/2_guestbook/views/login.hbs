@@ -14,14 +14,10 @@
 <body>
   <h1>Login</h1>
 
-  <!-- Part 1: Login form -->
-
-  <!--
-    Add an HTML form with `method="POST"` and `action="/login"`.
-    This login form should contain a single `<input>` element of `type="text"`
-    and `name="username"` and [a submit button](http://www.w3schools.com/html/html_forms.asp)
-  -->
-
-  <!-- YOUR CODE HERE -->
+  <form action="/login" method="post">
+  <span><input type="text" name="username" value={{username}}>
+    <input type="submit" value="Login">
+  </span>
+  </form>
 </body>
 </html>
