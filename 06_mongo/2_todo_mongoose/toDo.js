@@ -174,8 +174,8 @@ function addTask() {
 
 function showTasks() {
   ToDo.findOne({name: process.argv[4]}, (err, result) => {
-      console.log(`Task: ${result.name}, Priority: ${task.priority}, Completed: ${task.completed}`)
-  });
+      console.log(`Task: ${result.name}, Priority: ${result.priority}, Completed: ${result.completed}`)
+  }).catch(err => console.log(err));
   // Hint: Use the .find function on your model to get the tasks
   //    .find({name: "Do Laundry"}, function(err, task) { // do things } ) - only finds ToDoItems where name is "Do Laundry"
   //    .find(function (err, task) { // do things } ) - finds all tasks
