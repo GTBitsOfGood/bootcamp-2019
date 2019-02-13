@@ -61,6 +61,8 @@ app.post('/login', function(req, res) {
 // Hint: use data.read() to read the post data from data.json
 app.get('/posts', function (req, res) {
   res.render('posts', {
+    username: req.cookies.username,
+    posts: data.read()
     // Pass `username` to the template from req.cookies.username
     // Pass `posts` to the template from data.read()
     // YOUR CODE HERE
