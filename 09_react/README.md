@@ -61,15 +61,15 @@ component lifecycle methods.
 
 1. [Open CodePen for this exercise.](https://codepen.io/BitsofGood/pen/qQOVvy)
 
-1. Implement the `update` function. This function should call `this.setState()` and update `this.state.secondsLeft` to be `(this.state.end - Date.now()) / 1000`.
+2. Implement the `update` function. This function should call `this.setState()` and update `this.state.secondsLeft` to be `(this.state.end - Date.now()) / 1000`.
 
-1. Implement the `componentDidMount` function. Set `this.state.end` to be `this.props.mins` added to the current time, and use `setInterval()` to call `this.update` periodically.
+3. Implement the `componentDidMount` function. Set `this.state.end` to be `this.props.mins` added to the current time, and use `setInterval()` to call `this.update` periodically.
 
     ![](img/setInterval.png)
 
-1. Implement the `componentWillUnmount` function. Use `clearInterval()` to cancel the background update process.
+4. Implement the `componentWillUnmount` function. Use `clearInterval()` to cancel the background update process.
 
-1. There are two timers on the page, verify that they count down from 1 and 5 minutes respectively.
+5. There are two timers on the page, verify that they count down from 1 and 5 minutes respectively.
 
 > Do not worry if the numbers go below zero!
 
