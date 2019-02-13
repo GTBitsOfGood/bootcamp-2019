@@ -4,7 +4,7 @@
     "commander": "^2.19.0",
     "jasmine-node": "^1.16.2",
     "jsonfile": "^5.0.0",
-    "mongoose": "^5.4.7"
+    "mongoose": "^5.4.11"
   },
   "scripts": {
     "test": "jasmine-node .",
