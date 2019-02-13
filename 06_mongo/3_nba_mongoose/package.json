@@ -1,10 +1,10 @@
 {
-  "name": "wk3d1",
+  "name": "nba-mongoose",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "mongoose": "^5.4.7"
+    "mongoose": "^5.4.11"
   },
   "scripts": {
     "start": "nodemon index.js"

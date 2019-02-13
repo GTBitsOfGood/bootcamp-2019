@@ -1,23 +1,23 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var PlayerSchema = new Schema({
-  Name:{
+const PlayerSchema = new Schema({
+  Name: {
     type: String,
     required: true
   },
-  Points:{
+  Points: {
     type: Number,
     required: true
   },
-  Rebounds:{
+  Rebounds: {
     type: Number,
     required: true
   },
-  Assists:{
+  Assists: {
     type: Number,
     required: true
   }
 });
 
-module.exports =  mongoose.model('Player', PlayerSchema)
+module.exports = mongoose.model("Player", PlayerSchema);
