@@ -15,7 +15,9 @@ app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({extended: false}));
+
 app.use(bodyParser.json());
 
 // Make files in the folder `public` accessible via Express
@@ -161,5 +163,5 @@ app.post('/posts', function (req, res) {
 });
 
 // Start the express server
-var port = '3000'
+const port = '3000'
 app.listen(port);

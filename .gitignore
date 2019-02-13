@@ -1,4 +1,4 @@
 .DS_Store
+node_modules/
 .idea/
-08_ajax_express/video_code/node_modules/*
-
+.vscode/
