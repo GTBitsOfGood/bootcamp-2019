@@ -40,5 +40,7 @@ const Empurress = new Cat({
 });
 Empurress.save();
 
-console.log(Cat.findOne({name: "Mr. Bigglesworth"}));
+Cat.findOne({name: "Mr. Bigglesworth"}).then((results) => console.log(results));
+
+//there are probably too many things in this database so this won't look great
 

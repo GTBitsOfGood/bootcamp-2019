@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 // PART 0: Create an env.sh file that should export the MONGODB_URI
 
 // connect to your Mongo Database
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } );
 mongoose.Promise = global.Promise;
 
 // check if the connection was successful
@@ -48,6 +48,12 @@ db.once("open", function() {
 //    is a String, a "priority" property that is a String, and a
 //    "completed" property that is a Boolean.
 
+const ToDoItemSchema = new mongoose.Schema({
+     name: String,
+     priority: String,
+     completed: Boolean
+   });
+const ToDo = new mongoose.model('ToDoItem', ToDoItemSchema);
 // YOUR CODE HERE
 
 // Time to start defining our Commands. What are we going to do with our program?
@@ -62,7 +68,6 @@ db.once("open", function() {
 
 // THIS PART IS DONE FOR YOU. BE SURE TO READ THROUGH IT AND UNDERSTAND
 // THE CODE.
-
 program
   .command("add")
   .description("Create Tasks")
@@ -95,13 +100,16 @@ program
 // TODO: add flags for "-t and --task" (do not use parseInt as the
 //    task name should be kept a string)
 program.option("-p, --priority <p>", "Specify priority for task", parseInt);
+program.option("-t, --task <t>", "Specify task");
 // YOUR CODE HERE
 
 // Arguments
 // These lines are part of the 'Commander' module. They tell it to process all the
 // other arguments that are sent to our program with no specific name.
 program.parse(process.argv);
+
 if (process.argv.length === 2) {
+
   program.help();
 }
 
@@ -133,13 +141,16 @@ function addTask() {
 
   // TODO: create new instance of your toDo model (call it task) and
   //    set name, priority, and completed.
-
+  const task = new ToDo({name: name, priority: priority, completed: false});
   // YOUR CODE HERE
 
   // TODO: Use mongoose's save function to save task (the new instance of
   //    your model that you created above). In the callback function
   //    you should close the mongoose connection to the database at the end
   //    using "mongoose.connection.close();"
+  task.save().then(_ =>
+    mongoose.connection.close()
+  );
 
   // YOUR CODE HERE
 }
@@ -159,7 +170,12 @@ function addTask() {
 // use console.log to write to the command line.
 // Tasks must be logged in the following way:
 //    Task: [task.name], Priority: [task.priority], Completed: [task.completed]
+
+
 function showTasks() {
+  ToDo.findOne({name: process.argv[4]}, (err, result) => {
+      console.log(`Task: ${result.name}, Priority: ${task.priority}, Completed: ${task.completed}`)
+  });
   // Hint: Use the .find function on your model to get the tasks
   //    .find({name: "Do Laundry"}, function(err, task) { // do things } ) - only finds ToDoItems where name is "Do Laundry"
   //    .find(function (err, task) { // do things } ) - finds all tasks
