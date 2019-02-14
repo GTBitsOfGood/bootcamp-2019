@@ -1,13 +1,13 @@
 "use strict";
 
 //configuration options. These make up the exercicse.
-var fs = require('fs');
+const fs = require("fs");
 // This is the NPM module commander, we use it to interpret
 // command line commands, arguments and flags.
-var program = require('commander');
+const program = require("commander");
 
 // require the mongoose package
-var mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // PART 0: Create an env.sh file that should export the MONGODB_URI
 
@@ -16,9 +16,15 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
 // check if the connection was successful
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error. did you remember to create env.sh?'));
-db.once('open', function() {
+const db = mongoose.connection;
+db.on(
+  "error",
+  console.error.bind(
+    console,
+    "connection error. did you remember to create env.sh?"
+  )
+);
+db.once("open", function() {
   // connected!
 });
 
@@ -57,15 +63,18 @@ db.once('open', function() {
 // THIS PART IS DONE FOR YOU. BE SURE TO READ THROUGH IT AND UNDERSTAND
 // THE CODE.
 
-program.command('add')
-.description("Create Tasks")
-.action(addTask);
-program.command('show')
-.description("Show Tasks")
-.action(showTasks);
-program.command('delete')
-.description("Delete Tasks")
-.action(deleteTask);
+program
+  .command("add")
+  .description("Create Tasks")
+  .action(addTask);
+program
+  .command("show")
+  .description("Show Tasks")
+  .action(showTasks);
+program
+  .command("delete")
+  .description("Delete Tasks")
+  .action(deleteTask);
 
 // Flags
 // We will need two flags on our program. These will take values and convert them
@@ -85,8 +94,7 @@ program.command('delete')
 
 // TODO: add flags for "-t and --task" (do not use parseInt as the
 //    task name should be kept a string)
-program
-.option('-p, --priority <p>', 'Specify priority for task', parseInt)
+program.option("-p, --priority <p>", "Specify priority for task", parseInt);
 // YOUR CODE HERE
 
 // Arguments
@@ -106,8 +114,8 @@ if (process.argv.length === 2) {
 
 // The function parseArgs eliminates the last element on the array and joins
 // it in a string so: ['No', 'One', {}] -> ['No', 'One'] -> "No One"
-function parseArgs () {
-  var args = program.args.splice(0, (program.args.length-1));
+function parseArgs() {
+  const args = program.args.splice(0, program.args.length - 1);
   return args.join(" ");
 }
 
@@ -119,9 +127,9 @@ function parseArgs () {
 // for the tast from program.priority.
 // Remember to set priority to some default if the command is called without '-p'
 // `node toDo.js add Do the dishes`
-function addTask(){
-  var priority = program.priority || 1;
-  var name = parseArgs();
+function addTask() {
+  const priority = program.priority || 1;
+  const name = parseArgs();
 
   // TODO: create new instance of your toDo model (call it task) and
   //    set name, priority, and completed.
@@ -155,7 +163,6 @@ function showTasks() {
   // Hint: Use the .find function on your model to get the tasks
   //    .find({name: "Do Laundry"}, function(err, task) { // do things } ) - only finds ToDoItems where name is "Do Laundry"
   //    .find(function (err, task) { // do things } ) - finds all tasks
-
   // YOUR CODE HERE
 }
 
@@ -163,9 +170,8 @@ function showTasks() {
 
 // Write a function that is called when the command `node toDo.js delete -t "Do Laundry"`
 // is run. Take the name from program.task and delete that element from the database.
-function deleteTask(){
+function deleteTask() {
   // TODO: If program.task exists you should use mongoose's .remove function
   //    on the model to remove the task with {name: program.task}
-
   // YOUR CODE HERE
 }

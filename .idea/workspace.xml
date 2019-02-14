@@ -2,16 +2,238 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="184fc06d-6327-45d2-b576-229bf605ba39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" beforeDir="false" afterPath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/a/c/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/paths/a/c/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/sum/sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/sum/sum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01_git/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01_git/merge-conflict-tutorial.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/img/debug break point console.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/img/debug break point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/img/debug click failing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/img/debug console.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/img/debug resume.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02_javascript/2_debugging/img/debug step.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03_html_css/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_express/1_express_intro/1_poet/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_express/1_express_intro/2_express_echo/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/3_profiles/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_express/1_express_intro/img/postman2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex1_arrays_and_strings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex1_arrays_and_strings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex1_arrays_and_strings_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex1_arrays_and_strings_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex2_functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex2_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex2_functions_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex2_functions_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex3_arrays_and_functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex3_arrays_and_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex3_arrays_and_functions_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex3_arrays_and_functions_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex4_objects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex4_objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex4_objects_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex4_objects_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex5_libraries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex5_libraries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/Ex5_libraries_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/Ex5_libraries_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/img/chrome-menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/img/chrome-menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/img/devtools-open.png" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/img/devtools-open.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/img/devtools.png" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/img/devtools.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/img/exc1-solved.png" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/img/exc1-solved.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/img/exc1.png" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/img/exc1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/jasmine-2.4.1/boot.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/jasmine-2.4.1/boot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/jasmine-2.4.1/console.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/jasmine-2.4.1/console.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/jasmine-2.4.1/jasmine-html.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/jasmine-2.4.1/jasmine-html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/jasmine-2.4.1/jasmine.css" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/jasmine-2.4.1/jasmine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/jasmine-2.4.1/jasmine.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/jasmine-2.4.1/jasmine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/1_basics/jasmine-2.4.1/jasmine_favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/1_basics/jasmine-2.4.1/jasmine_favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/1Tic_Tac_Toe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/1Tic_Tac_Toe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/1Tic_Tac_Toe_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/1Tic_Tac_Toe_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/2Hangman.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/2Hangman.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/2Hangman.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/2Hangman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/2Hangman_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/2Hangman_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/3Towers_of_Hanoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/3Towers_of_Hanoi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/3Towers_of_Hanoi_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/3Towers_of_Hanoi_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman.gif" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman0.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman1.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman2.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman3.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman4.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman5.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/hangman6.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/hangman6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/tictactoe.gif" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/tictactoe.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/img/towers.gif" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/img/towers.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/jasmine/boot.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/jasmine/boot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/jasmine/console.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/jasmine/console.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/jasmine/jasmine-html.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/jasmine/jasmine-html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/jasmine/jasmine.css" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/jasmine/jasmine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/jasmine/jasmine.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/jasmine/jasmine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/2_games/jasmine/jasmine_favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/2_games/jasmine/jasmine_favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/2_debugging/debug.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/2_debugging/debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/3_debugging/debug_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/2_debugging/debug_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/4_rocketship/rocketship.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/4_rocketship/rocketship.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/4_rocketship/rocketship_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/4_rocketship/rocketship_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/3_js_builtins/js_builtins.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/3_js_builtins/js_builtins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.md" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/3_js_builtins/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/3_js_builtins/js_builtins_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.html" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/4_function_arguments/var_args.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/4_function_arguments/var_args.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args.md" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/4_function_arguments/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/6_function_arguments/var_args_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/4_function_arguments/var_args_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/7_calculator/util_calc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/7_calculator/util_calc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/7_calculator/util_calc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/7_calculator/util_calc_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/7_calculator/util_calc_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/B1_poker/poker.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/B1_poker/poker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/B1_poker/poker.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/B1_poker/poker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/B1_poker/poker.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/B1_poker/poker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/B1_poker/poker_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/javascript/B1_poker/poker_tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_javascript/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/02_javascript/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_html_css/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_html_css/udemy_ss.png" beforeDir="false" afterPath="$PROJECT_DIR$/03_html_css/udemy_ss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/1_handling_events/event_handlers.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/1_handling_events/event_handlers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/1_handling_events/event_handlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/1_handling_events/event_handlers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/2_comment_threads/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/2_comment_threads/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/2_comment_threads/comment_threads.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/2_comment_threads/comment_threads.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/2_comment_threads/comment_threads.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/2_comment_threads/comment_threads.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/3_horello_dynamic/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/3_horello_dynamic/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/3_horello_dynamic/horello.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/3_horello_dynamic/horello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/3_horello_dynamic/img/title.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/3_horello_dynamic/img/title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/3_horello_dynamic/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/3_horello_dynamic/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/3_horello_dynamic/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/3_horello_dynamic/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/async.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/async.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/errors.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/errors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/poetry_slam/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/poetry_slam/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/poetry_slam/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/poetry_slam/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/poetry_slam/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/poetry_slam/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/4_ajax/population.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/4_ajax/population.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture1.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture10.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture10.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture11.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture11.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture12.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture12.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture13.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture13.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture14.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture14.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture3.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture4.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture5.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture6.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture6.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture7.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture8.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture8.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/screenshots/capture9.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/screenshots/capture9.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/src/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/src/img/title.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/src/img/title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/src/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/src/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/src/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/src/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/5_horello-ajax/src/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/5_horello-ajax/src/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b1_jquery/b1_jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b1_jquery/b1_jquery.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b2_twilio/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b2_twilio/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b2_twilio/twilio.css" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b2_twilio/twilio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b2_twilio/twilio.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b2_twilio/twilio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b2_twilio/twilio.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b2_twilio/twilio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/css/momentum.css" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/css/momentum.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/js/momentum-quote.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/js/momentum-quote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/js/momentum-weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/js/momentum-weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/js/momentum.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/js/momentum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/momentum.html" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/momentum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/text-example.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/text-example.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_jquery/b3_momentum/weather-example.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/jquery/b3_momentum/weather-example.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/1_sum/sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/1_sum/sum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/countio/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/3_countio/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/countio/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/3_countio/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/a/c/five.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/2_paths/a/c/five.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/a/c/four.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/2_paths/a/c/four.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/a/c/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/2_paths/a/c/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/a/two.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/2_paths/a/two.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/b/one.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/2_paths/b/one.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/paths/b/three.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/2_paths/b/three.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/sum/sum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/1_node_intro/sum/sum.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/1_node_intro/1_sum/sum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/2_address_book_cli/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/2_address_book_cli/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/2_address_book_cli/addressBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/2_address_book_cli/addressBook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/2_address_book_cli/addressBook_spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/2_address_book_cli/addressBook_spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/3_companies_csv/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/3_companies_csv/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/3_companies_csv/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/3_companies_csv/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04_node/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/b1_wikipedia/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_wikipedia/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/b1_wikipedia/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_wikipedia/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/b1_wikipedia/answers.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_wikipedia/answers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/b1_wikipedia/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_wikipedia/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/b1_wikipedia/sample.data" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_wikipedia/sample.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_node/b1_wikipedia/wikipedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_wikipedia/wikipedia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/express_echo/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/express_echo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/2_express_echo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/accounts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/example1.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/example1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/example2.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/example2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/example3.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/example3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/example4.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/example4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/views/example1.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/views/example1.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/views/example2.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/views/example2.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/views/example3.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/views/example3.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/views/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/forms_examples/views/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/4_forms_examples/views/register.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/conditional/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/2_conditional/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/conditional/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/2_conditional/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/conditional/views/condition.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/2_conditional/views/condition.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/conditional/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/2_conditional/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/hello_world/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/1_hello_world/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/profiles/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/profiles/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/3_profiles/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/profiles/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/3_profiles/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/handlebars_examples/profiles/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/3_handlebars_examples/3_profiles/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/img/postman3.png" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/img/postman3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/poem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/1_poet/poem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/1_express_intro/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/1_express_intro/1_poet/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/2_guestbook/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/2_guestbook/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/2_guestbook/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/2_guestbook/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/2_guestbook/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/2_guestbook/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/05_express/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/b1_trello-csv/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_trello-csv/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/b1_trello-csv/img/trello.png" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_trello-csv/img/trello.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/b1_trello-csv/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_trello-csv/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/b1_trello-csv/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_trello-csv/sample.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_express/b1_trello-csv/trello-csv.js" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/node/b1_trello-csv/trello-csv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/1_mongo_intro/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/1_mongo_intro/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/1_mongo_intro/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/1_mongo_intro/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/1_mongo_intro/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/1_mongo_intro/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/1_mongo_intro/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/toDo.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/toDo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/toDo_spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/2_todo_mongoose/toDo_spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/model/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/model/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/playerAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/3_nba_mongoose/playerAdd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_mongo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/06_mongo/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/07_mini_project_1/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_mini_project_1/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_mini_project_1/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/07_mini_project_1/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/07_mini_project_1/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_mini_project_1/views/layouts/main.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/07_mini_project_1/views/layouts/main.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_ajax_express/1_form_validation/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/08_ajax_express/1_form_validation/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/08_ajax_express/1_form_validation/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/08_ajax_express/1_form_validation/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10_advanced_mongoose/books/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/10_advanced_mongoose/books/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,24 +245,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.37701976">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2210">
-                  <caret line="130" column="27" selection-start-line="130" selection-start-column="27" selection-end-line="130" selection-end-column="27" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/04_node/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="34">
-                    <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                  <first_editor relative-caret-position="68">
+                    <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -59,41 +272,27 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/sum/sum.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/sum/sum.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="457">
-                  <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/04_node/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="68">
+                    <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/countio/main.js">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/1_sum/sum.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="3" column="64" lean-forward="true" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
+                <state relative-caret-position="578">
+                  <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
@@ -118,6 +317,7 @@
         <option value="$PROJECT_DIR$/01_javascript/5_js_builtins/js_builtins.js" />
         <option value="$PROJECT_DIR$/04_node/1_node_intro/paths/a/c/main.js" />
         <option value="$PROJECT_DIR$/04_node/1_node_intro/sum/sum.js" />
+        <option value="$PROJECT_DIR$/04_node/1_node_intro/1_sum/sum.js" />
       </list>
     </option>
   </component>
@@ -143,22 +343,6 @@
             <path>
               <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
               <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
-              <item name="01_javascript" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
-              <item name="01_javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="5_js_builtins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
-              <item name="02_html_css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootcamp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
               <item name="04_node" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -172,7 +356,7 @@
               <item name="bootcamp" type="462c0819:PsiDirectoryNode" />
               <item name="04_node" type="462c0819:PsiDirectoryNode" />
               <item name="1_node_intro" type="462c0819:PsiDirectoryNode" />
-              <item name="countio" type="462c0819:PsiDirectoryNode" />
+              <item name="1_sum" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,18 +418,18 @@
       <workItem from="1548638179318" duration="79000" />
       <workItem from="1548955943533" duration="18599000" />
       <workItem from="1549399292429" duration="7527000" />
-      <workItem from="1550187110536" duration="17000" />
+      <workItem from="1550187110536" duration="333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40123000" />
+    <option name="totallyTimeSpent" value="40439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24831308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24831308" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,16 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/04_node/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
@@ -466,11 +640,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/countio/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="51">
           <caret line="3" column="64" lean-forward="true" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_node/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04_node/1_node_intro/1_sum/sum.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
         </state>
       </provider>
     </entry>
