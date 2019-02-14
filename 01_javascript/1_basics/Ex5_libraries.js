@@ -40,7 +40,9 @@ console.log("let's see what's in our toolbox:", toolbox);
 // ex. toolbox.countEven(1)  -> [0]
 // ex. toolbox.countEven(10) -> [0, 2, 4, 6, 8]
 toolbox.countEven = function(n) {
-  // YOUR CODE HERE
+  return toolbox.filter(toolbox.count(n) , function(n){
+    return (n % 2) == 0;
+  });
 };
 
 // Exercise 5.2 indexOf(array, item)
@@ -54,7 +56,11 @@ toolbox.countEven = function(n) {
 // See indexOf() from the underscore.js library:
 // http://underscorejs.org/#indexOf
 toolbox.indexOf = function(array, item) {
-  // YOUR CODE HERE
+  return toolbox.find(array, function(x){
+    return (x == item);
+
+  });
+
 };
 
 // Exercise 5.3 lastIndexOf(array, fun)
@@ -81,7 +87,14 @@ toolbox.indexOf = function(array, item) {
 // See lastIndexOf() from the underscore.js library:
 // http://underscorejs.org/#lastIndexOf
 toolbox.lastIndexOf = function(array, item) {
-  // YOUR CODE HERE
+
+  let returnNum =  toolbox.find(array.reverse() , function(x){
+    return item == x;
+  });
+  if(returnNum == -1) {
+    return -1;
+  }
+  return array.length - returnNum - 1;
 };
 
 // Exercise 5.4 negate(fun)
@@ -103,7 +116,10 @@ toolbox.lastIndexOf = function(array, item) {
 // See negate() from the underscore.js library:
 // http://underscorejs.org/#negate
 toolbox.negate = function(fun) {
-  // YOUR CODE HERE
+  return function(x) {
+    return !fun(x);
+  }
+
 };
 
 // Exercise 5.5 reject(array, fun)
@@ -127,7 +143,11 @@ toolbox.negate = function(fun) {
 // See reject() from the underscore.js library:
 // http://underscorejs.org/#reject
 toolbox.reject = function(array, fun) {
-  // YOUR CODE HERE
+  let opposite = toolbox.negate(fun);
+  return toolbox.filter(array, function(item){
+    return opposite(item);
+
+  });
 };
 
 // Bonus Exercise! difference(array1, array2)

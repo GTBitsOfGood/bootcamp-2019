@@ -37,7 +37,11 @@ array.length; // -> outputs 4
 // ex. count(1)  -> [0]
 // ex. count(10) -> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 toolbox.count = function(n) {
-  // YOUR CODE HERE
+    var arr = [];
+      for(var i = 0; i < n; i++) {
+          arr.push(i)
+      }
+    return arr;
 };
 
 // 1.2 first(array)
@@ -47,7 +51,7 @@ toolbox.count = function(n) {
 // ex. first([1, 2, 3]) -> 1
 // ex. first(['a', 'b', 'c']) -> 'a'
 toolbox.first = function(array) {
-  // YOUR CODE HERE
+  return array[0];
 };
 
 // 1.3 last(array)
@@ -57,7 +61,8 @@ toolbox.first = function(array) {
 // ex. last([1, 2, 3]) -> 3
 // ex. last(['a', 'b', 'c']) -> 'c'
 toolbox.last = function(array) {
-  // YOUR CODE HERE
+  //console.log(array.length);
+  return array[array.length - 1];
 };
 
 // 1.4 repeat(n, array)
@@ -68,7 +73,17 @@ toolbox.last = function(array) {
 // ex. repeat(1, [1, 2, 3]) -> [1, 2, 3]
 // ex. repeat(3, [1, 2, 3]) -> [1, 2, 3, 1, 2, 3, 1, 2, 3]
 toolbox.repeat = function(n, array) {
-  // YOUR CODE HERE
+  const arr = [];
+
+  for(let i = 0; i < n; i++){
+      for(let j = 0; j < array.length; j++) {
+          arr.push(array[j]);
+      }
+  }
+
+
+  return arr;
+
 };
 
 // 1.5 reverse(array)
@@ -77,7 +92,11 @@ toolbox.repeat = function(n, array) {
 // ex. reverse([1]) -> [1]
 // ex. reverse([1, 2, 3]) -> [3, 2, 1]
 toolbox.reverse = function(array) {
-  // YOUR CODE HERE
+    const arr = [];
+      for (var i = array.length - 1; i >= 0; i--) {
+          arr.push(array[i]);
+      }
+      return arr;
 };
 
 // Strings represent text. They behave a lot like arrays of letters. You can
@@ -110,7 +129,8 @@ string[0]; // still "h"
 // ex. firstN("hello", 0) -> ""
 // ex. firstN("hello", 2) -> "he"
 toolbox.firstN = function(string, n) {
-  // YOUR CODE HERE
+    return string.slice(0,n);
+
 };
 
 // 1.7 lastN(string, n)
@@ -119,7 +139,7 @@ toolbox.firstN = function(string, n) {
 // ex. lastN("hello", 0) -> ""
 // ex. lastN("hello", 2) -> "lo"
 toolbox.lastN = function(string, n) {
-  // YOUR CODE HERE
+  return string.slice(string.length - n, string.length);
 };
 
 // Built-in function: string.indexOf(substring)
@@ -144,7 +164,8 @@ toolbox.lastN = function(string, n) {
 // ex. startsWith("hello", "e") -> false
 // ex. startsWith("hello", "x") -> false
 toolbox.startsWith = function(string, substring) {
-  // YOUR CODE HERE
+  let size = substring.length;
+  return string.slice(0, size) == substring;
 };
 
 // Built-in function: string.split(separator)
@@ -166,5 +187,6 @@ toolbox.startsWith = function(string, substring) {
 // ex. replaceAll("hello world", "hello", "goodbye") -> "goodbye world"
 // ex. replaceAll("hello", "l", "x") -> "hexxo"
 toolbox.replaceAll = function(string, substring, newSubstring) {
-  // YOUR CODE HERE
+  return string.split(substring).join(newSubstring);
+
 };

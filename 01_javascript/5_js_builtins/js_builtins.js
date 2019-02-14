@@ -20,7 +20,8 @@ window.builtins = {};
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
 builtins.trim = function(str) {
-  // YOUR CODE HERE
+    let result = str.trim();
+    return result;
 };
 
 // ----------------------------------------------------------------------------
@@ -39,7 +40,11 @@ builtins.trim = function(str) {
 // ex. builtins.search('Horizons', 'h') -> false
 
 builtins.search = function(sourceString, searchString) {
-  // YOUR CODE HERE
+  if(sourceString.search(searchString) != -1) {
+      return true;
+  } else {
+      return false;
+  }
 };
 
 // ----------------------------------------------------------------------------
@@ -59,7 +64,9 @@ builtins.search = function(sourceString, searchString) {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 
 builtins.parseQuantity = function(str) {
-  // YOUR CODE HERE
+  let result = str.split(" ");
+  console.log(result);
+  return parseInt(result[0]);
 };
 
 // ----------------------------------------------------------------------------
@@ -75,7 +82,7 @@ builtins.parseQuantity = function(str) {
 // ex. builtins.reverse([123]) -> [123]
 
 builtins.reverse = function(arr) {
-  // YOUR CODE HERE
+  return arr.reverse();
 };
 
 // ----------------------------------------------------------------------------
@@ -93,7 +100,14 @@ builtins.reverse = function(arr) {
 // ex. builtins.isEqual([], []) -> true
 
 builtins.isEqual = function(a, b) {
-  // YOUR CODE HERE
+    if(a.length !== b.length)
+        return false;
+    for(var i = a.length; i--;) {
+        if(a[i] !== b[i])
+            return false;
+    }
+
+    return true;
 };
 
 // ----------------------------------------------------------------------------
@@ -110,7 +124,19 @@ builtins.isEqual = function(a, b) {
 // ex. builtins.isPalindrome('racecar'.split('')) -> true
 
 builtins.isPalindrome = function(arr) {
-  // YOUR CODE HERE
+    for(let i = 0; i < arr.length; i++) {
+        for(let j = arr.length - 1; j >= 0; j--) {
+            if(arr[i] !== arr[j]){
+                console.log(arr[i]);
+                return false;
+            }
+        }
+    }
+
+    return true;
+   //console.log(builtins.isEqual(arr,arr2));
+
+    //return builtins.isEqual(arr,arr2);
 };
 
 // ----------------------------------------------------------------------------
@@ -130,7 +156,8 @@ builtins.isPalindrome = function(arr) {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 builtins.sortByValue = function(arr) {
-  // YOUR CODE HERE
+    console.log(arr.sort());
+    return (arr.sort((a,b)=>a-b));
 };
 
 // ----------------------------------------------------------------------------
@@ -147,7 +174,7 @@ builtins.sortByValue = function(arr) {
 // comparing this time!
 
 builtins.sortByLength = function(arr) {
-  // YOUR CODE HERE
+  return (arr.sort((a,b)=>a.length - b.length));
 };
 
 // ----------------------------------------------------------------------------
@@ -162,5 +189,5 @@ builtins.sortByLength = function(arr) {
 // ex. builtins.flatten([]) -> []
 
 builtins.flatten = function(arr) {
-  // YOUR CODE HERE
+
 };
