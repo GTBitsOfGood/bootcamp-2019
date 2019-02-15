@@ -7,6 +7,12 @@ module.exports = {
   // "original investment" made on a company.
   // Return the amount of the largest investment.
   singleLargestInvestment: function(arr){
+    return arr.reduce(function(accumulator, investment) {
+      if (investment.originalInvestment > accumulator) {
+        return investment.originalInvestment
+      }
+      return accumulator
+    }, 0)
     // Fields to be parsed: "originalInvestment", "valueToday"
   },
 
@@ -15,6 +21,10 @@ module.exports = {
   // of investments.
   // Return a Number.
   averageOfOriginalInvestments: function(arr){
+    var sum = arr.reduce(function(accumulator, investment) {
+      return accumulator + investment.originalInvestment;
+    }, 0)
+    return sum/(arr.length);
     // Fields to be parsed: "originalInvestment", "valueToday"
   },
 
@@ -29,6 +39,14 @@ module.exports = {
   //   ...
   // }
   totalOriginalInvestmentForCompanies: function(arr){
+    var investmentAmounts = {};
+    arr.forEach (function(investment) {
+      if (investmentAmounts[investment.company] === undefined) {
+        investmentAmounts[investment.company] = 0;
+      }
+      investmentAmounts[investment.company] += investment.originalInvestment
+    });
+    return investmentAmounts;
     // Fields to be parsed: "originalInvestment", "valueToday"
   },
 
@@ -43,6 +61,14 @@ module.exports = {
   //   ...
   // }
   totalOriginalInvestmentsByInvestors: function(arr){
+    var investorAmounts = {};
+    arr.forEach(function(investment) {
+      if (investorAmounts[investment.investorID] === undefined) {
+        investorAmounts[investment.investorID] = 0;
+      }
+      investorAmounts[investorAmounts.investorID] += investment.originalInvestment
+    });
+    return investorAmounts;
     // Fields to be parsed: "originalInvestment", "valueToday"
   },
 
@@ -59,6 +85,14 @@ module.exports = {
   // }
     // Fields to be parsed: "originalInvestment", "valueToday"
   totalCurrentValueOfInvestors: function(arr){
+    var investorCurrentValues = {};
+    arr.forEach(function(investment) {
+      if (investorCurrentValues[investment.investorID] === undefined) {
+        investorCurrentValues[investment.investorID] = 0;
+      }
+      investorCurrentValues[investment.investorId] += investment.valueToday
+    });
+    return investorCurrentValues;
   },
 
   // To find out who the best investor is, you need to find out the ratio in which
@@ -69,13 +103,51 @@ module.exports = {
   // using totalOriginalInvestmentsByInvestors & totalCurrentValueOfInvestors
   // Return an investorID;
   bestInvestorByValueIncrease: function(arr){
+    var investmentRatios = {}
+    var totalInvestmentByInvestors = this.totalOriginalInvestmentsByInvestors(arr)
+    var totalCurrentValueOfInvestors = this.totalCurrentValueOfInvestors(arr)
+    for (var investor in totalInvestmentByInvestors) {
+      if (totalInvestmentByInvestors.hasOwnProperty(investor)) {
+        investmentRatios[investor]=totalCurrentValueOfInvestors[investor]/totalInvestmentByInvestors[investor];
+      }
+    }
+    var bestInvestor=  0;
+    var bestInvestmentRatio = 0;
+    for (var investor in investmentRatios) {
+      if (investmentRatios.hasOwnProperty(investor)) {
+        if (investmentRatios[investor]>bestInvestmentRatio) {
+          bestInvestmentRatio=investmentRatios[investor];
+          bestInvestor=investor;
+        }
+      }
+    }
+    return bestInvestor;
     // Fields to be parsed: "originalInvestment", "valueToday"
   },
 
   // Find out which company was invested the most in using the originalInvestment.
   // Return a companyId
   mostInvestedCompany: function(arr){
-    // Fields to be parsed: "originalInvestment", "valueToday"
+    var companyCurrentValues = {};
+        arr.forEach(function(investment) {
+          if (companyCurrentValues[investment.company] === undefined){
+            companyCurrentValues[investment.company] = 0;
+          }
+          companyCurrentValues[investment.company] += investment.originalInvestment
+        });
+
+        var mostInvestedCompanyId=0;
+        var mostInvestedCompanyAmount=0;
+        for (var companyId in companyCurrentValues) {
+          if (companyCurrentValues.hasOwnProperty(companyId)) {
+            if (companyCurrentValues[companyId]>mostInvestedCompanyAmount){
+              mostInvestedCompanyAmount=companyCurrentValues[companyId];
+              mostInvestedCompanyId=companyId;
+          }
+        }
+    }
+    return mostInvestedCompanyId;
+        // Fields to be parsed: "originalInvestment", "valueToday"
   }
 
 }

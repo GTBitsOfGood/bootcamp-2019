@@ -75,7 +75,7 @@ You can now check your tests and see them failing/passing. Run `npm test` every 
 
 Open `4_node/3_companies_csv/functions.js` file and fill in the functions to
 perform the different calculations. Each function has a short description of the
-expected results and some hints to achieve them.  
+expected results and some hints to achieve them.
 
 Every time you modify a function or want to check your progress, go to the
 command line and run `npm test`.

@@ -67,7 +67,13 @@ toolbox.keys = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [1, 1]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [1, 1, 2]
 toolbox.values = function(object) {
-  // YOUR CODE HERE
+  const returnArray = [];
+  for (let key in object) {
+    if(object.hasOwnProperty(key)) {
+      returnArray.push(object[key]);
+    }
+  }
+  return returnArray;
 };
 
 // Exercise 4.2 pairs(object)
@@ -79,7 +85,13 @@ toolbox.values = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [[a, 1], [b, 1]]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [[a, 1], [b, 1], [c, 2]]
 toolbox.pairs = function(object) {
-  // YOUR CODE HERE
+  const returnArray = [];
+  for (let key in object) {
+    if(object.hasOwnProperty(key)) {
+      returnArray.push([key, object[key]]);
+    }
+  }
+  return returnArray;
 };
 
 // Example 4.3 filterKey(object, fun)
@@ -92,7 +104,15 @@ toolbox.pairs = function(object) {
 //  }
 //  filterKey({aa: 1, ab: 2, ba: 3}, startsWithA) -> {aa: 1, ab: 2}
 toolbox.filterKey = function(object, fun) {
-  // YOUR CODE HERE
+  var obj = {};
+  for (let key in object) {
+    if(object.hasOwnProperty(key)){
+      if (fun(key) === true) {
+        obj[key] = object[key];
+      }
+    }
+  }
+  return obj;
 };
 
 // Exercise 4.4 pick(object, keysArray)
@@ -105,7 +125,17 @@ toolbox.filterKey = function(object, fun) {
 // ex. pick({a: 1}, ['a', 'b']) -> {a: 1}
 // ex. pick({a: 1, b: 2}, ['a', 'b']) -> {a: 1, b: 2}
 toolbox.pick = function(object, keysArray) {
-  // YOUR CODE HERE
+  var obj = {};
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      for (let i = 0; i < keysArray.length; i++) {
+        if (key === keysArray[i]) {
+        obj[key] = object[key];
+      }
+      }
+    }
+  }
+  return obj;
 };
 
 // Bonus Exercise 4.5! toolbox.propertyOf(object)

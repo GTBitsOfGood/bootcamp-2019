@@ -20,7 +20,15 @@ window.builtins = {};
 // ex. builtins.trim('Hello World!    ') -> 'Hello World!'
 
 builtins.trim = function(str) {
-  // YOUR CODE HERE
+  if (str[0] == " ") {
+    return str[1:];
+  }
+  if (str[str.length() - 1] == " ") {
+    return str[:str.length() - 2];
+  } else {
+    return str;
+  }
+
 };
 
 // ----------------------------------------------------------------------------
@@ -39,7 +47,16 @@ builtins.trim = function(str) {
 // ex. builtins.search('Horizons', 'h') -> false
 
 builtins.search = function(sourceString, searchString) {
-  // YOUR CODE HERE
+  let splitList = "";
+  sourceString.split("").forEach(letter =>) {
+    splitList += letter;
+  }
+  for (let i = 0; i < splitList.length; i++) {
+    if (splitList[i: i + searchString.length] == searchString) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // ----------------------------------------------------------------------------

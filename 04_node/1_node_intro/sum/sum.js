@@ -23,18 +23,36 @@
 // > 5
 //
 
-// Example code for reading command line arguments:
-console.log('Command line arguments', process.argv.slice(2));
+// // Example code for reading command line arguments:
+// console.log('Command line arguments', process.argv.slice(2));
 
-// Example code for getting input from the user
-var readline = require('readline');
+// // // Example code for getting input from the user
+function sumArgs() {
+    var readline = require('readline');
 
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+    var r1 = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
 
-rl.question("Hi! What's your name? ", function(name) {
-  console.log('Nice to meet you', name);
-  rl.close();
-});
+    r1.question("Enter 1st number. ", function(number1) {
+        r1.question("Enter 2nd number. ", function(number2) {
+            console.log(parseFloat(number1) + parseFloat(number2));
+            r1.close();
+        });
+    });
+}
+
+function addUp(numbers) {
+    let total = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        total += parseFloat(numbers[i]);
+    }
+    return total;
+}
+
+if (process.argv.length === 2) {
+    sumArgs();
+} else {
+    console.log(addUp(process.argv.slice(2)))
+}
