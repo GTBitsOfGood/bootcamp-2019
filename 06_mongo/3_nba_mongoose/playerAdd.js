@@ -1,3 +1,4 @@
+require("dotenv").config();
 // importing playerStats.json from source folder
 const playerStats = require("./model/source/playerStats.json");
 
@@ -19,7 +20,7 @@ mongoose.connection.on("error", () => {
   process.exit(1);
 });
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 
 // loop through playerStats.json and add each player and their stats to mlab
 playerStats.forEach((player, i, arr) => {
