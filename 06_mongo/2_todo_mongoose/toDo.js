@@ -1,6 +1,6 @@
 "use strict";
 
-//configuration options. These make up the exercicse.
+//configuration options. These make up the exercise.
 const fs = require("fs");
 // This is the NPM module commander, we use it to interpret
 // command line commands, arguments and flags.
@@ -114,7 +114,7 @@ if (process.argv.length === 2) {
 }
 
 // All the arguments that are not specified as flags are stored on an array called program.args
-// Calling our program with unkown args like 'node program.js No One'  means nothing
+// Calling our program with unknown args like 'node program.js No One'  means nothing
 // to our program. It is not a flag or command. It is an extra argument, so our
 // programs.args contain -> ['No', 'One', {}].
 // 'No One' is the name of the Game of Thrones episode. and the last item is an object that contains
@@ -132,7 +132,7 @@ function parseArgs() {
 // Example: This is a function that is called to create a new task.
 // Calling `node toDo.js add Do the dishes -p 3` must call our function addTask.
 // It should get the name of the task by calling parseArgs() and the priority
-// for the tast from program.priority.
+// for the test from program.priority.
 // Remember to set priority to some default if the command is called without '-p'
 // `node toDo.js add Do the dishes`
 function addTask() {
@@ -148,7 +148,7 @@ function addTask() {
   //    your model that you created above). In the callback function
   //    you should close the mongoose connection to the database at the end
   //    using "mongoose.connection.close();"
-  task.save().then(_ =>
+  task.save().then(() =>
     mongoose.connection.close()
   );
 
@@ -173,7 +173,7 @@ function addTask() {
 
 
 function showTasks() {
-  ToDo.findOne({name: process.argv[4]}, (err, result) => {
+  ToDo.findOne({name: program.task}, (err, result) => {
       console.log(`Task: ${result.name}, Priority: ${result.priority}, Completed: ${result.completed}`)
   }).catch(err => console.log(err));
   // Hint: Use the .find function on your model to get the tasks
@@ -187,7 +187,12 @@ function showTasks() {
 // Write a function that is called when the command `node toDo.js delete -t "Do Laundry"`
 // is run. Take the name from program.task and delete that element from the database.
 function deleteTask() {
-  // TODO: If program.task exists you should use mongoose's .remove function
-  //    on the model to remove the task with {name: program.task}
-  // YOUR CODE HERE
+    // TODO: If program.task exists you should use mongoose's .remove function
+    //    on the model to remove the task with {name: program.task}
+    // YOUR CODE HERE
+    let keepDeleting = true;
+    ToDo.findOneAndDelete({name: program.task}).then(result => {
+        console.log(result);
+    });
+
 }

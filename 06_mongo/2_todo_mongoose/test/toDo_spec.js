@@ -1,5 +1,5 @@
 "use strict";
-const child_process = require("child_process");
+const child_process = require('child_process').execSync('rsync -avAXz --info=progress2 "/src" "/dest"').toString();
 
 describe("Test toDo.js", function() {
   it("Show with no tasks on model", function() {
