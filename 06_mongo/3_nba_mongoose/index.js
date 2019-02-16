@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 // Require the Player model (Part 2.3)
 const Player = require('./model/player');
 // Require the Roster model (Part 5.2)
-
+const Roster = require('./model/roster');
 // Ensure that there is a MONGODB_URI environment variable (source env.sh)
 if (!process.env.MONGODB_URI) {
   throw new Error(
@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
   });
 });
 
+
 // (Part 4.2)
 app.post('/addPlayer', (req, res) => {
   let newPlayer = new Player(
@@ -47,13 +48,47 @@ app.post('/addPlayer', (req, res) => {
         Rebounds: req.body.Rebounds,
         Assists: req.body.Assists
       });
-  newPlayer.save().then((error) => {
-        console.log(error);
+  newPlayer.save().then((results, error) => {
+      if (error)
+        res.send(error);
+      else
+          res.send('New player added');
   });
 
-})
+});
 // (Part 5.3)
+app.post('/addPlayerRoster', (req, res) => {
+    let newPlayerInRoster = new Roster(
+        {
+            Name: req.body.Name,
+            JerseyNumber: req.body.JerseyNumber,
+            Team: req.body.Team
+        });
+    newPlayerInRoster.save().then(() => res.send("Got eem")).catch((error) => {
+        if (error)
+            res.send(error);
+        else
+            res.send('New player added to roster');
+    });
+});
+const ObjectId = require('mongodb').ObjectID;
+app.get('/:rosterid', (req, res) => {
+    console.log(req.params.rosterid);
+    const info = {};
 
+    Roster.find({"_id":ObjectId("5c6788b6ab13f866360a10b1")}, (results) => {
+        console.log(results);
+        info["Name"] = results["Name"];
+        info["Team"] = results.Team;
+        info["JerseyNumber"] = results.JerseyNumber;
+    }).then(Player.findOne({Name: info["Name"]}, (results) => {
+        console.log("asdlj", info);
+        info["Points"] = results.points;
+        info["Assists"] = results.assists;
+        info["Rebounds"] = results.rebounds;
+    })).then(res.json(info));
+
+});
 // (BONUS)
 
 // Begin listening on port 3000 (Part 2.1)
