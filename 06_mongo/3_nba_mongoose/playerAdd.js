@@ -22,6 +22,7 @@ mongoose.connection.on("error", () => {
 mongoose.connect(process.env.MONGODB_URI);
 
 // loop through playerStats.json and add each player and their stats to mlab
+
 playerStats.forEach((player, i, arr) => {
   const newPlayer = new Player({
     Name: player.Name,
