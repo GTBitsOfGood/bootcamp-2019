@@ -23,6 +23,27 @@
 -->
 
 <!-- YOUR CODE HERE -->
+{{#if ascending}}
+
+    {{#each posts}}
+        <div>
+            Author: {{this.author}} <br>
+            Title: {{this.title}} <br>
+            Body: {{this.body}} <br>
+            Date: {{this.date}} <br>
+        </div>
+    {{/each}}
+  {{else}}
+    {{#each backward}}
+      <div>
+            Author: {{this.author}} <br>
+            Title: {{this.title}} <br>
+            Body: {{this.body}} <br>
+            Date: {{this.date}} <br>
+        </div>
+    {{/each}}
+
+ {{/if}}
 
 </body>
 </html>
