@@ -73,20 +73,20 @@ app.post('/addPlayerRoster', (req, res) => {
 });
 const ObjectId = require('mongodb').ObjectID;
 app.get('/:rosterid', (req, res) => {
-    console.log(req.params.rosterid);
     const info = {};
 
-    Roster.find({"_id":ObjectId("5c6788b6ab13f866360a10b1")}, (results) => {
-        console.log(results);
-        info["Name"] = results["Name"];
+    Roster.findOne({_id: ObjectId(req.params.rosterid)}, (err, results) => {
+        info["Name"] = results.Name;
         info["Team"] = results.Team;
         info["JerseyNumber"] = results.JerseyNumber;
-    }).then(Player.findOne({Name: info["Name"]}, (results) => {
-        console.log("asdlj", info);
-        info["Points"] = results.points;
-        info["Assists"] = results.assists;
-        info["Rebounds"] = results.rebounds;
-    })).then(res.json(info));
+        return info
+    }).then((info2) =>
+        Player.findOne({Name: info2.Name}, (error, results) => {
+        info2["Points"] = results.Points;
+        info2["Assists"] = results.Assists;
+        info2["Rebounds"] = results.Rebounds;
+        return info2;
+    }).then((info3) => res.send(info3)));
 
 });
 // (BONUS)
