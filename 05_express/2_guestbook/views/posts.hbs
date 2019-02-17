@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="/js/script.js"></link>
 </head>
 <body>
-<h1>View all posts</h1>
+<a href="/posts">View all posts</a>
+<a href="/posts/new">Create new post</a>
 
 <h2>Your username: {{username}}</h2>
 
@@ -23,7 +24,7 @@
 -->
 
 {{#unless isFiltered}}
-  <p>Sort by date:</p>
+  Sort by date:
   <a href="/posts?order=ascending">ascending</a>
   <a href="/posts?order=ascending">descending</a>
 {{else}}

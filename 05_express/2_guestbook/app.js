@@ -59,21 +59,23 @@ app.post('/login', function(req, res) {
 //
 // Hint: to get the username, use req.cookies.username
 // Hint: use data.read() to read the post data from data.json
-app.get('/posts', function (req, res) {
-  let posts = data.read()
+app.get('/posts', (req, res) => {
+  let array = data.read()
   const isFiltered = req.query.author != undefined
   
   if (req.query.order) {
+    console.log('yo')
     const step = (req.query.order === 'descending') ? -1 : 1
-    posts.sort((a, b) => (a.date - b.date) * step)
+    array.sort((a, b) => (a.date - b.date) * step)
   }
   if (req.query.author) {
-    posts.filter(post => post.author === req.query.author)
+    console.log('what up')
+    array.filter(post => post.author === req.query.author)
   }
 
   res.render('posts', {
     username: req.cookies.username,
-    posts: posts,
+    posts: array,
     order: req.query.order,
     author: req.query.author,
     isFiltered: isFiltered
@@ -108,17 +110,18 @@ app.get('/posts/new', (req, res) => {
 //
 // Read all posts with data.read(), .push() the new post to the array and
 // write it back wih data.save(array).
-app.post('/posts', function(req, res) {
+app.post('/posts', (req, res) => {
   if (!req.cookies.username) {
     res.status(401)
     res.send('Please log in to see posts')
-  } else if (!req.body.title || !req.body.date || !date) {
+  } else if (!req.body.title || !req.body.date || !req.body.body) {
     res.status(400)
-    res.send('Body, title, or date missing')
+    res.send('Body, title, or date missing<br><a href="/posts/new">Go back</a>')
   } else {
     const posts = data.read()
-    posts.push({ title: req.body.title, body: req.body.body, date: req.body.date })
+    posts.push({ title: req.body.title, body: req.body.body, author: req.cookies.username, date: req.body.date })
     data.save(posts)
+    res.render('posts')
   }
 });
 
