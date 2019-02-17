@@ -66,11 +66,11 @@ app.get('/posts', (req, res) => {
   if (req.query.order) {
     console.log('yo')
     const step = (req.query.order === 'descending') ? -1 : 1
-    array.sort((a, b) => (a.date - b.date) * step)
+    array = array.sort((a, b) => (a.date - b.date) * step)
   }
   if (req.query.author) {
     console.log('what up')
-    array.filter(post => post.author === req.query.author)
+    array = array.filter(post => post.author === req.query.author)
   }
 
   res.render('posts', {
