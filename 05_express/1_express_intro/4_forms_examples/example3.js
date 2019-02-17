@@ -33,7 +33,8 @@ app.post('/login', (req, res) => {
   let accountIndex = findAccountIndex(req.body.email, req.body.password)
   let firstName = accounts[accountIndex].firstName
   let isValidLogin = accountIndex > -1
-  res.render('login', {
+  console.log(`hello ${req.body.email} ${req.body.password} ${firstName} ${isValidLogin}`)
+  res.render('example3', {
     email: req.body.email,
     firstName: firstName,
     isValidLogin: isValidLogin

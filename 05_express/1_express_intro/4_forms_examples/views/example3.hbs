@@ -3,8 +3,8 @@
 {{else}}
 <p style="color:Tomato;">Go away {{email}}</p>
 {{/if}}
-<form method="POST">
+<form action="/login" method="POST">
   <input type="text" name="email">
   <input type="password" name="password">
-  <input type="button" value="submit">
+  <input type="submit" value="submit">
 </form>
