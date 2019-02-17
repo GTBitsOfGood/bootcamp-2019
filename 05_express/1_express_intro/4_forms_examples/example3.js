@@ -16,24 +16,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('example3', {
-    email: req.query.email,
-    password: req.query.password
+    email: (req.body) ? req.body.email : null,
+    password: (req.body) ? req.body.password : null
   });
 });
 
-const checkLogin = (email, password) => {
+const findAccountIndex = (email, password) => {
   for (let i = 0; i < accounts.length; i++) {
-    if (accounts[i].email === email && accounts[i].password === password) return i
+    if (accounts[i].email === email && accounts[i].password === password)
+      return i
   }
   return -1
 }
 
 app.post('/login', (req, res) => {
-  let accountIndex = checkLogin(req.body.email, req.body.password)
-  let first_name = accounts[accountIndex].first_name
+  let accountIndex = findAccountIndex(req.body.email, req.body.password)
+  let firstName = accounts[accountIndex].firstName
   let isValidLogin = accountIndex > -1
   res.render('login', {
-    first_name: first_name,
+    email: req.body.email,
+    firstName: firstName,
     isValidLogin: isValidLogin
   })
 })

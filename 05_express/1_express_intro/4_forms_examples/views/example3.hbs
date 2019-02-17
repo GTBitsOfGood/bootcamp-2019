@@ -1,5 +1,9 @@
-
-<form method="POST" action="/login">
+{{#if validLogin}}
+<h1>Hi {{firstName}}!</h1>
+{{else}}
+<p style="color:Tomato;">Go away {{email}}</p>
+{{/if}}
+<form method="POST">
   <input type="text" name="email">
   <input type="password" name="password">
   <input type="button" value="submit">
