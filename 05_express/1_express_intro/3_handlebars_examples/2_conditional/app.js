@@ -18,4 +18,3 @@ app.get('/:word', function(req, res) {
 });
 
 app.listen(3000);
-
