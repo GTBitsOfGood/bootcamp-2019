@@ -115,7 +115,7 @@ if (process.argv.length === 2) {
 // The function parseArgs eliminates the last element on the array and joins
 // it in a string so: ['No', 'One', {}] -> ['No', 'One'] -> "No One"
 function parseArgs() {
-  var args = program.args.splice(0, program.args.length - 1);
+  const args = program.args.splice(0, program.args.length - 1);
   return args.join(" ");
 }
 
@@ -128,8 +128,8 @@ function parseArgs() {
 // Remember to set priority to some default if the command is called without '-p'
 // `node toDo.js add Do the dishes`
 function addTask() {
-  var priority = program.priority || 1;
-  var name = parseArgs();
+  const priority = program.priority || 1;
+  const name = parseArgs();
 
   // TODO: create new instance of your toDo model (call it task) and
   //    set name, priority, and completed.
