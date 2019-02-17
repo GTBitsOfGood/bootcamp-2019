@@ -11,7 +11,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Part 1
-// YOUR CODE HERE
+app.get('/', (req, res) => {
+    res.render('example1', { my_input : req.query.my_input || 'Default header'})
+})
 
 // start the express app
 const port = process.env.PORT || 3000;

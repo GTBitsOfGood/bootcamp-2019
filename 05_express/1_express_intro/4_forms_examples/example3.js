@@ -14,6 +14,8 @@ app.get('/', function(req, res) {
   res.render('example3');
 });
 
+app.post('/login', { username: req.body.username, password: req.body.password })
+
 // start the express app
 const port = process.env.PORT || 3000;
 app.listen(port);
