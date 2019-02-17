@@ -60,9 +60,23 @@ app.post('/login', function(req, res) {
 // Hint: to get the username, use req.cookies.username
 // Hint: use data.read() to read the post data from data.json
 app.get('/posts', function (req, res) {
+  let posts = data.read()
+  const isFiltered = req.query.author != undefined
+  
+  if (req.query.order) {
+    const step = (req.query.order === 'descending') ? -1 : 1
+    posts.sort((a, b) => (a.date - b.date) * step)
+  }
+  if (req.query.author) {
+    posts.filter(post => post.author === req.query.author)
+  }
+
   res.render('posts', {
     username: req.cookies.username,
-    posts: data.read()
+    posts: posts,
+    order: req.query.order,
+    author: req.query.author,
+    isFiltered: isFiltered
   });
 });
 
@@ -75,7 +89,7 @@ app.get('/posts', function (req, res) {
 // the user is not logged in display an error.
 //
 // Hint: check req.cookies.username to see if user is logged in
-app.get('/posts/new', function(req, res) {
+app.get('/posts/new', (req, res) => {
   res.render('post_form', { username: req.cookies.username })
 });
 
@@ -98,9 +112,13 @@ app.post('/posts', function(req, res) {
   if (!req.cookies.username) {
     res.status(401)
     res.send('Please log in to see posts')
-  }
-  else if (!title || !body || !date) {
-    
+  } else if (!req.body.title || !req.body.date || !date) {
+    res.status(400)
+    res.send('Body, title, or date missing')
+  } else {
+    const posts = data.read()
+    posts.push({ title: req.body.title, body: req.body.body, date: req.body.date })
+    data.save(posts)
   }
 });
 
