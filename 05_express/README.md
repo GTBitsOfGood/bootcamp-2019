@@ -1,6 +1,13 @@
 # Express
 
-In this section you will learn about NodeJS. NodeJS is a powerful tool we use that allows us to run JavaScript on the server. This allows us to learn one language and use it for both backend and frontend development -- no trivial convinence.
+Express is a web app framework for Node.js. Some cool things you can do with Express are:
+
+> - Write handlers for requests with different HTTP verbs at different URL paths (routes).
+> - Integrate with "view" rendering engines in order to generate responses by inserting data into templates.
+> - Set common web application settings like the port to use for connecting, and the location of templates that are used for rendering the response.
+> - Add additional request processing "middleware" at any point within the request handling pipeline.
+
+(from [MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction))
 
 ## Tasks
 
