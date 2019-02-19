@@ -48,8 +48,10 @@ if (nums[0] == null || nums[1] == null) {
   });
 
   rl.question("Enter first number? ", function(num1) {
-    console.log(num1);
-    rl.close();
+    rl.question("Enter second number? ", function(num2) {
+      console.log(parseInt(num1) + parseInt(num2));
+      rl.close();
+    })
   });
 
 } else{
