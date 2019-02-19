@@ -1,0 +1,22 @@
+{
+  "name": "node-js-playlist",
+  "version": "1.0.0",
+  "description": "a little test app",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GTBitsOfGood/bootcamp.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GTBitsOfGood/bootcamp/issues"
+  },
+  "homepage": "https://github.com/GTBitsOfGood/bootcamp#readme"
+}
