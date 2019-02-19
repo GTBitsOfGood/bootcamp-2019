@@ -11,36 +11,42 @@ router.get("/create-test-project", (req, res) => {
   const project = new Project({
     title: "I am a test project"
   });
-  project.save(err => {
-    if (err) {
-      return res.status(500).json(err);
-    }
-    return res.send("Success: created a Project object in MongoDb");
-  });
 });
 
 // Part 1: View all projects
 // Implement the GET / endpoint.
 router.get("/", (req, res) => {
-  // YOUR CODE HERE
+  Project.find({}, (error, results) => {
+    res.render('index', {items: results});
+  });
 });
 
 // Part 2: Create project
 // Implement the GET /new endpoint
 router.get("/new", (req, res) => {
   // YOUR CODE HERE
+  res.render('new');
 });
 
 // Part 2: Create project
 // Implement the POST /new endpoint
 router.post("/new", (req, res) => {
-  // YOUR CODE HERE
+
+  const newProj = new Project(req.body);
+  newProj.save().then(() => {
+    res.redirect('/');
+  }).catch((error) => {
+    res.render('new', {proj: req.body, error: 'Make sure you fill in all of your information!'});
+  });
+
 });
 
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get("/project/:projectid", (req, res) => {
-  // YOUR CODE HERE
+  Project.findById(req.params.projectid, (err, proj) => {
+    res.render('project', {proj});
+  });
 });
 
 // Part 4: Contribute to a project
