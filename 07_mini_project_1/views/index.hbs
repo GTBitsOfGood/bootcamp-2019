@@ -1,7 +1,17 @@
+<div style="position: relative; width: 600px; height: 700px;">
 <h1>View projects</h1>
 
 <!-- Part 1: View all projects -->
 <!-- YOUR CODE HERE -->
+<div>
+    {{#each items}}
+        {{title}} <br>
+    {{/each}}
+</div>
 
 <!-- Part 2: Create new project -->
 <!-- YOUR CODE HERE -->
+    <div style="position: absolute; bottom: 10px">
+        <a href="http://localhost:3000/new">Create new project</a>
+    </div>
+</div>
