@@ -4,6 +4,8 @@ Today you will be making your first big leap into developing more dynamic fronte
 
 There can be a bit of a steep learning curve when you start learning React, but don't let this discourage you! Proactively ask questions when you encounter things that don't make sense!
 
+For all the exercises today we will be using CodePen to run our React Code. Next time we will teach you how to run React projets from your terminal.
+
 ## Outline
 
 1. React Intro
@@ -25,7 +27,7 @@ There can be a bit of a steep learning curve when you start learning React, but 
 
 ## Section 1: React Intro
 
-What is React and why do we use it?
+What is React anyways and why do we use it?
 
 TODO:
 
@@ -64,9 +66,52 @@ TODO:
 
 ## Section 5: State & Lifecycle
 
+State is an integral part of dynamic frontends and React, Angular, and Vue all have slightly different ways of handling state. Another key idea is the component lifecycle. React gives us many lifecycle hooks we can plug into to create more dynamic experiences.
+
+TODO:
+
+- **[Watch Video][state]**
+- [Open this CodePen][ex3]. The `<Clock />` component is currently defined as a functional component. Convert `<Clock />` to be defined as a class component.
+- [Open this CodePen][ex4]. The goal here is to build a timer using React component lifecycle methods.
+  1. Implement the `update` function. This function should call `this.setState()` and update `this.state.secondsLeft` to be `(this.state.end - Date.now()) / 1000`.
+  2. Implement the `componentDidMount` function. Set `this.state.end` to be `this.props.mins` added to the current time, and use `setInterval()` to call `this.update` periodically.
+    ![component did mount hint](img/setInterval.png)
+  3. Implement the `componentWillUnmount` function. Use `clearInterval()` to cancel the background update process.
+  4. There are two timers on the page, verify that they count down from 1 and 5 minutes respectively.
+       - Don't worry if the timers go below zero!
+
 ## Section 6: Handling Events
 
+Web application wouldn't be very interesting if we had no way to handle user interactions. We do this using "events". In React, we leverage the power of JavaScript to handle events.
+
+TODO:
+
+- **[Watch Video][events]**
+- [Open this CodePen][ex5]. The goal here is to build a basic counter by bringing together the concepts of state and event handlers.
+  1. Implement the `increase()` function such that it increases the value of `this.state.counter` by 1 every time it is executed.
+     - Hint: make sure you are using `this.setState()` properly since you cannot directly modify the `state`.
+     - Hint: remember that `this.setState()` takes either an object, **OR** a callback function `cb(state,props)` which returns an object.
+  2. Implement the `decrease()` function such that it decreases the value of `this.state.counter` by 1 every time it is executed.
+  3. Add event handlers to the "Increase" and "Decrease" buttons in the `render()` function.
+       - Hint: remember that you need to bind `increase()` and `decrease()` so that `this` is set properly. There are many ways to do this.
+  4. Test out your counter!
+
 ## Section 7: Conditional Rendering
+
+Often times we want to be able to show different content based on dynamic conditions. Conditional rendering is how we decide what gets shown dynamically.
+
+TODO:
+
+- **[Watch Video][conditional]**
+- [Open this CodePen][ex5]. The goal here is to create a basic React app that allows us to control whether an image is shown on the screen. You will need to combine your knowledge of conditional rendering, handling events, and state management.
+   1. Implement the `toggleDog()` function such that it sets `this.state.showDog = !this.state.showDog` every time it is clicked.
+       - Hint: make sure you are using `this.setState()` properly since you cannot directly modify the `state`.
+       - Hint: remember that `this.setState()` takes either an object, **OR** a callback function `cb(state,props)` which returns an object.
+   2. Implement the `toggleCat()` function such that it sets `this.state.showCat = !this.state.showCat` every time it is clicked.
+   3. Add event handlers to the "Toggle Dog" and "Toggle Cat" buttons in the `render()` function.
+       - Hint: remember that you need to bind `toggleDog()` and `toggleCat()` so that `this` is set properly. There are many ways to do this. Try using a different approach than you used in the last section.
+   4. Implement conditional rendering using the corrosponding parts of the state and the `&&` operator to control when the dog and cat image are shown.
+   5. Test out your app! When you click the "Toggle Dog" button the dog picture should disapear from the DOM. It should reappear if you click the "Toggle Dog" button again. The "Toggle Cat" button should work in the same way.
 
 ## Section 8: Lists & Keys
 
@@ -84,7 +129,13 @@ TODO:
 [components]: https://www.youtube.com/watch?v=uHV8gXn3ljo
 [ex1]: https://codepen.io/BitsofGood/pen/mzNrrL?&editors=0010
 [ex2]: https://codepen.io/BitsofGood/pen/ZwNxBY?editors=0010
-
+[state]: https://www.youtube.com/watch?v=hew-Zgk5C60
+[ex3]: https://codepen.io/BitsofGood/pen/MLdLqL?editors=0010
+[ex4]: https://codepen.io/BitsofGood/pen/qQOVvy
+[events]: https://www.youtube.com/watch?v=Z2U1xfPLMb4
+[ex5]: https://codepen.io/BitsofGood/pen/yZWwVm?editors=0010
+[conditional]: https://www.youtube.com/watch?v=G1C6L5FgM2k
+[ex6]: https://codepen.io/BitsofGood/pen/RvmOrv?editors=0010
 
 ## Exercise 1: Controlled Form Fields
 
@@ -130,28 +181,7 @@ printing an increasing sequence of numbers and if statements in React.
 
     ![](img/codepen-fizz.png)
 
-## Exercise 3: Component Lifecycle: Timer
 
-### Goal
-
-The goal of this exercise is to build a timer by using React
-component lifecycle methods.
-
-### Instructions
-
-1. [Open CodePen for this exercise.](https://codepen.io/BitsofGood/pen/qQOVvy)
-
-2. Implement the `update` function. This function should call `this.setState()` and update `this.state.secondsLeft` to be `(this.state.end - Date.now()) / 1000`.
-
-3. Implement the `componentDidMount` function. Set `this.state.end` to be `this.props.mins` added to the current time, and use `setInterval()` to call `this.update` periodically.
-
-    ![](img/setInterval.png)
-
-4. Implement the `componentWillUnmount` function. Use `clearInterval()` to cancel the background update process.
-
-5. There are two timers on the page, verify that they count down from 1 and 5 minutes respectively.
-
-> Do not worry if the numbers go below zero!
 
 ## Exercise 4: Tic Tac Toe
 
