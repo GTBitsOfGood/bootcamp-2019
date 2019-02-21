@@ -1,10 +1,90 @@
 # React
 
-Today we will learn about React.
+Today you will be making your first big leap into developing more dynamic frontends. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”
 
-## What is React?
+There can be a bit of a steep learning curve when you start learning React, but don't let this discourage you! Proactively ask questions when you encounter things that don't make sense!
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”
+## Outline
+
+1. React Intro
+2. JSX
+3. Rendering Elements
+4. Components & Props
+5. State & Lifecycle
+6. Handling Events
+7. Conditional Rendering
+8. Lists & Keys
+9. Forms
+10. Lifting State Up
+11. Composition vs. Inheritance
+12. Tic-Tac-Toe Exercise
+
+---
+
+**[Note: The slides used in the videos can be found here](https://goo.gl/w7zRMr)**
+
+## Section 1: React Intro
+
+What is React and why do we use it?
+
+TODO:
+
+- **[Watch Video][intro]**
+
+## Section 2: JSX
+
+One of the unique features of React (as opposed to Angular and Vue) is JSX. JSX allows us to use the power of JavaScript to create dynamic HTML.
+
+TODO:
+
+- **[Watch Video][jsx]**
+
+## Section 3: Rendering Elements
+
+React is a very efficient view library because it only updates DOM elements that need to be changed rather than re-rendering the whole page.
+
+TODO:
+
+- **[Watch Video][rendering]**
+
+## Section 4: Components & Props
+
+React is a very efficient view library because it only updates DOM elements that need to be changed rather than re-rendering the whole page.
+
+TODO:
+
+- **[Watch Video][components]**
+- [Open this CodePen][ex1]. Update the code so that the `<Welcome />` component uses another prop called `age` and displays `age` as part of the rendered HTML.
+  - Example output: "Hello, Andre. You are 22."
+- [Open this CodePen][ex2]. Currently there is a `<PetContainer />` component that shows all 4 of my pets. Unfortunately I had to repeat a lot of code in `<PetContainer />`. Your task is to create **ONE** new component and use it inside of `<PetContainer />` to reduce the code repition.
+  - Hints:
+    - The HTML output should look the same, you should just be making the code better.
+    - Think of how your new component should use props to get data.
+    - You should use your new component exactly 4 times in `<PetContainer />`.
+
+## Section 5: State & Lifecycle
+
+## Section 6: Handling Events
+
+## Section 7: Conditional Rendering
+
+## Section 8: Lists & Keys
+
+## Section 9: Forms
+
+## Section 10: Lifting State Up
+
+## Section 11: Composition vs. Inheritance
+
+## Section 12: Tic-Tac-Toe Exercise
+
+[intro]: https://www.youtube.com/watch?v=d5n-XBpNhzI
+[jsx]: https://www.youtube.com/watch?v=CoU7sK9_Joo
+[rendering]: https://www.youtube.com/watch?v=jOMQ2Z0wH4A
+[components]: https://www.youtube.com/watch?v=uHV8gXn3ljo
+[ex1]: https://codepen.io/BitsofGood/pen/mzNrrL?&editors=0010
+[ex2]: https://codepen.io/BitsofGood/pen/ZwNxBY?editors=0010
+
 
 ## Exercise 1: Controlled Form Fields
 
