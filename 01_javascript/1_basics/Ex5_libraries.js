@@ -40,7 +40,18 @@ console.log("let's see what's in our toolbox:", toolbox);
 // ex. toolbox.countEven(1)  -> [0]
 // ex. toolbox.countEven(10) -> [0, 2, 4, 6, 8]
 toolbox.countEven = function(n) {
-  // YOUR CODE HERE
+  let arr1 = toolbox.count(n);
+  console.log(arr1);
+  return function()
+  let rArray = toolbox.filter(arr1, arr1.forEach(function(item,index) {
+    if (item%2 === 0) {
+      return true
+    } else {
+      return false
+    }
+  });
+  console.log(rArray);
+  return rArray;
 };
 
 // Exercise 5.2 indexOf(array, item)

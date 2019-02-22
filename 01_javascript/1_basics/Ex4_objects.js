@@ -67,7 +67,13 @@ toolbox.keys = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [1, 1]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [1, 1, 2]
 toolbox.values = function(object) {
-  // YOUR CODE HERE
+  let rArray = [];
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      rArray.push(object[key]);
+    };
+  };
+  return rArray;
 };
 
 // Exercise 4.2 pairs(object)
@@ -79,7 +85,14 @@ toolbox.values = function(object) {
 // ex. toolbox.values({a: 1, b: 1}) -> [[a, 1], [b, 1]]
 // ex. toolbox.values({a: 1, b: 1, c: 2}) -> [[a, 1], [b, 1], [c, 2]]
 toolbox.pairs = function(object) {
-  // YOUR CODE HERE
+  let rArray = [];
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      let newArr = [key, object[key]];
+      rArray.push(newArr);
+    };
+  };
+  return rArray;
 };
 
 // Example 4.3 filterKey(object, fun)
@@ -92,7 +105,13 @@ toolbox.pairs = function(object) {
 //  }
 //  filterKey({aa: 1, ab: 2, ba: 3}, startsWithA) -> {aa: 1, ab: 2}
 toolbox.filterKey = function(object, fun) {
-  // YOUR CODE HERE
+  let rObject = {};
+  for (let key in object) {
+    if (object.hasOwnProperty(key) && fun(key)) {
+      rObject[key] = object[key];
+    }
+  }
+  return rObject;
 };
 
 // Exercise 4.4 pick(object, keysArray)
@@ -105,7 +124,21 @@ toolbox.filterKey = function(object, fun) {
 // ex. pick({a: 1}, ['a', 'b']) -> {a: 1}
 // ex. pick({a: 1, b: 2}, ['a', 'b']) -> {a: 1, b: 2}
 toolbox.pick = function(object, keysArray) {
-  // YOUR CODE HERE
+  let rObject = {};
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      let present = false;
+      keysArray.forEach(function(item, index) {
+        if (key === item) {
+          present = true;
+        };
+      })
+      if (present) {
+        rObject[key] = object[key];
+      };
+    };
+  };
+  return rObject;
 };
 
 // Bonus Exercise 4.5! toolbox.propertyOf(object)
@@ -120,5 +153,7 @@ toolbox.pick = function(object, keysArray) {
 //  propertyGetter('b') -> 2
 // ex. toolbox.propertyOf({a: 1})('a') -> 1
 toolbox.propertyOf = function(object) {
-  // YOUR CODE HERE
+  return function(key) {
+    return object[key];
+  }
 };
