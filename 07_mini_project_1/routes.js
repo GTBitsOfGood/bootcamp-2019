@@ -22,13 +22,15 @@ router.get("/create-test-project", (req, res) => {
 // Part 1: View all projects
 // Implement the GET / endpoint.
 router.get("/", (req, res) => {
-  // YOUR CODE HERE
+  Project.find((err, array) => {
+    res.render('index', { array })
+  })
 });
 
 // Part 2: Create project
 // Implement the GET /new endpoint
 router.get("/new", (req, res) => {
-  // YOUR CODE HERE
+  res.render('new.hbs', { project })
 });
 
 // Part 2: Create project

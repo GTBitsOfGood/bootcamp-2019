@@ -9,15 +9,30 @@ if (!process.env.MONGODB_URI) {
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
-const Cat = mongoose.model("Cat", new mongoose.Schema({
-  name: String,
-  furColor: String
+const Project = mongoose.model("Project", new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  goal: {
+    type: Number,
+    required: true
+  },
+  description: String,
+  start: {
+    type: Date,
+    required: true
+  },
+  end: {
+    type: Date,
+    required: true
+  }
 }))
 
-Cat.find((error, cats) => {
+Project.find((error, projects) => {
   if (error) {
-    console.log("Can't find cats", error);
+    console.log("Can't find projects", error);
   } else {
-    console.log('Cats', cats);
+    console.log('Projects', cats);
   }
 });
