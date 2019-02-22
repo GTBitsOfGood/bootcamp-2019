@@ -16,15 +16,15 @@ This day focusses on NodeJS a popular web technology that lets you run javascrip
 
 ## Section 1: Introduction to NodeJS
 
-1. [Install NodeJS](https://nodejs.org/en/) 
+1. [Install NodeJS](https://nodejs.org/en/)
 2. Run the following code snippet using node.
 
-    When you are successful you will see the text "Hello NodeJS" in your terminal window. Note that you will need to create a script file with the code and then run it using "node myfilename.js".
+    When you are successful you will see the text "Hello NodeJS" in your terminal window.
 
     ```bash
-        $ node
-        > console.log("Hello NodeJS");
-        > Hello NodeJS  <- expected output
+    $ node
+    > console.log("Hello NodeJS");
+    > Hello NodeJS  <- expected output
     ```
 
 ---
@@ -32,7 +32,7 @@ This day focusses on NodeJS a popular web technology that lets you run javascrip
 ## Section 2. Builtin `global` and `process` objects
 
 The goal of this exercise to implement your very own command line
-tool `sum/sum.js`
+tool `1_sum/sum.js`
 
 - `sum.js` should take optional command line arguments, parse the
   arguments into numbers and return their sum. Use
@@ -62,7 +62,7 @@ Bonus:
 
 [Reading input from terminal](https://nodejs.org/api/readline.html#readline_readline)
 
-```
+```javascript
     // Example code for getting input from the user
     var readline = require('readline');
 
@@ -77,14 +77,13 @@ Bonus:
     });
 ```
 
-
 ---
 
 ## Section 3. Builtin `require` keyword
 
-Using `module.exports`, `require`, and your knowledge of relative paths run the functions in the functions across in ascending numeric order. You are only allowed to modify `/4_node/1_node_intro/paths/a/c/main.js` and you are not allowed to type `console.log`. You also should not move any folders around.
+Using `module.exports`, `require`, and your knowledge of relative paths run the functions in the functions across in ascending numeric order. You are only allowed to modify `/04_node/1_node_intro/2_paths/a/c/main.js` and you are not allowed to type `console.log`. You also should not move any folders around.
 
-1. Navigate to `/4_node/1_node_intro/paths`: This is the folder you will be working in
+1. Navigate to `/04_node/1_node_intro/2_paths`: This is the folder you will be working in
 2. Look through the folder structure to identify where the scripts `main.js`, `one.js`, `two.js`, `three.js`, and `four.js` are located.
 3. Modify only `main.js` so that you run all the functions in `one.js`, then the function in `two.js`, and finally the function in `three.js` with the first argument as value exported by `four.js` under the key `horizons`. The output should be a diagonal line.
 4. Note: the example code in `main.js` uses `five.js` to help illustrate the directions.
@@ -95,8 +94,7 @@ Using `module.exports`, `require`, and your knowledge of relative paths run the 
 
 Using `process.argv`, and your knowledge of `fs` modify `main.js` in the `countio` folder so that it supports the following:
 
-1. running the `/4_node/1_node_intro/countio/main.js` script adds a line to the `/4_node/1_node_intro/countio/log.txt` file with a timestamp for the current time.
-2. running `main.js -s` or `main.js --stats` returns the total number of times the `main.js` program has been run along with the first and last time it was run. Note: running with `-s` or `--stats` flag should not add a timestamp or increment any counters. 
+1. running the `/04_node/1_node_intro/3_countio/main.js` script adds a line to the `/04_node/1_node_intro/3_countio/log.txt` file with a timestamp for the current time.
+2. running `main.js -s` or `main.js --stats` returns the total number of times the `main.js` program has been run along with the first and last time it was run. Note: running with `-s` or `--stats` flag should not add a timestamp or increment any counters.
 
-3. Navigate to `/4_node/1_node_intro/countio`: This is the folder you will be working in
-
+3. Navigate to `/04_node/1_node_intro/3_countio`: This is the folder you will be working in
