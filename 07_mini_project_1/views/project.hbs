@@ -1,15 +1,41 @@
 <h1>View Project</h1>
 
-<!-- Part 3: View a single project -->
 
-<!-- YOUR CODE HERE -->
 <h2>{{proj.title}}</h2>
 <h3>Goal: {{proj.goal}}</h3>
 <h3>Description: {{proj.description}}</h3>
 <h3>Start: {{proj.start}}</h3>
 <h3>End: {{proj.end}}</h3>
+<h3>Category: {{proj.category}}</h3>
 <br><br>
-<a href="/">Back to all projects</a>
+
 <!-- Part 4: Contribute to a project -->
 
+<form method="POST" action ="/project/{{id}}">
+    <p>Name: <input type="text" name="name" value="{{name}}"></p>
+    <p>Amount: <input type="text" name="amount" value="{{amount}}"></p>
+    <button type="submit">Submit New Project</button>
+    {{#if error}}
+        <h4>Something isn't filled in correctly!</h4>
+    {{/if}}
+</form>
 <!-- YOUR CODE HERE -->
+
+
+<h2>Contributions:</h2>
+<h3>Total: ${{total}} out of ${{proj.goal}}</h3>
+<br>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar"
+         aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="{{proj.goal}}" style="width:{{percent}}%">
+        {{percent}}% completed
+
+    </div>
+</div>
+{{#each proj.contributions}}
+
+    <h4>{{this.name}} contributed ${{this.amount}}</h4>
+{{/each}}
+<br><br>
+<a href="/project/{{id}}/edit">Edit this project</a><br>
+<a href="/">Back to all projects</a>

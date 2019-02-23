@@ -1,6 +1,6 @@
-<h2>Create project</h2>
+<h2>Edit project{{proj.title}}</h2>
 
-<form method="POST" action ="/new">
+<form method="POST" action ="/project/{{id}}/edit">
     <p>Title: <input type="text" name="title" value="{{proj.title}}"></p>
     <p>Goal: <input type="text" name="goal" value="{{proj.goal}}"></p>
     <p>Description of Project: </p>
@@ -21,6 +21,4 @@
     {{#if error}}
         <h4>{{error}}</h4>
     {{/if}}
-
 </form>
-<a href="/">Go back to Projects page</a>

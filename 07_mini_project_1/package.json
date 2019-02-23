@@ -13,7 +13,8 @@
     "express-validator": "^2.20.5",
     "mongoose": "^5.4.11",
     "morgan": "^1.9.1",
-    "strftime": "^0.10.0"
+    "strftime": "^0.10.0",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"

@@ -1,14 +1,32 @@
 <h1>View projects</h1>
+<h4>Sort:
+    <ul>
+    <li><a href="/?sort=start&sortDirection={{sortDirection}}&status={{status}}">By Start Date</a></li>
+    <li><a href="/?sort=end&sortDirection={{sortDirection}}&status={{status}}">By End Date</a></li>
+    <li><a href="/?sort=goal&sortDirection={{sortDirection}}&status={{status}}">By Goal</a></li>
+    <li><a href="/?sort=totalContributions&sortDirection={{sortDirection}}&status={{status}}">By Total Contributions</a></li>
+    </ul>
+</h4>
+<br>
+<h4>Order:
+    <ul>
+        <li><a href="/?sort={{sort}}&sortDirection=ascending&status={{status}}">Ascending</a></li>
+        <li><a href="/?sort={{sort}}&sortDirection=descending&status={{status}}">Descending</a></li>
+    </ul>
+</h4>
+<br>
+<h4>Filter:
+    <ul>
+        <li><a href="/?sort={{sort}}&sortDirection={{sortDirection}}&status=done">Done</a></li>
+        <li><a href="/?sort={{sort}}&sortDirection={{sortDirection}}&status=notdone">Not done</a></li>
+        <li><a href="/?sort={{sort}}&sortDirection={{sortDirection}}&status=">Show all</a></li>
+    </ul>
+</h4>
+<br>
 
-<!-- Part 1: View all projects -->
-<!-- YOUR CODE HERE -->
 {{#each items}}
     <h3><a  href="/project/{{id}}">{{title}}</a></h3>
 
 {{/each}}
-
-<!-- Part 2: Create new project -->
-<!-- YOUR CODE HERE -->
-
 
 <h2><a href="http://localhost:3000/new">Create new project</a></h2>
