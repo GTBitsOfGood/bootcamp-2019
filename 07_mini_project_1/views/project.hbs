@@ -4,12 +4,12 @@
 
 <!-- YOUR CODE HERE -->
 <div>
-    {{pro.title}} {{pro.goal}} {{pro.project}} {{pro.start}} {{pro.end}} <br>
+    {{pro.title}} {{pro.goal}} {{pro.project}} {{pro.start}} {{pro.end}} {{pro.category}} <br>
 </div>
 
 <!-- Part 4: Contribute to a project -->
 <!-- YOUR CODE HERE -->
-<form action="/project" method="POST">
+<form action={{url}} method="POST">
 <div>
     <input type="text" name="name" value="name">
     <input type="text" name="amount" value="amount">
@@ -18,5 +18,8 @@
 </form>
 
 <div>
-    {{pro.contribution.name}} {{pro.contribution.amount}}
+    {{#each contributions}}
+        {{name}}
+        {{amount}}
+    {{/each}}
 </div>

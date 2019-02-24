@@ -21,11 +21,18 @@ const Project = mongoose.model("Project", {
         required: true
     },
     end: {
-        type: Date,
+      type: Date,
         required: true
     },
     contributions: {
       type: []
+    },
+    category: {
+      type: String,
+        enum: ['Famous Muppet Frogs', 'The Pen Is Mightier', 'Famous Mothers',
+        'Drummers Named Ringo', '1-Letter Words', 'Months That Start With "Feb"',
+        'How Many Fingers Am I Holding Up', 'Potent Potables'],
+        required: true
     }
 
 });

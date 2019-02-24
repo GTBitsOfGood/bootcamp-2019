@@ -1,13 +1,13 @@
-<h2>Create project</h2>
+<h2>Edit project</h2>
 
 <!-- Part 2: Create project -->
-<form action="/new" method="POST">
+<form action={{url}} method="POST">
     <span>
-        <input type="text" name="title" value={{project.title}}><br>
-        <input type="text" name="goal" value={{project.goal}}><br>
-        <textarea id="description" name="description" rows="5" cols="33">description</textarea><br>
-        <input type="date" name="start"><br>
-        <input type="date" name="end"><br>
+        <input type="text" name="title" value={{title}}><br>
+        <input type="text" name="goal" value={{goal}}><br>
+        <textarea id="description" name="description" rows="5" cols="33">{{description}}</textarea><br>
+        <input type="date" name="start" value={{start}}><br>
+        <input type="date" name="end" value={{end}}><br>
         <select class="category" name="category">
             <option value="Famous Muppet Frogs" name="category">Famous Muppet Frogs</option>
             <option value="The Pen Is Mightier" name="category">The Pen Is Mightier</option>
