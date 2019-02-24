@@ -27,14 +27,16 @@ router.get("/", (req, res) => {
         if (req.query.sort === "contributions") {
             let list = [];
             Project.find({}, (err, pro) => {
-                let sum = 0;
-                if (pro.contributions === undefined) {
-                    list.push({0: pro});
-                } else {
-                    for (let i = 0; i < pro.contributions.length; i++) {
-                        sum += pro.contributions[i].amount;
+                for (let i = 0; i < pro.length; i++) {
+                    let sum = 0;
+                    if (pro[i].contributions === undefined) {
+                        list.push({0: pro});
+                    } else {
+                        for (let j = 0; j < pro[i].contributions.length; j++) {
+                            sum += pro[i].contributions[j].amount;
+                        }
+                        list.push({sum: pro[i]});
                     }
-                    list.push({sum: pro});
                 }
             })
                 .then(_ => {
@@ -50,19 +52,19 @@ router.get("/", (req, res) => {
         } else if (req.query.sort === "filter") {
             let list = [];
             Project.find({}, (err, pro) => {
-                let sum;
-                if (pro.contributions === undefined) {
-                    sum = 0;
-                } else {
-                    for (let i = 0; i < pro.contributions.length; i++) {
-                        sum += pro.contributions[i].amount;
+                for (let j = 0; j < pro.length; j++) {
+                    let sum = 0;
+                    if (pro[j].contributions === undefined) {
+                        sum = 0;
+                    } else {
+                        for (let i = 0; i < pro[j].contributions.length; i++) {
+                            sum += Number(pro[j].contributions[i].amount);
+                        }
+                    }
+                    if (sum > pro[j].goal) {
+                        list.push(pro[j]);
                     }
                 }
-                if (sum > pro.goal) {
-                    console.log("Hi");
-                    list.push(pro);
-                }
-
             }).then(_ => {
                 res.json(list);
             }).catch(console.log)
