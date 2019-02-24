@@ -103,7 +103,7 @@ Often times we want to be able to show different content based on dynamic condit
 TODO:
 
 - **[Watch Video][conditional]**
-- [Open this CodePen][ex5]. The goal here is to create a basic React app that allows us to control whether an image is shown on the screen. You will need to combine your knowledge of conditional rendering, handling events, and state management.
+- [Open this CodePen][ex6]. The goal here is to create a basic React app that allows us to control whether an image is shown on the screen. You will need to combine your knowledge of conditional rendering, handling events, and state management.
    1. Implement the `toggleDog()` function such that it sets `this.state.showDog = !this.state.showDog` every time it is clicked.
        - Hint: make sure you are using `this.setState()` properly since you cannot directly modify the `state`.
        - Hint: remember that `this.setState()` takes either an object, **OR** a callback function `cb(state,props)` which returns an object.
@@ -115,11 +115,50 @@ TODO:
 
 ## Section 8: Lists & Keys
 
+One of the most common use cases in React is querying a database for a list of objects and rendering them dynamically on the frontend. React lets us leverage the power of JavaScript's `Array.map()` for this purpose. When we use the `key=""` property properly React will ensure that our lists are rendered as efficiently as possible.
+
+TODO:
+
+- **[Watch Video][lists]**
+- [Open this CodePen][ex7]. The goal of this exercise is to recreate the FizzBuzz programming interview question using React. You will need to use your knowledge of lists and conditional rendering.
+    1. Make `<FizzBuzz />` display a bulleted list (`<ul>`) of `n` numbers (notice `n` is a prop).
+        - Hint: You can use `new Array(5)` to create an empty array with length 5.
+        - Hint: How migh `Array.map((curr, index) => {...})` help you?
+    2. If a given number is divisible by 3 paint it red, if it's divisible by 2 paint it blue, if it's divisible by both 2 and 3 paint it purple. If a number neither divisible by 2 or 3, then display it in black.
+        - The CSS Classes `red`, `blue`, and `black` have been provided to help you. Remember in React we use `className` instead of `class` when applying CSS classes.
+    3. Your solution should look like this:
+        ![fizzbuzz solution](img/codepen-fizz.png)
+
+
 ## Section 9: Forms
+
+Another important factor of React applications is dealing with user input. We already learned how to handle user generated events (i.e. button clicks, etc.), but now we need to go over handling user generated input (i.e. textboxes).
+
+TODO:
+
+- **[Watch Video][forms]**
+- [Open this CodePen][ex8]. The goal of this exercises is to use controlled form fields to tie the values of two text input fields together in React.
+    1. There are two text input fields here. We want them to display the same data at all times, with one being all uppercase characters, and another being all lowercase characters. If you change one, the other one should change instantly.
+    2. Create a new function `change(event)` inside the class. This function should take an `event` argument and update `this.state.text` using `this.setState` and `event.target.value`.
+    3. Use the `change(event)` function you just created as the event handler for the two form fields.
+    4. Try changing input fields, they should update at the same time.
+    5. Now, modify input fields so that one shows uppercase characters whereas another one shows lowercase characters.
 
 ## Section 10: Lifting State Up
 
+BLAH
+
+TODO:
+
+- **[Watch Video][lifting]**
+
 ## Section 11: Composition vs. Inheritance
+
+BLAH
+
+TODO:
+
+- **[Watch Video][composition]**
 
 ## Section 12: Tic-Tac-Toe Exercise
 
@@ -136,50 +175,22 @@ TODO:
 [ex5]: https://codepen.io/BitsofGood/pen/yZWwVm?editors=0010
 [conditional]: https://www.youtube.com/watch?v=G1C6L5FgM2k
 [ex6]: https://codepen.io/BitsofGood/pen/RvmOrv?editors=0010
-
-## Exercise 1: Controlled Form Fields
-
-### Goal
-
-The goal of this exercises is to use controlled form fields to tie the values of two text input fields together in React.
-
-#### Instructions
-
-1. [Open CodePen for this exercise.](https://codepen.io/BitsofGood/pen/VVvrGE?editors=1000#0)
-
-2. There are two text input fields here. We want them to display the same data at all times, with one being all uppercase characters, and another being all lowercase characters. If you change one, the other one should change instantly.
-
-3. Create a new function `change` inside the class. This function should take an `event` argument and update `this.state.text` using `this.setState` to `event.target.value`.
-
-    ![](img/change.png)
-
-4. Add the `onChange={(e) => this.change(e)}` event handler to both form fields.
-
-5. Try changing input fields, they should update at the same time.
-
-6. Now, modify input fields so that one shows uppercase characters whereas another one shows lowercase characters.
+[lists]: https://www.youtube.com/watch?v=mgcm_NlwkW0
+[ex7]: https://codepen.io/BitsofGood/pen/wQKPOa?editors=0010
+[forms]: https://www.youtube.com/watch?v=4j-i6TfdXWk
+[ex8]: https://codepen.io/BitsofGood/pen/VVvrGE?editors=0010
+[lifting]: https://www.youtube.com/watch?v=mT3cCLhMQMQ
+[composition]: https://www.youtube.com/watch?v=9WZxVhiuNn0
 
 
-## Exercise 2: Fizz Buzz React Edition
 
-### Goal
+1. Add the `onChange={(e) => this.change(e)}` event handler to both form fields.
 
-The goal of this exercise is to solve a very common  programming interview question using React.
+2. Try changing input fields, they should update at the same time.
 
-### Instructions
+3. Now, modify input fields so that one shows uppercase characters whereas another one shows lowercase characters.
 
-FizzBuzz is a basic programming question asked in many interviews. It involves
-printing an increasing sequence of numbers and if statements in React.
 
-1. Open [this CodePen project](https://codepen.io/BitsofGood/pen/wQKPOa), fork it so you can save your work.
-
-2. Make `<FizzBuzz />` display a bulleted list (`<ul>`) of `n` numbers (n is a prop).
-
-3. If a given number is divisible by 3 paint it red (CSS `color: red`), if it's divisible by 2 paint it blue, if it's divisible by both 2 and 3 paint it purple. If a number neither divisible by 2 or 3, then display it in black.
-
-4. Your solution should look like this:
-
-    ![](img/codepen-fizz.png)
 
 
 
