@@ -146,11 +146,23 @@ TODO:
 
 ## Section 10: Lifting State Up
 
-BLAH
+By now you should have some intuition about props and state in React. The next step is to understand where in your component tree you should put state and how to pass it down via props to other components. 
 
 TODO:
 
 - **[Watch Video][lifting]**
+- [Open this CodePen][ex9]. The goal of this exercise is to extend the Counter example you did before while exploring the concept of lifting up state.
+    1. First complete the `<Counter />` component like you did in Section 6 (refer to Section 6 if you need to review the directions).
+    2. At this point you should have two independent counters that you can control. Now we want to add the ability to incrememt both counters at the same time using the "Increase Both" button. Consider if you can do this with the way the components are currently organized.
+    3. To implement the "Increase Both" functionality we will need to move the state of each counter into the `<App />` component and pass it down as props.
+       1. Add two state variables to the `<App />` component that will represent the two counters.
+       2. Create a function in `<App />` that will increase any given counter by 1 (this function should take exactly 1 argument).
+       3. Since we are extracting state from our `<Counter />` components we need to use props to pass down the current value of the counter and function that allows `<Counter />` to increase the current value of the counter. Think about why we need to pass both a value and a function here. If the counter state lives in `<App />`, how can `<Counter />` change it?
+       4. Pass a counter value and the increase counter function from your `<App />` component down to each of the two `<Counter />` components. Rewrite your `<Counter />` component so it displays the counter value passed in as a prop, and uses the function passed in as a prop to handle events from the "Increase" button click. Strip out the state and state modifying functions you previously had in the `<Counter />` component. At this point you should be click the "Increase" button on both `<Counter />` components and it should work properly. The "Decrease" button should be broken.
+       5. Repeat steps 3-5 except implement decrease functionality.
+       6. Now we can finally implement our "Increase/Decrease Both" functionality. Create a function inside `<App />` that increases both counter states. Use this as the event handler for the "Increase Both" button.
+       7. Repeat step 6 except implement decrease functionality.
+       8. You should be done! Test out all the buttons and make sure they work as expected!
 
 ## Section 11: Composition vs. Inheritance
 
@@ -180,17 +192,8 @@ TODO:
 [forms]: https://www.youtube.com/watch?v=4j-i6TfdXWk
 [ex8]: https://codepen.io/BitsofGood/pen/VVvrGE?editors=0010
 [lifting]: https://www.youtube.com/watch?v=mT3cCLhMQMQ
+[ex9]: https://codepen.io/BitsofGood/pen/WmeRWY
 [composition]: https://www.youtube.com/watch?v=9WZxVhiuNn0
-
-
-
-1. Add the `onChange={(e) => this.change(e)}` event handler to both form fields.
-
-2. Try changing input fields, they should update at the same time.
-
-3. Now, modify input fields so that one shows uppercase characters whereas another one shows lowercase characters.
-
-
 
 
 
