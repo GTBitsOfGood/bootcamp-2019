@@ -166,13 +166,17 @@ TODO:
 
 ## Section 11: Composition vs. Inheritance
 
-BLAH
+In object oriented programming we learn to use inheritance to simply our code, but in React we don't follow this paradigm. It's normally better to use composition (i.e. using components inside of components) rather than relying on inheritance.
 
 TODO:
 
 - **[Watch Video][composition]**
 
 ## Section 12: Tic-Tac-Toe Exercise
+
+For this exercise you will be making Tic Tac Toe in React! This will be a good opportunity for you to practice all the things you've learned so far!
+
+[Click Here](tic-tac-toe/) to get started!
 
 [intro]: https://www.youtube.com/watch?v=d5n-XBpNhzI
 [jsx]: https://www.youtube.com/watch?v=CoU7sK9_Joo
@@ -194,10 +198,3 @@ TODO:
 [lifting]: https://www.youtube.com/watch?v=mT3cCLhMQMQ
 [ex9]: https://codepen.io/BitsofGood/pen/WmeRWY
 [composition]: https://www.youtube.com/watch?v=9WZxVhiuNn0
-
-
-
-## Exercise 4: Tic Tac Toe
-
-For this exercise you will be making Tic Tac Toe in React!
-[Click Here](tic-tac-toe/) to get started!
