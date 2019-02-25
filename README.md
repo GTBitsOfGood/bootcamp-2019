@@ -10,9 +10,9 @@
 | 2      | [Mongo & Mongoose][mongo]  | [Videos][mongo-vids]    | 3 hours |
 | 2      | [Mini Project 1][mp1]      | N/A                     | 5 hours |
 | 3      | [Heroku][heroku]           | [Videos][heroku-vids]   | 45 mins |
-| 3      | [React][react]             | [Videos][react-vids]    | TBD     |
-| 3      | [React & APIs][react-apis] | TODO                    | TBD     |
-| 3      | [Mini Project 2][mp2]      | N/A                     | TBD     |
+| 3      | [React][react]             | [Videos][react-vids]    | 5 hours |
+<!-- | 3      | [React & APIs][react-apis] | TODO                    | TBD     | -->
+<!-- | 3      | [Mini Project 2][mp2]      | N/A                     | TBD     | -->
 
 <!---
 
