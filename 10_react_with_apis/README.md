@@ -1,11 +1,21 @@
-# Week 5 Day 4 Exercises 
+# React with APIs
 
-## Morning videos & Individual exercises
+TODO
 
-[React Day2 Videos Link](videos.md)
+## Outline
 
+1. TODO
 
+---
 
-## Pair programming exercises
+**[Note: The slides used in the videos can be found here](TODO)**
 
-[React Chat](https://github.com/horizons-school-of-technology/react-chat)
+## Section 1: TODO
+
+BLAH
+
+TODO:
+
+- **[Watch Video][TODO]**
+
+[TODO]: blah
