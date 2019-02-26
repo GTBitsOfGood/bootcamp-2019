@@ -140,7 +140,7 @@ created document.
         ```
 
     2. If there are no validation errors, create a new `Project` and
-    `.save()` it. If `.save()` is successful redirect to `/`.
+    `.save()` it. If `.save()` is successful use `res.redirect()` to redirect to `/`.
 6. You should now see the newly created project on your "View all projects"
   page.
 

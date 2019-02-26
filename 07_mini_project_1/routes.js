@@ -5,6 +5,10 @@ const express = require("express");
 const router = express.Router();
 const Project = require("./models").Project;
 const strftime = require("strftime");
+const bodyParser = require('body-parser')
+
+router.use(bodyParser.urlencoded({ extended: false }));;
+router.use(bodyParser.json());
 
 // Example endpoint
 router.get("/create-test-project", (req, res) => {
@@ -30,13 +34,24 @@ router.get("/", (req, res) => {
 // Part 2: Create project
 // Implement the GET /new endpoint
 router.get("/new", (req, res) => {
-  res.render('new.hbs', { project })
+  res.render('new.hbs', { project, errorMessage: '' })
 });
 
 // Part 2: Create project
 // Implement the POST /new endpoint
 router.post("/new", (req, res) => {
-  // YOUR CODE HERE
+  const newProject = new Project({
+    title: req.body.project.title,
+    goal: req.body.project.goal,
+    description: req.body.project.description,
+    start: req.body.project.start,
+    end: req.body.project.end    
+  })
+  newProject.save()
+    .then(res.redirect('/'))
+    .catch(err => {
+      res.render('new.hbs', { project, errorMessage: "Some of the entries you've provided are invalid" })
+  })
 });
 
 // Part 3: View single project
