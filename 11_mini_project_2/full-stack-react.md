@@ -7,15 +7,12 @@ We will also be spending some time to demonstrate some recommended project and c
 **READ EVERYTHING, IN ORDER!**
 
 Sections:
+
 1. [Getting Set Up](#part-1-getting-set-up)
-
-1. [Writing a Static Mockup of our React App](#part-2-writing-a-static-mockup-of-our-react-app)
-
-1. [Adding in Functionality with Event Handlers](#part-3-adding-in-functionality-with-event-handlers)
-
-1. [Persistence with MongoDB](#part-4-persistence-with-mongodb)
-
-1. [Bonuses](#part-5-bonuses)
+2. [Writing a Static Mockup of our React App](#part-2-writing-a-static-mockup-of-our-react-app)
+3. [Adding in Functionality with Event Handlers](#part-3-adding-in-functionality-with-event-handlers)
+4. [Persistence with MongoDB](#part-4-persistence-with-mongodb)
+5. [Bonuses](#part-5-bonuses)
 
 ## Part 1: Getting Set Up  
 
