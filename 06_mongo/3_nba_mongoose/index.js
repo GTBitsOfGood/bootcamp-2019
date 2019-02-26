@@ -1,11 +1,14 @@
 // Require express and create an express app (Part 2.1)
-
+const express = require('express')
+const app = express();
+app.listen(3000);
 // Require mongoose (Part 2.2)
-
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGODB_URI);
 // Require and setup body-parser (Part 4.1)
 
 // Require the Player model (Part 2.3)
-
+const Player = require('./model/player')
 // Require the Roster model (Part 5.2)
 
 
@@ -31,7 +34,9 @@ mongoose.connection.on('error', function(err) {
    ===================================== */
 
 // (Part 3.1)
-
+app.get('/', (req, res) => {
+  res.send()
+})
 // (Part 4.2)
 
 // (Part 5.3)

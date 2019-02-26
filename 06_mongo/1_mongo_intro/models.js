@@ -6,10 +6,25 @@ if (! process.env.MONGODB_URI) {
 }
 
 // First let's set up our MongoDb connection
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-var Cat; // YOUR CODE HERE - define the cat model
+const CatSchema = new mongoose.Schema({
+  name: String,
+  furColor: String
+});
+
+const Cat = mongoose.model("Cats", CatSchema);
+
+//const crookshanks = new Cat({name: "Crookshanks", furColor: "Black"});
+//const mrBigglesworth = new Cat({name: "Mr. Bigglesworth", furColor: "White"});
+//const empurress = new Cat({name: "Empurress", furColor: "Calico"});
+//crookshanks.save();
+//mrBigglesworth.save();
+//empurress.save();
+
+Cat.findOne({name: "Mr. Bigglesworth"}).then(results =>
+console.log(results));
 
 Cat.find(function(error, cats) {
   if (error) {

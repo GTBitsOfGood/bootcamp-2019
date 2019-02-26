@@ -1,7 +1,11 @@
 "use strict";
 // The node builtin filesystem library.
 var fs = require('fs');
-var validator = require('validator')
+
+var validator = require('validator');
+let columnify = require('columnify');
+
+
 //require columnify here
 
 
@@ -21,7 +25,7 @@ var helpString = "\n\tUsage: addressBook [options] [command]\n\n\n" +"\tOptions:
 var argv = process.argv
 //console.log(process.argv) //UNCOMMENT TO SEE WHAT PROCESS.ARGV IS BEFORE WE SPLICE
 argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies process.argv, so you will not need to do this again!
-
+//console.log(argv);
 
 //------------PART1: PARSING COMMAND LINE ARGUMENTS------------------------
 
@@ -33,8 +37,11 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
-  // YOUR CODE HERE
-
+if (argv.length > 0) {
+  return argv[0];
+} else {
+  return '';
+}
 }
 
 //store the command and execute its corresponding function
@@ -69,9 +76,29 @@ switch(input){
 */
 function displayContacts(){
     //YOUR CODE HERE
-
-    // console.log(columnify(data)); //UNCOMMENT
-
+    let col = columnify(data, {
+      dataTransform: function(data) {
+        if (data === '-1') {
+          data = '-None-';
+        }
+        return data;
+    },
+    config: {
+          name: {
+              headingTransform: function (heading) {
+                  heading = "CONTACT_NAME"
+                  return heading;
+              }
+          },
+          number: {
+              headingTransform: function (heading) {
+                  heading = "PHONE_NUMBER"
+                  return heading;
+              }
+          }
+      }
+  });
+  console.log(col);
 }
 
 
@@ -87,10 +114,29 @@ function displayContacts(){
 * name: string, number: number
 * if no number is provided, store -1 as their number
 */
+
+
 function addContact() {
 // YOUR CODE HERE
 
+
+if (argv.length == 2) {
+  if (!/^[a-zA-Z]+$/.test(argv[1])) {
+    console.log("Improper name input.");
+  } else {
+    for (int i = 0; i < data.length; i++) {
+      if (data[i].data.name == 'argv[1]') {
+        console.log("User already exists in address book.");
+        let flag = true;
+      }
+      if (!flag) {
+        add
+      }
+    }
+  }
 }
+}
+
 
 
 //----------------- PART 4 'update' command---------------------//

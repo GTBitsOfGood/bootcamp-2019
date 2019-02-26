@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "mongoose": "^5.4.7"
+    "express": "^4.16.4",
+    "mongoose": "^5.4.14"
   },
   "scripts": {
     "start": "nodemon index.js"
