@@ -12,6 +12,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Part 1
 // YOUR CODE HERE
+app.get('/', (req, res) => {
+    const name = req.query.form_name || "Default Header";
+    res.render("example1.hbs", {form_name: name});
+});
 
 // start the express app
 var port = process.env.PORT || 3000;

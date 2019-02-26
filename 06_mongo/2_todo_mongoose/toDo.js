@@ -1,4 +1,6 @@
 "use strict";
+const uri = "mongodb://admin:Daisy99#@cluster0-shard-00-00-0q7ol.mongodb.net:27017,cluster0-shard-00-01-0q7ol.mongodb.net:27017,cluster0-shard-00-02-0q7ol.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
+
 
 //configuration options. These make up the exercicse.
 var fs = require('fs');
@@ -12,14 +14,14 @@ var mongoose = require('mongoose');
 // PART 0: Create an env.sh file that should export the MONGODB_URI
 
 // connect to your Mongo Database
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(uri, { useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
 // check if the connection was successful
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error. did you remember to create env.sh?'));
 db.once('open', function() {
-  // connected!
+  
 });
 
 // PART 1: Create the Model
@@ -42,7 +44,13 @@ db.once('open', function() {
 //    is a String, a "priority" property that is a String, and a
 //    "completed" property that is a Boolean.
 
-// YOUR CODE HERE
+const toDoItemSchema = new mongoose.Schema({
+  name: String,
+  priority: String,
+  completed: Boolean
+});
+
+const ToDoItem = mongoose.model("ToDoItem", toDoItemSchema);
 
 // Time to start defining our Commands. What are we going to do with our program?
 // We want to be able to add, show and delete tasks.
@@ -89,6 +97,9 @@ program
 .option('-p, --priority <p>', 'Specify priority for task', parseInt)
 // YOUR CODE HERE
 
+program
+.option('-t, --task <p>', 'task');
+
 // Arguments
 // These lines are part of the 'Commander' module. They tell it to process all the
 // other arguments that are sent to our program with no specific name.
@@ -123,10 +134,16 @@ function addTask(){
   var priority = program.priority || 1;
   var name = parseArgs();
 
+
   // TODO: create new instance of your toDo model (call it task) and
   //    set name, priority, and completed.
 
   // YOUR CODE HERE
+  const task = new ToDoItem({
+    name: "Do Laundry",
+    priority: "1st",
+    completed: false
+  });
 
   // TODO: Use mongoose's save function to save task (the new instance of
   //    your model that you created above). In the callback function
@@ -134,6 +151,10 @@ function addTask(){
   //    using "mongoose.connection.close();"
 
   // YOUR CODE HERE
+  task.save();
+  setTimeout(function() {
+    mongoose.disconnect();
+  }, 1000);
 }
 
 // PART 3: Show tasks
@@ -155,8 +176,11 @@ function showTasks() {
   // Hint: Use the .find function on your model to get the tasks
   //    .find({name: "Do Laundry"}, function(err, task) { // do things } ) - only finds ToDoItems where name is "Do Laundry"
   //    .find(function (err, task) { // do things } ) - finds all tasks
-
-  // YOUR CODE HERE
+  if (program.task) {
+    ToDoItem.find().then(results => {
+      console.log("Task" + results);
+    }).catch(err => console.log("An error Occured"));
+  }
 }
 
 // PART 4: Delete tasks
@@ -166,6 +190,7 @@ function showTasks() {
 function deleteTask(){
   // TODO: If program.task exists you should use mongoose's .remove function
   //    on the model to remove the task with {name: program.task}
-
-  // YOUR CODE HERE
+  if (program.task) {
+    ToDoItem.find().findOneAndDelete().then(() => console.log("This worked"));
+  }
 }
