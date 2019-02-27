@@ -50,7 +50,7 @@ router.post("/new", (req, res) => {
   newProject.save()
     .then(() => res.redirect('/'))
     .catch(err => {
-      res.render('new', { newProject, errorMessage: "Some of the entries you've provided are invalid" })
+      res.render('new', { project: newProject, errorMessage: "Some of the entries you've provided are invalid" })
   })
 });
 
