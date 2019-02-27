@@ -27,7 +27,7 @@ mongoose.connection.on("error", _ => {
   console.log("Error connecting to MongoDb. Check MONGODB_URI in env.sh");
   process.exit(1);
 });
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
 // Handlabars setup
 app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));

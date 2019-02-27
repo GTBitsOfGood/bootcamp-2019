@@ -65,19 +65,19 @@ router.get("/project/:projectid", (req, res) => {
     }
     const percentOfGoal = totalRaised / project.goal
     res.render('project.hbs', { project, totalRaised, percentOfGoal })
-  })
+  }).catch(err => console.log(err))
 });
 
 // Part 4: Contribute to a project
 // Implement the GET /project/:projectid endpoint
 router.post("/project/:projectid", (req, res) => {
-  const project = Project.findById(req.params.projectid)
-  project.contributions.push({
-    'name': res.body.name,
-    'amount': res.body.amount
-  })
-  project.save()
-  // todo: add 
+  Project.findById(req.params.projectid.slice(1)).then(project => {
+    project.contributions.push({
+      'name': req.body.name,
+      'amount': req.body.amount
+    })
+    project.save()
+  }).catch(err => console.log(err))
 });
 
 // Part 6: Edit project

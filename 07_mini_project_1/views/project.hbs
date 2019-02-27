@@ -19,13 +19,13 @@ Percentage of project goal met:
 </div>
 Contributions:
 {{#each project.contributions}}
-{{this}}<br>
+{{this.name}} contributed {{this.amount}}<br>
 {{/each}}
 
 
 <h1>Make a contribution</h1>
 <form method="POST">
-    Name: <input type="text" name="name" value="{{contribution.name}}"/><br/>
-    Amount: <input type="text" name="amount" value="{{contribution.amount}}"/><br/>
+    Name: <input type="text" name="name" value="{{name}}"/><br/>
+    Amount: <input type="text" name="amount" value="{{amount}}"/><br/>
     <input type="submit" value="Submit"/>
 </form>
