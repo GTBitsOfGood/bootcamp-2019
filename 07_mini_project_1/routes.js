@@ -48,16 +48,18 @@ router.post("/new", (req, res) => {
     end: req.body.end    
   })
   newProject.save()
-    .then(res.redirect('/'))
+    .then(() => res.redirect('/'))
     .catch(err => {
-      res.render('new.hbs', { project, errorMessage: "Some of the entries you've provided are invalid" })
+      res.render('new', { newProject, errorMessage: "Some of the entries you've provided are invalid" })
   })
 });
 
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get("/project/:projectid", (req, res) => {
-  // YOUR CODE HERE
+  let project = Project.findById(req.params.projectid)
+  res.render('project.hbs', { project })
+  // Issue: URL loads regardless of whether project exists; project fields don't' show up.
 });
 
 // Part 4: Contribute to a project

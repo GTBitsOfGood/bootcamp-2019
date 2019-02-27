@@ -21,7 +21,8 @@ const Project = mongoose.model("Project", {
   end: {
     type: Date,
     required: true
-  }
+  },
+  contributions: Array
 });
 
 module.exports = {
