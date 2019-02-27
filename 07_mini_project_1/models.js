@@ -6,9 +6,22 @@ const mongoose = require("mongoose");
 // Project model
 const Project = mongoose.model("Project", {
   title: {
-    type: String
+    type: String,
+    required: true
+  },
+  goal: {
+    type: Number,
+    required: true
+  },
+  description: String,
+  start: {
+    type: Date,
+    required: true
+  },
+  end: {
+    type: Date,
+    required: true
   }
-  // YOUR CODE HERE
 });
 
 module.exports = {

@@ -34,18 +34,18 @@ router.get("/", (req, res) => {
 // Part 2: Create project
 // Implement the GET /new endpoint
 router.get("/new", (req, res) => {
-  res.render('new.hbs', { project, errorMessage: '' })
+  res.render('new.hbs', { errorMessage: '' })
 });
 
 // Part 2: Create project
 // Implement the POST /new endpoint
 router.post("/new", (req, res) => {
   const newProject = new Project({
-    title: req.body.project.title,
-    goal: req.body.project.goal,
-    description: req.body.project.description,
-    start: req.body.project.start,
-    end: req.body.project.end    
+    title: req.body.title,
+    goal: req.body.goal,
+    description: req.body.description,
+    start: req.body.start,
+    end: req.body.end    
   })
   newProject.save()
     .then(res.redirect('/'))
