@@ -58,7 +58,7 @@ router.post("/new", (req, res) => {
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get("/project/:projectid", (req, res) => {
-  const projectid = req.params.projectid.slice(1)
+  const projectid = req.params.projectid
   Project.findById(projectid).then(project => {
     let totalRaised = 0
     for (let contribution of project.contributions) {
@@ -73,7 +73,7 @@ router.get("/project/:projectid", (req, res) => {
 // Part 4: Contribute to a project
 // Implement the GET /project/:projectid endpoint
 router.post("/project/:projectid", (req, res) => {
-  const projectid = req.params.projectid.slice(1)
+  const projectid = req.params.projectid
   Project.findById(projectid).then(project => {
     project.contributions.push({
       'name': req.body.name,
@@ -85,6 +85,24 @@ router.post("/project/:projectid", (req, res) => {
 
 // Part 6: Edit project
 // Create the GET /project/:projectid/edit endpoint
+router.get('/project/:projectid/edit', (req, res) => {
+  const projectid = req.params.projectid
+  Project.findById(projectid).then(project => {
+    res.render('editProject.hbs', { project })
+  })
+})
+
 // Create the POST /project/:projectid/edit endpoint
+router.post('project/:projectid/edit', (req, res) => {
+  const projectid = req.params.projectid
+  Project.findByIdAndUpdate(projectid, {
+    title: req.body.title,
+    goal: req.body.goal,
+    description: req.body.description,
+    start: req.body.start,
+    end: req.body.end,
+    category: req.body.category
+  }, (err) => console.log(err)).then(() => res.redirect('/project/' + projectid + '/edit'))
+})
 
 module.exports = router;
