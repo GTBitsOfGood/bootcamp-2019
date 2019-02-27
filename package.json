@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/GTBitsOfGood/bootcamp/issues"
   },
-  "homepage": "https://github.com/GTBitsOfGood/bootcamp#readme"
+  "homepage": "https://github.com/GTBitsOfGood/bootcamp#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0"
+  }
 }

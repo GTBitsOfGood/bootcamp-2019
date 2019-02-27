@@ -3,6 +3,7 @@
 const fs = require('fs');
 const validator = require('validator')
 //require columnify here
+const columnify = require('columnify')
 
 
 const JSON_FILE = 'data.json'
@@ -34,6 +35,11 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 */
 function parseCommand() {
   // YOUR CODE HERE
+  if (argv[1] == null) {
+    return "";
+  } else {
+    return argv[1];
+  }
 
 }
 
@@ -70,7 +76,7 @@ switch(input){
 function displayContacts(){
     //YOUR CODE HERE
 
-    // console.log(columnify(data)); //UNCOMMENT
+    console.log(columnify(data)); //UNCOMMENT
 
 }
 

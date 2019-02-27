@@ -9,12 +9,26 @@ if (! process.env.MONGODB_URI) {
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-const Cat; // YOUR CODE HERE - define the cat model
+const catSchema = new mongoose.Schema({
+  name: String,
+  furColor: String
+}); // YOUR CODE HERE - define the cat model
 
-Cat.find((error, cats) => {
-  if (error) {
-    console.log("Can't find cats", error);
-  } else {
-    console.log('Cats', cats);
-  }
-});
+const Cat = mongoose.model("Cat", catSchema);
+
+// const crookshanks = new Cat({name: "Crookshanks", furColor: "Black"});
+// crookshanks.save();
+// const mrB = new Cat({name: "Mr. Bigglesworth", furColor: "White"});
+// mrB.save();
+// const emp = new Cat({name: "Empurress", furColor: "Calico"});
+// emp.save();
+
+Cat.find().then(results => {
+  console.log(results);
+}).catch(err => console.log(err));
+
+Cat.findOne({name: "Mr. Bigglesworth"})
+.then(results => {
+  console.log(results);
+})
+.catch(err => console.log(err));
