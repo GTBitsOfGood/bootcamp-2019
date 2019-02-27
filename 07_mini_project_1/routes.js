@@ -45,7 +45,8 @@ router.post("/new", (req, res) => {
     goal: req.body.goal,
     description: req.body.description,
     start: req.body.start,
-    end: req.body.end    
+    end: req.body.end,
+    category: req.body.category
   })
   newProject.save()
     .then(() => res.redirect('/'))
