@@ -57,15 +57,27 @@ router.post("/new", (req, res) => {
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get("/project/:projectid", (req, res) => {
-  let project = Project.findById(req.params.projectid)
-  res.render('project.hbs', { project })
-  // Issue: URL loads regardless of whether project exists; project fields don't' show up.
+  Project.findById(req.params.projectid.slice(1)).then(project => {
+    let totalRaised = 0
+    for (let contribution of project.contributions) {
+      const amount = contribution.amount
+      totalRaised += amount
+    }
+    const percentOfGoal = totalRaised / project.goal
+    res.render('project.hbs', { project, totalRaised, percentOfGoal })
+  })
 });
 
 // Part 4: Contribute to a project
 // Implement the GET /project/:projectid endpoint
 router.post("/project/:projectid", (req, res) => {
-  // YOUR CODE HERE
+  const project = Project.findById(req.params.projectid)
+  project.contributions.push({
+    'name': res.body.name,
+    'amount': res.body.amount
+  })
+  project.save()
+  // todo: add 
 });
 
 // Part 6: Edit project

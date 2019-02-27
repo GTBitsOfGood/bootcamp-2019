@@ -1,7 +1,6 @@
 <h2>Create project</h2>
 
 <!-- Part 2: Create project -->
-<!-- Part 5: Project categories -->
 {{errorMessage}}
 <form method="POST" action="/new">
     Title: <input type="text" name="title" value="{{project.title}}" /><br>
@@ -9,5 +8,7 @@
     Description: <textarea>{{project.description}}</textarea><br>
     Start: <input type="date" name="start" value="{{project.start}}" /><br>
     End: <input type="date" name="end" value="{{project.end}}"/><br>
-    Submit: <input type="submit" name="submit" value="Submit" />
+    Submit: <input type="submit" value="Submit" />
 </form>
+
+<!-- Part 5: Project categories -->
