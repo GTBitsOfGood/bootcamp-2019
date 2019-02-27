@@ -57,26 +57,28 @@ router.post("/new", (req, res) => {
 // Part 3: View single project
 // Implement the GET /project/:projectid endpoint
 router.get("/project/:projectid", (req, res) => {
-  Project.findById(req.params.projectid.slice(1)).then(project => {
+  const projectid = req.params.projectid.slice(1)
+  Project.findById(projectid).then(project => {
     let totalRaised = 0
     for (let contribution of project.contributions) {
       const amount = contribution.amount
       totalRaised += amount
     }
     const percentOfGoal = totalRaised / project.goal
-    res.render('project.hbs', { project, totalRaised, percentOfGoal })
+    res.render('project.hbs', { project, totalRaised, percentOfGoal, projectid })
   }).catch(err => console.log(err))
 });
 
 // Part 4: Contribute to a project
 // Implement the GET /project/:projectid endpoint
 router.post("/project/:projectid", (req, res) => {
-  Project.findById(req.params.projectid.slice(1)).then(project => {
+  const projectid = req.params.projectid.slice(1)
+  Project.findById(projectid).then(project => {
     project.contributions.push({
       'name': req.body.name,
       'amount': req.body.amount
     })
-    project.save()
+    project.save().then(() => res.redirect('/project/:' + projectid))
   }).catch(err => console.log(err))
 });
 
