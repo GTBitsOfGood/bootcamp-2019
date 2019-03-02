@@ -6,6 +6,7 @@ const router = express.Router();
 const Project = require("./models").Project;
 const strftime = require("strftime");
 const bodyParser = require('body-parser')
+const moment = require('moment')
 
 router.use(bodyParser.urlencoded({ extended: false }));;
 router.use(bodyParser.json());
@@ -26,9 +27,17 @@ router.get("/create-test-project", (req, res) => {
 // Part 1: View all projects
 // Implement the GET / endpoint.
 router.get("/", (req, res) => {
-  Project.find((err, array) => {
-    res.render('index', { array })
-  })
+  const sortBy = req.query.sort
+  const sortDirection = req.query.sortDirection || 'descending'
+  if (req.query.sort) {
+    Project.find().sort({ sortBy: sortDirection }).exec((err, projects) => {
+      res.render('index', { projects })
+    })
+  } else {
+    Project.find((err, projects) => {
+      res.render('index', { projects })
+    })
+  }
 });
 
 // Part 2: Create project
@@ -88,9 +97,12 @@ router.post("/project/:projectid", (req, res) => {
 router.get('/project/:projectid/edit', (req, res) => {
   const projectid = req.params.projectid
   Project.findById(projectid).then(project => {
-    res.render('editProject.hbs', { project })
+    const start = moment(project.start).utc().format("YYYY-MM-DD")
+    const end = moment(project.end).utc().format("YYYY-MM-DD")
+    res.render('editProject.hbs', { project, start, end })
   })
 })
+// todo: fix prepopulating date
 
 // Create the POST /project/:projectid/edit endpoint
 router.post('project/:projectid/edit', (req, res) => {

@@ -237,7 +237,7 @@ that allows us to make contributions.
 
 ### Part 7: Sort projects
 
-1. Add two query parameters `GET /`: `sort` and `sortDirection`.
+1. Under `GET /`, add two query parameters: `sort` and `sortDirection`.
 
     When the `sort` query parameter is specified use `.sort()` when doing
     `.find()` to sort results you're getting back from MongoDb.
