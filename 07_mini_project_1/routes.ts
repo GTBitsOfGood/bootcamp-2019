@@ -27,23 +27,36 @@ router.get("/create-test-project", (req, res) => {
 // Part 1: View all projects
 // Implement the GET / endpoint.
 router.get("/", (req, res) => {
-  const sortBy = req.query.sort
-  let sortDirection = req.query.sortDirection || 'ascending'
-  // sortDirection = "'" + sortDirection + "'"
-  if (sortBy === 'totalContributions') {
+  let sortObject = {}
+  sortObject[req.query.sort] = req.query.sortDirection || 'ascending'
+  if (req.query.sort === 'totalContributions') {
     Project.find((err, projects) => {
       for (let project of projects) {
-        let totalContributions = 0
+        let totalContribs = 0
         for (let contribution of project.contributions) {
-          totalContributions += contribution.amount
+          totalContribs += contribution.amount
         }
-        projects.push({ 'totalContributions': totalContributions })
+        projects.push({ 'totalContributions': totalContribs })
       }
-    }).then(projects => {
+    }).sort(sortObject).exec((err, projects) => {
       res.render('index', { projects })
     })
   } else if (req.query.sort) {
-    Project.find({}).sort({ sortBy: sortDirection }).exec((err, projects) => {
+    Project.find({}).sort(sortObject).exec((err, projects) => {
+      res.render('index', { projects })
+    })
+  } else if (req.query.filter) {
+    Project.find((err, projects) => {
+      for (let project of projects) {
+        let totalContribs = 0
+        for (let contribution of project.contributions) {
+          totalContribs += contribution.amount
+        }
+        let funded = totalContribs >= project.goal
+        project['funded'] = funded
+      }
+      projects = projects.filter(project => project.funded === req.query.filter)
+    }).then(projects => {
       res.render('index', { projects })
     })
   } else {

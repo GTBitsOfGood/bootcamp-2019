@@ -17,6 +17,7 @@
     "strftime": "^0.10.0"
   },
   "devDependencies": {
+    "@types/node": "^11.10.4",
     "nodemon": "^1.14.11"
   }
 }
