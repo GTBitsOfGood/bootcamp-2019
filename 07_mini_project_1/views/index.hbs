@@ -1,9 +1,26 @@
-<h1>View projects</h1>
+<h1>All projects</h1>
+Sort:
+<ul>
+    <li><a href="/?sort=start">Start date, ascending</a></li>
+    <li><a href="/?sort=end">End date, ascending</a></li>
+    <li><a href="/?sort=goal">Goal, ascending</a></li>
+    <li><a href="/?sort=start&sortDirection=descending">Start date, descending</a></li>
+    <li><a href="/?sort=end&sortDirection=descending">End date, descending</a></li>
+    <li><a href="/?sort=goal&sortDirection=descending">Goal, descending</a></li>
+</ul>
 
 <!-- Part 1: View all projects -->
 {{#each projects}}
-<p>{{this}}</p>
+<h2>{{this.title}}</h2>
+Goal: {{this.goal}}<br>
+Start: {{this.start}}<br>
+End: {{this.end}}<br>
+Contributions: {{#each this.contributions}}
+{{#each this}}
+{{this}}
 {{/each}}
-
+{{/each}}
+{{/each}}
+<br>
 <!-- Part 2: Create new project -->
-<a href="http://localhost:3000/new">Create new project</a>
+<h1><a href="http://localhost:3000/new">Create new project</a></h1>
