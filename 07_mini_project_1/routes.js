@@ -27,7 +27,7 @@ router.get("/", function (req, res) {
     var sortObject = {};
     sortObject[req.query.sort] = req.query.sortDirection || 'ascending';
     if (req.query.sort === 'totalContributions') {
-        Project.find(function (err, projects) {
+        Project.find({}, function (err, projects) {
             for (var _i = 0, projects_1 = projects; _i < projects_1.length; _i++) {
                 var project = projects_1[_i];
                 var totalContribs = 0;

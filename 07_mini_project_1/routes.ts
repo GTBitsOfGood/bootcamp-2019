@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
   let sortObject = {}
   sortObject[req.query.sort] = req.query.sortDirection || 'ascending'
   if (req.query.sort === 'totalContributions') {
-    Project.find((err, projects) => {
+    Project.find({}, (err, projects) => {
       for (let project of projects) {
         let totalContribs = 0
         for (let contribution of project.contributions) {
