@@ -1,7 +1,15 @@
-<h1>View projects</h1>
+<h1>All projects</h1>
 
 <!-- Part 1: View all projects -->
 <!-- YOUR CODE HERE -->
+<ul class="projects_list">
+  {{#each items}}
+    <li>
+      <a href="/project/{{this.id}}">{{this.title}}</a>
+    </li>
+  {{/each}}
+</ul>
 
 <!-- Part 2: Create new project -->
 <!-- YOUR CODE HERE -->
+<a href="http://localhost:3000/new"> Create new project </a>

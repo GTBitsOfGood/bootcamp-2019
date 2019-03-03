@@ -1,9 +1,48 @@
-<h1>View Project</h1>
+<div>
+  <a href="/">Back to all projects</a>
+  <h1> {{project.title}} </h1>
+  <h5> Goal: ${{project.goal}} </h5>
+  <h5> Description: </h5>
+  <p> {{project.description}} </p>
+  <h5> Start: </h5>
+  <p> {{startDate}} </p>
+  <h5> End:  </h5>
+  <p> {{endDate}} </p>
+  <h5> Category:  </h5>
+  <p> {{project.category}} </p>
+  <h5> Total Contributions: ${{project.total_contributions}}</h5>
+  <div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  aria-valuenow="{{project.total_contributions}}" aria-valuemin="0" aria-valuemax="{{project.goal}}" style="width:{{project.percent}}%">
+    {{project.percent}}% Complete
+  </div>
+</div>
+  <h5> Contributions: </h5>
+  <ul class="projects_list">
+    {{#each project.contributions}}
+      <li>{{this.name}}: ${{this.amount}}</li>
+    {{/each}}
+  </ul>
+  <a href="/project/{{project.id}}/edit">Edit project</a>
+</div>
 
-<!-- Part 3: View a single project -->
-
-<!-- YOUR CODE HERE -->
 
 <!-- Part 4: Contribute to a project -->
+<div>
+  <br>
+  {{#each errors}}
+    <li>{{this.message}}</li>
+  {{/each}}
+  <br>
+  <h3> Contribute to this project! </h3>
+  <form action="/project/{{project.id}}" method="POST">
+    Name:<br>
+    <input type="text" name="name"> <br>
+    Amount:<br>
+    <input type="text" name="amount"> <br>
+    <br>
+    <input type="submit" value="Contribute">
+  </form>
+</div>
 
 <!-- YOUR CODE HERE -->
