@@ -88,7 +88,9 @@ router.post("/project/:projectid", (req, res) => {
         res.locals.project = project;
       }
     });
-    res.render('project.hbs', {project: project});
+    const formatStart = moment(project.start).format('MMMM Do, YYYY');
+    const formatEnd = moment(project.end).format('MMMM Do, YYYY');
+    res.render('project.hbs', {project: project, startDate: formatStart, endDate: formatEnd});
   });
 
 });
@@ -98,6 +100,7 @@ router.get("/project/:projectid/edit", (req, res) => {
   Project.findById(req.params.projectid, (err, project) => {
     const startDate = moment(project.start).utc().format("YYYY-MM-DD");
     const endDate = moment(project.end).utc().format("YYYY-MM-DD");
+    console.log(project.category);
     res.render('editProject.hbs', {project: project, projectid: req.params.projectid, startDate: startDate, endDate: endDate});
   });
 });
