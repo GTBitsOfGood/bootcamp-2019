@@ -36,8 +36,7 @@ const Project = mongoose.model("Project", {
     required: true
   },
   total_contributions: {
-    type: Number,
-    default: 0
+    type: Number
   },
   percent: {
     type: Number,

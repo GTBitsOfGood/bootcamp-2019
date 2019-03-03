@@ -24,9 +24,69 @@ router.get("/create-test-project", (req, res) => {
 // Part 1: View all projects
 // Implement the GET / endpoint.
 router.get("/", (req, res) => {
-  Project.find((err, array) => {
-  res.render('index', {items: array});
-  });
+  if (req.query.sort) {
+    const sortObject = {};
+    sortObject[req.query.sort] = 1;
+    Project.find().sort(sortObject).exec((err, array) => {
+      array.forEach(item => {
+        item.newStart = moment(item.start).format('MMMM Do, YYYY');
+        item.newEnd = moment(item.end).format('MMMM Do, YYYY');
+      })
+      res.render('index', {items: array});
+    });
+  }else {
+    Project.find((err, array) => {
+      array.forEach(item => {
+        item.newStart = moment(item.start).format('MMMM Do, YYYY');
+        item.newEnd = moment(item.end).format('MMMM Do, YYYY');
+      })
+      res.render('index', {items: array});
+    });
+  }
+});
+
+router.get("/funded", (req, res) => {
+  if (req.query.sort) {
+    const sortObject = {};
+    sortObject[req.query.sort] = 1;
+    Project.find({percent: 100}).sort(sortObject).exec((err, array) => {
+      array.forEach(item => {
+        item.newStart = moment(item.start).format('MMMM Do, YYYY');
+        item.newEnd = moment(item.end).format('MMMM Do, YYYY');
+      })
+      res.render('funded', {items: array});
+    });
+  }else {
+    Project.find({percent: 100}).then(array => {
+      array.forEach(item => {
+        item.newStart = moment(item.start).format('MMMM Do, YYYY');
+        item.newEnd = moment(item.end).format('MMMM Do, YYYY');
+      })
+      res.render('funded', {items: array});
+    });
+  }
+});
+
+router.get("/unfunded", (req, res) => {
+  if (req.query.sort) {
+    const sortObject = {};
+    sortObject[req.query.sort] = 1;
+    Project.find({percent: { $lt: 100}}).sort(sortObject).exec((err, array) => {
+      array.forEach(item => {
+        item.newStart = moment(item.start).format('MMMM Do, YYYY');
+        item.newEnd = moment(item.end).format('MMMM Do, YYYY');
+      })
+      res.render('unfunded', {items: array});
+    });
+  }else {
+    Project.find({percent: { $lt: 100}}).then(array => {
+      array.forEach(item => {
+        item.newStart = moment(item.start).format('MMMM Do, YYYY');
+        item.newEnd = moment(item.end).format('MMMM Do, YYYY');
+      })
+      res.render('unfunded', {items: array});
+    });
+  }
 });
 
 // Part 2: Create project
@@ -67,6 +127,7 @@ router.get("/project/:projectid", (req, res) => {
   Project.findById(req.params.projectid, (err, project) => {
     const formatStart = moment(project.start).format('MMMM Do, YYYY');
     const formatEnd = moment(project.end).format('MMMM Do, YYYY');
+    project.percent = Math.round(project.total_contributions / project.goal * 100);
     res.render('project.hbs', {project: project, startDate: formatStart, endDate: formatEnd});
   });
 });
@@ -81,6 +142,9 @@ router.post("/project/:projectid", (req, res) => {
     }
     project.total_contributions += Number(req.body.amount);
     project.percent = Math.round(project.total_contributions / project.goal * 100);
+    if (project.percent > 100) {
+      project.percent = 100;
+    }
     project.contributions.push(contribution);
     project.save(err => {
       if (err) {
@@ -108,20 +172,28 @@ router.get("/project/:projectid/edit", (req, res) => {
 // Create the POST /project/:projectid/edit endpoint
 
 router.post("/project/:projectid/edit", (req, res) => {
-  Project.findByIdAndUpdate(req.params.projectid, {
-    title: req.body.title,
-    goal: req.body.goal,
-    description: req.body.description,
-    start: moment.tz(req.body.start, "America/New_York"),
-    end: moment.tz(req.body.end, "America/New_York"),
-    category: req.body.category,
-    total_contributions: req.body.total_contributions
-  }, (err) => {
-    return res.render('edit.hbs');
+  Project.findById(req.params.projectid, (err, project) => {
+    project.title = req.body.title,
+    project.goal = req.body.goal,
+    project.description = req.body.description,
+    project.start = moment.tz(req.body.start, "America/New_York"),
+    project.end = moment.tz(req.body.end, "America/New_York"),
+    project.category = req.body.category
+    project.percent = Math.round(project.total_contributions / project.goal * 100);
+    if (project.percent > 100) {
+      project.percent = 100;
+    }
+    project.save(err => {
+      if (err) {
+        res.locals.errors = err.errors;
+        res.locals.project = project;
+      }
+    });
+    const formatStart = moment(project.start).format('MMMM Do, YYYY');
+    const formatEnd = moment(project.end).format('MMMM Do, YYYY');
+    res.render('project.hbs', {project: project, startDate: formatStart, endDate: formatEnd});
   });
-    return res.redirect('/');
 });
-
 
 
 module.exports = router;

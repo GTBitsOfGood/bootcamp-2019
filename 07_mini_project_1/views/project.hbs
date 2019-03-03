@@ -1,5 +1,5 @@
 <div>
-  <a href="/">Back to all projects</a>
+  <a href="/">< Back to all projects</a>
   <h1> {{project.title}} </h1>
   <h5> Goal: ${{project.goal}} </h5>
   <h5> Description: </h5>
@@ -18,12 +18,12 @@
   </div>
 </div>
   <h5> Contributions: </h5>
-  <ul class="projects_list">
+  <ul class="list-group">
     {{#each project.contributions}}
-      <li>{{this.name}}: ${{this.amount}}</li>
+      <li class="list-group-item">{{this.name}}: ${{this.amount}}</li>
     {{/each}}
   </ul>
-  <a href="/project/{{project.id}}/edit">Edit project</a>
+  <a href="/project/{{project.id}}/edit" class="btn btn-primary">Edit project</a>
 </div>
 
 
@@ -34,14 +34,14 @@
     <li>{{this.message}}</li>
   {{/each}}
   <br>
-  <h3> Contribute to this project! </h3>
+  <h1> Contribute to this project! </h1>
   <form action="/project/{{project.id}}" method="POST">
     Name:<br>
     <input type="text" name="name"> <br>
     Amount:<br>
     <input type="text" name="amount"> <br>
     <br>
-    <input type="submit" value="Contribute">
+    <input type="submit" class="btn btn-success" value="Contribute">
   </form>
 </div>
 
