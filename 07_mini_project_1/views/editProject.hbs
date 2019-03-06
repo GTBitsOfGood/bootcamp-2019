@@ -1,14 +1,14 @@
-<h2>Create project</h2>
-<form action="/new" method="post">
+<h2>Edit project</h2>
+<form action="/project/{{project._id}}/edit" method="post">
   <span>
       Title
-      <input type="text" name="title" value={{title}}>
+      <input type="text" name="title" value={{project.title}}>
     <br/>
       Goal
-    <input type="text" name="goal" value={{goal}}>
+    <input type="text" name="goal" value={{project.goal}}>
     <br/>
       Description
-      <textarea name="description" value={{description}}>Enter text here...</textarea>
+      <textarea name="description" value={{project.description}}>{{project.description}}</textarea>
     <br/>
       Start Date
       <input type="date" name="start" value={{start}}>
@@ -17,7 +17,7 @@
       <input type="date" name="end" value={{end}}>
     <br/>
       Category
-      <select name="category">
+      <select name="category" value={{project.category}}>
         <option value="Famous Muppet Frogs">Famous Muppet Frogs</option>
         <option value="The Pen Is Mightier">The Pen Is Mightier</option>
         <option value="Famous Mothers">Famous Mothers</option>
@@ -31,6 +31,3 @@
     <input type="submit" value="Submit">
   </span>
 </form>
-<!-- Part 2: Create project -->
-<!-- Part 5: Project categories -->
-<!-- YOUR CODE HERE -->

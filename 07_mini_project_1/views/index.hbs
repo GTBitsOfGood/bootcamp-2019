@@ -1,5 +1,18 @@
 <h1>View projects</h1>
-
+{{#each items}}
+    <div>ObjectId: {{_id}}    title: {{title}}   goal: {{goal}}    description: {{description}}    start: {{start}}
+        end: {{end}} Category: {{category}} </div>
+{{/each}}
+<a href="/new">Create new Project</a><br/>
+<a href="/?sort=start&sortDirection=ascending">Sort ascending by start</a><br/>
+<a href="/?sort=start&sortDirection=descending">Sort descending by start</a><br/>
+<a href="/?sort=end&sortDirection=ascending">Sort ascending by end</a><br/>
+<a href="/?sort=end&sortDirection=descending">Sort descending by end</a><br/>
+<a href="/?sort=goal&sortDirection=ascending">Sort ascending by goal</a><br/>
+<a href="/?sort=goal&sortDirection=descending">Sort descending by goal</a><br/>
+<a href="/sortByTotalContribution">Sort by total contribution</a><br/>
+<a href="/checkFounded?stat=full">View fully funded project</a><br/>
+<a href="/checkFounded?stat=not">View not fully founded project</a><br/>
 <!-- Part 1: View all projects -->
 <!-- YOUR CODE HERE -->
 
