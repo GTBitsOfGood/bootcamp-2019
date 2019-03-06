@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
         let totalContribs = 0
         if (project.contributions) {
           for (let contribution of project.contributions) {
-            totalContribs += contribution.amount
+            totalContribs += Number(contribution.amount)
           }
         }
         project.totalContributions = totalContribs
@@ -50,18 +50,18 @@ router.get("/", (req, res) => {
     Project.find().sort(sortObject).exec((err, projects) => {
       res.render('index', { projects })
     })
-  } else if (req.query.filter) {
+  } else if (req.query.funded) {
     Project.find().then(projects => {
       for (let project of projects) {
         let totalContribs = 0
-        for (let contribution of project.contributions) {
-          totalContribs += contribution.amount
+        if (project.contributions) {
+          for (let contribution of project.contributions) {
+            totalContribs += contribution.amount
+          }
         }
-        let funded = totalContribs >= project.goal
-        project['funded'] = funded
+        project.isFunded = totalContribs >= project.goal
       }
-      projects = projects.filter(project => project.funded === req.query.filter)
-    }).then(projects => {
+      projects = projects.filter(project => project.isFunded === (req.query.funded === 'true'))
       res.render('index', { projects })
     })
   } else {
@@ -119,7 +119,7 @@ router.post("/project/:projectid", (req, res) => {
       'name': req.body.name,
       'amount': req.body.amount
     })
-    project.save().then(() => res.redirect('/project/:' + projectid))
+    project.save().then(() => res.redirect('/project/' + projectid))
   }).catch(err => console.log(err))
 });
 

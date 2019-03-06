@@ -165,6 +165,7 @@ that allows us to make contributions.
   for making contributions. This form should have `name` and `amount` input
   fields for specifying who is making the contribution and the size of the
   contribution.
+    - For the `amount` input field, use an `<input type="number" …>`.
 3. Implement the `POST /project/:projectid` endpoint in `07_mini_project_1/routes.js`.
   This endpoint should get the `Project` from MongoDb with `.findById()`,
   add a new object to the `contributions` array and `.save()` it back.
