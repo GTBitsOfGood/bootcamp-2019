@@ -133,11 +133,13 @@ function parseArgs() {
 // Remember to set priority to some default if the command is called without '-p'
 // `node toDo.js add Do the dishes`
 function addTask() {
-    let priority = program.priority || 1;
-    let name = parseArgs();
+
+    const priority = program.priority || 1;
+    const name = parseArgs();
 
     // TODO: create new instance of your toDo model (call it task) and
     //    set name, priority, and completed.
+
 
     const task = new todoI({name: name, priority: priority, completed: false});
 
