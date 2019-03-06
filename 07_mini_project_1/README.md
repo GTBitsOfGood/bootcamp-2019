@@ -268,8 +268,8 @@ that allows us to make contributions.
 Make it possible to sort projects by their total contribution.
 
 We can't sort by total contributions inside MongoDb because there is no
-`totalContributions` property. Get all projects from MongoDb then
-sort the array yourself. You can use `underscorejs` from NPM to help you with the sorting if you'd like.
+`totalContributions` property. Get all projects from MongoDb, then
+JavaScript's native array `.sort()` method. You can use `underscorejs` from NPM to help you with the sorting if you'd like.
 
 ### Part 9: Filter projects by funding status
 
