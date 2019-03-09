@@ -61,7 +61,7 @@ When you click the `Login` button you should see this (Don't worry if you don't 
 #### Endpoint: `GET /posts`
 
 1. Implement the `GET /posts` endpoint in `/05_express/2_guestbook/app.js`.
-1. Use Handlebars `{{each}}` to display posts in `/05_express/2_guestbook/views/posts.hbs`.
+1. Use Handlebars `{{#each}}` to display posts in `/05_express/2_guestbook/views/posts.hbs`.
 
 ### Part 3: Create post
 
@@ -73,16 +73,16 @@ When you click the `Login` button you should see this (Don't worry if you don't 
 1. Implement the `POST /posts` endpoint:
     - If the user is not logged in, respond with `401` status code and display an
     error.
-    - If any of body, title or date are missing (or empty) respond with a `400`
+    - If any of body, title or date (read from `req.body`) are missing (or empty) respond with a `400`
     status code and display an error.
-    - If the form contents are valid, create a new post object and store it
-    using `data.save()`.
+    - If the form contents are valid, read all posts into an array with data.read(), .push() onto it a new post object, and store it
+    using `data.save(array)`.
 
 ### Part 4: Sort posts
 
 Make it possible to sort posts by date using a URL parameter.
 
-1. Add a request parameter `order` to the `GET /posts` endpoint in
+1. Add a request (query) parameter `order` to the `GET /posts` endpoint in
    `/05_express/2_guestbook/app.js`.
 
    `/posts?order=ascending` should display posts in chronological order (oldest
@@ -90,6 +90,8 @@ Make it possible to sort posts by date using a URL parameter.
 
    `/posts?order=descending` should display posts in reverse chronological order
    (newest first).
+
+   (See info on [array.sort()](https://www.w3schools.com/js/js_array_sort.asp).)
 
 1. Add 2 links to `/05_express/2_guestbook/views/posts.hbs` to sort posts in ascending or
   descending order.
