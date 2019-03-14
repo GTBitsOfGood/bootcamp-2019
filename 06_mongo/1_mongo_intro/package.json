@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "mongoose": "^5.0.3"
+    "mongoose": "^5.4.14"
   },
   "scripts": {
     "start": "node models.js"

@@ -124,8 +124,7 @@ created document.
   that has `method` `POST` and `action` `/new`. This form should contain:
     1. `title`: text input field
     1. `goal`: text input field
-    1. `description`: [Textarea](http://www.w3schools.com/TAgs/tag_textarea.asp)
-    field
+    1. `description`: [Textarea](http://www.w3schools.com/TAgs/tag_textarea.asp) field
     1. `start`: Date input field
     1. `end`: Date input field
 1. Implement the `POST /new` endpoint in `7_mini_project_1/routes.js`.

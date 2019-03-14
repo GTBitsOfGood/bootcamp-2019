@@ -1,3 +1,26 @@
-<form>
-  <span>YOUR CODE HERE</span>
-</form>
+<body>
+  <h1>Register Form</h1>
+  <form> 
+    <ul style="list-style-type:none; padding-left: 0;">
+      <li><span>Username:<input type="text" name="username" value="{{username}}"></span></li>
+      <li><span>Password:<input type="password" name="password" value={{password}}></span></li>
+      <li><span>Name:<input type="text" name="name" value={{name}}></span></li>
+      <li>
+        <input type="radio" name="male" value="male"> Male
+        <input type="radio" name="female" value="female"> Female
+        <input type="radio" name="other" value="other"> Other
+      </li>
+      <li>
+        <span>
+          State: 
+          <select name="state">
+            {{#each states}}
+              <option value={{abbreviation}}>{{abbreviation}} - {{name}}</option>
+            {{/each}}
+          </select>
+        </span>
+      </li>
+      <li><input type="submit" value="Register"> </li>
+    </ul>
+  </form>
+</body>

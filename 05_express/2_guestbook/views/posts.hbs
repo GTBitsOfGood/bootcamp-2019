@@ -22,7 +22,31 @@
   Put each post inside a div. Be sure to display the author, title, body and date of each post.
 -->
 
-<!-- YOUR CODE HERE -->
+{{#unless isFiltered}}
+  Sort by date:
+  <a href="/posts?order=ascending">ascending</a>
+  <a href="/posts?order=ascending">descending</a>
+{{else}}
+  {{#unless order}}
+    <a href="/posts">View posts by all authors</a>
+  {{else}}
+    <a href="/posts?order={{order}}">View posts by all authors</a>
+  {{/unless}}
+  <br>
+  Sort by date:
+  <a href="/posts?order=ascending&author={{author}}">ascending</a>
+  <a href="/posts?order=descending&author={{author}}">descending</a>
+{{/unless}}
+
+{{#each posts}}
+  <div>{{this.author}}: #{{this.title}} "{{this.body}}" {{this.date}}</div>
+  {{#unless order}}
+    <a href="/posts?author={{this.author}}">View posts only by this author</a>
+  {{else}}
+    <a href="/posts?order={{order}}&author={{this.author}}">View posts only by this author</a>
+  {{/unless}}
+{{/each}}
+
 
 </body>
 </html>

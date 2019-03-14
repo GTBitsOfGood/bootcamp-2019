@@ -1,13 +1,31 @@
-var express = require("express");
+const express = require("express");
+const handlebars = require("express-handlebars")
 
-var app = express();
+const app = express();
+
+app.engine(
+  "hbs",
+  handlebars({
+    extname: ".hbs"
+  })
+);
+
+app.set("view engine", "hbs");
 
 app.get("/", function(request, response) {
-  response.send("Hello World");
+  response.render('first_template');
 });
 
 app.get('/:error', (req, res) => {
-  res.send(`<error> page not found, did you enter the correct url?`);
+  const error = req.params.error;
+  res.render('page', {
+    page_name: error
+  });
 });
+
+//app.get('/greet', (req, res) => {
+  //const name = req.query.name || "stranger";
+  //res.send(`Welcome ${name}!`);
+//});
 
 app.listen(3000);

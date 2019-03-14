@@ -165,5 +165,7 @@ toolbox.reject = function(array, fun) {
 // See difference() from the underscore.js library:
 // http://underscorejs.org/#difference
 toolbox.difference = function(array1, array2) {
-  // YOUR CODE HERE
+  return toolbox.reject(array1, function(item) {
+    return array2.indexOf(item) > -1;
+  });
 };

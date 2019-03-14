@@ -1,9 +1,41 @@
 <h1>View Project</h1>
 
 <!-- Part 3: View a single project -->
+{{!-- <script type="text/javascript" src="./../routes.js">
+  let total = 0;
+  for (let contribution of proj.contributions) {
+    const amount = contribution.amount;
+    total += amount;
+  }
+  const goalPercent = total / proj.goal;
+</script> --}}
 
-<!-- YOUR CODE HERE -->
+<h3>Title: {{proj.title}}</h3>
+<p>Goal: {{proj.goal}} </p>
+<div style="margin-right: 1500px;">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar"
+    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+      100%
+    </div>
+  </div>
+</div>
+<p>Description: {{proj.description}}</p>
+<p>Start: {{proj.start}}</p>
+<p>End: {{proj.end}}</p><br>
+<p>Category: {{proj.category}}</p><br>
 
 <!-- Part 4: Contribute to a project -->
+<h4>Contributions: <br></h3>
+<p>{{#each proj.contributions}}
+{{this.name}} contributed {{this.amount}}!<br>
+{{/each}}
+</p>
+<p>Contribution Total: 103
+</p><br>
 
-<!-- YOUR CODE HERE -->
+<form method="POST">
+  Contributor Name: <input type="text" name="name">
+  <br>Contribution Amount: <input type="text" name="amount">
+  <br><input type="submit" value="Submit Form">
+</form>

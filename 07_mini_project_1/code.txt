@@ -1,0 +1,47 @@
+<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{percent}}" 
+    aria-valuemin="0" aria-valuemax="{{proj.goal}}" style="width:{{percent}}%"> 
+        {{percent}}% completed
+    </div>
+
+let sort = {};
+  sort[req.query.sort] = req.query.sortDirection || 'ascending'
+  if (req.query.sort === 'totalContributions') {
+    Project.find().then(project1 => {
+      for (let proj of project1) {
+        let total = 0;
+        if (proj.contributions) {
+          for (let contribution of proj.contributions) {
+            total += Number(contribution.amount);
+          }
+        }
+        project.totalContributions = total;
+      }
+      if (req.query.sortDirection === 'descending') {
+        projects.sort((a, b) => b.totalContributions - a.totalContributions);
+      } else {
+        projects.sort((a, b) => a.totalContributions - b.totalContributions);
+      }
+      res.render('index', {project1});
+    })
+  } else if (req.query.sort) {
+    Project.find().sort(sort).exec((err, project1) => {
+      res.render('index', {project1});
+    });
+  } else if (req.query.funded) {
+    Project.find().then(project1 => {
+      for (let proj of project1) {
+        let total = 0;
+        if (proj.contributions) {
+          for (let contribution of proj.contributions) {
+            total += contribution.amount;
+          }
+        }
+        proj.isFunded = total >= proj.goal;
+      }
+      project1 = project1.filter(proj => proj.isFunded === (req.query.funded === 'true'));
+      res.render('index', {project1});
+    })
+  } else {
+
+
+    <li><a href="/?sort=start&sortDirection=descending">Start date, descending</a></li>

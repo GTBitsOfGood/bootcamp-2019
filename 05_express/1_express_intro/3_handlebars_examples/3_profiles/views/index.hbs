@@ -1,3 +1,24 @@
-<div>
-  <span>YOUR CODE HERE</span>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>profiles</title>
+</head>
+<body>
+  <div>
+    <span>
+      <ul>
+        {{#each data}}
+          <li>
+            First Name: {{this.first_name}}
+            </br> Last Name: {{this.last_name}}
+            </br> Email: {{this.email}}
+          </li>
+        {{/each}}
+      </ul>
+    </span>
+  </div>
+</body>
+</html>

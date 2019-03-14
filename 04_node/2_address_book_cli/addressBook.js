@@ -33,8 +33,13 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
-  // YOUR CODE HERE
-
+  let commands = ['add', 'update', 'display', 'delete', 'help'];
+  for (let i = 0; i < commands.length; i++) {
+    if (argv[0] === commands[i]) {
+      return commands[i];
+    }
+  }
+  return "";
 }
 
 //store the command and execute its corresponding function
@@ -68,9 +73,31 @@ switch(input){
 *
 */
 function displayContacts(){
-    //YOUR CODE HERE
+  let output = columnify(data, {
+    dataTransform: function(word) {
+      if (parseInt(word) === -1) {
+        return "-None-";
+      } else {
+        return word;
+      }
+    },
+    config: {
+      name: {
+        headingTransform: function(heading) {
+          return "CONTACT_NAME";
+        }
+      },
+      number: {
+        headingTransform: function(heading) {
+          return "PHONE_NUMBER";
+      }
+    }
+  }
+})
 
-    // console.log(columnify(data)); //UNCOMMENT
+console.log(output);
+
+  // console.log(columnify(data)); //UNCOMMENT
 
 }
 
@@ -88,8 +115,41 @@ function displayContacts(){
 * if no number is provided, store -1 as their number
 */
 function addContact() {
-// YOUR CODE HERE
+  process.argv.splice(0,1);
+  if (process.argv.length == 0) {
+    console.log("Invalid contact format");
+    return;
+  }
+  let name = process.argv[0];
+  let number = process.argv[1] || -1;
+  let exists = data.find(function(contact){
+    return contact.name === name
+  });
+  if (!checkForLetters(name)) {
+    console.log("Name must only contain letters.")
+    return;
+  } else if (exists) {
+    console.log("Name already exists.");
+    return;
+  } else if (argv.length > 1 && !checkForNumbers(number)) {
+    console.log("Number must only contain numbers");
+    return;
+  }
+  data.push({
+    name: name,
+    number: parseInt(number)
+  });
+  console.log("Added new contact " + name + ", " + number + ".");
+}
 
+//if only letters in text return
+function checkForLetters(text) {
+  return !/[^a-z]/i.test(text);
+}
+
+//if only numbers return
+function checkForNumbers(text) {
+  return !/[^0-9]/i.test(text);
 }
 
 
@@ -104,13 +164,43 @@ function addContact() {
 *
 */
 function updateContact(){
-// YOUR CODE HERE
+  process.argv.splice(0,1);
+  let contactName = argv[0];
+  let newContactName = argv[1];
+  let foundName = data.find(function(contact){
+    return contact.contactName === contactName;
+  });
+  if (argv.length < 2) {
+    console.log("Incorrect Format");
+  } else if (!foundName) {
+    console.log("No contact found");
+  } else if (checkForLetters(newContactName)) {
+    console.log("Updated name to " + newContactName);
+    foundName.contactName = newContactName;
+  } else if (checkForNumbers(newContactName)) {
+    console.log("Updated number to " + newContactName);
+    foundName.number = parseInt(newContactName);
+  } else {
+    console.log("Incorrect Format");
+  }
 }
 
 
 //BONUS Implement deleteContact
 function deleteContact(){
-    //YOUR CODE HERE
+  process.argv.splice(0,1);
+  let contactName = argv[0];
+  let foundName = data.find(function(contact){
+    return contact.contactName === contactName;
+  });
+  if (!foundName) {
+    console.log('No contact found');
+  } else {
+    console.log('Removed ' + foundName);
+    data = data.filter(function(word) {
+      return word.contactName !== contactName;
+    });
+  }
 }
 
 

@@ -1,0 +1,19 @@
+<h1>Edit project</h1>
+
+<form method="POST" action="/new">
+    Project Title: <input type="text" name="title">
+        <br>Goal: <input type="text" name="goal">
+        <br>Description: <input type="textarea" name="description">
+        <br>Start: <input type="date" name="start">
+        <br>End: <input type="date" name="end"><br>
+    Category: <select name="category" value="{{proj.category}}">
+        <option value="Famous Muppet Frogs">Famous Muppet Frogs</option>
+        <option value="The Pen Is Mightier">The Pen Is Mightier</option>
+        <option value="Famous Mothers">Famous Mothers</option>
+        <option value="Drummers Named Ringo">Drummers Named Ringo</option>
+        <option value="1-Letter Words">1-Letter Words</option>
+        <option value='Months That Start With "Feb"'>Months That Start With 'Feb'</option>
+        <option value="How Many Fingers Am I Holding Up">How Many Fingers Am I Holding Up</option>
+        <option value="Potent Potables">Potent Potables</option> </select><br/>
+    <br><input type="submit" value="Submit Form">
+</form>

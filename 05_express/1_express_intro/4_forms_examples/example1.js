@@ -10,8 +10,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Part 1
-// YOUR CODE HERE
+app.get('/', function(req, res) {
+    const name = req.query.names || "Default Header";
+    res.render('example1', {names: name});
+});
 
 // start the express app
 var port = process.env.PORT || 3000;

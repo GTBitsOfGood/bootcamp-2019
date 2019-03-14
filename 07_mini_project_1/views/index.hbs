@@ -1,7 +1,33 @@
 <h1>View projects</h1>
 
-<!-- Part 1: View all projects -->
-<!-- YOUR CODE HERE -->
+<p>Sort:</p>
+<ul>
+    <li><a href="/?sort=start">Sort by Start Date</a></li>
+    <li><a href="/?sort=end">Sort by End Date</a></li>
+    <li><a href="/?sort=goal">Sort by Goal</a></li>
+    <li><a href="/?sort=totalContributions">Sort by Total Contributions</a></li>
+</ul>
 
-<!-- Part 2: Create new project -->
-<!-- YOUR CODE HERE -->
+<p>Filter:</p>
+<ul>
+    <li><a href="/?funded=true">Funded</a></li>
+    <li><a href="/?funded=false">Not Funded</a></li>
+</ul>
+
+<!-- Part 1: View all projects -->
+<body>
+  <div>
+    <span>
+      <ul>
+        {{#each items}}
+          <li>
+            Project: {{this.title}}
+          </li>
+        {{/each}}
+      </ul>
+    </span>
+    <!-- Part 2: Create new project -->
+    <a href="http://localhost:3000/new">Create a new project</a>
+  </div>
+</body>
+</html>

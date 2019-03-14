@@ -189,5 +189,9 @@ toolbox.find = function(array, fn) {
 //  zip(['moe', 'larry', 'curly'], [30, 40, 50]) ->
 //    [["moe", 30], ["larry", 40], ["curly", 50]]
 toolbox.zip = function(array1, array2) {
-  // YOUR CODE HERE
+  let arr = [];
+  for (let i = 0; i < array1.length; i++) {
+    arr.push([array1[i], array2[i]]);
+  }
+  return arr;
 };
