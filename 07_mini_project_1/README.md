@@ -166,7 +166,7 @@ that allows us to make contributions.
   fields for specifying who is making the contribution and the size of the
   contribution.
 3. Implement the `POST /project/:projectid` endpoint in `07_mini_project_1/routes.js`.
-  This endpoint should the `Project` from MongoDb with `.findById()`,
+  This endpoint should find the `Project` from MongoDb with `.findById()`,
   add a new object to the `contributions` array and `.save()` it back.
 4. Edit `07_mini_project_1/views/project.hbs` and display:
      1. Total amount of contributions made.
