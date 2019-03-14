@@ -41,6 +41,13 @@ These are the data models used for this basic implementation of Reddit. The data
 }
 ```
 
+## API
+
+- The API is hosted off: https://bog-reddit.herokuapp.com/api/v1/.
+- Check out the API docs available here: https://bog-reddit.herokuapp.com/api-docs
+- The two main API endpoints you will be using are:
+  - https://bog-reddit.herokuapp.com/api/v1/posts
+  - https://bog-reddit.herokuapp.com/api/v1/comments
 
 ## Outline
 
@@ -69,9 +76,9 @@ In the previous set of React exercises you did all your coding using CodePen. Th
 
 TODO:
 
-1. Navigate to the root of your project repository.
+1. Navigate to `/10_react_with_apis/`.
 
-2. Run `Create React App` to create your frontend boilerplate.
+2. Run `Create React App` to create your React boilerplate.
     This will automatically download all the code and dependencies that the React App needs.
     It may take a minute!
 
@@ -218,18 +225,36 @@ TODO:
      - We have a winner! The [React documentation][didMount] specifically recommends making network requests here. The `componentDidMount()` lifecycle hook gets called after the `constructor()` is run and DOM nodes are created.
 4. Add a `constructor()` function to your `App` component. Inside the constrctor we will create a piece of state to hold the posts we will load. Initialize this piece of state to be `null`. We want to initialize `this.state.posts` to be null initially until we successfully load the posts from the API. More on this later...
 
-    ```javascript
-    constrcutor(props) {
-      super(props);
-      this.state = { posts: null};
-    }
-    ```
+    <details>
+      <summary>SPOILER: Show code to add</summary>
+
+      ```javascript
+        constrcutor(props) {
+          super(props);
+          this.state = { posts: null};
+        }
+      ```
+
+    </details>
 
 5. Add a `componentDidMount()` function to your `App` component. Inside this function you should use `axios` to make a `GET` request to the correct endpoint on the backend API to get the list of all posts. Once you get the array of posts, you should update the state to contain the array of posts.
-   
-  >! This is a spoiler
-  
+    - Hint: the API endpoint you should use is `https://bog-reddit.herokuapp.com/api/v1/posts`
 
+    <details>
+      <summary>SPOILER: Show code to add</summary>
+
+      ```javascript
+        componentDidMount() {
+          axios.get("https://bog-reddit.herokuapp.com/api/v1/posts")
+            .then(posts => this.setState({ posts }))
+            .catch(err => console.log(err));
+        }
+      ```
+
+    </details>
+
+6. Now that we have a way to load the posts from the backend using `componentDidMount()` we need to use the data inside of `render()` to display the posts.
+  TO BE CONTINUED!
 
 [http-methods]: https://youtu.be/DtR_6krv57U
 [axios]: https://youtu.be/r_w_gbxDvDY
