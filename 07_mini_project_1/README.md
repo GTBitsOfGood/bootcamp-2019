@@ -140,7 +140,7 @@ created document.
         ```
 
     2. If there are no validation errors, create a new `Project` and
-    `.save()` it. If `.save()` is successful redirect to `/`.
+    `.save()` it. If `.save()` is successful use `res.redirect()` to redirect to `/`.
 6. You should now see the newly created project on your "View all projects"
   page.
 
@@ -165,8 +165,9 @@ that allows us to make contributions.
   for making contributions. This form should have `name` and `amount` input
   fields for specifying who is making the contribution and the size of the
   contribution.
+    - For the `amount` input field, use an `<input type="number" …>`.
 3. Implement the `POST /project/:projectid` endpoint in `07_mini_project_1/routes.js`.
-  This endpoint should find the `Project` from MongoDb with `.findById()`,
+  This endpoint should get the `Project` from MongoDb with `.findById()`,
   add a new object to the `contributions` array and `.save()` it back.
 4. Edit `07_mini_project_1/views/project.hbs` and display:
      1. Total amount of contributions made.
@@ -237,7 +238,7 @@ that allows us to make contributions.
 
 ### Part 7: Sort projects
 
-1. Add two query parameters `GET /`: `sort` and `sortDirection`.
+1. Under `GET /`, add two query parameters: `sort` and `sortDirection`.
 
     When the `sort` query parameter is specified use `.sort()` when doing
     `.find()` to sort results you're getting back from MongoDb.
@@ -268,8 +269,8 @@ that allows us to make contributions.
 Make it possible to sort projects by their total contribution.
 
 We can't sort by total contributions inside MongoDb because there is no
-`totalContributions` property. Get all projects from MongoDb then
-sort the array yourself. You can use `underscorejs` from NPM to help you with the sorting if you'd like.
+`totalContributions` property. Get all projects from MongoDb, then
+JavaScript's native array `.sort()` method. You can use `underscorejs` from NPM to help you with the sorting if you'd like.
 
 ### Part 9: Filter projects by funding status
 
