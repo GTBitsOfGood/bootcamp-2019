@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "mongoose": "^5.4.7"
   },
   "scripts": {

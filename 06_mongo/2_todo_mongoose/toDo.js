@@ -43,6 +43,13 @@ db.once('open', function() {
 //    "completed" property that is a Boolean.
 
 // YOUR CODE HERE
+let itemSchema = new mongoose.Schema({
+  name: String,
+  priority: String,
+  competed: Boolean
+});
+
+let ToDoitem = mongoose.model("ToDoItem", itemSchema);
 
 // Time to start defining our Commands. What are we going to do with our program?
 // We want to be able to add, show and delete tasks.
@@ -88,6 +95,8 @@ program.command('delete')
 program
 .option('-p, --priority <p>', 'Specify priority for task', parseInt)
 // YOUR CODE HERE
+program
+.option('-t, --task <t>', 'Specifies the type of task')
 
 // Arguments
 // These lines are part of the 'Commander' module. They tell it to process all the
@@ -127,6 +136,11 @@ function addTask(){
   //    set name, priority, and completed.
 
   // YOUR CODE HERE
+  const task = ToDoItem({
+      name: name,
+      priority: priority,
+      completed: false
+  });
 
   // TODO: Use mongoose's save function to save task (the new instance of
   //    your model that you created above). In the callback function
@@ -134,6 +148,9 @@ function addTask(){
   //    using "mongoose.connection.close();"
 
   // YOUR CODE HERE
+  task.save(function(){
+    mongoose.connection.close();
+  });
 }
 
 // PART 3: Show tasks
@@ -157,6 +174,13 @@ function showTasks() {
   //    .find(function (err, task) { // do things } ) - finds all tasks
 
   // YOUR CODE HERE
+  ToDoitem.find({name: program.task})
+  .then(results=>{
+    console.log(results);
+  })
+  .catch(err=>{
+    console.log('Error');
+  });
 }
 
 // PART 4: Delete tasks
@@ -168,4 +192,9 @@ function deleteTask(){
   //    on the model to remove the task with {name: program.task}
 
   // YOUR CODE HERE
+  ToDoitem.findAndDelete({name: program.task}, function(err) {
+    if(err)
+      return handleError(err);
+  });
+
 }

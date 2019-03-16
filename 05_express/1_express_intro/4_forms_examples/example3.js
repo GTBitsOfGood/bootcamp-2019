@@ -1,10 +1,10 @@
-var express = require('express');
-var path = require('path');
-var exphbs = require('express-handlebars');
+let express = require('express');
+let path = require('path');
+let exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-var data = require('./accounts');
+let data = require('./accounts');
 
-var app = express();
+let app = express();
 
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
@@ -20,16 +20,22 @@ app.get('/', function(req, res) {
 });
 
 app.post('/login', (req,res)=>{
-    res.render('login', {
-        for (let i = 0; i < data.length; i++) {
-            if (data[i].email == req.body.email && data[i].password == req.body.password) {
-                userName: true;
-                name:  data[i].first_name;
+    console.log(req.body);
+    let username = false;
+    let name;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].email == req.body.email && data[i].password == req.body.password) {
+            username= true;
+            name = data[i].first_name;
+            break;
+        }
+    }
+    console.log(username, name);
+    res.render('login', {username, name});
+})
 
-         }
-         }
-    });
-});
+
+
 
 // start the express app
 var port = process.env.PORT || 3000;
