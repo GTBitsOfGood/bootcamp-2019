@@ -1,5 +1,44 @@
+
 <h2>Create project</h2>
 
 <!-- Part 2: Create project -->
 <!-- Part 5: Project categories -->
 <!-- YOUR CODE HERE -->
+{{#if err}}
+    <h1> ERROR: {{err}} </h1>
+    <h1> Forms filled: </h1>
+
+<form>
+    <input type = 'text' name = 'newTitle' value = {{newProj.title}}> <br>
+    <input type = 'text' name = 'goal' value = {{newProj.goal}}> <br>
+    <textarea rows="4" cols="50" name = 'description'> {{newProj.description}} </textarea>  <br><!-- #2 is this right -->
+    <input type = 'date' name = 'startDate' value = {{newProj.start}}> <br>
+    <input type = 'date' name = 'endDate' value = {{newProj.end}}> <br>
+</form>
+{{else}}
+
+<form action = '/new' method = "POST">
+    <input type = 'text' name = 'newTitle' value = "Title"> <br>
+    <input type = 'text' name = 'goal' value = "Goal"> <br>
+    <textarea rows="4" cols="50" name = 'description'>  </textarea> <br><!-- #2 is this right -->
+    <input type = 'date' name = 'startDate' value = "Start Date"> <br>
+    <input type = 'date' name = 'endDate' value = "End Date"> <br>
+    <input type = "text" name = 'Type' value = 'Type'> <br>
+    <select name = 'select'>
+        <option value= "Famous Muppet Frogs"> Famous Muppet Frogs </option>
+        <option value="The Pen is Mightier"> The Pen is Mightier </option>
+        <option value="Famous Mothers"> Famous Mothers</option>
+        <option value="Drummers Named Ringo">Drummers Named Ringo</option>
+        <option value="1-Letter Words"> 1-Letter Words</option>
+        <option value="Months That Start With Feb">Months That Start With Feb</option>
+        <option value="How Many Fingers Am I Holding Up?">How Many Fingers Am I Holding Up?</option>
+        <option value="Potential Potables">Potential Potables</option>
+    </select> <br>
+    <input type = 'submit' name = 'submit' value = 'Submit'> <br>
+</form>
+{{/if}}
+
+
+
+
+

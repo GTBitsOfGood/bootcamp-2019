@@ -3,7 +3,44 @@
 <!-- Part 3: View a single project -->
 
 <!-- YOUR CODE HERE -->
+    <ul>
+        <li> Title: {{results.title}} </li>
+        <li> Goal: {{results.goal}} </li>
+        <li> Description: {{results.description}} </li>
+        <li> Start date: {{results.start}} </li>
+        <li> End date: {{results.end}} </li>
+        <li> Category: {{results.category}} </li>
+    </ul>
+
 
 <!-- Part 4: Contribute to a project -->
-
+{{#if err}}
+    <h1> ERROR: {{err}} </h1>
+{{/if}}
 <!-- YOUR CODE HERE -->
+<form method = "POST">
+    <input type="text" name="contributer" value= 'Name'> <br>
+    <input type="text" name="amount" value = "Size amount"> <br>
+    <input type='submit' name= 'submit' value = 'Submit'>
+</form>
+
+<ul>
+    {{#each results.contributions}}
+    <li>Contributer: {{this.name}}</li>
+    <li>Amount: {{this.amount}}</li>
+    {{/each}}
+    <li>Total amount: {{total}}</li>
+    <!--idk how to do percentage bar -->
+</ul>
+<ul>
+    <li> {{results.category.enum}}</li>
+
+
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{percent}}"
+  aria-valuemin="0" aria-valuemax="100" style="width:{{percent}}%">
+    {{percent}}%
+</div>
+
+

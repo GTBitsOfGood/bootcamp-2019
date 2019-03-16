@@ -2,6 +2,31 @@
 
 <!-- Part 1: View all projects -->
 <!-- YOUR CODE HERE -->
-
+<ul>
+{{#each item}}
+    <li> Project: {{this}} </li>
+{{/each}}
+</ul>
+<a href = "http://localhost:3000/new"> Create new project </a>
 <!-- Part 2: Create new project -->
 <!-- YOUR CODE HERE -->
+<h2> Sort Projects By: </h2>
+<button onclick="window.location.href='/?view=fullyFunded'"> View Fully Funded Projects</button> <br>
+<button onclick="window.location.href='/?view=notFullyFunded'"> View Not Fully Funded Projects</button> <br> <br>
+<button onclick="window.location.href='/?sort=start'"> Start Date & Ascending</button> <br>
+<button onclick="window.location.href='/?sort=start&sortDirection=-1'">Start Date & Descending </button> <br>
+<button onclick="window.location.href='/?sort=end'">End Date & Ascending </button> <br>
+<button onclick="window.location.href='/?sort=end&sortDirection=-1'">End Date & Descending </button> <br>
+<button onclick="window.location.href='/?sort=goal'">Goal & Ascending </button> <br>
+<button onclick="window.location.href='/?sort=goal&sortDirection=-1'">Goal & Descending </button> <br>
+<button onclick="window.location.href='/?sort=totContributions'"> Contributions & Ascending </button> <br>
+
+
+
+
+
+
+
+
+
+

@@ -27,6 +27,8 @@ mongoose.connection.on('error', function() {
   console.log('Error connecting to MongoDb. Check MONGODB_URI in env.sh');
   process.exit(1);
 });
+
+// const mongodb_uri = "mongodb://admin:admin123@cluster0-shard-00-00-ivpoq.mongodb.net:27017,cluster0-shard-00-01-ivpoq.mongodb.net:27017,cluster0-shard-00-02-ivpoq.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true
 mongoose.connect(process.env.MONGODB_URI);
 
 // Handlabars setup

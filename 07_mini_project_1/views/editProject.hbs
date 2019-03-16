@@ -1,0 +1,26 @@
+
+{{#if err}}
+    <h1> ERROR! {{err}} </h1>
+{{else}}
+<form action = '/project/:projectid/edit' method = "POST">
+    <input type = 'text' name = 'newTitle' value = "{{results.title}}"> <br>
+    <input type = 'text' name = 'goal' value = "{{results.goal}}"> <br>
+    <textarea rows="4" cols="50" name = 'description'>{{results.description}}  </textarea> <br><!-- #2 is this right -->
+    <input type = 'date' name = 'startDate' value = "{{results.start}}"> <br>
+    <input type = 'date' name = 'endDate' value = "{{results.end}}"> <br>
+    <input type = "text" name = 'Type' value = '{{results.category.type}}'> <br>
+    <select name = 'select' value = {{results.category.enum}}>
+        <option value= "Famous Muppet Frogs"> Famous Muppet Frogs </option>
+        <option value="The Pen is Mightier"> The Pen is Mightier </option>
+        <option value="Famous Mothers"> Famous Mothers</option>
+        <option value="Drummers Named Ringo">Drummers Named Ringo</option>
+        <option value="1-Letter Words"> 1-Letter Words</option>
+        <option value="Months That Start With Feb">Months That Start With Feb</option>
+        <option value="How Many Fingers Am I Holding Up?">How Many Fingers Am I Holding Up?</option>
+        <option value="Potential Potables">Potential Potables</option>
+    </select> <br>
+    <input type = 'submit' name = 'submit' value = 'Submit'> <br>
+</form>
+
+{{/if}}
+
