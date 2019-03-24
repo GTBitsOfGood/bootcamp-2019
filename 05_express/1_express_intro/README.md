@@ -126,14 +126,14 @@ connect to your local server at `http://localhost:3000`
 
 ### [Watch me: Express Templating](https://youtu.be/nVZ9zaMspm8)
 
-The following set of tasks will require setting up your own express app with handlebars templating. You should refer back to the video if you get stuck on a task.
+The following set of tasks will require setting up your own Express app with Handlebars templating. You should refer back to the video if you get stuck on a task.
 
 1. Navigate to `/05_express/1_express_intro/3_handlebars_examples/1_hello_world/`: This is the folder you will be working in
-2. Start your Node App (you can use `npm init`)
+2. Start your Node app (you can use `npm init`)
 3. Install the required packages
     - `express`
     - `express-handlebars`
-4. Create an `app.js` file: This is where you will set up express to use handlebars
+4. Create an `app.js` file: This is where you will set up Express to use handlebars
 5. Create the following routes:
     - `/`: Displays the text `"Hello World"` from a `.hbs` file
     - `/:error`: Displays the text `"<error> page not found, did you enter the correct url?"` where `<error>` is the text entered as a param.
@@ -176,12 +176,15 @@ The following set of tasks will require setting up your own express app with han
 [odd]: img/odd.png
 [even]: img/even.png
 
+3. Run `npm install`, `node app.js`, and open to serve your handlebars files on `localhost:3000`, and make sure your above routes work as intended!
+
 ### [Watch me: Looping in Handlebars](https://youtu.be/LRD-8JFGPWc)
 
 1. Open `/05_express/1_express_intro/3_handlesbars_examples/3_profiles/` in your Terminal
 2. Run `npm install`
-3. Take a look at `data.json`; this is a list of student info that contians `first_name`, `last_name`, `email`, and `gender`.
-4. Create a Handlebars template under `views` that, given an array of students, displays their first name, last name, and email in a list.
+3. Take a look at `data.json`; this is a list of student info that contains `first_name`, `last_name`, `email`, and `gender`.
+4. In `/views/index.hbs`, create a Handlebars template that, given an array of students, displays their first name, last name, and email in a list.
+    - You can name the array in your loop whatever you like, since you're the one writing the Express code.
 5. Create the following routes that render the template you created in the previous step:
     - `/`: A directory of __ALL__ students
     - `/male`: A directory of __ALL MALE__ students
@@ -197,12 +200,13 @@ The following set of tasks will require setting up your own express app with han
 
 ### [Watch Me: Input Fields & Names](https://youtu.be/iOZEf8rr7vM)
 
-1. Open `/05_express/1_express_intro/4_forms_examples/`: For this example you will write code in the following files
+1. Open `/05_express/1_express_intro/4_forms_examples/`: For this example you will write code in the following files:
     - `example1.js`
     - `views/example1.hbs`
 1. Create a `GET /` route that renders a page with a header and a form.
-    - `h1`: A heading tag that's text is based on the input box (in the form).
+    - `h1`: A heading tag whose text is based on the input box (in the form).
     - `form`: A form with an `input` box and a submit button
+    - If the header hasn't been set yet, the header should by default say 'Default Header'.
 1. Test your route by running `npm install` then `node example1.js` in the terminal. The following steps should work:
     1. Open your favourite web browser and navigate to `localhost:3000`
     1. You should see a heading titled __Default Header__ and a input box with a submit button (like below)
@@ -233,20 +237,20 @@ The following set of tasks will require setting up your own express app with han
 
 ### [Watch Me: Form Action Attribute](https://youtu.be/99zshXbq1FM)
 
-In this example you are to make a register form. Make sure that when you press submit, the form data does not change (use the `value` attribute).
+In this example you are to make a registration form.
 
 1. Open `/05_express/1_express_intro/4_forms_examples/`: For this example you will write code in the following files
         - `example2.js`
         - `views/example2.hbs`
-2. Create a register form (in `views/example2.hbs`) with the following inputs:
+2. In `views/example2.hbs`, create a register form with the following inputs:
     - username (text input box)
-    - password (password input box)
+    - password (password input box, with `type="password"`)
     - name (text input box)
-    - gender: male/female/other (radio buttons)
-    - __BONUS__ state (dropdown)
-3. __BONUS__ Add logic in `example2.js` to make sure the data in your form will __NOT__ be cleared when you press _Register_.
+    - pronouns: he/his, she/her, they/their ([radio buttons](https://www.w3schools.com/tags/att_input_type_radio.asp))
+    - __BONUS__ state ([dropdown](https://www.freeformatter.com/usa-state-list-html-select.html))
+3. __BONUS__ Add logic in `example2.js` to make sure the data in your form will __NOT__ be cleared when you press _Register_ (hint: use the `value` attribute).
 4. `npm install && node example2.js` to test your app.
-5. Fill in the form (it should look something like the one below once filled) and click register. Make sure the form stays filled.
+5. Fill in the form (it should look something like the one below once filled) and click register.
 
     <details><summary>
     Screenshot
