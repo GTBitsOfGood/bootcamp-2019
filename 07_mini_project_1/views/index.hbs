@@ -1,7 +1,23 @@
 <h1>View projects</h1>
 
 <!-- Part 1: View all projects -->
-<!-- YOUR CODE HERE -->
+<ul>
+    {{#each items}}
+        <article class="models">
+            <br>
+            <div>Title: {{this.title}}</div>
+            <div>Goal: {{this.goal}}</div>
+            <div>Description: {{this.description}}</div>
+            <div>Start Date: {{this.start}}</div>
+            <div>End Date: {{this.end}}</div>
+            <br>
+        </article>
+    {{/each}}
+</ul>
 
 <!-- Part 2: Create new project -->
-<!-- YOUR CODE HERE -->
+<body>
+    <div style="position: relative; margin-top:100%"></div>
+    <a href="http://localhost:3000/new">Create new project</a>
+</body>
+

@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/GTBitsOfGood/bootcamp#readme",
   "dependencies": {
-    "body-parser": "^1.18.3"
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "mongoose": "^5.4.11"
   }
 }

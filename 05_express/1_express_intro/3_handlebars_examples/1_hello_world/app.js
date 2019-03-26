@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:error', (req, res) => {
-    const error = req.query.error || "stranger";
+    //const error = req.query.error || "stranger";
+    const error = req.originalUrl;
     res.render("error_route", {
         error_msg: error
     });

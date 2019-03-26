@@ -48,8 +48,11 @@ db.once("open", function() {
 //    is a String, a "priority" property that is a String, and a
 //    "completed" property that is a Boolean.
 
-// YOUR CODE HERE
-
+const ToDoItem = new mongoose.Schema({
+  name: String,
+  priority: String,
+  completed: true
+});
 // Time to start defining our Commands. What are we going to do with our program?
 // We want to be able to add, show and delete tasks.
 // Syntax: lets say you want your program to add a task. You would define it like:
@@ -95,7 +98,7 @@ program
 // TODO: add flags for "-t and --task" (do not use parseInt as the
 //    task name should be kept a string)
 program.option("-p, --priority <p>", "Specify priority for task", parseInt);
-// YOUR CODE HERE
+program.option("-t, --tasks<p>", "Tasks to do", String);
 
 // Arguments
 // These lines are part of the 'Commander' module. They tell it to process all the
@@ -134,14 +137,19 @@ function addTask() {
   // TODO: create new instance of your toDo model (call it task) and
   //    set name, priority, and completed.
 
-  // YOUR CODE HERE
+function task() {
+  let  name = parseArgs();
+  let priority = program.priority || 1;
+  let completed = true;
+}
 
   // TODO: Use mongoose's save function to save task (the new instance of
   //    your model that you created above). In the callback function
   //    you should close the mongoose connection to the database at the end
   //    using "mongoose.connection.close();"
+  
 
-  // YOUR CODE HERE
+  //wut
 }
 
 // PART 3: Show tasks

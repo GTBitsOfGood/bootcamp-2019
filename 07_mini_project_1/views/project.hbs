@@ -1,9 +1,42 @@
 <h1>View Project</h1>
 
 <!-- Part 3: View a single project -->
-
-<!-- YOUR CODE HERE -->
+<ul>
+    <article class="models">
+        <br>
+        <div>Title: {{title}}</div>
+        <div>Goal: {{goal}}</div>
+        <div>Description: {{description}}</div>
+        <div>Start Date: {{start}}</div>
+        <div>End Date: {{end}}</div>
+        <div>Category: {{category}}</div>
+        <br>
+    </article>
+</ul>
 
 <!-- Part 4: Contribute to a project -->
 
-<!-- YOUR CODE HERE -->
+<ul>
+    <article class="models">
+        <form id="contributeProject" method="post">
+            <br>Name<br><input type="text" name="name" values={{project.name}}>
+            <br>Amount<br><input type="number" name="amount" values={{project.amount}}>
+            <br>Save<br><input type="submit" value="Submit">
+        </form>
+    </article>
+</ul>
+
+<ul>
+    {{#each contributions}}
+        <article class="models">
+            <br>
+            <div>Name: {{this.name}}</div>
+            <div>Amount: {{this.amount}}</div>
+            <br>
+        </article>
+    {{/each}}
+</ul>
+
+<div class="contributionsBar">
+    <div class="contributions-bar" role="progressbar"> </div>
+</div>

@@ -12,10 +12,16 @@ app.get('/', (req, res) => {
     res.render("students", {students: data});
 });
 
+
 app.get('/male', (req, res) => {
-    res.render("students", {males: data})
+    const males = data.filter(current => current.gender === "Male");
+    res.render("students", {students: males})
 });
 
+app.get('/female', (req, res) => {
+    const females = data.filter(current => current.gender === "Female");
+    res.render("students", {students: females});
+})
 app.listen(3000);
 
 

@@ -1,9 +1,5 @@
-<h2>Create project</h2>
-
-<!-- Part 2: Create project -->
-<!-- Part 5: Project categories -->
-
-<form id="newProject" method="post">
+<h2>Edit project {{proj.title}} </h2>
+<form action="/project/{{id}}/edit" method="post">
     <br>Title<br><input type="text" name="title" values={{project.title}}>
     <br>Goal<br><input type="number" name="goal" values={{project.goal}}>
     <br>Description<br><input type="textarea" name="description" values={{project.description}}>

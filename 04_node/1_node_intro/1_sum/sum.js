@@ -1,77 +1,26 @@
-// In this exercise we will build a command line utility for
-// summing numbers.
-//
-// sum.js should take optional command line arguments, parse the
-// arguments into numbers and return their sum. Use
-// **`process.argv`** to read command line arguments.
-//
-// ex. node sum.js 1 2
-// > 3
-// ex. node sum.js 2 3 4 5
-// > 14
-// ex. node sum.js 2 -5 3
-// > 0
-//
-// If no command line arguments are specified, you should ask the
-// user for 2 numbers and print their sum.
-//
-// ex. node sum.js
-// > Enter first number?
-// > 1
-// > Enter second number?
-// > 4
-// > 5
-//
-
-// Example code for reading command line arguments:
-<<<<<<< HEAD
-//console.log('Command line arguments', process.argv.slice(2));
-
-// Example code for getting input from the user
-// var readline = require('readline');
-=======
-// console.log('Command line arguments', process.argv.slice(2));
-
-// Example code for getting input from the user
-var readline = require("readline");
->>>>>>> master
-
-// var rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-
-
-// rl.question("Hi! What's your name? ", function(name) {
-//   console.log('Nice to meet you', name);
-//   rl.close();
-// });
-const readline = require('readline');
-const numInputs = process.argv.slice(2);
-let sum = 0;
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-<<<<<<< HEAD
-if (numInputs.length === 0) {
-  rl.question("Enter a number", (answer) => {
-    sum += answer;
-    rl.close();
-  })
-  rl.on('resume', (answer2) => {
-    sum += answer2;
+function getInputAndCalc() {
+  const readline = require('readline');
+  const r1 = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
   });
-} else {
-  for (let i = 0; i < numInputs.length; i++) {
-    sum += Number(numInputs[i]);
-  }
-  console.log("the sum " + sum);
+  r1.question("Number 1? ", function(n1) {
+    r1.question("Number 2? ", function(n2) {
+      console.log(parseInt(n1) + parseInt(n2));
+      r1.close();
+    });
+  });
 }
-=======
 
-rl.question("Hi! What's your name? ", function(name) {
-  console.log("Nice to meet you", name);
-  rl.question("qu2", resp => console.log("ty", resp));
-});
->>>>>>> master
+function sum(nums) {
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum += parseInt(nums[i]);
+  }
+  return sum;
+}
+if(process.argv.length === 2) {
+  getInputAndCalc();
+} else {
+  console.log(sum(process.argv.slice(2)));
+}
