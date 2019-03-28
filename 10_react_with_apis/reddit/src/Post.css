@@ -1,0 +1,24 @@
+.Author {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: medium;
+}
+
+.Title {
+    font-family: "Al Tarikh";
+    font-size: x-large;
+}
+
+.Text {
+    font-family: "Al Tarikh";
+    font-size: small;
+}
+
+.Comments {
+    font-family: ".SF NS Display";
+    font-size: larger;
+}
+
+.Vote {
+    font-family: Athelas;
+    font-size: medium;
+}
