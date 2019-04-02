@@ -20,14 +20,14 @@ if (!process.env.MONGODB_URI) {
     "MONGODB_URI is not in the environmental variables. Try running 'source env.sh'"
   );
 }
-mongoose.connection.on("connected", _ =>
-  console.log("Success: connected to MongoDb!")
-);
-mongoose.connection.on("error", _ => {
-  console.log("Error connecting to MongoDb. Check MONGODB_URI in env.sh");
-  process.exit(1);
-});
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } );
+// mongoose.connection.on("connected", _ =>
+//   console.log("Success: connected to MongoDb!")
+// );
+// mongoose.connection.on("error", _ => {
+//   console.log("Error connecting to MongoDb. Check MONGODB_URI in env.sh");
+//   process.exit(1);
+// });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } ).then(_ => console.log("connected successfully")).catch(err => console.log("err, err"))
 
 // Handlabars setup
 app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
