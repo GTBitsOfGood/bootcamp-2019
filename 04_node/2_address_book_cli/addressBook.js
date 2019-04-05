@@ -123,8 +123,10 @@ function addContact() {
 *
 */
 function updateContact(){
-  const contactName = argv[1]
+  const contact = argv[1]
   const newInfo = argv[2]
+  if (!contact || !newInfo)
+    console.log("Invalid contact format");
   let newInfoIsName // boolean
   if (isAlphabetic(newInfo)) newInfoIsName = true
   else if (isNumeric(newInfo)) newInfoIsName = false

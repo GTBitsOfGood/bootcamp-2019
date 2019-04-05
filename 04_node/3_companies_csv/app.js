@@ -1,8 +1,8 @@
 "use strict";
 
-var fs = require('fs');
-var path = require('path');
-var csvjson = require('csvjson');
+const fs = require('fs');
+const path = require('path');
+const csvjson = require('csvjson');
 
 // Write a function that takes the path of a CSV file, reads its contents and
 // returns them as as an array of JavaScript objects.
@@ -31,12 +31,14 @@ var csvjson = require('csvjson');
 //      ...
 //    ]
 function fileReader(csvFilePath){
-  // YOUR CODE HERE
+  const data = fs.readFileSync(path.join(__dirname, csvFilePath), { encoding : 'utf8' });
+  let arr = csvjson.toObject(data);
+  return arr;
 }
 
 // Write a function that takes an array of investment objects and replaces
 // the "originalInvestment", "valueToday" fields in each object with numbers
-// instead of strings.
+// instead of strings. This should return the new array.
 //
 // You will need to use: parseInt()
 // ex. parser([{id: '1', investorId: '1', company: '9',
@@ -46,7 +48,11 @@ function fileReader(csvFilePath){
 //     originalInvestment: 1100000, // Note conversion from string to number
 //     valueToday: 1000000}] // Note conversion from string to number
 function parser(arr){
-  // YOUR CODE HERE
+  for (let obj of arr) {
+    obj.originalInvestment = parseInt(obj.originalInvestment);
+    obj.valueToday = parseInt(obj.valueToday);
+  }
+  return arr;
 }
 
 module.exports = {

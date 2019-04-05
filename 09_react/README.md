@@ -110,7 +110,7 @@ TODO:
    2. Implement the `toggleCat()` function such that it sets `this.state.showCat = !this.state.showCat` every time it is clicked.
    3. Add event handlers to the "Toggle Dog" and "Toggle Cat" buttons in the `render()` function.
        - Hint: remember that you need to bind `toggleDog()` and `toggleCat()` so that `this` is set properly. There are many ways to do this. Try using a different approach than you used in the last section.
-   4. Implement conditional rendering using the corrosponding parts of the state and the `&&` operator to control when the dog and cat image are shown.
+   4. Implement conditional rendering using the corresponding parts of the state and the `&&` operator to control when the dog and cat image are shown.
    5. Test out your app! When you click the "Toggle Dog" button the dog picture should disapear from the DOM. It should reappear if you click the "Toggle Dog" button again. The "Toggle Cat" button should work in the same way.
 
 ## Section 8: Lists & Keys
