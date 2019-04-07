@@ -11,8 +11,8 @@
 | 2      | [Mini Project 1][mp1]      | N/A                     | 5 hours |
 | 3      | [Heroku][heroku]           | [Videos][heroku-vids]   | 45 mins |
 | 3      | [React][react]             | [Videos][react-vids]    | 5 hours |
-<!-- | 3      | [React & APIs][react-apis] | TODO                    | TBD     | -->
-<!-- | 3      | [Mini Project 2][mp2]      | N/A                     | TBD     | -->
+| 3      | [React & APIs][react-apis] | [Videos][react-2-vids]  | 5 hours |
+| 3      | [Mini Project 2][mp2]      | N/A                     | TBD     |
 
 <!---
 
@@ -41,6 +41,7 @@
 [react]: 09_react/
 [react-vids]: https://www.youtube.com/playlist?list=PLG3Osgh6aITWm0jWCCcM--a3PH3ZU8an5
 [react-apis]: 10_react_with_apis/
+[react-2-vids]: https://www.youtube.com/watch?v=DtR_6krv57U&list=PLG3Osgh6aITV-9yKYCi5hto04q_pb8v-a
 [mp2]: 11_mini_project_2/
 [router]: 12_react_router/
 [redux]: 13_redux/
