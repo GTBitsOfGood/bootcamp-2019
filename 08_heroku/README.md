@@ -14,3 +14,12 @@ git, so the learning curve is not too steep.
 
 1. Please visit the [Heroku-Demo](https://github.com/GTBitsOfGood/heroku-demo) repo and complete the tutorial outlined there.
 2. Deploy your Mini Project 1 to Heroku.
+	- First, copy all the stuff from your `07_mini_project_1` into a separate directory (outside of your `bootcamp` directory) and create a new git repo in that directory using `git init`. You probably do *not* want to try to connect Heroku from inside your bootcamp directory because Heroku is not going to understand that you only want to deploy the stuff from `07_mini_project_1`
+	- In `app.js`, remove the following lines:
+	```javascript
+	if (!fs.existsSync("./env.sh")) {
+ 	   throw new Error("env.sh file is missing");
+	}
+	```
+	- In `package.json`, change `"start": "nodemon app.js"` to `"start": "node app.js"`.
+	- Remember to do `heroku config:set MONGODB_URI=blahblah`
