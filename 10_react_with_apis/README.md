@@ -58,6 +58,11 @@ These are the data models used for this basic implementation of Reddit. The data
 5. Mock up Comment Component
 6. Using Props
 7. Loading Real Data
+8. Creating New Posts
+9. Deleting Posts
+10. Upvoting & Downvoting Posts
+11. Replying to Posts
+12. Finsihing Comments
 
 ---
 
@@ -215,7 +220,7 @@ Amazing! At this point we have created a rough mock of our Reddit app. Now it's 
 TODO:
 
 1. For this exercise we are going to use Axios to make requests to our API. First let's add `axios` to our project by running `npm install axios`.
-2. Open your `App.js` file and import `axios`.
+2. Open your `App.js` file and import `axios` using `import axios from "axios";`.
 3. Now we have to figure out where inside our React component we should make our API call. Let's consider some options:
    - What if we make API requests in the `render()` function?
      - Bad. Remember the render function gets called **a lot**. Everytime a piece of `state` or a `prop` changes `render()` gets called. We don't need/want to make API requests that often. We just need to load data once when our component is created
@@ -223,7 +228,7 @@ TODO:
      - Also not ideal. The constructor gets called before the React component gets attached to the DOM. We want to keep the constructor as small as possible and avoid doing API work here.
    - After the component gets mounted (i.e. `componentDidMount()`)?
      - We have a winner! The [React documentation][didMount] specifically recommends making network requests here. The `componentDidMount()` lifecycle hook gets called after the `constructor()` is run and DOM nodes are created.
-4. Add a `constructor()` function to your `App` component. Inside the constrctor we will create a piece of state to hold the posts we will load. Initialize this piece of state to be `null`. We want to initialize `this.state.posts` to be null initially until we successfully load the posts from the API. More on this later...
+4. Add a `constructor()` function to your `App` component. Inside the constrctor we will create a piece of state to hold the posts we will load. Initialize this piece of state to be `[]`. For simplicity we want to initialize `this.state.posts` to be an empty array until we successfully load the posts from the API.
 
     <details>
       <summary>SPOILER: Show code to add</summary>
@@ -231,7 +236,7 @@ TODO:
       ```javascript
         constrcutor(props) {
           super(props);
-          this.state = { posts: null};
+          this.state = { posts: []]};
         }
       ```
 
@@ -246,18 +251,317 @@ TODO:
       ```javascript
         componentDidMount() {
           axios.get("https://bog-reddit.herokuapp.com/api/v1/posts")
-            .then(posts => this.setState({ posts }))
+            .then(({data}) => this.setState({ posts: data.posts }))
             .catch(err => console.log(err));
         }
       ```
 
     </details>
 
-6. Now that we have a way to load the posts from the backend using `componentDidMount()` we need to use the data inside of `render()` to display the posts.
-  TO BE CONTINUED!
+6. Now that we have a way to load the posts from the backend using `componentDidMount()`, use the piece of state data `this.state.posts` inside of `render()` to display the posts.
+     - Hint: use `this.state.posts.map(...)` to help you.
+     - Reminder: Don't forget to set a key of the elements inside your `.map()` otherwise React will throw a warning.
+      <details>
+      <summary>SPOILER: Show code to add</summary>
+
+      ```javascript
+        render() {
+          return (
+            <div>
+              <h1>Bits of Good Bootcamp -- Reddit</h1>
+              {this.state.posts.map(curr => (
+                <Post key={curr._id} post={curr} />
+              ))}
+            </div>
+          );
+        }
+      ```
+
+      </details>
+
+7. Great work so far! Lets take a second to recap what we have done up to this point.
+    - Used Create React App to generate boilerplate from scratch
+    - Mocked up our components with fake data
+    - Introduced props to make our components dynamic
+    - Displayed real data loaded from an API using Axios
+
+    This general flow of checkpoints is fairly common and is something you'll likely find yourself doing as you start working on more React projects.
+
+    Here is an example of what your app might look like after loading real data from the backend API. Note your results will likely be different as there may be more posts/comments in the database.
+        ![six](./img/six.png)
+
+## Section 8: Creating New Posts
+
+Now that we are displaying real reddit data from our API, let's work on adding a way to create new posts! Although there are many ways one might want to incorporate adding new posts into your UI, for the sake of simplicity lets just add a couple text boxes above our first post that allow us to enter a `author`, `title`, and `text`.
+
+TODO:
+
+1. Create a new class component called `AddPost`.
+2. Import `AddPost` into `App.js` and insert it into the render function below your header and above your list of posts.
+   <details>
+     <summary>SPOILER: Show code to add</summary>
+
+     ```javascript
+       render() {
+         return (
+           <div>
+             <h1>Bits of Good Bootcamp -- Reddit</h1>
+             <AddPost />
+             {this.state.posts.map(curr => (
+               <Post key={curr._id} post={curr} />
+             ))}
+           </div>
+         );
+       }
+     ```
+
+     </details>
+
+3. Go back to your `AddPost` component and insert three text `<input />` into your render function. Note that these should be controlled components. That means you need to have a piece of `state` and an `onChange` handler associated with each input. For a review on controlled components [check out the React docs][forms]
+4. In addition to your three controlled inputs inside of `AddPost` add a submit button.
+5. Often times we want to validate input on the front end before we send an API request to try to create or modify something. There are many different ways of validating input, but for this tutorial we will use the easiest approach of validating when a user clicks `Submit`.
+    - Add a new variable `error: false` to your state. We instantiate it to false originally because we haven't produced an error yet.
+    - Create a function called `submit` and set it as the `onClick` handler for your submit button. Remember to make sure that your submit function is bound correctly!
+    - Inside your `submit()` function validate your `state` to ensure that `this.state.author`, `this.state.title`, and `this.state.text` have valid values (i.e. are not blank).
+    - If any part of your `state` is invalid, use `this.setState({error: ...})` to set an error message in your state. Use conditional rendering to display the error message after the submit button.
+      - Hint: `{this.state.error && display your error message here}`
+    - If you've validated your state successfully call `this.props.onSubmit()` and pass it an object containing the `author`, `title`, and `text` from your `state`.
+
+   Here is an example of what your app might look after fleshing out the `AddPost` component.
+   ![seven](./img/seven.png)
+6. Great now we have created our `AddPost` component and inserted it inside our `App` component. Inside our `App` component, we need to create a function that actually sends a POST request to our API to create our new post. After we write this function, we will pass it to the `AddPost` component as a `prop`.
+
+    - Inside the `App` component, create a new class function called `creatPost(postData)`. Don't forget to properly bind this function.
+    - Inside the  `createPost(postData)` function, use `axios` to send a POST request to our API. In response to your POST request, the API will send back the newley created post. You should use `this.setState(state => ({...your code}))` to update the state with your newley added post.
+         - Hint: the API endpoint you should use is `https://bog-reddit.herokuapp.com/api/v1/posts`
+         - <details>
+            <summary>SPOILER: Show code to add</summary>
+
+            ```javascript
+              createPost(postData) {
+                axios
+                  .post("https://bog-reddit.herokuapp.com/api/v1/posts", postData)
+                  .then(({ data }) =>
+                    this.setState(state => ({
+                      posts: [data.post, ...state.posts]
+                    }))
+                  )
+                  .catch(console.log);
+              }
+            ```
+
+            </details>
+    - Inside the render function, pass this new function to your `AddPost` component as a prop called `onSubmit`.
+        - <details>
+            <summary>SPOILER: Show code to add</summary>
+
+            ```html
+              <AddPost onSubmit={this.createPost} />
+            ```
+
+            </details>
+7. Test out your now fully functional `AddPost` component! You should be able to create new posts now and it should appear on your screen when added.
+
+## Section 9: Deleting Posts
+
+Now we have the functionality to read posts and create new posts. For our next step we will add the ability to delete posts. It may seem intuitive to write the delete post functionality inside the `Post` component because we have all the info for the post already. The problem with this approach is that after the post is deleted, we no longer want it to show up on our frontend. Inside the `Post` component we can't handle this type of action. Hence we have to go a level up to the `App` component as this is where we keep our list of posts as part of our state. From here we can write a function that makes the DELETE request to the API and then removes the post from our state so it no longer shows up in our React application.
+
+TODO:
+
+1. Inside the `App` component create a new class function called `deletePost(id)`. Make sure to properly bind this function!
+2. Implement `deletePost(id)` so that it send a DELETE request to the API, and upon successful deletion remove the deleted post from the list of posts in `this.state.posts`. The API endpoint you should use is `https://bog-reddit.herokuapp.com/api/v1/posts/INSERT-POST-ID-HERE`. Note that you need to specifiy the ID of the post to be deleted in the URL. Assume the ID for the post to be deleted is given as a parameter to this function.
+      - Hint: remember to modify the `state` you must use `this.setState(...)`.
+      - Hint: `Array.filter(...)` may be useful here.
+      - <details>
+          <summary>SPOILER: Show code to add</summary>
+
+          ```javascript
+          deletePost(id) {
+            axios
+              .delete(`https://bog-reddit.herokuapp.com/api/v1/posts/${id}`)
+              .then(_ => {
+                this.setState(state => ({
+                  posts: state.posts.filter(cur => cur._id !== id)
+                }));
+              });
+          }
+          ```
+
+        </details>
+3. Now that we've created this `deletePost(id)` function, we need to pass it as a `prop` to the `Post` components we are rendering inside the `App` component. Inside the `render()` function, add a new `prop` called `onDelete` to the `Post` components you are creating and pass in the `this.deletePost` function we just created.
+4. Inside the `Post` component add a delete button in your `render()` function. Pass in a function to the delete button's `onClick` method that calls the `onDelete` prop we just added. Remeber that the `deletePost` (and hence the `onDelete` prop) requires an id to be passed into it. You need to ensure that the function that you are passing to the delete button's `onClick` handler is properly passing the post ID to `this.props.onDelete()`.
+   - Hint: You can do this by either using arrow functions or creating a new class function.
+5. Test out your delete functionality! You should now be able to delete posts and they should be removed from the databases as well as from your React application. If after clicking delete, the post does not disapear from the React component, there is something wrong with your `deletePost(id)` function in your `App` component regarding updating the state after successfully sending the delete request.
+
+## Section 10: Upvoting & Downvoting Posts
+
+Our Reddit app can now dispaly, create, and delete posts. Not bad! Reddit wouldn't be what it is without the ability to upvote and downvote posts so that's what we'll tackle next. Upvoting and Downvoting is really an edit operation becasue we are modifying fields on the Post model on our back end. Just like in Section 9, we have to consider where to implement this functionality. While you may be tempted to start working in the `Post` component, we actually need to implement this in the `App` containter for the same reason cited in Section 9.
+
+TODO:
+
+1. Inside the `App` component create a new class function called `editPost(id, editData)`. Make sure to properly bind this function!
+2. Implement `editPost(id, editData)` so that it send a PATCH request to the API, and upon successful request update the edited post from the list of posts in `this.state.posts`. The API endpoint you should use is `https://bog-reddit.herokuapp.com/api/v1/posts/INSERT-POST-ID-HERE`. Note that you need to specifiy the ID of the post to be edited in the URL. Assume the ID for the post to be edited is given as a parameter to this function and that the second parameter `editData` is an object containing the data to be edited.
+      - Hint: remember to modify the `state` you must use `this.setState(...)`.
+      - Hint: `Array.map(...)` may be useful here to go over the list of posts and replace only the one that was edited.
+      - <details>
+          <summary>SPOILER: Show code to add</summary>
+
+          ```javascript
+          editPost(id, editData) {
+            axios
+              .patch(`https://bog-reddit.herokuapp.com/api/v1/posts/${id}`, editData)
+              .then(({ data }) =>
+                this.setState(state => ({
+                  posts: state.posts.map(cur =>
+                    cur._id === data.post._id ? data.post : cur
+                  )
+                }))
+              )
+              .catch(console.log);
+          }
+          ```
+
+        </details>
+3. Now that we've created this `editPost(id, editData)` function, we need to pass it as a `prop` to the `Post` components we are rendering inside the `App` component. Inside the `render()` function, add a new `prop` called `onEdit` to the `Post` components you are creating and pass in the `this.editPost` function we just created.
+4. Inside the `Post` component, we need to use our new `editPost` prop to create two functions that will increment our upVote and DownVote numbers. Create two class functions `upVotePost()` and `downVotePost()`. Make sure to bind these functions properly!
+5. Use `this.props.editPost(id, editData)` to implement `upVotePost()` and `downVotePost()`. Remember you need to pass in the post ID and an object represneting the data you want to change to `this.props.editPost(id, editData)`.
+    - <details>
+        <summary>SPOILER: Show code to add</summary>
+
+        ```javascript
+          upVotePost() {
+            this.props.onEdit(this.props.post._id, {
+              upVotes: this.props.post.upVotes + 1
+            });
+          }
+          downVotePost() {
+            this.props.onEdit(this.props.post._id, {
+              downVotes: this.props.post.downVotes + 1
+            });
+          }
+        ```
+
+        </details>
+6. Pass `this.upVotePost` and `this.downVotePost` to your upvote and downvote buttons `onClick` handlers respectively. Test out your new functionality! You should be able to upvote and downvote posts now and they should update in real time on your React application! If your vote count isn't changing in real time you have an issue with your `editPost(id, editData)` function inside your `App` component.
+
+
+## Section 11: Replying to Posts
+
+Our `Post` component is nearly done! One of the last things we need to add is the ability to reply to posts (i.e. add comments). By this point, you should be getting used to the process of adding new functionality to our application. This will be the last section where you are guided through the process in detail.
+
+TODO:
+
+1. Create a new component called `AddComment`. It's functionality will be very similar to the `AddPost` component so you may want to just copy that file.
+2. Inside of `AddComment` we must have a field for the `author` and another for the `text`. These both need to be controlled components which means you'll have to add them to your `state` and create an `onChange` handler function that updates your state.
+    - Hint: You've done this already in `AddPost`.
+3. Add a `submit` function to your `AddComment` component which validates your state and calles `this.props.onSubmit` if your state is valid. Just like in `AddPost` you should add a piece of state for `error` and display/update `error` as necessary if your validtion catches that `author` or `text` is invalid (i.e. `=== ""`).
+4. Now our `AddComment` component encapsualtes all the logic and HTML to display a form and collect input from the user. Import `AddComment` into the `Post` component.
+5. Inside the `render()` function of the `App` component, add a "Reply" button next to the "delete" button. We only want to display the `AddComment` component when a user clicks on the "Reply" button.
+    - Inside the `App` component, add a piece of state `replyOpen` and intializie it to `false`.
+    - Create a function that toggles the value of `replyOpen` between `true` and `false`. Remember to properly bind this function. Add it as the `onClick` handler on your "Reply" button.
+6. Use conditional rendering to only display the `AddComment` component inside the `render()` function of `App` when `this.state.replyOpen` is true.
+    - <details>
+        <summary>SPOILER: Show code to add</summary>
+
+        ```html
+          {this.state.replyOpen && <AddComment />}
+        ```
+
+        </details>
+7. Inside the `Post` component create a new class function called `saveComment(commentData)`. Remember to bind this function! Inside this function, set the `this.state.replyOpen` to `false` and call `this.props.onComment(id, commentData)`. Make sure to passs in the Post ID into `onComment(id, commentData)`.
+8. Take the `saveComment(commentData)` function you just wrote and pass it to `AddComment` as the `onSubmit` prop`.
+9. Inside the `App` component create a new function called `createComment(postId, commentData)`. Remember to bind this function. Inside this function use `axios` to make a post request to create your new comment. Upon successfuly posting the new comment, the API will return the newly modified Post object which you should update in the state as you have done before.
+    - Hint: the API endpoint you should use is https://bog-reddit.herokuapp.com/api/v1/posts/INSERT-POST-ID/comment
+    - <details>
+        <summary>SPOILER: Show code to add</summary>
+
+        ```javascript
+          createComment(postId, commentData) {
+            axios
+              .post(
+                `https://bog-reddit.herokuapp.com/api/v1/posts/${postId}/comment`,
+                commentData
+              )
+              .then(({ data }) =>
+                this.setState(state => ({
+                  posts: state.posts.map(cur =>
+                    cur._id === data.post._id ? data.post : cur
+                  )
+                }))
+              )
+              .catch(console.log);
+          }
+        ```
+
+        </details> 
+10. Pass the new `this.createComment` function you just created as a prop called `onComment` to the `Post` components you are creating inside the `render()` function of the `App` component.
+      - <details>
+        <summary>SPOILER: Show code to add</summary>
+
+        ```html
+          render() {
+            return (
+              <div>
+                <h1>Bits of Good Bootcamp -- Reddit</h1>
+                <AddPost onSubmit={this.createPost} />
+                {this.state.posts.map(curr => (
+                  <Post
+                    key={curr._id}
+                    post={curr}
+                    onDelete={this.deletePost}
+                    onEdit={this.editPost}
+                    onComment={this.createComment}
+                  />
+                ))}
+              </div>
+            );
+          }
+        ```
+
+        </details>
+11. Test out your new ability to create comments! You should be able to create and display new comments on your posts now!
+
+
+## Section 12: Finishing Comments
+
+Congrats! You've just finished your first set of CRUD functionality using React. We have built out the ability to create, read, update, and delete posts! Now in this section you will implement the same functionality for our `Comment` component which has been on the backburner for a while. This section will be less guided than before... if you're unsure of how to do something, reference back to the relevant section regarding the `Post` CRUD operations we did above and use that as a guide to implement the functionality for `Comment`.
+
+TODO:
+
+1. Deleting Comments
+   1. Inside the `App` component create a new class function `deleteComment(id)` that makes an Axios DELETE call to the API to delete a comment.
+      - Hint: The API endpoint you should use is https://bog-reddit.herokuapp.com/api/v1/comments/INSERT-COMMENT-ID
+      - Hint: Instead of manually trying to modify the `state` after successfully deleting the comment, just make a new API call to the backend to reload all the posts and use that to set the `state`.
+   2. Inside the `Comment` component create a "Delete" button.
+   3. Inside the `App` component pass your new function `this.deleteComment` to the `Post` components you are rendering as a prop called `onCommentDelete`
+   4. Inside the `Post` component pass `this.props.onCommentDelete` to the `Comment` components you are rendering as a prop called `onDelete`
+   5. Inside the `Comment` component set the "Delete" button's `onClick` handler to call `this.props.onDelete`. Make sure to pass it the Comment's ID `this.props.onDelete`.
+      - Hint: This can be done either using an arrow function or creating a new class function.
+   6. Test out the Comment delete functionality!
+2. Upvoting & Downvoting Comments
+   1. Inside the `App` component create a new class function `editComment` that makes an axios PATCH call to the API to delete a comment.
+      - Hint: The API endpoint you should use is https://bog-reddit.herokuapp.com/api/v1/comments/INSERT-COMMENT-ID
+      - Hint: Instead of manually trying to modify the `state` after successfully deleting the comment, just make a new  
+   2. Inside the `App` component pass your new function `this.editComment` to the `Post` components you are rendering as a prop called `onCommentEdit`.
+   3. Inside the `Post` component pass `this.props.onCommentEdit` to the `Comment` components you are rendering as a prop called `onEdit`.
+   4. Inside the `Comment` component create two new class functions `upVoteComment` and `downVoteComment` that use `this.props.onEdit(id, editData)` to increase the `upVote` and `downVote` counts respectively.
+   5. Set `this.upVoteComment` and `this.downVoteComment` as the `onClick` handlers for the up vote and down vote buttons in the render function of the `Comment` component.
+   6. Test out the up vote and down vote functionality!
+3. Replying to Comments
+   1. Inside the `App` component create a new class function `createSubComment(commentId, commentData)` that makes an Axios POST call to the API to create a comment on a comment.
+      - Hint: The API endpoint you should use is https://bog-reddit.herokuapp.com/api/v1/comments/INSERT-COMMENT-ID/comment
+      - Hint: Instead of manually trying to modify the `state` after successfully deleting the comment, just make a new  
+   2. Inside the `App` component pass your new function `this.subComment` to the `Post` components you are rendering as a prop called `onSubComment`.
+   3. Inside the `Post` component pass `this.props.onSubComment` to the `Comment` components you are rendering as a prop called `onComment`.
+   4. Import the `AddComment` component into your `Comment` component file.
+   5. Create a "Reply" button inside your `Comment` component and create a toggle function which conditionally renders the `AddComment` component based on a piece of state.
+   6. Create a `saveComment(commentData)` function inside your `Comment` component that modifies the state to hide the `AddComment` component and calls `this.props.onComment(commentId, commentData)` with the proper parameters.
+   7. Pass your new `this.saveComment` function to `AddComment` as a prop called `onSubmit`.
+   8. Test out your new ability to create subcomments!
 
 [http-methods]: https://youtu.be/DtR_6krv57U
 [axios]: https://youtu.be/r_w_gbxDvDY
 [cra]: https://github.com/facebook/create-react-app
 [localhost]: http://localhost:3000/
 [didMount]: https://reactjs.org/docs/react-component.html#componentdidmount
+[forms]: https://reactjs.org/docs/forms.html
