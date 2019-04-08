@@ -13,13 +13,13 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { posts: null };
+        this.state = { posts:null };
 
     }
 
     componentDidMount() {
         axios.get("https://bog-reddit.herokuapp.com/api/v1/posts")
-            .then(posts => this.setState({ posts }))
+            .then(({data}) => this.setState({posts: data.posts}))
             .catch(err => console.log(err));
     }
 
@@ -58,9 +58,7 @@ class App extends Component {
       };
       return (
         <div>
-            {/*<h1> Bits of Good Bootcamp -- Reddit </h1>*/}
-            <Post data={this.state.posts}/>
-            {/*{this.state.posts}*/}
+            {this.state.posts && this.state.posts.map(item => <Post data={item} />)}
         </div>
       );
     }
