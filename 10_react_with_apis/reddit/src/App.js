@@ -4,6 +4,7 @@ import './App.css';
 import Post from "./Post";
 import axios from 'axios';
 import AddPost from './AddPost';
+import AddComment from './AddComment';
 
 // const axios = require("axios");
 // axios.get("https://bog-reddit.herokuapp.com/api/v1/posts")
@@ -14,9 +15,12 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { posts:null };
+        this.state = { posts:null, replyOpen: false };
         this.creatPost = this.creatPost.bind(this);
         this.deletePost = this.deletePost.bind(this);
+        this.editPost = this.editPost.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.createComment = this.createComment.bind(this);
     }
 
     creatPost(postData) {
@@ -40,6 +44,38 @@ class App extends Component {
             });
     }
 
+    editPost(id, editData) {
+        axios
+            .patch(`https://bog-reddit.herokuapp.com/api/v1/posts/${id}`, editData)
+            .then(({ data }) => {
+                this.setState(state => ({
+                    posts: state.posts.map(cur =>
+                    cur._id === data.post._id ? data.post : cur)
+                }))
+            })
+            .catch(console.log);
+    }
+
+    toggle(bool) {
+        this.setState({replyOpen: bool});
+    }
+
+    createComment(postId, commentData) {
+        axios
+            .post(
+                `https://bog-reddit.herokuapp.com/api/v1/posts/${postId}/comment`,
+                commentData
+            )
+            .then(({ data }) =>
+                this.setState(state => ({
+                    posts: state.posts.map(cur =>
+                        cur._id === data.post._id ? data.post : cur
+                    )
+                }))
+            )
+            .catch(console.log);
+    }
+
     componentDidMount() {
         axios.get("https://bog-reddit.herokuapp.com/api/v1/posts")
             .then(({data}) => this.setState({posts: data.posts}))
@@ -52,7 +88,16 @@ class App extends Component {
         <div>
             <h1>Bits of Good Bootcamp -- Reddit</h1>
             <AddPost onSubmit={this.creatPost}/>
-            {this.state.posts && this.state.posts.map(item => <Post data={item} onDelete={this.deletePost} />)}
+            {this.state.posts &&
+            this.state.posts.map(item =>
+                <Post
+                    data={item}
+                    onDelete={this.deletePost}
+                    onEdit={this.editPost}
+                    onComment={this.createComment}
+                    toggle={this.toggle}
+                    />)}
+            {this.state.replyOpen && <AddComment />}
         </div>
       );
     }
