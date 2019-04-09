@@ -17,6 +17,7 @@ class Post extends Component {
                 <text className="Text"> {this.props.data.text} </text><br/>
                 <button className="Vote"> Up + {this.props.data.upVotes} </button>
                 <button className="Vote"> Down + {this.props.data.downVotes} </button>
+                <button onClick={_ => this.props.onDelete(this.props.data._id)}>Delete</button>
                 {this.props.data.comments && this.props.data.comments.map(item => <Comment data={item} />)}
             </div>
         )
