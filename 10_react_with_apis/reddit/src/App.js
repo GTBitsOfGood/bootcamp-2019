@@ -15,11 +15,11 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { posts:null, replyOpen: false };
+        this.state = { posts:null };
         this.creatPost = this.creatPost.bind(this);
         this.deletePost = this.deletePost.bind(this);
         this.editPost = this.editPost.bind(this);
-        this.toggle = this.toggle.bind(this);
+        // this.toggle = this.toggle.bind(this);
         this.createComment = this.createComment.bind(this);
     }
 
@@ -56,9 +56,9 @@ class App extends Component {
             .catch(console.log);
     }
 
-    toggle(bool) {
-        this.setState({replyOpen: bool});
-    }
+    // toggle(bool) {
+    //     this.setState({replyOpen: bool});
+    // }
 
     createComment(postId, commentData) {
         axios
@@ -95,9 +95,7 @@ class App extends Component {
                     onDelete={this.deletePost}
                     onEdit={this.editPost}
                     onComment={this.createComment}
-                    toggle={this.toggle}
                     />)}
-            {this.state.replyOpen && <AddComment />}
         </div>
       );
     }

@@ -5,11 +5,14 @@ import AddComment from './AddComment';
 
 class Post extends Component {
 
+
     constructor(props) {
         super(props);
+        this.state = {repltOpen: false};
         this.upVotePost = this.upVotePost.bind(this);
         this.downVotePost = this.downVotePost.bind(this);
         this.saveComment = this.saveComment.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
     upVotePost() {
@@ -29,6 +32,10 @@ class Post extends Component {
         this.props.onComment(this.props.data._id, commentData);
     };
 
+    toggle() {
+        this.setState({replyOpen: true});
+    }
+
     render() {
         return (
             <div>
@@ -38,8 +45,8 @@ class Post extends Component {
                 <button className="Vote" onClick={this.upVotePost}> Up + {this.props.data.upVotes} </button>
                 <button className="Vote" onClick={this.downVotePost}> Down + {this.props.data.downVotes} </button>
                 <button onClick={_ => this.props.onDelete(this.props.data._id)}>Delete</button>
-                <button onClick={_ => this.props.toggle(true)}>Reply</button>
-                {this.props.data.replyOpen && <AddComment onSubmit={this.saveComment}/>}
+                <button onClick={_ => this.toggle()}>Reply</button>
+                {this.state.replyOpen && <AddComment onSubmit={this.saveComment}/>}
                 {this.props.data.comments && this.props.data.comments.map(item => <Comment data={item} />)}
             </div>
         )
