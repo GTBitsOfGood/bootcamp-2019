@@ -32,6 +32,7 @@ class Post extends Component {
         this.props.onComment(this.props.data._id, commentData);
     };
 
+
     toggle() {
         this.setState({replyOpen: true});
     }
@@ -47,7 +48,10 @@ class Post extends Component {
                 <button onClick={_ => this.props.onDelete(this.props.data._id)}>Delete</button>
                 <button onClick={_ => this.toggle()}>Reply</button>
                 {this.state.replyOpen && <AddComment onSubmit={this.saveComment}/>}
-                {this.props.data.comments && this.props.data.comments.map(item => <Comment data={item} />)}
+                {this.props.data.comments && this.props.data.comments.map(item => <Comment
+                    data={item}
+                    onDelete={this.props.onCommentDelete}
+                    onEdit={this.props.onCommentEdit}/>)}
             </div>
         )
     }

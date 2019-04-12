@@ -15,12 +15,13 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { posts:null };
+        this.state = { posts: null };
         this.creatPost = this.creatPost.bind(this);
         this.deletePost = this.deletePost.bind(this);
         this.editPost = this.editPost.bind(this);
-        // this.toggle = this.toggle.bind(this);
         this.createComment = this.createComment.bind(this);
+        this.deleteComment = this.deleteComment.bind(this);
+        this.editComment = this.editComment.bind(this);
     }
 
     creatPost(postData) {
@@ -56,9 +57,24 @@ class App extends Component {
             .catch(console.log);
     }
 
-    // toggle(bool) {
-    //     this.setState({replyOpen: bool});
-    // }
+    editComment(id, editData) {
+        axios
+            .patch(`https://bog-reddit.herokuapp.com/api/v1/comments/${id}`, editData)
+            .then(({ data }) => {
+                this.setState(state => ({
+                    posts: state.posts.map(cur =>
+                        cur._id === data.post._id ? data.post : cur)
+                }))
+            })
+            .catch(console.log);
+    }
+
+    deleteComment(id) {
+        axios
+            .delete(`https://bog-reddit.herokuapp.com/api/v1/comments/${id}`)
+            .then(_ => axios.get("https://bog-reddit.herokuapp.com/api/v1/posts"))
+                .then(({data}) => this.setState({posts: data.posts}));
+    }
 
     createComment(postId, commentData) {
         axios
@@ -95,6 +111,8 @@ class App extends Component {
                     onDelete={this.deletePost}
                     onEdit={this.editPost}
                     onComment={this.createComment}
+                    onCommentDelete={this.deleteComment}
+                    onCommentEdit={this.editComment}
                     />)}
         </div>
       );
