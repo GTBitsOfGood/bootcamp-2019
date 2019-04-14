@@ -38,8 +38,8 @@ if(needSum.length == 0) {
   });
 
 
-  rl.question("Enter first number?", function(firstNumber) {
-    r1.question("Enter second number?", function(secondNumber){
+  rl.question("Enter first number?", function (firstNumber) {
+    r1.question("Enter second number?", function (secondNumber) {
       needSum.push(firstNumber);
       needSum.push(secondNumber);
     });
@@ -47,17 +47,15 @@ if(needSum.length == 0) {
     r1.close();
 
 
-
-
   });
 
 
-
-rl.question("Hi! What's your name? ", function(name) {
-  console.log("Nice to meet you", name);
-  rl.question("qu2", resp => console.log("ty", resp));
-});
-console.log(result);
+  rl.question("Hi! What's your name? ", function (name) {
+    console.log("Nice to meet you", name);
+    rl.question("qu2", resp => console.log("ty", resp));
+  });
+  console.log(result);
+}
 
 
 

@@ -1,6 +1,7 @@
 "use strict";
 // The node builtin filesystem library.
 const fs = require('fs');
+const columnify = require('columnify');
 const validator = require('validator')
 //require columnify here
 
@@ -33,7 +34,8 @@ argv.splice(0,2); //remove 'node' and path from args, NOTE: splicing modifies pr
 * $ node addressBook.js                ----> ''
 */
 function parseCommand() {
-  // YOUR CODE HERE
+  let result = process.argv[0];
+  return result;
 
 }
 
@@ -68,9 +70,29 @@ switch(input){
 *
 */
 function displayContacts(){
-    //YOUR CODE HERE
+  let output = columnify(data, {
+    dataTransform: function(data) {
+      if(parseInt(data)===-1) {
+        return '-None-';
+      } else {
+        return data;
+      }
+    },
+    config: {
+      name: {
+        headingTransform: function() {
+          return "CONTACT_NAME"
+        }
+      },
+      number: {
+        headingTransform: function() {
+          return "PHONE_NUMBER"
+        }
+      }
+    }
+  })
 
-    // console.log(columnify(data)); //UNCOMMENT
+  console.log(output);
 
 }
 
@@ -88,7 +110,23 @@ function displayContacts(){
 * if no number is provided, store -1 as their number
 */
 function addContact() {
-// YOUR CODE HERE
+  let name = process.argv[1];
+  let number = -1;
+  if (argv[2] !== undefined) {
+    number = parseInt(process.argv[2]);
+  }
+  let exists = false;
+  for (let i = 0; i < data.length; i++) {
+    if(data[i].name === name) {
+      exists = true;
+      return;
+    }
+  }
+  let newPerson = {
+    name: name;
+    number: number;
+    data.push(newPerson);
+  }
 
 }
 
@@ -104,7 +142,18 @@ function addContact() {
 *
 */
 function updateContact(){
-// YOUR CODE HERE
+  let update = process.argv[1];
+  let updateInfo = process.argv[2];
+  if (data.indexOf(update) !== -1){
+    if (isAlphabetic(updateInfo)) {
+      update['name'] = updateInfo;
+    } else {
+      update['number'] = updateInfo;
+    }
+
+  }
+
+
 }
 
 

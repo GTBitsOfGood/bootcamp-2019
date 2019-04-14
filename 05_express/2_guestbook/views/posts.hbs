@@ -23,6 +23,12 @@
 -->
 
 <!-- YOUR CODE HERE -->
+{{#each posts}}
+    <div>
+        {{author}} {{title}} {{body}} {{date}}
+        <a href="/posts?author={{author}}">{{author}}</a> <br>
+    </div>
+{{/each}}
 
 </body>
 </html>
