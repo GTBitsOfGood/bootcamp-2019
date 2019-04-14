@@ -30,7 +30,7 @@ const csvjson = require('csvjson');
 //      valueToday: '300000' },
 //      ...
 //    ]
-function fileReader(csvFilePath){
+function fileReader(csvFilePath) {
   const data = fs.readFileSync(path.join(__dirname, csvFilePath), { encoding : 'utf8' });
   let arr = csvjson.toObject(data);
   return arr;
@@ -38,7 +38,7 @@ function fileReader(csvFilePath){
 
 // Write a function that takes an array of investment objects and replaces
 // the "originalInvestment", "valueToday" fields in each object with numbers
-// instead of strings. This should return the new array.
+// instead of strings. Return this new/modified array.
 //
 // You will need to use: parseInt()
 // ex. parser([{id: '1', investorId: '1', company: '9',
@@ -47,7 +47,7 @@ function fileReader(csvFilePath){
 //   [{id: '1', investorId: '1', company: '9',
 //     originalInvestment: 1100000, // Note conversion from string to number
 //     valueToday: 1000000}] // Note conversion from string to number
-function parser(arr){
+function parser(arr) {
   for (let obj of arr) {
     obj.originalInvestment = parseInt(obj.originalInvestment);
     obj.valueToday = parseInt(obj.valueToday);

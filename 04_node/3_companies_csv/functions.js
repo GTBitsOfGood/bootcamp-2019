@@ -4,7 +4,7 @@ module.exports = {
   // all investments made on a company, but the largest investment made an one point
   // in time. Return the amount of the largest investment, according to the
   // "originalInvestment" field.
-  singleLargestInvestment: function(arr){
+  singleLargestInvestment: function(arr) {
     // Fields to be parsed: "originalInvestment"
     if (!arr) return null;
     let largest = arr[0].originalInvestment;
@@ -19,7 +19,7 @@ module.exports = {
   // This is equal to the sum of all the original investments divided by the number
   // of investments.
   // Return a Number.
-  averageOfOriginalInvestments: function(arr){
+  averageOfOriginalInvestments: function(arr) {
     // Fields to be parsed: "originalInvestment"
     let sum = 0;
     let count = 0;
@@ -30,7 +30,7 @@ module.exports = {
     return sum / count;
   },
 
-  // Find out how much a company got as the original investments. In this case, You
+  // Find out how much a company got as the original investments. In this case, you
   // will have to iterate over the companies and find all the investments for each
   // company and add them up to find how much money they started with.
   // Return an object that contains company ids as keys and their total original investment
@@ -40,7 +40,7 @@ module.exports = {
   //  2: 1024000,
   //   ...
   // }
-  totalOriginalInvestmentForCompanies: function(arr){
+  totalOriginalInvestmentForCompanies: function(arr) {
     // Fields to be parsed: "company", "originalInvestment"
     let ret = {};
     for (let obj of arr) {
@@ -55,13 +55,13 @@ module.exports = {
   // need to iterate through all the investments, find all the investments for each
   // investor and add them up to find how much money someone invested at the beginning.
   // Return an object that contains investor ids as keys and their total original investment
-  // as values.  The object's structure should look something like this:
+  // as values. The object's structure should look something like this:
   // {
   //  1: 595000,
   //  2: 1024000,
   //   ...
   // }
-  totalOriginalInvestmentsByInvestors: function(arr){
+  totalOriginalInvestmentsByInvestors: function(arr) {
     // Fields to be parsed: "investorId", "originalInvestment"
     let ret = {};
     for (let obj of arr) {
@@ -85,7 +85,7 @@ module.exports = {
   //   ...
   // }
     // Fields to be parsed: "investorId", "valueToday"
-  totalCurrentValueOfInvestors: function(arr){
+  totalCurrentValueOfInvestors: function(arr) {
     let ret = {};
     for (let obj of arr) {
       if (!(obj.investorId in ret))
@@ -102,8 +102,8 @@ module.exports = {
   // Note: Remember to use their total of investments and the total of current value:
   // using module.exports.totalOriginalInvestmentsByInvestors and
   // module.exports.totalCurrentValueOfInvestors
-  // Return an investorID;
-  bestInvestorByValueIncrease: function(arr){
+  // Return an investor ID;
+  bestInvestorByValueIncrease: function(arr) {
     // Fields to be parsed: "originalInvestment", "valueToday"
     const orig = module.exports.totalOriginalInvestmentsByInvestors(arr);
     const current = module.exports.totalCurrentValueOfInvestors(arr);
@@ -122,7 +122,7 @@ module.exports = {
 
   // Find out which company was invested the most in using the originalInvestment.
   // Return a company id.
-  mostInvestedCompany: function(arr){
+  mostInvestedCompany: function(arr) {
     // Fields to be parsed: "company", "originalInvestment"
     if (!arr) return null;
     let companiesToInvestments = module.exports.totalOriginalInvestmentForCompanies(arr);
