@@ -22,6 +22,7 @@ class App extends Component {
         this.createComment = this.createComment.bind(this);
         this.deleteComment = this.deleteComment.bind(this);
         this.editComment = this.editComment.bind(this);
+        this.createSubComment = this.createSubComment.bind(this);
     }
 
     creatPost(postData) {
@@ -60,12 +61,8 @@ class App extends Component {
     editComment(id, editData) {
         axios
             .patch(`https://bog-reddit.herokuapp.com/api/v1/comments/${id}`, editData)
-            .then(({ data }) => {
-                this.setState(state => ({
-                    posts: state.posts.map(cur =>
-                        cur._id === data.post._id ? data.post : cur)
-                }))
-            })
+            .then(_ => axios.get("https://bog-reddit.herokuapp.com/api/v1/posts"))
+            .then(({data}) => this.setState({posts: data.posts}))
             .catch(console.log);
     }
 
@@ -92,6 +89,14 @@ class App extends Component {
             .catch(console.log);
     }
 
+    createSubComment(commentId, commentData) {
+        axios
+            .post(`https://bog-reddit.herokuapp.com/api/v1/comments/${commentId}/comment`,
+            commentData)
+            .then(_ => axios.get("https://bog-reddit.herokuapp.com/api/v1/posts"))
+            .then(({data}) => this.setState({posts: data.posts}))
+    }
+
     componentDidMount() {
         axios.get("https://bog-reddit.herokuapp.com/api/v1/posts")
             .then(({data}) => this.setState({posts: data.posts}))
@@ -113,6 +118,7 @@ class App extends Component {
                     onComment={this.createComment}
                     onCommentDelete={this.deleteComment}
                     onCommentEdit={this.editComment}
+                    onSubComment={this.createSubComment}
                     />)}
         </div>
       );

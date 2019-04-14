@@ -8,7 +8,7 @@ class Post extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {repltOpen: false};
+        this.state = {replyOpen: false};
         this.upVotePost = this.upVotePost.bind(this);
         this.downVotePost = this.downVotePost.bind(this);
         this.saveComment = this.saveComment.bind(this);
@@ -34,7 +34,7 @@ class Post extends Component {
 
 
     toggle() {
-        this.setState({replyOpen: true});
+        this.setState({replyOpen: !this.state.replyOpen});
     }
 
     render() {
@@ -51,7 +51,8 @@ class Post extends Component {
                 {this.props.data.comments && this.props.data.comments.map(item => <Comment
                     data={item}
                     onDelete={this.props.onCommentDelete}
-                    onEdit={this.props.onCommentEdit}/>)}
+                    onEdit={this.props.onCommentEdit}
+                    onComment={this.props.onSubComment}/>)}
             </div>
         )
     }
