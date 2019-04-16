@@ -55,7 +55,7 @@ We will be using [this codepen](https://codepen.io/BitsofGood/pen/dQYJeb) for th
 
 <h3 style="border-bottom:none">Remember to click on the Fork button before typing any code or your changes will not be saved! You will need to sign up for a CodePen account, if you have not done so already.</h3>
 
-Ensure that you see **your username** on the top left, i.e. "A Pen by [username]", and not "A PEN BY Joseph Chuang"
+Ensure that you see **your username** on the top left, i.e. "A Pen by [username]", and not "A Pen by Bits of Good"
 
 Before we begin our board should look like this:
 
@@ -492,8 +492,8 @@ history = [
 
 2. Change the Board component so that it takes ```squares``` and ```onClick``` from the Game component, instead of having its own version.
     1. Delete the constructor in Board:
-    2. Replace any instance of ```this.state.squares``` with ```this.props.squares``` in ```renderSquare``` for the Board
-    3. Replace any instance of ```this.handleClick``` with ```this.props.handleClick``` in ```renderSquare``` for the Board
+    2. Replace ```this.state.squares[i]``` with ```this.props.squares[i]``` in ```renderSquare``` for the Board
+    3. Replace ```this.handleClick(i)``` with ```this.props.onClick(i)``` in ```renderSquare``` for the Board
 3. Have the Game component look at the history array and correctly calculate the game's status.
 
     <details>
@@ -556,7 +556,7 @@ history = [
     <details>
       <summary>Show Code</summary>
 
-    ```javascipt
+    ```javascript
         handleClick(i) {
             const history = this.state.history;
             const current = history[history.length - 1];
@@ -732,13 +732,18 @@ Since Square is a component that only uses the ```render``` function, we can con
 
 ```javascript
 function ComponentName(props){
-    return(
+    return (
         ... //component layout here
     )
 }
 ```
 
 Convert Square into a functional component.
+
+<details>
+<summary>Hint</summary>
+Remember to replace this.props with props.
+</details>
 
 ## Part 9: Feeling Emboldened?
 
