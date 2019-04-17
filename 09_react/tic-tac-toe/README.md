@@ -590,7 +590,7 @@ history = [
                 'Game start';
             return (
                 <li>
-                <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+                <button onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             );
         });
@@ -629,7 +629,7 @@ When we select one of our previous moves the board should display its state at t
     ...
     return (
         <li key={move}>
-            <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+            <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
     );
     ...
