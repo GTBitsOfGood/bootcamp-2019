@@ -123,7 +123,7 @@ TODO:
 
 1. Navigate to the `reddit/src` directory. This is where all your React component should live.
 2. Inside the `reddit/src/App.js` file delete all the content inside the `render()` function and just return a `<h1>` tag says something like "Bits of Good Bootcamp -- Reddit".
-3. Inside the `reddit/src` directory create a new file and call it `Post.js`. In this file you should creat a **class based component** called `Post`. For now have the render function just return `<h2> My Post </h2>`. After your React class declaration make sure to export your component from the file using `export default Post`.
+3. Inside the `reddit/src` directory create a new file and call it `Post.js`. In this file you should create a **class-based component** called `Post`. For now have the render function just return `<h2> My Post </h2>`. After your React class declaration make sure to export your component from the file using `export default Post`.
 4. Inside `App.js` import your `Post` component and add it to the render function.
 5. At this point you should have two components (`App.js` and `Post.js`) and application should look like this:
 ![one](./img/one.png)
@@ -141,6 +141,8 @@ TODO:
     - Up votes
     - Down votes
     - Comments
+
+    We will eventually be filling in this information by passing in a `data` prop; i.e., Author would be `{this.props.data.author}`, and so on.
 2. Go ahead and implement the `render()` function inside the `Post` component to display this data. For now don't worry about displaying comments.
     - Hint: you may want to create a `Post.css` file for your styling and import it into your `Post.js` file using `import './Post.css`. Inside the `render()` function in your `Post` component you, remember you can appy css classes using `className` (ex: `<div className="post"></div>`)
 
@@ -175,7 +177,7 @@ As you have seen, using mock data to flesh out the styling of your React compone
 
 TODO:
 
-1. Now we want to use `props` to pass data in rather than having dummy data in our `render()` functions. Since we haven't conneceted to our backend API yet we can create a dummy object that simulates the data we expect to get from our backend. You are free to create your own dummy data or use the one provided below:
+1. Now we want to use `props` to pass data in rather than having dummy data in our `render()` functions. Since we haven't connected to our backend API yet we can create a dummy object that simulates the data we expect to get from our backend. You are free to create your own dummy data or use the one provided below:
 
     ```javascript
     const postData = {
@@ -212,8 +214,8 @@ TODO:
     ```
 
 2. Take your dummy `postData` and paste it into the `App.js` file.
-3. Pass your `postData` to the `Post` component in the `render()` function inside of `App.js` as a `prop` called `data` (i.e. `<Post data={postData}/>`).
-4. Update your `Post` component so that all the data being displayed is coming from `props` rather than static dummy data in the render function. Remember in class based components you can access data passes in as `props` using `this.props.data.author`.
+3. Pass your `postData` to the `Post` component in the `render()` function inside of `App.js` as a `prop` called `data` (i.e., `<Post data={postData}/>`).
+4. Update your `Post` component so that all the data being displayed is coming from `props` rather than static dummy data in the render function. Remember, in class-based components, you can access data passed in as `props` using `this.props.data.author`.
 5. Previously we had our `<Comment />` component displayed in our `Post` component's `render()` function. Now we only want to display the `<Comment />` component if a given post has comments assoicated with it (i.e. `this.props.data.comments` is not empty). Also consider that a given post may have any number of comments that we need to display. How can we handle this?
     - Hint: how might `this.props.data.comments.map(...)` be helpful here?
 6. Update your `Comment` component so that all the data being dispayed is coming from `props` rather than static dummy data in the `render()` function.
@@ -237,7 +239,7 @@ TODO:
      - Also not ideal. The constructor gets called before the React component gets attached to the DOM. We want to keep the constructor as small as possible and avoid doing API work here.
    - After the component gets mounted (i.e. `componentDidMount()`)?
      - We have a winner! The [React documentation][didMount] specifically recommends making network requests here. The `componentDidMount()` lifecycle hook gets called after the `constructor()` is run and DOM nodes are created.
-4. Add a `constructor()` function to your `App` component. Inside the constrctor we will create a piece of `state` to hold the posts we will load. Initialize this piece of `state` to be `[]`. For simplicity we want to initialize `this.state.posts` to be an empty array until we successfully load the posts from the API.
+4. Add a `constructor()` function to your `App` component. Inside the constructor we will create a piece of `state` to hold the posts we will load. Initialize this piece of `state` to be `[]`. For simplicity we want to initialize `this.state.posts` to be an empty array until we successfully load the posts from the API.
 
     - <details>
       <summary>SPOILER: Show code to add</summary>
@@ -326,7 +328,7 @@ TODO:
 
      </details>
 
-3. Go back to your `AddPost` component and insert three text `<input />` into your `render()` function. Note that these should be controlled components. That means you need to have a piece of `state` and an `onChange` handler associated with each input. For a review on controlled components [check out the React docs][forms]
+3. Go back to your `AddPost` component and insert three text `<input />` for an author, title, and text into your `render()` function. Note that these should be controlled components. That means you need to have a piece of `state` and an `onChange` handler associated with each input. For a review on controlled components [check out the React docs][forms].
 4. In addition to your three controlled inputs inside of `AddPost` add a "submit" button.
 5. Often times we want to validate input on the frontend before we send an API request to try to create or modify something on the backend. There are many different ways of validating input, but for this tutorial we will use the easiest approach of validating when a user clicks "Submit".
     - Add a new variable `error: false` to your state. We instantiate it to false originally because we haven't produced an error yet.

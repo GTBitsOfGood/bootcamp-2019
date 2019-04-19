@@ -749,7 +749,7 @@ Remember to replace this.props with props.
 
 ### Goal
 
-Bold the currently-selected item in History (so that our time traveling is a little less confusing)
+Bold the currently selected item in History (so that our time traveling is a little less confusing)
 
 ![](./img/bonus1.gif)
 
@@ -777,4 +777,4 @@ When someone wins, highlight the winning squares
 
 ## Credits
 
-This guide was largely based off of the official React tutorial [here](https://facebook.github.io/react/tutorial/tutorial.html)
+This guide was largely based off of the official React tutorial [here](https://reactjs.org/tutorial/tutorial.html)
