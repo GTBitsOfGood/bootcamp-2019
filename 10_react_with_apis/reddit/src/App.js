@@ -47,6 +47,23 @@ class App extends Component {
       .catch(console.log);
   };
 
+  createComment = (postId, commentData) => {
+    axios
+      .post(
+        `https://bog-reddit.herokuapp.com/api/v1/posts/${postId}/comment`,
+        commentData
+      )
+      .then(({ data }) =>
+        this.setState(state => ({
+          posts: state.posts.map(cur =>
+            cur._id === data.post._id ? data.post : cur
+          )
+        }))
+      )
+      .catch(console.log);
+    console.log("comment saved to Axios: " + postId + commentData)
+  }
+
   render() {
     return (
       <div className="App">
@@ -58,43 +75,12 @@ class App extends Component {
             post={item}
             onDelete={this.deletePost}
             onEdit={this.editPost}
+            onComment={this.createComment}
           />
         ))}
       </div>
     );
   }
 }
-
-const postData = {
-  id: "1",
-  author: "John Smith",
-  title: "Hello World",
-  text: `In ex duis culpa labore est voluptate proident esse. Fugiat
-  exercitation laborum dolore aute commodo dolore Lorem est nisi Lorem
-  sint ex reprehenderit proident. Excepteur consequat amet laborum velit
-  est velit culpa id esse nisi eiusmod enim enim. Sint sit culpa magna
-  Lorem ea sunt aliquip minim culpa aliquip eiusmod officia aliquip.`,
-  upVotes: 10,
-  downVotes: 1,
-  comments: [
-    {
-      id: "2",
-      author: "Jane Doe",
-      text: `Sunt reprehenderit et veniam in nostrud ipsum duis mollit non eiusmod consectetur eu minim laborum.`,
-      upVotes: 3,
-      downVotes: 1,
-      comments: [
-        {
-          id: "3",
-          author: "John Smith",
-          text: `Sunt reprehenderit et veniam in nostrud ipsum duis mollit non eiusmod consectetur eu minim laborum.`,
-          upVotes: 5,
-          downVotes: 1,
-          comments: []
-        }
-      ]
-    }
-  ]
-};
 
 export default App;

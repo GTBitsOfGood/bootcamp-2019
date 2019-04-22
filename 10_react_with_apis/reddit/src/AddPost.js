@@ -12,10 +12,6 @@ class AddPost extends Component {
     }
   }
 
-  handleChange = event => {
-    this.setState({value: event.target.value})
-  }
-
   submit = () => {
     const { author, title, text } = this.state;
     if (author === "") {

@@ -9,7 +9,7 @@ class Comment extends Component {
 
     return (
       <div className="comment">
-        <p className>Posted by {this.props.comment.author}</p>
+        <p>Posted by {this.props.comment.author}</p>
         <p>{this.props.comment.text}</p>
         <p>+{this.props.comment.upVotes}/-{this.props.comment.downVotes}</p>
         {comments}
