@@ -3,15 +3,15 @@ import './Comment.css'
 
 class Comment extends Component {
   render() {
-    const comments = this.props.data.comments
-      ? this.props.data.comments.map(item => <Comment data={item}/>)
+    const comments = this.props.comment.comments
+      ? this.props.comment.comments.map(item => <Comment comment={item}/>)
       : null;
 
     return (
       <div className="comment">
-        <p className>Posted by {this.props.data.author}</p>
-        <p>{this.props.data.text}</p>
-        <p>+{this.props.data.upVotes}/-{this.props.data.downVotes}</p>
+        <p className>Posted by {this.props.comment.author}</p>
+        <p>{this.props.comment.text}</p>
+        <p>+{this.props.comment.upVotes}/-{this.props.comment.downVotes}</p>
         {comments}
       </div>
     )
