@@ -32,7 +32,6 @@ class AddPost extends React.Component {
     event.preventDefault();
   }
   handleSubmit(data) {
-    console.log(data);
     this.props.onSubmit(data);
   }
   render() {
@@ -47,6 +46,7 @@ class AddPost extends React.Component {
             Text:
             <input type="text" value={this.state.text} onChange={(e) => this.handleChange("text", e)} />
           </label>
+          <br/>
           <input type="submit" value="Submit"  onClick={this.submit}/>
         </form>
         <h3>{this.state.error && "Make sure all fields  are filled in properly"}</h3>

@@ -6,8 +6,10 @@ import AddComment from "./AddComment";
 class Post extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {replyOpen: false};
     this.upVotePost = this.upVotePost.bind(this);
     this.downVotePost = this.downVotePost.bind(this);
+    this.saveComment = this.saveComment.bind(this);
   }
 
   upVotePost() {
@@ -16,6 +18,13 @@ class Post extends React.Component {
 
   downVotePost() {
     this.props.onEdit(this.props.data._id, {downVotes: this.props.data.downVotes + 1})
+  }
+  onReply() {
+    this.setState({replyOpen: !this.state.replyOpen});
+  }
+  saveComment(commentData) {
+    this.setState({replyOpen: false});
+    this.props.onComment(this.props.data._id, commentData);
   }
 
   render() {
@@ -32,17 +41,17 @@ class Post extends React.Component {
           <button onClick={ _ => this.downVotePost()}>
             Downvote Post
           </button>
+          <button onClick={ _ => this.onReply()}>
+            Reply
+          </button>
           <button onClick={ _ => this.props.onDelete(this.props.data._id)}>
             Delete
           </button>
-          <button onClick={ _ => this.props.onReply()}>
-            Reply
-          </button>
         </div>
-        {this.state.replyOpen && <AddComment />}
+        {this.state.replyOpen && <AddComment onSubmit={this.saveComment}/>}
         <h3 className="ml-4">Comments: </h3>
         {this.props.data.comments.map((item) => {
-          return <Comment key={item._id}  data={item}/>
+          return <Comment key={item._id} onDelete={this.props.onCommentDelete} onEdit={this.props.onCommentEdit} onComment={this.props.onSubComment} data={item}/>
         })}
       </div>
     );
