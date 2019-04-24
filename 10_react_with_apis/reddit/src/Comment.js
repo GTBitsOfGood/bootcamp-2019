@@ -12,7 +12,7 @@ class Comment extends React.Component {
             <p>{this.props.data.text}</p>
             <p>Upvotes: {this.props.data.upVotes} Downvotes: {this.props.data.downVotes}</p>
             {this.props.data.comments.map((item) => {
-              return <Comment data={item}/>
+              return <Comment key={item._id} data={item}/>
             })}
           </div>
         </div>

@@ -1,47 +1,73 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Post from './Post.js'
+import AddPost from './AddPost.js'
+import axios from 'axios';
 import './App.css';
 
-const postData = {
-  id: "1",
-  author: "John Smith",
-  title: "Hello World",
-  text: `In ex duis culpa labore est voluptate proident esse. Fugiat
-  exercitation laborum dolore aute commodo dolore Lorem est nisi Lorem
-  sint ex reprehenderit proident. Excepteur consequat amet laborum velit
-  est velit culpa id esse nisi eiusmod enim enim. Sint sit culpa magna
-  Lorem ea sunt aliquip minim culpa aliquip eiusmod officia aliquip.`,
-  upVotes: 10,
-  downVotes: 1,
-  comments: [
-    {
-      id: "2",
-      author: "Jane Doe",
-      text: `Sunt reprehenderit et veniam in nostrud ipsum duis mollit non eiusmod consectetur eu minim laborum.`,
-      upVotes: 3,
-      downVotes: 1,
-      comments: [
-        {
-          id: "3",
-          author: "John Smith",
-          text: `Sunt reprehenderit et veniam in nostrud ipsum duis mollit non eiusmod consectetur eu minim laborum.`,
-          upVotes: 5,
-          downVotes: 1,
-          comments: []
-        }
-      ]
-    }
-  ]
-};
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      replyOpen: false
+    };
+
+    this.createPost = this.createPost.bind(this);
+    this.deletePost = this.deletePost.bind(this);
+    this.editPost = this.editPost.bind(this);
+    this.toggleReplyOpen = this.toggleReplyOpen.bind(this);
+  }
+
+  deletePost(id) {
+    axios.delete("https://bog-reddit.herokuapp.com/api/v1/posts/" + id).then(_ => {
+      this.setState(state => ({
+        posts: state.posts.filter(item =>
+           item._id !== id
+        )}))
+      });
+  }
+  editPost(id, editData) {
+    axios.patch("https://bog-reddit.herokuapp.com/api/v1/posts/" + id, editData).then(returnData => {
+      this.setState(state => ({
+        posts: state.posts.map((item) => {
+          console.log(item);
+          return item._id === returnData.data.post._id ? returnData.data.post : item
+        })
+      }));
+    });
+  }
+  createPost(postData) {
+    axios.post("https://bog-reddit.herokuapp.com/api/v1/posts", postData).then((response) => {
+      this.setState(state => ({posts: [response.data.post, ...state.posts]}));
+    }).catch((e) => {
+        console.log(e);
+      }
+    );
+
+  }
+  componentDidMount() {
+    axios.get('https://bog-reddit.herokuapp.com/api/v1/posts').then((response) => {
+      this.setState({posts: response.data.posts});
+    }).catch((err) => console.log("Something went wrong", err));
+  }
+
+  toggleReplyOpen() {
+    console.log(this.state);
+    this.setState({replyOpen: !this.state.replyOpen});
+  }
+
   render() {
     return (
       <div>
         <h1 className="mt-2 ml-4">Yo this is reddit</h1>
-        <Post data={postData}/>
+        <AddPost onSubmit={this.createPost}/>
+        {this.state.posts.map((post) => {
+          return <Post key={post._id} data={post} onReply={this.toggleReplyOpen} onDelete={this.deletePost} onEdit={this.editPost}/>;
+
+        })}
+        {/*<Post data={postData}/>*/}
       </div>
     );
   }
