@@ -70,7 +70,7 @@ class App extends Component {
         axios
             .delete(`https://bog-reddit.herokuapp.com/api/v1/comments/${id}`)
             .then(_ => axios.get("https://bog-reddit.herokuapp.com/api/v1/posts"))
-                .then(({data}) => this.setState({posts: data.posts}));
+            .then(({data}) => this.setState({posts: data.posts}));
     }
 
     createComment(postId, commentData) {
