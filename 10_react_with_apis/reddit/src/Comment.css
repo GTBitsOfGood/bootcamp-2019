@@ -1,0 +1,40 @@
+
+.Author {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: medium;
+    padding-right: 30px;
+    padding-left: 80px;
+    display: block;
+}
+
+.Title {
+    font-family: "Arial";
+    font-size: x-large;
+    padding-right: 30px;
+    padding-left: 80px;
+    display: block;
+}
+
+.Text {
+    font-family: "Arial";
+    font-size: small;
+    padding-right: 30px;
+    padding-left: 80px;
+    display: block;
+}
+
+.Comments {
+    font-family: ".SF NS Display";
+    font-size: larger;
+}
+
+.Vote {
+    font-family: Athelas;
+    font-size: medium;
+
+}
+
+.PostBorder {
+    padding-left: 20px;
+    border: 1px solid black;
+}
